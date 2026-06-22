@@ -1,0 +1,3605 @@
+So many other creators, they're just
+kind of like very unhappy people. Their
+top of- mind thing if they've been doing
+it for 10 years is, "How do I stop doing
+it?" Right? They just feel exhausted.
+They feel burnt out. They feel like
+they're on this treadmill. And I was
+trying to introspect on like why I don't
+[music] feel that way. I feel very
+energized saying like, "Wow, certainly
+in the next 10 years, I absolutely want
+to keep doing the same thing. If
+anything, do it more."
+>> But it's the fact that you packaged it
+[music] that's what matters because
+ultimately you just made the information
+accessible.
+>> I actually know the solution to
+education. You hire actors, roughly the
+same number of actors as there are
+students. They charismatically engage
+with at a social level their mark and
+then they just show an interest in the
+thing that you want the mark to learn
+about. The problem is not explanation,
+it's motivation. The most powerful form
+of motivation is social. And then the
+most powerful form of social motivation
+comes from your peers, not from others.
+It's very easy for people to create
+[music] cages around themselves. Like
+they found a thing and then that thing
+becomes their cage and they're sort of
+trapped by it.
+>> How come that hasn't happened to you?
+>> [music]
+[music]
+>> Grant, thank you so much for being here.
+Welcome to the Luba Show. I'm really
+excited to get started with something
+that happens this summer, which is us
+being at a wedding of a mutual friend
+>> and you giving an insane speech at the
+wedding.
+>> Sure. [laughter]
+And um actually a lot of people as I
+heard afterwards have said that this was
+the best speech that they've ever heard
+at a wedding. And just to paint
+[laughter]
+>> I had fun writing that actually.
+>> Uh actually Molly and I have relisted to
+the speech yesterday night. Yeah. Yeah.
+We did. We did.
+>> Uh and just to paint paint a picture for
+the viewer for anyone who's listening.
+So the speech started the speech weaved
+in nuclear fusion. it. We've done very
+detailed reactions and observations
+around both bride and groom and
+observation of who they are over the
+course of the years. We've done a lot of
+emotion, a lot of really great pauses
+when necessary in a speech. uh very
+proper and good hand gesturing and um
+you know the speech tied all those
+pieces together in a very eloquent and
+in a very succinct yet again vulnerable
+and emotional way and I remember I
+myself was like holy [ __ ] you know you
+had how many hours to prepare this
+>> well he came to me the day before
+literally the day before and he was like
+grant oh he doesn't call me Grant but
+the nickname and he's like do you uh it
+would be an honor if you could like give
+a toast uh tomorrow and like you can't
+say no. I'm not gonna be like, "No,
+man." Like a day before.
+>> It was a day before. And so then
+obviously my mind between then and I'm
+like, "Okay, I mean through cuz like
+with the wedding toast you've got this
+spectrum between um completely
+unprepared and it's a little bit of a
+mess, right? And then you've got like
+kind of ad hoc. There's no notes, right?
+Which is probably the best zone to be
+in. And then you've got like actually
+writing it out on paper. And
+[clears throat] those can be good, but
+also, you know, every time someone goes
+up to give a toast and they like open up
+their iPhone notes app or they have the
+pip,
+>> it's not that it's going to be bad, but
+you're kind of like, okay, there's no,
+it doesn't have the same like liveless
+to it. So, I think any kind of speech
+you do want to make sure you're giving
+without notes if possible. Like, I gave
+a commencement address a year or two ago
+and my big regret there. I absolutely
+could have had it memorized, but I just
+I don't know, it felt more formal to
+like have it there in front of me and I
+was okay with it, but I think it just
+would have been better if I didn't have
+the notes in front. I'm like, "All
+right, however it's delivered, let's
+make sure that there's there's no
+notes." Partly because you can just
+lower people's expectations, right?
+Like, if you give the impression that it
+is you're just casually talking off the
+cuff and you don't give the impression
+that you've made any plans for like how
+you want to tie it together at the end,
+then the standards are actually a lot
+lower for what feels good and feels like
+it lands. If you do tie it together,
+it's like, whoa, did he just come up?
+It's like, no, you like planned it out.
+But if there's notes, I think people
+subconsciously have this sense that
+like, oh, I expect you to have prepared
+this in a certain way. So, if it's both
+prepared, but also looks like it's not
+prepared, like that's actually the
+>> the medium you want to find yourself in.
+>> Um, no, that was so that was so wild
+though, just because it was Yeah. his
+reaction afterwards because I was making
+fun of him for giving me such short
+Well, because it was such short notice.
+He's like, "My lesson is that constraint
+breeds creativity." I'm like to be fair,
+I probably would have like stressed out
+about it more if there was more more uh
+notice ahead. Anyway, sorry, maybe you
+have a question there. Thanks for the
+kind words, but I'm I'm sure you're not
+you're not bringing this up because you
+just want to like shower praise on
+>> I mean it was a really impressive
+speech. So, you know, shower praise is
+definitely a part of it because it's
+genuine, but then I I was actually
+wondering what the process of writing
+that speech was. So, you had 24-hour
+notice.
+>> Yeah. Okay. So, um, let me let me try to
+think back to what the process was.
+Okay, so first I went to Claude and
+>> Okay,
+>> now LLMs are not good writers. So, you
+don't say like write me a speech. If
+anything, if you say write me a speech,
+you just like don't do any things they
+said. But I don't know how much we want
+to I won't talk about like the specifics
+of the wedding necessarily. You want to
+make it personal. We were in another
+country speaking another language. And
+so, I first I I just was I was thinking,
+how are we going to end this? Because
+anytime you're giving a talk,
+>> you you should know how you're going to
+start. know exactly how you're gonna
+start and you should know exactly how
+you're gonna end, right? And the ending
+is actually more important. Very often
+people kind of taper out at the end and
+they say, "And you know, you know,
+thanks for coming." Like they're not
+quite sure and and there's no strong
+note to end on and people don't know
+when to clap. So know how you want to
+end.
+>> So I'm like, I don't know. Are there any
+common sayings that are romantic but
+maybe not too cliche in the language of
+this country? I'm like, I don't know it.
+So, I asked the LLM like, "Hey, can you
+give me some examples of sayings that
+would be suitable for like a wedding
+toast um in this language?" Turns out, I
+looked it up afterwards. It just totally
+hallucinated on me. It was just like,
+yeah, it was just like not actually a
+thing. But it was a really sweet
+sentiment. So, I think what it was I
+think it was pulling from there will be
+these like memes that maybe float around
+Facebook or something with these like
+inspirational posters and it was a
+really nice quote that captured um it
+captured the moment for like where we
+were and it was like it was sweet but it
+wasn't like cloying and so it was a
+really I was like this is nice and it
+also referenced stars in there in a
+certain way. I'm like okay so that's
+good. These friends are also very
+scientific and so I knew I could like
+try to weave in science in some way and
+there was a way to use
+Like I had been reading about fusion
+recently and there was like a specific
+equation about fusion that I was like I
+actually think there's a way that we can
+kind of like give a little bit of a
+sciency theme that I know the groom is
+going to like.
+>> I know I could land it on this quote and
+it'll feel like tying things together
+because like we have the sciency thing
+and then suddenly there's like a sweet
+sentiment. And then the middle stuff,
+you know, just classic wedding toast
+stuff. You want to have like specific
+anecdotes. You want to tie in like what
+makes the bride and groom so great, not
+just as individuals but for each other.
+and like having those book ends on like
+I know I want to start with like a joke
+about making this overly sciency and
+then like step back. I know I want to
+end it by like tying it in there. Then
+it was just a matter of like filling in
+based on what I know about them. You
+reference pauses also. This is an
+important um feature of giving talks. So
+you you it's best if you can memorize
+it, right? But often you have to think
+about it like unless you're a good
+actor, which I'm not, and you like
+really know your
+>> You seem like a really good actor during
+that speech.
+>> Well, the way to seem like it
+when you don't know what to say, right?
+You actually have to think through in
+your mind like the notes and where you
+are. What what people naturally do is
+they'll say like, um, okay, so where
+were we? Right? Like they're kind of
+like announcing that they're thinking
+through their thoughts. Instead,
+>> you look meaningfully at one person in
+the audience as if it's a deliberate
+pause, right? And so you linger on that
+and you're comfortable in the silence,
+but really what's going on in your mind
+is you're like, crap, where am I? Like
+what was the next thing, right? So you
+have this like stern look on like
+deliberate pauses if you want whatever
+you just said to land. I don't know if
+it was deep or not, but you give the
+impression that it was. But really
+what's turning in there is saying,
+"Okay, where was I? We were at this.
+Okay, this is the next step." You know
+what I mean? But you just don't want to
+show that on your face that that's
+actually what's going on. And this maybe
+comes from I I was um I was very serious
+about the violin when I was growing up
+and I had this vi like Hungarian violin
+teacher who was both very good on the
+technical side.
+>> It's always the Eastern European
+teachers.
+>> They're so good. Yeah. But also on like
+kind of the more performative emotional
+side, like anytime we would have some
+kind of performance, she'd be after
+nailing down the technical aspect, she'd
+say like what does this make you think
+about? Like is there an emotional thing
+that it actually connects you with? Like
+I want you to be thinking about that
+when you play. And another thing she
+would say is like just don't show the
+audience that you made a mistake when
+you do. It's so natural as you're
+playing like you miss a note and you're
+like a crap. Right? Because it's almost
+as if you want to tell the teacher like
+I know that I missed it. She's like I
+know you missed it. You know you missed
+it. Don't let them know that you missed
+it. And so kind of getting in the habit,
+it's maybe faking it till you making it
+make it is would be the cynical take on
+it, but basically being in the habit of
+having the confidence to be okay with
+mistakes and just not show it and
+proceed forward. Know that that's not
+the crucial part of it. Have confidence
+that the crucial part of it is where
+you're going to land. So, in some ways,
+like having that, I don't know,
+upbringing from the stern Hungarian uh
+violin teacher like had these crossover
+effects on public speaking when
+otherwise I'm kind of like a [snorts]
+nervous person or I'm not like a the
+kind of person who's going to be sitting
+at the dinner table holding court in
+conversation. Like, I'm definitely like
+the quieter in the background type. So,
+I don't think being up in any
+environment and like giving public talks
+is a natural thing for me. But it's just
+come up enough just through like doing
+YouTube or I like teaching and teaching
+is a form of that that like there's been
+room to think about principles on it
+over the years. And so that wedding was,
+you know, that's a fun excuse to
+exercise that in a more casual context.
+But
+there's there's small little tips there.
+The takeaways for anyone if they're
+giving wedding to us, like don't have
+notes. It's going to be better if you
+don't. Just speak from the heart. Know
+how you're going to end it and be
+comfortable with your pauses. Like those
+three things alone are just going to
+make it a way better speech than like
+90% of the ones that people end up
+hearing at these events.
+>> Yeah. On pauses, this reminds me of a
+few things. So, uh, generally I'm trying
+to deliberately work on my pauses when I
+speak because I find that what you said
+like rumbling that you're thinking is
+almost the same as using filler words.
+it makes you sound less confident
+>> and a good
+>> stable and strong pause makes your
+speech only better. Uh, and what you
+said about Hungarian violin and your
+teacher is reminding me of um I sing
+opera and performing and oftentimes
+actually uh I might be performing a song
+that I don't know super super well and
+it's exactly what you said where you
+know I one embody the character like
+embody the energy of the song and then
+when I pause my wheels might be turning
+thinking about oh [ __ ] you know what is
+the next line and like what does the
+next line represent and it's very
+similar to what you said about uh the
+toes, but actually embodying the energy
+that you want the entire thing to have
+is so key and being like I am the
+character. I am in the presence of this
+vibe. Um and then you know being very
+very confident even when you're
+internally not actually that confident
+if you forget something. Um so that's
+very very true.
+>> We actually bore witness to your
+oporadic singing and just to add
+mystique for the viewers about what what
+the heck this particular wedding was. It
+also incorporated a little bit of luba
+oporatic singing and I thought you did a
+good like there was a vibe that you
+clearly got into this character as you
+were doing it on like and now we were in
+a different mode that was like a luba I
+hadn't seen before.
+>> Um so speaking of math and speaking of
+YouTube since you brought it up I am
+curious so you've been running your
+channel now for almost 10 years or a
+little over 10 years. over 10 years.
+>> Uh do you remember what was that moment
+and what was going through your mind
+when you were like, "Hey, I'm going to
+take a bet on going on this full-time
+cuz it was quite a contrarian thing to
+do at that time." Like now there is a
+lot of people with the mindset of
+wanting to do YouTube full-time even
+before they get started. But back in
+2014,
+15 16 um that was a very rare thing to
+do especially for a Stanford student.
+Well, I didn't start it with the intent
+of saying, "Hey, I want to be a
+YouTuber." I didn't even really know
+that was a thing. I remember when I
+uploaded my first video, I got some
+email from YouTube saying like,
+"Congratulations, you have 27
+subscribers." And I thought, "What the
+heck is a subscriber?" Like, I didn't
+actually kind of know how YouTube
+worked. I followed certain channels.
+Evidently, not as a subscriber. I just
+use it the way everyone does, kind of
+scrolling through and searching. And so
+I had a sense that there's room for
+really engaging educational material. I
+had concrete characters in that space
+who I looked up to. There was one in
+particular who had actually offered some
+mentorship in a way that I now deeply
+appreciate because I just know how many
+messages can come in once you have
+>> who were the characters at that time.
+>> So Henry Rich who runs Minute Physics.
+Um, I just will I will do anything for
+him because he was so helpful to me very
+early on even before I really had any
+video and I was just messing around with
+kind of creating my own custom math
+animation software. I kind of reached
+out ostensibly saying could this be
+helpful to your work but also in some
+sense asking for a mentoring hand and he
+he was very kind and I think he saw
+potential in the earliest thing that I
+made and then as time went on I was
+working like my day job was at Khan
+Academy so I was making math videos but
+of a different sort and then
+>> and Khan Academy was already after you'd
+graduated.
+>> So the way it happened I I made a video
+or two at the very end of my undergrad.
+I got in conversations with people at
+Khan Academy thanks to Henry actually is
+how I initially got the conversations
+and then they were running this thing
+they called the talent search which was
+kind of like an open application for
+video creators mixed together with some
+notion of choosing 10 as the winners
+that they would like fly out to visit
+Khan Academy.
+>> I'm pretty sure I listened to some of
+your calculus and linear algebra videos
+when you were K Academy.
+>> Okay, great. And so the um yeah, long
+story short, I got along very well with
+the math team there. this turned into
+like a one-year fellowship doing things
+there. Um that turned into an
+opportunity for longer than the one
+year, but as it happened while I was
+doing my channel in parallel on the
+side. It it for various reasons made
+sense to potentially uh just put my full
+effort on that channel. Not in the sense
+of, hey, financially this is like the
+smart move. This is like go full-time.
+There's a longer story I won't go into,
+but it it sort of shook out that like
+there was a period where hey, it makes
+sense. Maybe let's give this a try. It
+didn't pop off as the kids say in terms
+of, hey, I put out a video and it goes
+really viral. I remember for a long time
+there was the steady growth of maybe
+10%.
+>> How long was that time?
+>> Like multiple years of like 10% per
+month of subscriber. Um, so it was
+nothing that exploded. It was just this
+like steady people who found one video
+tended to watch other ones. Um, if I
+made more videos that tend to bring up a
+couple more people. And just to make
+sure I understand, you were already
+quote unquote full-time on the channel
+like you were K Academy.
+>> Yeah. So this is when I was at Khan
+Academy and doing channel on the side
+and that so there was that that bit of
+growth and then I I uh was going to kind
+of step back from Khan Academy. I did
+like 25% time there and was focusing
+more on the channel and that kind of
+growth continued. There were a couple
+spikes in there. I remember once there
+was one morning when it was I had like a
+100,000 subscribers and then the next
+morning it was like 130,000. I was like
+what happened? Damn.
+>> Vsauce is what happened where there's
+this very popular science channel who
+like kindly mentioned one of my videos
+in one of his and
+>> that's amazing. 30,000 subscribers just
+from one mention. I feel like that
+doesn't really happen these days.
+>> This this partly speaks to the value of
+shoutouts then versus now.
+>> Yeah, exactly. It changed a lot,
+>> right? Like I mean the the the cliche
+thing everyone talks about things are
+more algorithm driven these days in
+terms of how people find content as
+opposed to recommendations word of mouth
+or from other creators. So it was a
+little bit more in that era where like
+the word from another creator mattered.
+It's also that like Michael Stevens has
+a cult following and like people really
+did follow what he was saying more so
+than the average person. Um, and so that
+gave some confidence that there is
+something here, but it was never, hey,
+this really blew up. Let's go. It was it
+was also creatively fulfilling. I really
+loved it. I made a tool to animate the
+videos and with each video I would
+improve the tool. It's very fun. You're
+an engineer. You know how fun it can be
+to code and to just make a thing that's
+your own from scratch. So that was
+creatively fulfilling. In addition to
+the product itself, education feels very
+nice, right? It feels like a a value
+additive thing to contribute to all this
+internet consumption as opposed to
+consumption for consumption's sake. So,
+I just loved it and I think I just
+wanted to do more of it and it seemed as
+if there was a decent enough appetite
+from people. And in some sense I I might
+have like jumped in earlier than was
+rational to but again we there's a
+longer story here but it kind of didn't
+necessarily make sense to do both Khan
+Academy and that at the same time
+there's certain like conflicts of
+interest there and so I was in hindsight
+appreciated having an incentive to kind
+of like get kicked out of the nest
+earlier than I would have wanted to but
+personality typewise it's like that's
+not the vision I originally had for the
+channel. I was thinking I would maybe
+become an academic mathematician who
+cares a lot about outreach and maybe the
+channel is an aspect of portfolio to
+kind of show the fact that I uh am am
+interested in this aspect of outreach as
+opposed to just interested in research
+math.
+>> Yeah, I was actually very curious about
+the identity piece. So I know you wanted
+to potentially become go into academia
+and become a a researcher. Did you
+what did the that what did letting go
+that identity feel like when you decided
+to really focus on the channel? You
+loved it so much and you were letting go
+of this idea that you were going to go
+into academia. Was there some sort of
+pull or like you know identity
+distortion field. Uh what did that feel
+like?
+>> I think the there was never a good
+reason to go in academia other than I
+loved math and I wanted to engage with
+it more. And if I was to sit back and
+say what do I really want to do with it?
+I love the teaching side. I love the
+outreach side. I love trying to take
+things even if they're already proven
+and in some sense understood at a
+research level and trying to say like no
+but really why is it true? And I think
+there's this space for like unsolved
+expository problems where sure we know
+that the thing is true but like really
+what's the right perspective that makes
+it feel obvious? That's the stuff I
+loved. And I think the draw towards
+academia is just that hey that's kind of
+the only legitimized career path on like
+having a stable place where the thing
+that you do day in and day out is math.
+And it wasn't even a thing to say like
+how else would you do that? How like
+what is the platform you would stand on
+to do outreach if not authority lent
+from like what your your actual day job
+is? And in some sense maybe I suffer
+from that still where it's like there
+are entities who maybe don't respect
+what I would have to say because I don't
+have a PhD or things like that. And so
+there's some cost there. But by and
+large I think people mostly index off of
+the stuff that you have made before and
+they can judge it on its own just to say
+hey is this good? Does this um capture
+something that otherwise wasn't being
+conveyed? Is it actually interesting?
+Right? As opposed to just being a little
+bit boring and if someone doubts the
+like authority of where I'm coming from.
+The nice thing about math is you just
+like prove if it's true or not. Like
+it's much more objective than a lot of
+other things. And I think other fields
+that are more subjective, people have to
+lean on experts more or they want to
+lean on experts more because it's hard
+to judge from the content in and of
+itself. Is it true? But with math you
+can if you just think about it you just
+look at the content in and of itself and
+you can ask yourself like is this true
+or not. Um and that you know that's one
+of the joys of math is that it even
+lends itself to that and you avoid some
+of the like flame wars that can emerge
+in more subjective fields. And in a
+perverse way that also means that as a
+you know non-ressearcher who
+nevertheless is like really interested
+in understanding at a deep level why
+these things are true if you just convey
+that you don't nec at least I believe
+and maybe I'm wrong here you don't
+necessarily have to have the like
+credentials to stand on to put out
+meaningful ideas because people can just
+judge the ideas in and of themselves. In
+one of the um conversations I was
+listening to with you, I think it was
+about five years ago or so, you
+mentioned that you're more of a type of
+person who likes likes examining things
+that already exist and explaining them
+to others in simple words. Um and I
+think the the part of the conversation
+was about creating something new versus
+ruminating on the old. Um and given that
+that dialogue was about 5 years old, has
+that changed at all? like now that there
+is so many new things happening with AI,
+so many new exciting companies and so
+many um new potential breakthroughs that
+might happen. Do you uh regret miss kind
+of long for being a part of the moving
+the ma like the application of math
+forward or um are you still happy where
+with where you're at?
+>> Interesting. you're pointing to AI in
+particular because it's such a living
+field where so much of the
+>> so much more besides that
+>> in general I think there's a there's a
+fog of war at the forefront of any kind
+of research pursuit where it's unclear
+what are even the important ideas and a
+lot of people thrive in that right they
+they love the idea that hey it's not
+even clear which of these are worth
+thinking more about but they they choose
+one and they would be the very first I
+don't really care about being the very
+first to understand something I may be
+more motivated once things have been
+>> out and it's clear that this is an idea
+that actually works and actually has
+significance which sometimes takes in
+the math world like decades in the AI
+world you know months or whatever the
+the equivalent would be I find it very
+motivating if I know something is deep
+and useful to then like spend my energy
+trying to understand okay why is it true
+and I think there's a lot of space for
+taking things
+that have been discovered and basically
+how do I want to phrase this like the
+very first iteration of something is
+often not the clearest version of it cuz
+it you know it's not even clear what the
+right language to phrase it in and
+everything and then as it actually gets
+used then you kind of see again you're
+an engineer I think you know the feeling
+when you're coding something up if it's
+from the ground up you might make like a
+a version one or version zero and it's
+only by making it that you realize oh
+this is actually what I wanted it to be
+or actually what it should look like and
+you're tempted to kind of scrap it all
+and like make something again fresh. I
+think the same happens with how you
+express ideas where and you see this in
+the history of math and and computer
+science too where certain ideas start to
+crop up in an awkward way that's like
+too tied to a specific use case and like
+the motivation is a little bit
+meandering because it was just going to
+happen to be something and the cleanest
+version of how to describe it has yet to
+be discovered and that ends up getting
+filtered out through well a lot of
+things through like how it was used
+through when people try to teach it in
+the lecture halls what turns out to
+resonate or not and I feel like the
+forefront discovery that's going to
+happen there's a bunch of incentives for
+that to happen because academia is a
+thing people are very um motivated by
+being the first to find something um on
+the side of hey really deeply
+understanding it even if it's not like
+academically publishable. I don't know
+there's not the same incentive there and
+it feels like a space where maybe it's
+not going to happen in the same way
+right and also in a sense of hey what's
+actually useful to people this is a
+thing I've softened on over the years I
+was maybe younger when I was younger I
+was very interested in the content of
+this video is something like
+sufficiently novel right it's it's just
+not a thing that that you're going to
+find and I was really hung up on that in
+some ways over the years what resonates
+the most with people is not so much hey
+topic or this proof is like, hey, we
+never would have seen it before. It's
+actually a lot of the more standard
+things where people just want to know
+how it works. Um, like, you know, one of
+the most successful videos is just what
+is a neural network? Hey, there's a
+million other videos on neural networks,
+but maybe if I can do it well enough or
+visualize it well enough or motivate it
+well enough, that actually reaches
+people more significantly. Now, I'll
+always have a special place in my heart
+for topics where it makes someone think
+like, wow, that's so clever and they
+never would have seen it before. But in
+some ways, the ones that mean the most
+to people are just clarifying how does
+this thing work? Even if someone else is
+going to try to explain it, maybe I can
+I can visualize it better. I can
+motivate it better. I've got these like
+principles I've gained over the years. I
+have an audience size such that I'm more
+justified in in maybe pursuing some of
+the topics which are common. Whereas, if
+you're a much smaller channel, you
+benefit from doing things that are
+extremely niche because no one else is
+doing it. So, over the years, I've maybe
+shifted
+potentially to be like less interesting
+in that sense or like not being as hung
+up on like making sure that this
+particular thing is novel.
+>> What has caused that shift? Uh was it
+gradual or were you were you listening
+to feedback of people? Were you just
+kind of, you know, listening to yourself
+and what you're more drawn to being
+quote unquote useful?
+>> Well, you see what resonates with
+people. I mean, I'll give an example.
+When I visit universities, very often
+students come up after a talk and
+they'll like express some form of
+gratitude and often it's gratitude for
+this one series I made like nine years
+ago about linear algebra. Now I didn't
+like have any novel insights about
+linear algebra in that series. I wasn't
+saying anything that like any
+mathematician wouldn't know about linear
+algebra, but I was taking the style of
+aggressively visualizing things, letting
+movement speak for itself. Um, making
+sure that formulas are motivated by the
+idea already being populated in
+someone's mind through those visuals.
+And that style really lent itself to
+scratching a n itch for linear algebra
+where I could communicate the same thing
+the textbooks were trying to or the
+professors were trying to that's just
+hard to come through in any other
+medium. And so there's a topic pretty
+standard, right? Like all STEM majors
+are going to learn it pretty well
+covered like there's lots of textbooks
+on it, there's lots of lectures on it.
+But simply because of the style and
+simply because of the way I was doing
+it, there was a lot of value to be added
+by doing it in a particular way and
+maybe being more clear. So had I been
+hung up on hey, I'm I'm not going to put
+anything out unless like it's no one
+would have seen this before like no one
+would have um you know seen this
+perspective on like calculating
+determinance or something. I just it
+would have been a worse series. It would
+have been a worse bit of content because
+it wouldn't address what people were
+actually searching for. They just wanted
+to understand. They didn't care about
+the novelty. They just want to
+understand it. And in fact, the lack of
+novelty corresponds to the fact that
+it's widespread and useful. And so
+again, there's always going to be a
+special place in my heart for you want
+to make sure that there is content that
+is surprising and gives things that
+people otherwise wouldn't see anywhere.
+But what I've softened to is the idea
+that actually a lot of the value that
+can be delivered with the like medium
+that I'm using this particular way of
+visualizing math um I would be I would
+basically be overlooking a whole bunch
+of value that you can deliver to people
+trying to learn in the world by ignoring
+the like standard topics. Yeah, I can
+very much resonate with that because as
+you know I'm coming back to content and
+outside of uh doing conversations with
+people I'm also thinking through oh is
+there original contents that I can be
+making and there is this feeling of
+wanting to do something new something
+different but at the same time it also
+feels like everything has been done you
+know all the deep or not deep thoughts
+or lessons have been shared um and then
+the novelty maybe is coming from the
+delivery for you like it's you and your
+own experiences that you're sharing with
+others or maybe it's the formats or
+maybe there is some other little
+sprinkle that you know you take the same
+product but you tweak one thing and then
+it becomes a novel product. So basically
+uh I was reading one of my friends blog
+posts about writing and sharing new
+ideas and something that really
+resonated with me is that the novelty
+doesn't really matter as much as what
+matters is that this person at a given
+point of time in their career and life
+has gotten a chance to learn this
+information and it just happened to be
+from you. It might be the same
+information that they have uh they would
+have had access to through reading books
+or through stumbling upon it in some
+other way but it's the fact that you
+packaged it that's what matters um
+because ultimately you just made the
+information accessible.
+>> I will say though like even if at the
+high level what is the topic you don't
+have to be hamper novelty. I do think at
+the more micro level on like how exactly
+are you describing it um it is worth
+your time to think of like digest it in
+a way that is going to be sufficiently
+different for the reader or for the
+viewer. Um cuz you can kind of think to
+what extent are you a source and to what
+extent are you a relay right and there's
+certain ideas where often the way the
+modern world works it's like an author
+writes it in a book right and then like
+a YouTuber reads that book and conveys
+basically the same idea right or Yeah,
+there's just a lot of like content
+creation out there where it's really
+just people being relays. And I think
+listeners and viewers and readers kind
+of get a sense of that at some point and
+maybe one or two articles they find
+interesting, but they're not going to be
+like loyal followers. The places where
+you get actual loyal followings where
+someone wants to say like, "Wow, what
+did Luba upload next?" It's going to be
+if they have a sense that you're more of
+an origin, you're more of an actual
+source on that. And so when I'm talking
+about novelty, like at the high level,
+like what is the topic covered? I think,
+hey, don't shy away from the ones that
+like other people have covered. But it's
+still worth being a little bit ruthless
+as you're editing down the ways that you
+might describe it and the ways that you
+might even present it in the first
+place, saying like that's pretty
+standard. Someone else like would say
+that and finding something that you kind
+of can hold as your own such that
+because people will pick up on this in a
+subconscious way and they will know like
+wow every time I watch one of Luba's
+things like actually like I really come
+out thinking about something
+differently. When you have that feeling,
+then you're going to get the loyal
+following who independent of the topic
+lands on your next thing. Because I
+think there's a lot of creators, they
+have like one or two things that like
+work really well and then they keep
+trying to make a bunch of other stuff.
+They're like, it's just not resonating
+with the audience as much. And it might
+be like those two things work because of
+the topic and like that topic people
+happen to be searching for and it kind
+of didn't matter who made it. They just
+needed like someone to relay it to them.
+And if you're only being a relay, then
+you just are relying on luck that you
+can find the things that you're relaying
+and you happen to be like the the most
+um SEO optimized relay for it. If it's
+something where you can consistently be
+a source for it, that's when like
+someone might say, "Well, I never would
+have thought to watch a video about like
+X, but hey, Luba made that video about,
+so it must be worthwhile." So it's
+it is it is worth being a little bit
+ruthless at the micro level on like
+making sure that there's something
+something distinct. Yeah, that's very
+true. This makes me think about purity
+of art. How did you find the purity of
+your style? Because it's I'm actually
+I'm curious what the process of making a
+video is like, but I would imagine that
+let's say you take neural networks,
+there is so much written about them.
+There is so much information online. How
+do you make sure that the essence of
+your um of your explanation is very much
+you and is not a derivative of something
+else that you read somewhere?
+>> How would you define even your the style
+that you usually use outside of the
+animation component?
+>> Okay. Sure. Well, so on this front,
+sometimes I'll talk to other like
+creators or maybe journalistic type
+creators and they'll talk about their
+process where there's like the research
+phase and then like the writing phase
+and production. And when I look at my
+process, there is no research phase for
+a particular project in the same way.
+It's more like I want to always be
+learning about stuff. There's a long
+list of things that like maybe I would
+make a video on where there's some stuff
+I already feel like I know very well.
+And so the like potential energy is
+there to car it out. There's stuff that
+I don't yet feel like I have groed in my
+mind, but know would make a good video
+at some point. And so I just try to like
+ambiently learn about it. And I think
+the way I end up going about it like I
+don't know neural networks might be a
+good example where I had you know I'd
+learned about this in college so it's
+like it was there in some way there was
+request you know to to make a video
+about that that time I was doing a
+little bit more math so I'm like oh
+computer science thing do I want to oh
+now people are curious on it and so I
+like revisited but it had been in my
+mind since college and I like revisit I
+read some things but I think having a a
+lot of time where that's not necessarily
+the project that's on the top of the
+queue in that moment but on my horizon.
+I know I want to do neural networks at
+some point. So, I'm like ambiently
+thinking about it, playing around with
+the code myself. Um trying to come up
+with how do at what point does it feel
+like it clicks in my own mind? um not
+because hey I was reading something and
+someone said this thing but I was just
+like holding it in my own mind and I say
+you know this actually feels like it
+motivates like why are there layers or
+why are why do we have this like weights
+and bias structure or as as you get
+later on like what's the function of the
+attention mechanism or or all that I
+think
+I this is a long-winded way of saying I
+like do a lot of mulling just a lot of
+mulling before it actually gets to the
+point where hey this month the project
+on the top of my queue I feel confident
+that I can do the video about
+Transformers finally or something. And
+so the research phrase, it's not so much
+like, hey, now this is this project. I'm
+going to spend two weeks researching.
+And the thought there is that when
+you're consuming content, what's way
+more fun is to feel like you're watching
+a video from someone who actually really
+knows about it, right? And they just
+happen to be making video as opposed to
+watching a video from like a science
+journalist who job is to like translate
+things for public consumability. and
+they spent two weeks trying to get up to
+speed on it and like do their best to
+like translate like what they spun up on
+in those two weeks. You can just kind of
+tell when it's someone who like doesn't
+actually know it deeply and to know
+something deeply just takes a long time.
+And so in that way I don't I can't think
+of any process for for me where where
+that research phase for a particular
+video would be like concentrated into a
+short amount of time instead just having
+a lot of things that I want to
+understand and just try to think about
+and learn about and then every now and
+then it might bubble up to where I feel
+confident enough on it that it could be
+something that's the next month's video.
+That's how it ends up working. This
+makes me think of a relationship with
+audience and algorithm because a lot of
+creators, YouTubers, Tik Tockers, anyone
+who creates something online oftentimes
+fall prey uh to the algorithm or to the
+audience and wanting to put themselves
+into boxes and systems like hey I need
+to come up with a video every single
+week or every two weeks is my cadence
+and then as a result you try to reverse
+engineer your process. Um how come that
+hasn't happened to you?
+I've always so I've never thought about
+schedules in the sense of like hey I've
+got to upload on like this because when
+I consume content I kind of I don't care
+how often the person has uploaded. I
+just care like is the video good?
+There's very few things that I follow
+where I'm following it out of habit.
+It's like oh every week on this day some
+I know Lou is going to upload and I want
+that's just not how I consume. And so
+maybe I'm projecting onto the audience
+that I think to I think the audience
+doesn't care if you've uploaded things
+consistently for the last couple weeks.
+It's just a video might pop up to them
+maybe through friend recommendation,
+maybe through algorithmic
+recommendation. They just care is it
+going to be good? So I've always just
+focused on hey is it good? I get antsy
+if I haven't published for a while just
+because personally I like to have stuff
+happening in my life and seeing
+something go out the door is a is a
+emotionally satisfying thing but it's
+not because I think oh no the audience
+is going to be lost if
+>> it's very impressive after doing a
+channel for so long like literally
+you've never been trying to put yourself
+into a system
+>> well and so it's very interesting these
+days when I go to conferences and like
+chat with other creators so many other
+creators they're just kind of like very
+unhappy people and they they their top
+of- mind thing if they've been doing it
+for 10 years is how do I stop doing it,
+right? They just feel exhausted. They
+feel burnt out. They feel like they're
+on this treadmill. And I was trying to
+introspect on like why I don't feel that
+way. Like I get exhausted in certain
+ways, right? But I I feel very energized
+saying like, wow, certainly in the next
+10 years, I absolutely want to keep
+doing the same thing. If anything, do it
+more. I'm like, why do I not feel the
+same exhaustion others do? Part of it I
+think part of it actually is not having
+a team and therefore not having this
+sense of like wow here's this engine
+that needs to run and mouths that need
+to be fed and like if I'm not like
+banging on all cylinders if this video
+doesn't get such and such many views
+then like the the organization halts or
+something like I think that can be an
+easy source of stress. I think focusing
+on um like lessons that are meant to be
+evergreen as opposed to topical content
+that you're hoping hits a moment. I
+think if you're dependent on hitting a
+moment, then it can be very stressful
+because a lot might be writing on hoping
+that you like actually hit a certain
+wave and if you don't it's like wow like
+if it doesn't hit now then it's it's not
+going to it's not going to pick up later
+on. Whereas a lot of the successful
+successful content that I've made takes
+the form of you know maybe some people
+watch it now but it just my goal is that
+it's got high number of views like 10
+years from now there's just like a
+stable set of people who like kind of
+come to it. um like that matters a lot
+more to me than like number of views in
+the first month and such. And so I think
+things like that can mean when you're
+saying, "Hey, do I have a video out this
+week? Does it matter or not?" It's like
+I don't really care like this week or
+not. What I care is like there's is the
+thing that I made good enough that 10
+years from now there will be cause for
+people to be like coming back to it and
+that you know like I said there's
+there's a lot of privilege actually in
+that like it's it's not
+it's [snorts] not a given that you even
+can make stuff without a team. And I
+there's like contractors that I'll use
+like someone else writes the music I'll
+collaborate with. It's not like a fully
+solo endeavor but like much more so than
+a lot of my colleagues I kind of do it
+end to end at least these days. And I
+think that that lends a certain freedom
+just because there's uh there's
+breathing room that maybe I I I can
+understand a lot of other creators maybe
+just kind of can't can't afford. And so
+it's not like ah this is the right way
+to do things. there's a certain amount
+of privilege on like ah to have that
+breathing room and to be able to like
+make the choice that it's okay not to
+publish something this week cuz it's not
+like it's not there yet. Uh
+this I'm I'm rambling at this point just
+because as I was talking I became aware
+I'm like you know a lot of things I'm
+saying it's like a function of my own
+like privileged position and so I don't
+want it to come across as like
+>> partially you can say that it's
+privileged position but partially it's
+also just a very stoic and grounded and
+first principled view on work and craft
+because multiple times you've mentioned
+that the the thing that you care about
+is is this video good enough? Is it
+something that people will resonate
+with? are you having a novel take on
+let's say on explanation of the same
+topic or a different topic and I think
+grounding yourself in that is a skill
+that one can develop somehow so I'm
+curious how you have developed it
+because in the world of you know you're
+being fed metrics all the time um and
+you have creator friends that you said
+are quite unhappy a lot of them and just
+want to get off the train of being on
+the YouTube algorithm at the mercy of
+the algorithm or the mercy of whatever
+they feel like they're at the mercy you
+off. Maybe it's their audience. So,
+yeah. What makes you so uh grounded in
+those first principles? Is it I don't
+know.
+>> Metrics are such an interesting case,
+right? Because like YouTube throws all
+the numbers at you. It's like how many
+people watch, what was the watch time,
+how many likes, all of that.
+>> And most people I know too are obsessed
+over over those numbers. It's way too
+easy.
+>> You know what my like um my like guilty
+pleasure is? Is to open up the real time
+thing. I don't get any information from
+it, but just to see the real time views
+happening like in the last 48 hours.
+Yeah. It just that's like my happy place
+or that's my like dopamine hit.
+>> I'm like that's so useless. Like I learn
+nothing from that, right? Just seeing
+like how many people have watched in the
+last 48 hours or like you know is it a
+little is is any video getting a weird
+upswing now that it usually doesn't.
+>> I also would strongly disagree with your
+perspective about privilege because you
+literally again just said that a lot of
+your creator friends are at the mercy of
+the algorithm and I'm sure a lot of them
+are also quote unquote privileged and
+have uh big audiences and big channels.
+So they really should not be feeling
+that way.
+>> Well, okay. So I I I really do think
+that like team versus not team dynamic
+makes a difference here where
+>> the process that I have. Um
+>> well, we can talk about this later. I
+actually think I should have a team and
+that there is a way to do
+>> Yeah, let's bookmark this topic. But
+>> if I did if I did this, right, if I had
+like things that were filmed
+>> and uh I needed to like I would hire an
+editor yesterday because like I don't
+want to do that. It takes a bunch of
+time. But editing for me is this very
+final part of the process where I've got
+it all written out. I'm the way I'm even
+thinking about what the content should
+be is by like looking at the animations
+in a timeline. Sometimes there's a
+script, sometimes there's not a script
+for that section. Instead, I just make
+the animation and I talk it through like
+a talk. And so the whole process is so
+intertwined, it's very non-trivial to
+even extract out, hey, how would I
+outsource this different part? I don't
+even know how I would outsource the
+editing. I can see outsourcing like
+animating or other things. Again, we
+bookmark this and talk about like plans
+on that, but the way I currently create
+things, it's possible for me to make it
+all on my own.
+>> I think for other kinds of content, it
+might just actually not be possible for
+like one person to make it on their own
+at a decent cadence. And so to even do
+the thing at all requires having a team.
+And once you have a team, there's
+certain like minimum requirements on
+like revenue to even meet payroll.
+Almost all business models in YouTube
+are going to depend on the number of
+views in some way. And so that means
+those analytics that you're hitting are
+not just dopamine hits on like hey big
+numbers are fun. It's like no actually
+are we consistently meeting payroll.
+There's a lot of added stress there. And
+so the privilege I think is just from
+the particular style that I have or the
+particular I don't know skill sets
+around like the the animating is my way
+of even writing the the content and and
+that I love doing it right. I'm not like
+burned out by animating. A lot of people
+when they think they're like in After
+Effects and they hate it and something
+but for me I'm like this is my happy
+place. like this is where I feel
+comparative advantage and like I'm
+creating something novel for this
+explanation that it's like a style and
+an audience category and a bunch of
+things that have have gone well such
+that I can do it the way that I can do
+it and like not experience the same
+burnout mechanisms that other creators
+do where even if they have the same
+audience size it might be the case that
+in order to actually carry out their
+process it's not even an option to like
+do it without a team and and that's
+that's kind of the privilege I'm
+pointing to it's not so much like you
+know a particular Yeah. Yeah. Yeah.
+Exactly.
+>> One of my hypothesis is maybe you feel
+so at peace with um metrics and
+algorithm and why you're so focused on
+is the work really good is because you
+were so indexed on being in academia
+when you were younger because academia
+is quite focused on the process. You're
+researching. You're tinkering. you're
+trying to produce really good work
+versus being uh very overindexed on, you
+know, promotions and on the external
+worlds, so to say.
+>> I'd like to be able to say, "Oh, yeah,
+that's exactly right. I have this type."
+No, but I I I definitely am a little bit
+um you know, addicted to the numbers in
+the right way. Okay. The specific
+examples I think focusing on the right
+metric rather than wrong metric. So, for
+example, wrong metric is number of
+views, right? Slightly better metric is
+watch time, right? I think even better
+metrics than that for the kind of thing
+I want to do is like watch time let's
+say per month five years from now or
+something right and so like what if if
+you're going to index on one number
+associated with a particular video I
+don't think it should be like the number
+of views that it has I think it should
+be the number of people right now who
+are watching it
+>> and they don't show you that number but
+you can calculate that number very
+easily because you take the the watch
+time per month
+>> and so you've got like you know watch
+hours per month but a month is a number
+of hours. So you've got watch time per
+time. You cancel that out.
+>> But actually what that that top part is
+like people minutes or people hours.
+>> But I think that's still very externally
+focused because of the algorithm. They
+might or might not show your video.
+>> Let's talk about the algorithm because
+like people creators love to talk about
+the algorithm. They love to talk about
+>> like it's this blackbox
+sea monster with like this uh this
+ephemerrable taste one day that like
+turns into a different taste the next. I
+feel like I know exactly what you're
+going to say that if your video is good
+and the watch time is good and people
+and the retention is good then the
+algorithm no matter how many times they
+change it they will be shown in your
+video.
+>> Yeah I think broadly speaking it's a
+mirror of people's interests and it's
+not exact right
+>> the the platforms are very incentivized
+to make it a better mirror of people's
+interests and if you replace when people
+say like the algorithm wants blank if
+you replace the words the algorithm with
+the audience
+>> it's almost always like the same. It's
+like, oh, the algorithm really wants
+good thumbnails or something. It's like,
+no, like people will only click on
+something if they have reason to click
+on it. Like, you know, it's not the
+algorithm wants that. It's just that
+like this is how humans work if you need
+to like capture their attention in some
+way or the algorithm wants longer watch
+time. It's like, oh, people got more out
+of it when they were doing that. Now,
+there are concrete ways that matters
+like maybe when the algorithm is being
+trained, what is it being trained
+against? Is it trained against like
+watch time? Is it trained against
+meaningful watch time? How are they
+measured meaningful? Like there are
+there are tweaks to how the actual
+models are trained that maybe are
+significant and you can say where does
+it deviate from what we want it to be.
+Pretty clear examples of this would be
+people probably don't want to spend all
+day on YouTube. Um YouTube wants them to
+spend all day on YouTube and that's like
+a divergence of interest. So let's say
+there's a channel about running and you
+like watch it and it's got this really
+informative thing on like hey here's a
+thing that you should try for your
+training regimen or your form and you're
+like that's really good. and then you
+close your laptop and you go out for a
+run. That's very good for your life
+experience and like you got more value
+out of that. But then but from YouTube's
+perspective they're like man I showed
+this video and then they just stopped
+watching entirely and they stopped
+working. So there is a deviation there
+right and so I I do want to acknowledge
+that but I think 90% of the commentary
+creators have about the algorithm is
+like could just as easily apply to
+talking about audience needs. And I also
+think when a creator's video does very
+well, it's because of all of their hard
+work and their understanding of their
+audience. When their video doesn't do
+well, it's because the stupid algorithm
+didn't like like changed and you know
+what I mean? Like the only focus on the
+algorithm when like things don't go
+well. Um as opposed to trying to
+introspect and say maybe it just wasn't
+a good video or when things did go well
+saying like thank god the algorithm
+exists cuz how else would people have
+found that right? like every one of us
+owes our careers to like the existence
+of recommendation algorithms and yet it
+gets a lot of hate. So my focus has
+always been this is so cliched it's
+almost not worth it is like do people
+enjoy watching it like will people get
+value out of it and like the rest will
+take care of itself and so things that
+people might think of as growth hacks
+like hey make sure the first 30 seconds
+are really engaging that's not because
+of the algorithm that's just because
+that's how people work like I think of
+my own habits when I view something I
+need to be hooked so if I'm not hooking
+then like that's it make sure that the
+thumbnail like is compelling yeah
+obviously because like [laughter] what
+why why else would someone click on it
+if they don't have cause to if they
+don't come think that they're going to
+have a good experience and the only
+things that they see to understand if
+they're going to have a good experience
+there's thumbnail there's title there's
+also two other things there's the
+channel name and then there's like the
+runtime that they kind of see there and
+so the channel name probably actually
+counts for most of it in terms of is the
+last thing they watched something they
+got a good experience from. So if
+someone is trying to say wow the
+click-through rate on this was like
+really good why was that it might
+actually have nothing to do with the
+thumbnail. It might have been because
+the last video they watched was really
+good and they really wanted to click on
+what Luba's next thing was. And so
+a lot of these things, I don't know. I
+just don't think that the metrics thrown
+at you or the discussion around like
+what is the algorithm optimizing for
+cause you to make decisions that are any
+better than if you just say what do
+people want here or what would I want if
+I was a user.
+Then again, it's really nice to see high
+numbers in the app and there's a certain
+monkey brain part that just like, you
+know, is triggered by that.
+>> Would you say you mostly see your
+channel as fun or as work?
+>> H I mean,
+it is work, right? Like it's um it's not
+like a confetti driven party all the
+time to like make stuff for it.
+I would say
+once I'm in a project, I'm like 20% of
+the way into a project up until like
+90%. It's very fun and I just like it's
+just craft and like I enjoy that and I
+enjoy like thinking about how the
+audience is going to like a thing. I
+don't know. Like I'm making a video
+about the hairy ball theorem right now
+which is a serious name, a silly name
+for a serious bit of math and it's
+>> Could you explain in a few words what
+the hairball?
+>> Yeah. Yeah, sure. The informal statement
+is if you have a ball that's covered in
+hair, you can't comb down all of the
+hair to be flat. At some point, you're
+going to get like a little cowl lick
+where it kind of has to stick up at some
+point. There's no like elegant way to
+smooth it. Whereas, like on a donut, you
+could smooth out all the hair really
+elegantly. Um, on a four-dimensional
+ball, you can smooth it out just fine.
+On a circle, you can smooth it out just
+fine. You kind of go around. But
+threedimensional ball, you can't. Now,
+that's a silly statement. You might even
+wonder why someone would care. So, I
+want to motivate in the video like this
+kind of thing naturally emerges. This is
+like a metaphor for a natural kind of
+math that comes up, but also the
+exploration for why is it true. There's
+just a really beautiful proof. It's
+really fun to animate why this proof is
+true. There's other fun things to
+animate that are just like mindopening
+as you go just in like the land of pure
+math. And it's fun. And so I've just
+really been enjoying the the craft of
+that. I don't know if this video will
+actually perform that well, but it's
+it's like a fun thing to make. There are
+times when it feels like work where I
+don't know if I'm strategizing. Hey,
+what should the content be in the next
+year? You know, it's not so much me
+saying, let me have the most fun. It's
+like,
+>> why am what am I doing here, right?
+Like, what am I optimizing for? Uh what
+should my principles be in choosing?
+There's a certain, you know, it feels
+like the like BD strategic discussion on
+on that. So, it goes back and forth, but
+>> Okay. So, you do plan out the contents
+for a few months or a year in advance. I
+just you just mentioned that.
+>> Well, I make the plans, but I don't
+follow the plans.
+>> Okay. So,
+>> how does that work? Well, the way that
+it works is at the start of a year, I'm
+like, here are the things that feel
+important to cover. And then as the year
+proceeds, some of those projects blow
+up. Some of it it's like, well, this
+turned into two videos, but I wanted to
+make a follow-up on this. Sometimes I
+got nerd sniped by this one thing that
+goes in. So, like half of those goals
+are actually met. Um, I I kind of want
+to be more principled about that. Things
+always take longer than than I wish they
+did.
+>> What makes you want to be more
+principled about it?
+Well, I mentioned earlier when I go to
+universities there's this gratitude for
+like a series I made.
+>> I think a meaningful footprint that I
+could leave is to make series like that
+for a whole bunch of topics. I always
+sit at the start of a year and I plan to
+I'm like that was called the essence of
+linear algebra. I made one afterwards
+that was called the essence of calculus.
+I made a promise to make an essence of
+probability and I've made like six
+unpublished videos for it over the years
+that just weren't good and just like and
+then have like scattered probability
+material that like should be in a series
+but it's just a mess and it would be
+more meaningful to students if I got my
+act together and made a good version of
+that or the linear algebra series is
+very incomplete and I think making a
+whole sequel series like it would
+actually help a lot of students to just
+do that. So on the we've got on the like
+curricular side like lessons longer form
+series there's a lot of value to be
+added that kind of doesn't get
+prioritized because maybe it's a little
+bit more fun to make some of the other
+stuff maybe um maybe you know I am
+suffering from the short term versus
+long term like hey I I preach wanting to
+make something that will be watched a
+lot 10 years from now but then in
+practice I feel the draw towards
+something that I know will reach more
+people sooner. all these little things
+stack up to where for whatever reason
+the like next essence of blank it just
+gets dep prioritized and then at the end
+of the year I'm like I'm like ah man I
+really meant to do that and then I just
+didn't like other things came up and so
+I would knowing that that's where
+there's a lot of value in the long run I
+would benefit from
+putting in place the processes to ensure
+that that actually happens. Yeah, I
+think the mental talk that you have with
+yourself or when things like that happen
+is really really important. And you
+strike me as someone who as I mentioned
+before is really grounded and is very
+focused on am I doing good work? But now
+you're also saying that oh often times
+when you don't follow your road map and
+principles you are like oh I want to
+follow those principles again next year.
+What is the conversation that you have
+with yourself in those moments and does
+it really put you down or uh what is
+your mental hygiene? [laughter]
+>> Um I think I want to have principles and
+then there's multiple competing
+potential principles in there. For
+example,
+is like how should I value curricular
+stuff versus like general sciency
+interest stuff? Um, do people land on it
+because there's a particular thing that
+they want to learn and my job is to be
+as helpful for that particular thing or
+are they landing on it because they
+trust that I'm going to give them
+something interesting and my job is to
+like inspire and show that like math can
+be beautiful. And the right answer I
+think ends up being both. And so the
+like mental tuck I'll have with myself,
+it might be like both sides of those
+brains uh both sides of that brain like
+combating each other for the next
+particular project to say what should be
+prioritized. I think what I want to do
+is just try to get to the capacity where
+I can do both and it's not a trade-off
+to be had and almost in the same way
+like an or a company has different
+departments have like the curricular
+department that like the the mission is
+to create foundational material that's
+highly visualized lessons for the
+important topics in math so that someone
+can come up to speed on it. I know that
+would be valuable even if it takes a
+long time to make and like short run
+like fewer people see it. on the other
+side, consistently having things that
+bring joy and show the beauty of it and
+where like I just feel passionate about
+it and I get to share that like I don't
+want to not do that. And if anything, I
+think part of the reason that people
+will come to the channel is because they
+can like hear in my voice if I'm
+actually interested in it or not. So I
+don't want to ignore that. And so these
+two competing principles, I think the
+right thing to do is to say figure out
+how to be how to do more, right? figure
+out how to make it so that it's not um a
+trade-off between doing the two of
+those.
+>> Um even if like short term that might
+require uh
+>> like time sacrifice.
+>> Yeah. Yeah. Yeah. Exactly.
+>> Time sacrifice and mental sacrifice. I
+want to bookmark the topic on what the
+channel could look like. But uh what I
+wanted to ask is tell me more about the
+process of how you have that
+conversation with yourself. Is are you
+journaling? Are you going on a walk? Is
+this something you're intuitively
+thinking about?
+>> I mean yeah. So write you always think
+clearer if you write. So I have um yeah
+sure I have a mess in terms of like my
+internal documents and whatnot but I
+have like a folder in my computer where
+I might just write like daily notes when
+I just need to externalize my thoughts
+and there will be like a note whose
+title is the date. I never intend to go
+back to it
+>> like I can search it if I want to. In
+practice I kind of don't go back to it.
+Instead, the function of it is to be um
+you know, when you put your thoughts
+into words, either through speech or
+through writing, it
+>> becomes more clear.
+>> It becomes more clear
+>> and it it becomes um it's not that it
+becomes more clear, it's that it like it
+goes from not actually existing to
+existing like it wasn't actually a
+thought or it wasn't really a coherent
+um idea at all until you were forced to
+put into words. So, I have this. It's
+all just like right right
+>> and you write it every single day youce
+just whenever. Okay. Yeah. or or if I
+feel like I've got something I need to
+chew through, it's like, oh man, I've
+been like when I'm going to sleep
+thinking about like my mind is kind of
+buzzing around some set of principle
+like what should the business model of
+the channel be or like should I hire or
+should I not or like should I focus more
+on essence of type content or should I
+focus on um just isolated one-offs that
+people will do you know do I do I do
+more machine learning things because
+there's a really big appetite for that
+or do I kind of stick to the guns on
+like hey this is about pure math and
+like insp all of these sorts of how do I
+do that I just like
+>> ruminations
+ruminations. So, I write it down. I try
+to articulate some principles. There's a
+lot of redundancy. You know, there's
+things where I'm like writing principles
+that I had written down at some point
+before, but like again, the whole point
+is just make my current thinking actual
+thinking as opposed to fake thinking.
+Um, and [clears throat] that usually
+adds some clarity and then I make
+concrete plans based on that. Sometimes
+if it's a thought that I want to
+preserve, most of my life I just
+organize in like Apple notes these days
+where that'll range from like task lists
+to like certain things I want to
+>> Obsidian Snipes or Notion Snipes.
+>> No, I Well, I might be notion sniped. I
+think with an organization, Notion is
+clearly going to be better than like my
+current life system of files of Apple
+notes that link to each other. Um,
+Obsidian is enticing. I mean, cuz I'm
+like already writing it in like MDX
+files anyway. Uh, but I just I don't
+know. It's like I kind of partly because
+some of the life things I I want to be
+like share with others in my life and
+like not everyone uses obsidian and so I
+haven't been obsidian sniped but I've
+been obsidian intrigued. I anticipate
+being not
+>> I have recently got obsidian sniped but
+now I'm actually
+>> I know exactly why you have been
+[laughter]
+but um yeah.
+>> Um so we've uh danced around the topic
+of channel organization and channel
+evolution a few times now. I think now
+is the time to to actually dive into it.
+So tell me a bit more about the channel
+arc and uh the inflection point that you
+have right now.
+>> Yeah. So yeah, you could you're talking
+to me at an interesting time because had
+you chatted with me like 6 months ago,
+this conversation would have been much
+the same and now would be the end. I'm
+like solo creation is the best. Life is
+the best if you don't have a team. Um I
+mean we haven't even talked about the
+fact I don't do sponsorships and part of
+that I think
+>> Yeah, you made a big manifesto about it
+too. Yeah, I wrote a manifest which so
+actually I yeah I kind of I'm going to
+walk back from to some extent but I I
+think I can do it tastefully. Um yeah I
+think there's a lot of fraught aspects
+of that as a business model. I also
+think for the longer term focus that I
+wanted to have a monetization structure
+that centers on views in the next 3
+months does not set up the incentives
+that I want to have. And it was clear
+there was enough Patreon support of the
+channel that like I could support myself
+just fine. And if anything, maybe
+leaning into that more, it frees me up
+to not like negotiate with businesses or
+have an agency or something. I think it
+makes the content purer in a way that
+actually helps the channel. Like the
+call to action at the end is watch the
+next video. It's not like go buy this
+person's thing. Anyway, we haven't even
+talked about all that. Where I'm right
+now, sitting back and saying, how do I
+want to spend my own time? What goals do
+I want to achieve? In one of these
+documents, right, in one of these, I I
+sit down, I'm like,
+>> actually taking a step back, what
+triggered this rethinking? I don't just
+one of these weekly documents. I think I
+I was sitting here I'm like how do I
+want to spend
+>> some of my friends have asked if the
+fact that I have a child now who's like
+7 months old like has that sharpened my
+thinking maybe subconsciously like the
+the hours of the day aren't what they
+used to be like really no it it very
+much matters that in these eight hours I
+get done what I find valuable
+>> I don't think I'm learning as much these
+days as I want to be I talked about the
+like research process should be a lot of
+ambient learning it would be very it's
+easy for that to dry up and not happen
+and then you don't feel the impacts on
+content for like multiple years cuz I
+can just and through the stuff that like
+I already know well and then like 3
+years from now be like dang it I don't
+know anything else. Um not literally but
+there's I I feel that like I'm not
+learning new things as as much as I
+would like to be. I'd like to spend more
+of my days like reading and like writing
+notes and such and I just don't. Um, I
+also
+have, as I've mentioned, you know, I've
+got this conflict between do I make more
+essence of type things or do I kind of
+stick with a decent cadence on just the
+one-offs. And
+I I think I I sort of have had all these
+hesitations around team growth, not
+because I'm unaware of the benefits of
+specialization of labor um or or the
+best things in life coming from
+collaboration. Like, I'm not an idiot.
+Like I do know that these things are
+very strongly valuable and there's a
+reason economies orient themselves
+around that way. Um but I also know that
+it's very easy for people to create
+cages around themselves. Like they found
+a thing and then that thing becomes
+their cage and they're sort of trapped
+by it and it's very easy to go wrong and
+I've like seen this in multiple friends.
+So, long story short, I I do think the
+right way to do this is find like a
+trusted lean team to help make it such
+that I can do the sort of things I want
+to, but um just more efficiently where I
+don't actually have to do all the
+animations. This animation software that
+I've created, it's open source.
+Actually, a lot of people know how to
+use it now. And I'm sure a lot of them
+would be thrilled to like collaborate
+and be a part of the team to make it
+happen such that maybe when I'm making a
+video, if I've got a vision for how I
+want to visualize something, I like
+start to describe that or start to code
+it up and then someone else can see what
+I'm getting at and run with it.
+>> I think there's room to give more
+narrative to lessons with non-math
+visuals. You know, what goes on the
+screen if I want to describe the history
+of a topic. I kind of don't describe the
+history as a topic now to some extent
+because I the part of my brain that
+knows that I'm going to be editing and
+producing it later knows that I don't
+know what I'm going to put on the screen
+if I'm telling like the history of Gaus
+or something. And so finding like a good
+illustrator I think would be an unlock
+for that. And also for a lot of other
+just filler visuals through the the
+normal kind of videos I would make. It's
+just something I can hand off there. I
+don't know the best way to use an
+editor, but I'm sure that there is one
+and I'd like to like make that more
+efficient. And so I think if I get into
+a mode of life where my working days
+look like there's a a decent amount of
+learning, there's a decent amount of
+writing, and then there's a highly
+leveraged like directing of how things
+will go. I'll probably always want to
+animate to some extent because like I
+said, I I love it. I feel like this is
+where I have a lot of comparative
+advantage, but I don't have to do
+literally every single one. I have a
+vision for like that can work well and I
+don't think that it will compromise the
+like the feeling of the channel being
+something where hey this is just the
+lessons I want to express.
+>> Um
+>> and it sounds like that would be mostly
+a function of how you think about the
+business model because perhaps you
+>> business model. Yeah. So then there's a
+side of I've been quite happy to not do
+sponsorships. Um, and I kind of like,
+you know, it's like Patreon works fine
+for like supporting me and like whatever
+contractor needs I have, but I would
+like to just make sure that there's
+enough freedom that all of that is like
+good and covered. And there's an idea
+I've been toying around with for a while
+that I hadn't like jumped in on, but I
+will now. It's basically um rather than
+a traditional sponsorship saying like
+hey this video is brought to you by so
+and so uh the audience has a lot of very
+technically talented people like really
+impressive people are in there's a lot
+of companies who really value hiring
+technical talent a lot of whom I really
+love like you know a thing that doesn't
+come through on the channel but like you
+know about me I actually really like
+just sort of like companies and company
+culture and thinking about what are the
+good ones and such and like it's a whole
+part of my like intellectual life and
+like how I engage with my friends that
+just like doesn't come through on the
+channel, but having a space where here's
+a set of partner companies almost like a
+virtual career fair that's just a a
+place on my site and if the videos kind
+of promote saying hey if you're looking
+for a job or you want to work with other
+teams who are interested in mathematical
+talent and technical talent here's a set
+of partners I trust on that this is the
+business model I'm going to like sort of
+>> try
+>> yeah try out I think that aligns well
+with the general I think it um overcomes
+some of the short shortcomings I see in
+like traditional branding creation type
+stuff. Um, and and it should be enough
+to just like support small team.
+>> There's also a model of title
+sponsorships that I've been seeing on
+tech channels. By tech channels, I mean
+like very Silicon Valley focused
+channels and podcasts specifically where
+a podcast uh video series gets a title
+sponsor and the only thing that the
+title sponsor is requiring is that the
+logo of the sponsor is on the video, but
+the host of the channel doesn't actually
+talk about the sponsor at all.
+>> Yeah. I mean I so I think it's very
+important for people to um experiment in
+the space and not not fall prey to ruts
+that exist for pre-existing bit of
+smiles and think how they do. So, I
+think finding what's the right model for
+a particular channel. You know, I think
+certain podcasts like title sponsor,
+that's a great way to go. It's
+non-interruptive, but it's like good
+co-branding. Um, I think one of my
+favorite business models for YouTube
+channel is my friend Ben Eer, who
+teaches how to like he shows like
+constructing
+computing concepts from the be barest
+bones like on a breadboard, right? And
+then he like sells kits so that you can
+do it yourself. And so, the thing that
+you're buying is like highly engaged
+with the content in and of itself. And
+it's like that's just a super aligned
+model. And so in my case, I don't know
+if title sponsor where like on the whole
+video you like see that I don't think
+that would be as as good a fit, but I
+think something where it feels very
+valuable if I can say to the audience,
+hey, everyone here needs a job at some
+point in their life. Most people do. Um,
+and you probably want to work with math
+interested people. Um, there's a lot of
+teams out there who are interested in
+recruiting like the kind of top
+mathematical talent.
+>> Pairing goes off. It feels like high
+value on both sides of those. I think it
+can be uninterruptive to the channel and
+so like that side of it the motivation
+for doing it part I do think it can add
+value to both sides there but then also
+just um then it gives some breathing
+room such that I think there can be like
+a team and I also think done right then
+it shouldn't feel like I'm on that
+treadmill where like every single video
+it's got to meet a certain mark in order
+to meet payroll because the whole
+structure of it would be hey five years
+from now there's this body of videos
+five years worth of videos that are all
+like pointing to this this shared piece
+of real estate and so it's more just
+like quarter by quarter who wants to pay
+to be there and it's not hey how
+dependent um are revenues on like the
+next video right and instead having the
+videos that I know create like loyalty
+to what we're trying to do um you know
+hey if it it just reaches a couple
+hundred thousand people but they really
+love it that might actually be great
+because uh it's just like what really
+matters is is this a cultivated
+connection collection of math nerds more
+than like hey did I reach such and such
+millions of people and you know you're
+just paying by the impression. So that's
+my plan. We can check in in a year to
+see.
+>> Yeah, that's really awesome. I'm really
+excited for you. I'm sure it's going to
+free up some of the time to learn more
+and feel more
+>> long run it will. Short run uh you know
+like hiring and onboarding uh does not
+happen immediately, right? And so I have
+no illusions about like and then right
+out right off the bat like my life will
+be better. I'm I'm at like I'm at a nice
+local maximum now. I am very well aware
+that this involves going through a local
+minimum of like less time spent learning
+and less time spent creating, but I I'm
+optimistic that in not too much time, it
+can be a local peak that's even higher.
+>> Are you excited to be working with
+people? How has the loneliness of the
+journey been?
+>> So, okay, loneliness is interesting
+because for me, once I'm in the craft,
+>> I don't actually like working with other
+people like moment by moment as I'm like
+making the thing. But collaboration is
+great, right? There's I mean there's one
+person I'll hire next year who we've
+done like some collaborative things in
+the past. He just he's a very
+interesting thinker. He's got a good
+complimentary skill set. It's just been
+very vibrant like the forms of
+collaboration and I love that. That
+should be much more fun. And I think on
+the side of scoping things out or rubber
+ducking ideas and things like that, I do
+this very informally now just with like
+friends, right? And having like a more
+formal structure where it's like people
+who are aligned and they're
+[clears throat] actually making the
+thing with you. that probably could be
+more fun. Uh, but as far as the actual
+like in the moment day by day, I still
+kind of want to be able to wake up and
+have no meetings on my calendar and just
+kind of like do the thing that I want to
+do.
+>> Yeah, I feel very similarly. I kind of
+like being on my most of my life, I've
+done kind of loner things and even this
+the premise with like working in the
+office or working out of office. I think
+when I was younger and I was working uh
+at a startup or at companies, I was
+really excited to go to the office to
+interact with people. But that was
+because also it was defining period of
+my life. It was kind of like post
+college time where you wanted to meet
+people and
+>> no one should work remotely post
+college.
+>> Exactly. Exactly.
+>> That seems super unhealthy to me. So
+>> 100%. And then now I'm like oh actually
+I prefer just being on my own at a
+computer and I prefer doing my own thing
+without some external stuff that's uh
+pulling my energy and pulling me away
+from something that I want to be doing
+at a given time. Uh but I think
+obviously collaboration is always really
+exciting which brings brings me to a
+question around um friends and
+professional circles over the years.
+Have you been mostly spending time with
+other YouTubers with academics with tech
+people? Like who do you like surrounding
+yourself with?
+>> Yeah, those three. Like
+>> actually that's actually pretty pretty
+apt. I mean there's um
+>> yeah there's like YouTuber friends who I
+I really deeply value the connection
+with. Um, I try to make an active effort
+to stay in touch beyond just like
+running into each other at conferences
+cuz
+>> What conferences do you guys go to?
+>> Oh, you know, there's a bunch of secret
+ones we can't talk about. No, no,
+[laughter] I don't know. I think one of
+the nicest ones there's one called Open
+Sauce that um William Osman has like
+started that like VidCon still exists,
+but I think like
+>> VidCon has changed so much.
+>> It's changed. Right. Right. And so for
+>> I'm surprised you even went to Vid you
+went to
+>> early on. It was great. The first year I
+went I was like I think the first time I
+>> probably when the Green Brothers were
+still running it, right? Yeah.
+>> Yeah. Exactly. And like I love the Green
+Brothers, right? And so the first my
+first
+>> vibe is very different. It's very Yeah.
+entertainment.
+>> I don't think I'd ever go again, but
+there are like things like that that
+have kind of emerged usually much as the
+Green Brothers started it because they
+had a computer. They wanted to get other
+creators like that um who like run like
+I don't know maybe one day I'll like run
+my own conference or something just
+because like there's clearly value
+there.
+>> Um yeah. I mean, you and I were in
+[laughter]
+>> I need to know these secrets
+conferences. I'm curious
+>> what I would call it. Um,
+>> it's fine,
+>> but I could see something where I would
+like to bring together like the math
+academics who I'm I'm like try to stay
+in touch with with like the creator
+community. I think having a shared space
+for for them would be great because
+there's a lot of
+>> a lot of academics will pitch me on like
+you should make a video about X. I'm
+like you're not wrong.
+>> I'm not going to prioritize it, but that
+would be a great video, right? and like
+pairing that together with uh up and
+cominging creators. That would be kind
+of fun.
+>> Yeah. So, on that point, how much um has
+your ego been roped into your channel
+over the years? Cuz again,
+>> Yeah. So, uh are you how do you select
+videos? Do you ever select videos
+because you know you're good at
+something? Do you ever shy away from
+videos because you don't think you'd be
+good enough or because you know your
+channel is so big and there's certain
+level of expectation. You're like, I can
+only put out things of a certain bar.
+And as a result that makes you shy away
+from different topics. Um and just
+generally you know relationship with
+seeing you through a lens of
+professional success and uh continuing
+to be working on the craft and having a
+beginner's mindset.
+>> I mean I probably won't start to make a
+video unless I have a clear enough
+vision of how I would make it and that
+it would be good. I might start
+exploring a topic like having it on the
+list like it would be valuable to cover
+like like Transformers was something
+that since like I don't know 2020 or
+2021 it was clear like this would be a
+really good thing to make a video on but
+I didn't feel like I
+>> I don't know just like had a clear
+conception in my mind of like how I
+would do it or what it would be and
+wouldn't I probably made it in it's like
+2024 or something. It was like pretty
+long into the ex, you know, after like
+GPTs had like existed and there was like
+I there was an incentive to spend more
+mulling time on that than other things
+and eventually it bubbled up to say okay
+I'll do this. So definitely there's a
+lot of things I don't cover because I
+simply
+>> okay that I don't have time I just don't
+have a vision of like what what would I
+be making where at the granular level of
+like motivation by motivation or idea by
+idea like what am I bringing to the
+table or even just what is the core
+visual, right? I think there are topics
+there are some topics where I want the
+audience to think, "Wow, that's so
+clever." That I'm not motivating it
+because this is going to touch your life
+in the world. It's just really pretty.
+It's just really nice to like see why
+this thing is true. Like a thing that I
+um have a bunch of visuals for cuz I was
+like giving a talk on it and I'll like
+turn into a video at some point is uh I
+don't know how I'll motivate this,
+right? This is maybe one of the
+impediments, but it's very pretty once
+you wrap your mind around it. There's a
+formula for the volume of higher
+dimensional spheres which [laughter]
+okay so I I need to work on the
+motivation for it but it's really
+pretty. It's like the prettiest formula
+>> that tell me more what makes this pro
+formula pretty.
+>> Okay so when you're in school you learn
+like the area of a circle is pi * its
+radius squ. You might learn that the
+volume of a sphere is 4/3 pi * its
+radius cubed. And those are kind of the
+only two examples that you can see
+because like two dimensions and three
+dimensions are the ones that we play
+with. You probably don't learn that the
+volume of a four-dimensional hypersphere
+is pi halves times its radius sorry pi
+squared halves times its radius to the
+fourth. So it's it's pi squared. Now
+that's weird. Like the first two it just
+had a pi. This one had a pi squ.
+>> And these seem kind of unrelated. If you
+tried to guess like is there a unifying
+formula? They just look different and
+like if there was maybe it would be
+ugly. There's just a single formula that
+describes the volumes of all these
+higher dimensional spheres which is very
+clean. It's very pretty and it also
+causes you to ask questions about what
+should um the factorial of a of 1/2 be
+like what's 1/2 factorial and you basic
+you find yourself in this narrative
+where first of all that seems like an
+incoherent question and then you think
+you write this what you want this
+formula to be like hm even though that
+seems like an incoherent question I know
+exactly what I want it to be and then
+like the math works out that when you
+extend the factorial like that is that
+is what it is and like the universe is
+giving you this nice thing there's also
+a bunch of other nice things around it
+where the formula ends up telling I
+don't know how much of this you you want
+to but so if you just look at like the
+volume of a unit um circle so it's got a
+radius of one it's it's volume its area
+is pi the volume of a unit sphere is
+bigger and that kind of feels right
+three dimensions it's bigger the volume
+of a unit hypersphere in four dimensions
+is bigger the one in five dimensions is
+bigger but then in six dimensions it's a
+little smaller and then in seven it's
+smaller still and then it like really
+rapidly decreases and if you look at the
+volume of a 100dimensional ball that's
+got a radius of one, it's like nothing.
+And you look at that, you're like,
+that's one that feels [clears throat] a
+little bit weird. Maybe you think they
+would grow, but also like what does that
+even mean? Like what what are you
+supposed to make of this small the
+smallalness of that number? And I feel
+like I have a really nice way to like
+communicate what that means.
+>> What does that mean?
+>> Oh, no. This is this is the half hour.
+This is this is much the video. I I I
+literally cannot explain this to you
+without visuals and also without like 10
+minutes of like background to build it
+up. But there is I think one can answer
+that question. I'm like how should you
+think about the smallness of that
+number?
+>> Now so this is a topic it'll be fun.
+I'll have fun with it.
+>> I don't know how to motivate it necess
+it's not you're clicking on this video
+because like you've always wondered
+about the volumes of highdimensional
+spheres. Some people will have right but
+like most people won't have. So I don't
+know what the right pitch on it is. So
+there's topics like that that always
+it's like on the mind. And it feels very
+pretty. I know that once someone is into
+the narrative,
+>> they will get it.
+>> They'll have a good time. I can promise
+like once you're once you're on the ride
+with me, I can give you a good time.
+Even if I'm not sure how to bring you on
+that ride. So that one I know what I
+would make. I've even made a lot of the
+visuals. So like I will make it at some
+point, but it's just a question of hook.
+There's other things where the hook is
+very obvious.
+>> Like reinforcement learning. The hook is
+pretty obvious. Not entirely sure what I
+would make that like feels compelling,
+but like it's worth that being in the
+mulling time. Like it's worth me
+spending mulling time on saying like,
+"Hey, is there something compelling that
+I could do to like visualize certain
+formulas around reinforcement learning?"
+Don't know what the answer is, but like
+the hook is obvious, the follow through
+is not. Volumes was fears. The
+followrough is obvious, the hook is not.
+There is not.
+>> Yeah.
+>> Have you always seen math as beautiful?
+>> Oh, yeah. Probably. I mean, I've just
+loved it since I was since I was very
+little. Yeah.
+>> How would you define the beauty that you
+see in math? Like what does what does
+that feel like? What does that mean?
+There's a there's a specific emotion I
+really like and like to try to like
+instill into the audience when you have
+a thing that feels hard. You feel like
+you understand the question be like I
+have no idea what the answer is going to
+be. Maybe it feels like it's going to be
+a bunch of calculation or maybe it feels
+like you don't even know what
+calculation you would do in general. It
+just feels hard. But then the right way
+of seeing it, you like shift your
+perspective in some way like the puzzle
+pieces just fall together. That that is
+a specific feeling. It's in the same way
+that in music there's a specific feeling
+that comes from having um dissonance
+followed by some kind of harmony. You
+like you have a trionee followed by a
+fifth and there's like a very specific
+emotion that that like brings out of
+your heart. I think what's that what
+that's doing auditorially math does kind
+of at this logical level and it's
+something kind of like that tension and
+release. The tension that's like a
+trionee is coming from it feeling like
+this is going to be hard to calculate
+and then the release that's like a
+perfect fifth comes from like oh
+actually if you see it this way I love
+that and I think other people do and I
+think if you can do a good job like
+giving that there's also certain things
+where there are surprises where there is
+a truth and you know that can't be that
+can't be like how is how is that the
+case and so a lot of content on the
+channel is centered around like pie
+showing up in unexpected places and some
+of my favorite videos are around that
+because I mean my I'll never make a
+video better than this one where there's
+like um two colliding blocks and the
+when you count the number of times they
+collide with each other the like digits
+in that number end up looking like pi
+but like pi seemed to be coming from
+nowhere and it's a very fun topic the
+surprise is fun but also the way to show
+why it's true is fun and that one the
+intrigue and the like beauty of it it's
+not so much like the oh this was well
+there's a little bit actually of this
+was hard and we have a clean perspective
+but the beauty comes from like why is pi
+here it has no business being here and
+this sense that like there is a
+cleanliness to the way that the universe
+has like organized mathematical truths.
+It's nice. There's a certain I can't
+even put words to it, but there is a
+very specific aesthetic to this in the
+same way that other art forms have
+certain specific aesthetics that like
+move people in a way.
+So for videos where you don't right away
+see that beauty or for topics where you
+don't right away catch the beauty, do
+you try to force it somehow or do you
+feel somewhat like creatively stunted
+until you get there or do you just let
+it go, release and work on a video that
+immediately has that sense? Well, so for
+the ones that are meant to be like
+people are curious about it and they
+want to understand it,
+>> I try to make it as pretty as I can, but
+I'm not hung up on like if I did a video
+on reinforcement learning, I'm not going
+to make sure like, hey, this is going to
+this is going to give you that.
+>> You don't think that if you really, I
+don't know, meditate on the topic of
+reinforcement learning, you're going to
+find the beauty of it. It's like either
+it clicks or it doesn't.
+>> It would be a pleasant surprise if that
+had the specific emotion I'm describing
+here. I don't think it will. Most
+emotional learning just doesn't. like
+it's it's interesting to learn about and
+people like the videos but it's that's
+not the function it's serving. It's just
+that they want to understand how this
+thing works. I can make it as beautiful
+as I can in terms of the beauty should
+come from the clarity and you know
+sometimes the motivation for the idea
+can be pretty but that's just a
+different category of video. the one
+that you know if it's um volumes of
+higher dimensional spheres or something
+that's something where it's only worth
+making if I can anticipate what that
+click would be and if it's not there I
+there's just a million topics that like
+could be just I just don't make it. So I
+fall into the group of people who um has
+uh had to do a lot of math uh over the
+years, you know, in school, then in
+university. And I was always good at the
+formulas and numbers, but I've actually
+never reached a feeling of seeing quote
+unquote beauty in math, um or I was
+never as fascinated with it. So I'm
+curious, does that come through great
+introduction to math or is it something
+that you either have or you don't? Like
+was that a function of the fact that I
+never had a teacher who was so obsessed
+with math and were able to give me that
+feeling or was it just that I don't have
+it?
+>> Almost certainly the former I think yeah
+if you had the right teacher um who was
+because as kids also you index a lot off
+of what adults show to be interesting.
+Yeah. And you would see that I think
+leaving room for math to be discovered
+within someone's head rather than like
+poured into their head
+>> that gives room for it to actually be
+your own. And when it's your own, it's
+easier to see the beauty in it. So if I
+go and I try to say like uba, when you
+add up the reciprocals of square
+numbers, it's pi squared over six. Like
+how surprising that you're like, oh why
+you like throwing this at me? Whereas if
+you're like
+playing I remember actually I was
+playing around on a calculator when I
+was like little and I was like adding up
+the one over factorials. I'm like 1 over
+1 plus 1 over2 plus 1 over 6 plus 1 over
+24 and it was approaching like 1 uh
+1.71828. I'm like that's interesting.
+That's just one less than the number e.
+And then I I was like hm that's weird.
+But what if we tried to did zero
+factorial make any sense? when I like
+asked the calculator and it's like when
+I'm like oh that's so pretty. So then it
+would actually be E. And later I learned
+like oh actually that's almost almost
+like the definition of E. And I feel
+like having had that experience of just
+playing around and seeing and like for a
+brief moment it felt like my own fact
+and it felt prettier because of that
+like that you add up the reciprocals of
+factorials and you get e. Whereas if it
+had just been like calc 2 we're doing
+this lesson on tailaylor series. We do
+the tailaylor's expansion of e to the x
+and you plug in one. It might have been
+like huh all right. but it wouldn't have
+felt as like pretty. So, I think having
+the teacher who like shows their own
+interest, but even more important than
+that would be giving you as the up and
+cominging student the space to feel like
+it could grow inside your own head.
+That's probably where this emotion is
+actually going to come from.
+>> So, is it too late? Where do I start if
+I want to see if I can discover beauty
+and math?
+>> Yeah. Well, you
+>> What do I start with?
+>> You go to youtube.com/3blon
+brown. um you pause the videos when you
+feel like you see what the idea is going
+to be and see if you can come up with it
+in your own.
+>> No, I don't know. I mean, you um yeah,
+if you want to find that beauty,
+honestly, just like play. I think
+if if that's what you want, you could
+take a topic that you want to learn
+about maybe with some evidence that
+other people have mentioned that it's
+beautiful. Linear algebra can be
+beautiful, right? And so you say that's
+also useful, so let me try to learn
+that. however you like to learn things.
+Watch videos, chat with an LLM, read
+lectures, have a tutor, like whatever
+your method of like you want to learn it
+is, but just give yourself the space to
+say, "My goal right now is not to learn
+this as quickly as I can. If you're
+going at it for aesthetic reasons, then
+whenever there's a fact that gives you a
+little hint that like maybe there's
+something interesting there, pause.
+>> Don't let someone else spoil it for you
+and just like scribble a bunch in your
+notebook to see if you can like get at
+get to terms with it in your own head.
+you're pretty likely to find some beauty
+there. And you might find beauty in
+facts that are kind of benol. Like I'll
+get people writing to me all the time
+where you know they like want me to make
+a it's like a student like you should
+make a video about such and such because
+like it's so pretty. And really it's
+that they had this experience like
+rediscovering a little thing for
+themselves. I'm like that's amaz I'm not
+going to make a video on it but like
+that's amazing that like you had this
+experience. Um and you can see in the
+way that they're writing about it that
+like it was their own and they could
+have read about it somewhere. They could
+have had like an LLM tell them about it.
+the fact that they had like found it on
+their own is why they were so inspired
+to like dig up the contact information
+for me and like reach out and try to
+pitch on it and like you can give
+yourself that experience if you don't
+feel rushed.
+>> So, uh since you're bringing up LLMs,
+how do you think education will change
+and how are you thinking about educating
+your own son where you know LLM can just
+feed you all the information? Well, the
+the fundamental problem with education
+has never been one of the medium of
+explanation. So,
+um when motion picture first came out,
+Thomas Edison has these quotes about
+like the textbook will be obsolete
+because we have motion picture. When
+radio came out, there were these radio
+universities which pitched to like
+universities are going to be dead
+because what if you have the best
+lecture in the world reaching a million
+ears? Like why would you ever go to a
+normal college? And you would like write
+in your homework by mail. It was very
+interesting. They had TV universities in
+the ' 50s. You had like all these dot
+education startups in the '9s. You had
+like the MOOs in the 2010s. I do think
+LLMs are different in that like they are
+better than those, right? But like I
+don't know mukes were better than radio
+universities also like they are better
+but the fundamental issue comes down to
+do kids want to learn and so how how
+will it make a difference I think for
+those who want to learn it's a huge
+unlock right um you can just like I'm
+sure you use them all the time to like
+learn stuff and you can like chat and
+all that and so that's that's big it's
+not like revolutionary in the sense that
+like now we've solved education because
+like that it's just not the problem
+maybe there's creative ways to use it
+for motivation
+the like there's a this is like a half
+joke but half conversation starter that
+I like to tell if people want to chat
+about like solutions to education where
+I actually know the solution to
+education that has nothing to do with LL
+>> what's the solution to education
+>> so the I I'll start I'll start with the
+caveats which is that it is neither
+scalable nor ethical okay
+>> so
+>> those are great great [laughter] starts
+>> so so aside from that this is the
+solution we're going to focus on high
+school for right Now, just cuz this
+maybe gets weird if it's too young, but
+um you you hire actors roughly the same
+number of actors as there are students
+um preferably attractive actors to like
+be in the school, right? And each one of
+them has a mark. It's one of the actual
+students. So, you've got your actors and
+they've got their mark and they
+basically take the topics that you want
+your mark to learn about like maybe if
+they're struggling in English. Um then
+they go and they they either befriend or
+they like flirt depending on the like
+you know sexual interests of everybody
+involved. Um but they like they they
+charismatically engage with at a social
+level their mark. Um and then they just
+show an interest in the thing that you
+want the mark to learn about. If they're
+struggling in English they just show
+that they're really passionate about
+like reading Moby Dick or something and
+they like they try to like get their
+their mark to read it with them at the
+social level. if they're um struggling
+with math, they come and they do the
+thing I'm doing to you now that's like
+no, it really can be beautiful if you
+like slow down and like let me show you
+this thing, right? And they do that with
+their mark. Um yeah, that that's the way
+that if if you want that batch of high
+school students to just like just do
+>> so basically incentivize them by sexual
+attraction and that attraction being
+interested in a specific subject.
+>> No, it doesn't have to be sexual. That
+just makes the the thought experiment
+more more fun to think of it as
+flirting. But the the the point of it is
+is to think the problem is not
+explanation, it's motivation. The most
+powerful form of motivation is social.
+Um and then the most powerful form of
+social motivation comes from your peers,
+not from others. Like if you start with
+all of that on the one hand, you could
+say like why are you jabbering about
+this is all just like a nonsequittor
+when we want to talk about how to
+actually change education. But I do
+think if in your mind the platonic
+version of perfect education, rather
+than thinking of like young Spock inside
+a little hemisphere that's like asking
+him questions about math that's like
+perfectly tailored to him, you know, the
+AI agent that's been like really
+perfectly tailored to that need rather
+than thinking of that as being the
+platonic ideal of what solves it. If you
+think of um airdropping your actors in
+and each one having their mark like
+that's platonic ideal, I think it shifts
+how you think about it. For example, you
+realize the value of a teacher is not in
+so far as they are the explainer or the
+best explainer. In fact, they should
+probably spend less of their time
+explaining and lean on like internet
+resources to do the explanation. The
+value of the teacher is um motivate the
+student a social part of the student's
+life that motivates them. There's so
+many mathematicians I've talked to who I
+say, "How did you get into math?" And
+they say, "Well, there's this one
+teacher who like pulled me aside and
+said, "You're really good at this." A
+small comment like that actually has a
+huge influence on the student. Or if I'm
+a content creator, I'm like, what makes
+this more impactful to the student? On
+the one hand, okay, I'm making the
+content for the internet. So my job is
+to make the good explanation that other
+teachers can use cuz like you need the
+explanations somewhere. So that's like
+maybe the job number one. But on the
+other hand, the influence that's
+actually going to make a difference is
+if I can I can play some form of social
+role in their life. Now, I kind of can't
+do that through a screen from some so
+far away, but I can maybe make an effort
+to try to be engaging or show my own
+interest where the lasting impact is not
+going to come from did I really clearly
+explain why the volume of a
+fourdimensional sphere is what it is.
+You don't even care. The real interest
+is going to come from like did I make
+you care about that, right? and okay I
+am not the you know it's not the like
+the peer who's um got the greatest
+social connection to them but if I think
+of that as being the goal and saying how
+can I approximate that even though I'm
+so far away I'm not their peer I'm not
+even there in their life that's going to
+change the way that I explain it so when
+you say how will LLM's change education
+I mean it it gives a stronger crutch to
+stand on for the explanation side it
+means that that's even more solved than
+it already was with textbooks and with
+good videos and with mukes, but you know
+just like getting that from 90% to 99%
+isn't that significant in in the grander
+scheme. So maybe it starts to reshame
+how do teachers think about what their
+role should be. Maybe it starts to
+reframe like content creators thinking
+of what are the aspects of explanation
+that they're serving now as opposed to
+LLMs. But it's not a trivial gamecher.
+And if it is a gamecher, it's going to
+be because of some very creative thing
+that someone does to solve the
+motivation problem. But it's not.
+>> Would you say that um your interests are
+completely motivation driven or is there
+still some sort of natural inclination
+to certain subjects? The reason why I
+ask about that is because now there is a
+bunch of alternative schools, alpha
+school being one of them, and there's a
+lot of derivatives that kind of follow
+the same principle. And it
+[clears throat] seems to me that pretty
+early on they start having the kid focus
+on the subjects that they're
+specifically interested in. And I wonder
+if there is a certain age where um if
+it's too young, it could be too
+detrimental to have them focus on their
+natural inclination. and if there is
+like an optimal age until when you can
+try motivating them to be interested in
+subjects outside of their personal
+inclinations and then you have them
+focus on them because I worry that maybe
+they're over focusing kids too young um
+before they hit that optimal age.
+>> That seems like a valid worry. It's very
+arbitrary what a kid likes early on and
+so you definitely at least my philosophy
+is you're going to always want to have
+an influx of things that they're not yet
+interested in but maybe you're just
+trying to get them exposed. Like if they
+show a strong proficiency for math,
+great.
+>> Yeah.
+>> Let them run with that. But also like,
+hey, let's go read a novel together,
+right? Or let's go take a dance class.
+It's like don't Yeah, certainly the
+younger you are, you wouldn't want to
+pigeon hole too much there. I think
+where you can maybe do it is um
+>> this depends on how personalized things
+can be. If you're doing like a
+one-on-one tutoring situation with
+someone, like if I'm
+>> tutoring like a young six-year-old and I
+want them to love math, it's helpful if
+I know what they're already interested
+in and I can bring that in. Like I have
+a six-year-old niece, she really likes
+coloring. I want her to be in love with
+math. And so in the math lessons we'll
+do together, I'll
+>> you use color.
+>> Yeah, I use color, right? I make sure
+that like color plays a meaningful role
+in that. And so it's like you can
+leverage their interest to try to get
+there, but it wouldn't I I think it
+would be wrong to pigeon hole and be
+like you will be an artist and like all
+of your time shall be spent on like
+honing that craft. It's just it's just
+too early. Yeah,
+>> that makes sense. I want to talk uh
+briefly about success. How do you see
+success right now? What's your
+definition of success?
+>> I don't know if I have one. I feel like
+I would be making up an answer while I'm
+like
+>> interesting. Have your parents not
+instilled some sort of vision of
+success? They were they were pretty
+great about like Yeah, they were great
+about not being like, "Hey, here's
+here's what success looks like and we
+really hope you achieve it." I mean,
+there's the obvious stuff.
+>> That's amazing.
+>> You know,
+>> what about like being in college and
+being around people who all have some
+sort of vision for what they should do?
+And
+>> I mean, implicitly there's definitely
+at Stanford a sense that like you want
+to
+leave a footprint on the world, right?
+And so maybe for better or for worse,
+uh it would feel I don't know like if if
+you if if people were saying, "What are
+you doing after graduation?" and your
+answer was like, "I'm going to go
+meditate forever or something." Like
+maybe they'd be like, "Oh, that's kind
+of interesting, but there's maybe kind
+of an implicit sense that like it really
+should like touch the world." I don't
+know if it was as strongly hinged on
+maybe everyone cares about financial
+success whether they want to or not. I
+never really felt like oh like it really
+matters a lot that you know like
+financial success is comparable to
+Stanford peers. Um I mean that's one
+where you I think you step back there's
+some basic need you just want to make
+sure that like day by day you're you're
+living happily right and so there's
+certain thresholds there um it's
+important to be healthy right I think
+it's hard whatever notion of success you
+have in life it's going to be hard to be
+there if you're not healthy so in that
+sense like that should be whatever is
+required there like physically mentally
+otherwise like that should be
+prioritized there's a base level of
+financial success to like not be
+stressed about it and so that I think
+above a certain threshold, it like
+doesn't actually matter that much, but
+like it's very real. Like below a
+certain threshold, it's just it's going
+to it's going to eat into your life in a
+certain way. Um
+I mean, you you you referenced like the
+the child and I think success kind of
+centering on does he like things you
+start to think very generationally like
+does he have a happy life 20 years from
+now?
+>> You step back, what's required for that
+to happen? That's maybe I Yeah, I like I
+said, I would just be making up an
+answer. you're going to have like the
+classic stuff on like, you know, just
+make sure the basic needs are met. Uh
+make sure what you're doing feels
+fulfilling. Uh
+>> like improving people's lives in a
+positive way. Like there's no there's no
+like
+there is not a number where like that
+number has to like increase and like we
+can measure it and like talk about it
+and it gets over a bar. There's probably
+someone could analyze my life and maybe
+like back fill in being like, "Ah, you
+might not think that this was your
+metric success, but actually you seem to
+really care about like watch time on
+YouTube or something like that." There's
+probably things that like I actually do
+care about
+>> where my actions would speak to that in
+a way that like
+>> while I'm being interviewed on a
+podcast, I'm not going to be like, "Oh,
+this is really what I, you know, care
+about."
+>> But it's interesting because your quote
+unquote definition or lack of thereof of
+success is still grounded in first
+principles. It's like, do I have enough
+money to not be stressed out? Am I being
+fulfilled? It kind of goes back to that
+groundedness. Um, we the other day with
+friends, we were talking about happiness
+versus meaning versus fulfillment. And
+you mentioned, oh, is your are you
+living a happy life? Do you think it's
+more about happiness or is it about
+being fulfilled and finding meaning and
+purpose in your life and work?
+>> I think fulfillment matters more than
+happiness. I do think happiness
+um happiness is great. It's easier to
+achieve happiness. Uh like I don't know
+uh play music, exercise, have a child.
+Uh and like great, you got your
+happiness. Like uh
+>> simple.
+>> It's very simple. It's actually not like
+again assuming all the needs are met,
+right? There's not stresses in life.
+It's like you can generate happiness. Um
+>> maybe in the sense of like
+uh dopamine boost, right?
+uh fulfillment, you know, that that
+probably is the thing that if if you're
+going to sit back and strategize how do
+you want to spend your time because that
+one matters, but it's also harder. Maybe
+that's what you should be thinking
+about. Um you can't just
+>> actually no the child it's really great.
+you can just have a child cuz if it goes
+well then you'll also get the
+fulfillment but it's it's easy for it to
+not go well and so maybe you don't want
+to um
+>> yeah you don't want to hinge on that but
+uh you know there's there there's
+certainly capacity for joy um easily
+there
+of those three how do you think about it
+um when you think about the life that
+you want to lead is there one that is
+more top of mind is there like a balance
+that you find uh is that even the right
+framework for how you think about things
+>> um in terms of happiness, fulfillment,
+and su what success means
+>> exactly.
+>> I'd say that for me, I've definitely had
+over the years ideas of what I wanted to
+do and who I want to be and actually
+speaking um I think you were already
+here. We're talking about what has
+changed this year and this year I have
+made a decision to step away from my
+startup and basically embark on a
+journey of uncertainty and it was
+letting go of a lot of ideas of what
+success and what um meaning and what
+work I wanted to do given my younger
+version of self. Um so I would say that
+I kind of fell prey into the traditional
+ideas of success or like what is the
+vision that you have for yourself in 5
+10 15 years. But what I'm finding myself
+in is that the older I become, the more
+I realize that life changes, priorities
+change, and actually the most important
+thing is that groundedness that I've
+been uh I've been describing you
+yourself as uh that it's important to
+feel that you're finding nourishment in
+the things that you do, that you are
+feeling content with the community that
+you build. Do you for me personally it's
+really important to feel that I'm
+growing and growing into a version of
+myself that I think I could become. So
+if you know in the world you had all
+these different parallel versions of
+yourself and there was one most optimal
+one that had all the traits uh that
+fulfilled your given potential or maybe
+you look up to um certain rolodex of
+people that have certain tra traits and
+you want to achieve that version of
+yourself. Um, so are you really on the
+path to get there or not? Uh, I'd say
+that's how I define meaning and
+fulfillment now. But again, if you were
+to ask my younger self, I would
+definitely give you like a list of ideas
+that u define success.
+>> How do you balance um thinking about
+growth and like value to yourself versus
+how much of fulfillment comes from what
+you're delivering to other people?
+>> Yeah, that's a great question. I've
+always been of
+the thoughts that as long as you're
+focused on growth for yourself, the
+meaning to other people will naturally
+come and it would be like a secondary
+derivative of the
+>> I'm not sure that's true or at the very
+least I feel like I'm curious if you
+disagree. I feel like a lot of young
+people, especially like college or just
+graduating college, their whole life has
+been centered on growth, individual
+their own growth, right? And I think
+it's very easy for that to have an
+inertia where the way that they choose
+what to work on is centered around their
+own growth in a way that on the one hand
+like you're right you gain more
+expertise and that expertise then you
+can like use in the world and maybe
+there's enough other forcing functions
+in the world like financial ones and
+otherwise that like they kind of don't
+grow in the ways that they wouldn't
+choose to grow in ways that don't also
+touch the world. But a place where I do
+think there's maybe a risk is like in
+academia if someone is just focused on
+like hey what's interesting to me do
+they feel like I'm learning they might
+pursue things that seem hard but
+tractable to them as opposed to pursuing
+things where their expertise actually
+unlocks things for like others in the
+world. But I'm really curious if this is
+just a natural evolution that happens
+where we start with the pursuit of our
+own interests and then the feedback of
+the outside world uh shifts that pursuit
+towards wanting to help and be valuable
+to others because uh correct me if I'm
+wrong, but I'm kind of under the
+impression that you started making math
+videos because you thought they were
+really fun and math was something that
+you were drawn to and found beauty in.
+So, it was very self-driven in a lot of
+ways. And then at the beginning of the
+conversation, we talked about how um
+instead of focused focusing on am I
+making a novel, you know, proof or
+something novel in my videos or in the
+topics that I pick, now you're a lot
+more drawn to what is going to be
+valuable to your students and to your
+audience. So, it has been kind of a
+natural arc and progression that
+happened to you. And in my life, what I
+just people that I've surrounded myself
+with with or I observed, I've seen a
+similar thing happen. Some people are a
+lot more deliberate in picking a thing
+that's valuable to society because
+they're very overindexed on impact. Uh
+but a lot of people are just drawn to
+the things that they're good at, curious
+about, interested in, and then the world
+gives them feedback.
+>> That might happen. And so maybe it's a
+non-issue because there's enough
+incentives towards making people do
+things that will touch the world that
+are valuable.
+>> Yeah. That you don't need. But maybe you
+mentioned academia specifically and I
+guess in academia you're you pick a
+thesis, you research it, you're kind of
+stuck working on it for years and years.
+>> Yeah. I mean because you do have a kind
+of currency which is citations and so in
+some sense that is your connection to
+does this matter to other people like
+are they going to say so it's it's not
+completely disconnected right um how
+strong is that source of feedback for
+what the world wants versus um like
+economic based ones that people face uh
+in like the for-profit world? it's
+probably weaker. My my worry with that
+one is that it's it's indirect because
+it's value delivered to other academics
+for their research. And so following
+that chain down to at what point do you
+make sure that the intellectual brain
+cycle spent from this person really do
+end up like touching the world in a
+meaningful way. It's not that the
+incentives don't sit there because they
+do through this currency of citation and
+eventually that like chains down towards
+where's this research coming from, who's
+funding it and all that.
+I wonder whether people would more
+judiciously spend their youthful,
+energetic years if rather than waiting
+for like their first decade after
+college to like slowly feel those
+incentives to redirect their personal
+sense of fulfillment away from personal
+growth per se or personal growth as an
+in of itself and instead towards value
+for others like rather than relying on
+the winds of economic incentive or the
+winds of like citation incentive to like
+push them that way. But it's like no,
+like sit down like think about what you
+actually want to want to do here and uh
+discover that earlier rather than later.
+Like would people would I have started
+making more useful videos earlier?
+>> Probably. Like would uh you know I don't
+know if you would lead your life any
+differently if you could transport your
+current value system onto your postcol.
+It's hard to imagine though that you
+wouldn't have more expeditiously gotten
+to the goals that you want to get to if
+you couldn't have that value system. So
+I think I have a
+a worry about personal growth being a
+goal in and of itself
+>> just because there's such strong inertia
+for that. I don't know this was I gave
+like this was like the topic of that
+commencement address I was referencing
+earlier because I was thinking like back
+when I was a like graduate what what
+advice would I have benefit benefited
+from and I think it's something of this
+form where there really is this
+self-identity that we imbue into
+students
+>> where success depends on how good they
+are in a like very individualistic sense
+right we try not to we try to have
+collaborative projects or like
+internships or things like that but it's
+really baked in that like it's dependent
+on in individualistic success. And I
+just suspect that having a little bit of
+a harder hammer that like knocks you out
+of that value system and into a more
+others focused one earlier on rather
+than later. Maybe that could redirect a
+lot of
+very talented brain cycle spent for like
+young 20somes deciding where they get
+their fulfillment from. And it's gonna
+involve personal growth because whatever
+you want to do, you have to like learn
+in order to do that.
+>> Yeah.
+>> But learning with an others focused end
+in mind as opposed to learning with like
+a good litmus test for this is if you
+take if you like find some smart person
+who's like found a little bit of
+financial freedom and you're like what
+do you do with your free time? And if
+they're like oh I've like hired a
+physics tutor so that I can like
+understand physics better. Like I'm
+getting really good at chess. It's like
+that's I think that is a sign of the
+kind of inertia that I'm talking about
+that I'm afraid of. And I I have a
+suspicion that this is a a like a real
+phenomenon that that
+>> No, I think it is actually a real
+concern because your focus on yourself
+then impacts so many other things in
+your life unless you've learned
+otherwise. Just how you treat people,
+how you protect your time, not to be
+kind of a even a social part of society
+if that's inconvenient to your
+day-to-day goals and life and it
+isolates people. Um, so I I do think you
+have a valid point there. I uh maybe
+this sounds too uh too arrogant, but
+[laughter]
+but I have a feeling I've like, you
+know, got those more collectivistic
+values instilled in my childhood and I
+feel like I don't um I don't fall prey
+of what I just said because because of
+that.
+>> I think you're a good example here.
+>> Yeah. But but I do think it's a it's a
+real problem. And I I do sometimes think
+about um you know, if I were to focus my
+personal goals um on impact more uh
+deliberately, what would that look like?
+Right this moment, I'm in this
+transition period where I'm kind of
+giving myself time to figure out what is
+it exactly that I am drawn to and how I
+want to make that impact if that was the
+goal because I just stepped away from
+the startup journey where that was very
+much impact focused. So, it's almost
+like swinging the other way uh to find
+some sort of middle ground, but I'm not
+putting a lot of pressure on myself
+being like, "Okay, I have to figure out
+how this is going to be like super super
+useful to society immediately because I
+am secretly hoping that it's going to be
+that secondary effect that I was talking
+about."
+>> That's fair. Yeah. And also, you know, a
+cynic could like, "Hang on, weren't you
+just talking a half an hour ago about
+like you want to change such that you
+spend more of your own time learning
+rather than like making things like So,
+I definitely feel that." But I'm curious
+if if you were to run this thought
+experiment on yourself, if you instilled
+the values that you have now into your
+younger self, what do you think the arc
+would have been? Like cuz would a lot of
+things have changed? A part of me is
+thinking that, okay, you would have been
+making more quote unquote useful videos
+right off the get-go, but maybe a part
+of you needed to fulfill that desire to
+go off on your own and focus on novelty.
+So either way, you would like rebel and
+do that. So in the arc of things, the
+output would have been maybe similar,
+but that's just my
+>> Yeah, counterfactuals are so hard,
+right? Because you you change one thing
+and it's hard to know what else doesn't
+change. It's also hard to know
+>> if there's a form of success where it
+came from. Exactly.
+>> On the topic of YouTube channels, I feel
+like there are certainly channels where
+I watch them, I really like them,
+there's aspects of it that I don't like,
+and I'm like, I think the creator is
+doing that because they think that
+that's why their videos work. actually
+their videos work in spite of that
+annoying thing that they're doing, but
+they have no idea because they this is
+like reinforcement learning. It's like
+actually hard to pin down what the
+reason for like getting the good score
+was. You all you know is like all the
+actions taken like turned out well and
+you'll see this like successful YouTube
+channel has some annoying thing about it
+but like it works because of some other
+thing but they like lean into that
+annoying part because well something was
+working and maybe they think that was
+it. I think actually creators are a
+really good example of that because 10
+years ago or 20 15 years ago, let's say,
+when podcasts weren't as big as they are
+now, you could have argued that a lot
+of, you know, useful quote unquote units
+of society could have been going off
+doing something more valuable [laughter]
+for society than starting a podcast. But
+then now um a lot of the ones who
+persevered and did a great job are huge
+and actually are providing value to
+society by interviewing people with
+interesting perspectives, educating
+audiences or even pushing certain
+subjects forward. Um and then now you're
+like, "Oh, wow. You know, you're so good
+at this. Of course, you're doing this.
+This is very valuable to everyone uh
+around you." But like 10 years ago, you
+could have argued otherwise.
+>> Yeah. And I think there's a lot of
+examples outside of creators where
+someone's tinkering on something that
+they're so passionate about and maybe
+that this is very niche. Um and then
+in hindsight like 10 years uh from that
+point looking back they're like oh of
+course you know now I've provided so
+much value to people around me because I
+decided to pursue that very niche thing
+that everyone else thought was useless.
+>> Yeah. Yeah. You are right that there's
+value there. Um it's [laughter] yeah
+it's it's hard to think about on that
+balance of ah would more useful hours be
+spent not consuming these podcast
+>> how are you thinking about it as a
+parent
+>> in in know I guess there's a couple
+different in which specific respect
+>> like in instilling uh the idea of
+picking something that's valuable like
+being others first self first. Yeah, I
+mean child.
+>> No, it's a good question. I think um
+>> I mean it is very hard for kids in
+general to not be self-centered and like
+think about themselves as the
+protagonist of their own story. It can
+take until some people never get over
+that. But like a lot of people it's
+until they're like teenage years that
+>> maybe this is why a lot of people now
+don't get over that because we've been
+so overindexed on self. But I so in the
+same way that I think there's lots of
+ways you can think about a curriculum
+for like learning how to read or like
+learning math or things like that. I
+suspect that you can do something
+similar in thinking about having empathy
+or like being others focused
+talk to me in 5 years. Uh but I I I
+think it is very important to go through
+like if you're if you're so there's
+there are different phases. There's like
+as you're like a very little one, right?
+Let's take talk like two through five,
+right? Like literally being aware that
+like other people have stuff going on in
+their own heads and like letting some of
+your brain cycles be spent like
+understanding what's going on there. I
+think that is hard for that age. I think
+it's possible and I think it's a fun
+thought experiment to think how do you
+even get them to do that? and stories
+maybe seem like the best way just really
+embracing stories maybe reflecting on
+what happens in a day maybe in a moment
+like encouraging them them like hey what
+do you think she's thinking right now
+like little things like that I think you
+can I intend to spend as much time
+thinking about like making uh a child
+think about others as like teaching how
+to read or teaching math that's right up
+there then in the phase of like you know
+5 through 10 I think you have the
+capacity where it's not just knowing
+that someone else has
+>> their own personal experience that is as
+vivid to them as yours is to yours. But
+also you could think like
+>> what can I do to make their life better,
+right? Um like being other centered in
+in that way where recognizing
+it's not just that they are the
+protagonist but you can play a role in
+their story and do something for them.
+Again like I'll have clearer thoughts uh
+later on as that comes but that but that
+is a thing I intend to value. I think
+it's not written about with the same
+sort of like academic focus as some of
+the like often we think of there's
+educational stuff like capital E ed
+education that's like your ABCs 1 2 3
+whatnot and then there's things that are
+more like social norms that we don't
+think of as in the same way but I wonder
+if actually we should blend them a
+little bit more and the way that you
+learn math and reading should be in this
+very like social norm kind of way and
+the way you learn social norms should be
+in this very like structured no let's
+actually think about what do you need to
+know in order to get to this level and
+that level and such like what does it
+look like to empathize at a 5-year-old
+level or what does it look like to
+empathize at a 10-year-old level and
+like what's the curriculum that gets
+there? Talk to me in five years. But I I
+this is a longwinded way of saying like
+I think it's important to think about
+and I have every intention of doing
+that.
+>> I want to be mindful of our time so I'm
+going to wrap up.
+>> Okay.
+>> Um I'm just going to ask you a few
+questions for our lightning round. All
+right, I'll I'll keep them short.
+>> Um, what do you hope the 80-year-old
+version of you will be proud of?
+>> I mean, since we're focused on the math
+and math channel stuff, I think having
+instilled a meaningful number of people
+with like genuine intuitions for just
+how math works, right? That's a very
+broad sentence, but something like that,
+knowing that there are people who
+understand it better than they otherwise
+would have, and the depth with which
+they do is meaningful, and the number of
+people who I've touched in that way is
+meaningful. Hopefully something like
+that. And it ranges not just from the
+channel, but also like in personal life,
+right? Like people I tutor or something.
+>> Oh, you still tutor people?
+>> Uh, these days it's just my nieces and
+friends. It is people. It's a very
+different kind of tutoring. Yeah, it's a
+very different kind of tutoring, but I I
+I really hope to have an impact there.
+Um, so and I intend to do more more
+teaching as I free up my own time. Yeah.
+>> Your life philosophy in one sentence.
+Um,
+this is not very lightning.
+Life philosophy in one
+>> in one sentence.
+>> My god. Lightning round questions.
+I know this is not the answer you want.
+I don't have one. It's okay not to have
+one.
+>> I think it's okay not to have one.
+>> That's my life philosophy. It's okay not
+to have like a single guiding
+philosophy.
+>> Wait, that's great. I love it.
+>> Okay, we we'll run with that.
+the best advice you've ever received.
+>> Action precedes motivation.
+>> Oh, I actually love that. I um this is
+one of my lessons for 2026 or rather
+it's one of my lessons from 2025 guiding
+principle for 2026 that action precedes
+clarity. Um because I spent a lot of
+time especially post startup being like
+okay you know what is let's overanalyze
+what I could be doing and what I
+realized is that the most important
+thing is always be in motion in movement
+and action will create clarity and then
+10 years from now I'll be like well of
+course all these dots connect so
+perfectly hopefully
+>> um what's a trait that you have that
+you're genuinely grateful for
+>> I think calm but I think like emotional
+regulation it's easy to think that like
+ah you have control over yourself But I
+think over the years I've come to
+understand that actually there's just a
+lot of baked in disposition and it's not
+a given that like when things are
+stressful.
+>> Okay, I can't say I handle stress like
+gracefully in all circumstances. I maybe
+have a tendency to like
+fall under paralysis, but what I don't
+fall prey to is like getting heated.
+>> And I I think that's not some I think
+that's just baked in disposition.
+>> I think so. I'm I'm very similar. I'm
+very emotionally steady and more or less
+the same. I don't have a lot of like
+super super high highs or super low
+lows. And actually with stress, I have a
+very calm disposition. I don't really
+get heated, which I think is um we're
+really lucky to have that.
+>> Yeah. Yeah.
+>> Um and last but not least, what are you
+excited to learn or explore next? Ah
+>> um
+I think
+well I mean just the team growth aspect.
+So, let's just like learning to like run
+a small team um effectively to like
+carry out visions. I have that I don't
+have any illusions about already being
+skilled at that. I'm well aware that
+that involves practice and learning. I
+have philosophies on how I think I can
+do it. Well, I'm excited to see how
+those will be corrected faced against
+reality.
+>> Awesome. I'm excited for you, Grant.
+Thank you so much for your time. Thanks.
