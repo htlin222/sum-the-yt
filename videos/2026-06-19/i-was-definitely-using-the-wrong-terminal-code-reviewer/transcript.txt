@@ -1,0 +1,375 @@
+The biggest challenge for software
+engineers these days, assuming finding a
+job is not on the list, is reviewing the
+huge piles of code going into
+production. It was a complicated task
+since basically ever, and it's slowly
+grown into one of the unsustainable
+stuff we keep getting asked to do with
+changes that look like, well, this.
+So, there's two ways this can go, and no
+disrespect to the gentleman here, but
+you can accept all always I don't read
+this anymore, or look up to one of the
+best engineers in our generation who has
+built a DevOps enterprise with his bare
+hands and currently building the best
+terminal in existence for the love of
+the game. Mitchell Hashimoto, while
+dealing with exact same challenges,
+needed a code review solution, and he
+found it. Now, before you start
+screaming lazy get at me, yes, lazy get
+is awesome and while you can review code
+with it, it's not made for that, and it
+surely doesn't pack this. In a world
+where slop is a first-class citizen and
+these guys are trying to tell you all
+software engineers will be gone within a
+year, yet their job openings list grow
+quicker than NPM get supply chain
+attacks, it's on you. I mean, on us to
+stand up a gate or hold the door and
+review code like pros. [music]
+Hunk is all of the above and more. This
+doesn't mean agents don't have their
+place. On the contrary, I'm going to
+show you exactly how and where they fit
+into this workflow. Let's get into it.
+>> [music]
+>> Back to this tweet that caught my eye
+last month. Hunk is celebrated by many
+more than just Mitchell. Dax, one of the
+founders of Open Code, also points out
+it uses Open TUI, the framework by
+Anomaly, the company behind Open Code.
+Hunk was recently built by Ben Vinegar,
+one of the previous founders of Sentry,
+who now stands behind a company that
+aims to become your AI PM. [music] Hunk,
+as you probably learned by now, is a TUI
+for diffs with a sidebar, syntax
+highlighting, and GitHub-like diff
+panels. If it rings a bell from previous
+videos I made, you're not wrong. We'll
+get to that. As we mentioned, hunk is
+built on Open TUI by Anomaly and PR
+diffs, which is an open-source diff
+rendering library, which, by the way, is
+itself built on Shiki, a syntax
+highlighter. Talk about how NPM supply
+chain attacks start, right? So, without
+further ado, npm or brew install hunk
+from their tap, and you're good to go.
+The first two commands you'll notice are
+hunk diff and hunk show. Diff is for
+state changes, while show takes your
+last commit by default. There are some
+other options, but before we go in
+there, let's take a second to describe
+what is it that hunk gives us and how it
+lines up against its competition. Hunk
+gives you an interactive TUI, diff
+static, delta, and other options. Users
+know that this isn't the case with them.
+And here's where it gets interesting, an
+inline agent and AI annotation. Okay,
+we'll see. Let's rewind [music] a
+little. Everything starts here, GNU
+diff, a tool that finds the difference
+between two input files. It was first
+released, please hold onto your chair,
+51 years ago, when Linus was five. Diff
+is everywhere. Over the years, the
+concept was implemented into git diff to
+help users find changes. And recently,
+we've started seeing modern options like
+diff-so-fancy, that is, if you can call
+a pearl project modern. Then came along
+delta, a fantastic configurable diff
+pager in rust. In recent video, I even
+discussed diffnav, which adds a TUI much
+like the one hunk presents, but around
+delta. Not bad, but not quite what we're
+here to cover today. I'd be remiss if I
+didn't mention lumen as well, a rust TUI
+that forces me to see this every time I
+run it. It's a great and even closer TUI
+and great UX, but still not with the
+killer features hunk offers, which we'll
+see today. Hunk show pops a stacked git
+diff with some surprising top navbar and
+then honestly beautiful syntax
+highlighting and changes with color
+[music] coding. Each file shows line
+numbers and how many added or removed
+lines, and I'll add a key caster here to
+show you the motions.
+Control D or U to jump up and down as
+you would in Vim. Square brackets to
+jump between hunks. GG and shift G to
+scroll to the top or bottom. And even
+HJKL, the arrows in Vim, works as you'd
+expect. Now, here's the mouse in action.
+Opening these menus suggesting further
+shortcuts and options like using E to
+open the current files in your editor
+like so, which you can then quit to go
+back. You can toggle views stacked like
+we've seen before or side-by-side
+splits, which is my personal preference.
+There are themes, which oh god, my eyes.
+Anyway, yeah, themes. And lastly, there
+are notes. This is finally where the
+magic happens. Beyond everything here,
+the simplest feature of all and in my
+opinion the greatest, and why I'd use
+hunk over the others, notes. Much like
+GitHub comments, are line-based text
+bubbles you can leave or have someone or
+something leave for you. Yes, I'm
+talking about AI, but wait. If you're
+shipping software across more than one
+stack, you already know this pain. Your
+Python service loads secrets one way,
+your Go binary another, and that one
+bash script in CI is just sourcing a dot
+env file and hoping nobody commits it.
+That's the gap Keeper Security built
+Keeper Secrets Manager to close. The
+Keeper Secrets Manager SDK gives you
+simple, fast, and efficient way to
+access your secrets management
+functionality from all popular
+languages. So, however your services are
+written, retrieving a secret looks the
+same every single time. And when you
+don't even need a full SDK, there's the
+CLI, which bundles core secrets manager
+vault interaction straight from your
+terminal, a shell script, or any
+software that can be launched from the
+shell. That covers the parts of your
+pipeline that aren't really app code at
+all. Deploy steps, cron jobs, one-off
+automations without you writing a custom
+integration for each one. It's the same
+zero trust zero knowledge vault
+underneath whether you're calling it
+from code or from the shell. One
+consistent way to handle secrets across
+every language and every script in your
+stack. If you want to see how this fits
+into your existing workflow, request a
+demo at the link in the description.
+Now, back to the video. Hit the little
+plus icon next to a line and add your
+note. You can add as many as you like
+and scroll between them using opening
+and closing curly brackets. These can be
+deleted of course and if it wasn't
+clear, these comments are not Git
+tracked changes and would only reflect
+in this session, after which they
+evaporate. Not perfect if you ask me,
+we'll talk about that. As mentioned
+earlier, hunk shows reviews the last
+commit, but you can ask for an extended
+review from head for example on the last
+two or more. It also supports Jujutsu or
+JJ. For those of you who are unfamiliar,
+there are a couple of quite
+controversial, I must say, videos on the
+channel which you're welcome to watch.
+And by the way, this is the main reason
+for Mitchell Hashimoto enjoying hunk.
+Most other tools support Git or even
+just GitHub for reviews. Hunk supports
+both as a first class citizen. JJ is
+amazing, I'll leave it at that. Hunk
+diff is for when local changes are not
+yet committed and this is the real magic
+of hunk. Building on top of the notes
+we've seen earlier, hunk's entire idea
+of them is actually around AI notes.
+There's agent workflows file under the
+docs section which helps your agent
+review the changes it made and believe
+it or not leave comments in your code.
+If this doesn't spark curiosity, I'd
+quit this video now and do something
+more productive, but if you're in, check
+this out. I'll fire up Pi, the best
+coding agent I've used so far and
+another video on the channel you'd
+probably want to add to your watch list.
+I've seen people on Twitter run hunk in
+Pi, but couldn't find a dedicated
+extension. So, I figured let's
+understand how it works first and then
+let Pi do it for me. So, hunk comes with
+a session command, and unless I missed
+something, this command isn't for you.
+It's for your agent. When you start hunk
+diff or show session, in the background,
+hunk is running a small server. You can
+list these running sessions, and the
+hunk review doc explains how to use the
+review, add context, navigate, and add
+comments. The workflow suggests a skill
+and a generic prompt to provide first.
+So, we'll use that. Let's have Pi
+install that skill for itself in the
+background while we set things up.
+With the generic prompt, we make hunk
+load the skill, help it a little by
+asking it to run hunk skill [music]
+path, and review our diff. Go back to
+our live session, and there we go. Agent
+notes commenting on non-structured
+response body in my API endpoint. Let's
+go harder on another a bit more
+complicated change in a big project with
+notes from agent living next to my own
+side by side.
+Now, there's one problem that screams
+here loudly. While I love the TUI, the
+UE, the way you can review and read
+notes, this isn't very collaborative.
+Sure, you can pull a PR and have my
+local Pi review and provide comments,
+but what then? It's not in sync with
+tools like GitHub comments. I can't
+share the session, and even if I could,
+it's not the best method I can think of
+for code reviews. I've seen some open
+issues mentioning this, and I hope we'll
+see something close to that in the
+future. Other tools I've shared in the
+past like gh-dash that provides a TUI
+that integrates with other great
+projects like Octo and Vim for code
+reviews in GitHub that actually leaves
+comments for others to see. More on that
+in the video on the channel. Okay, so
+not that, but what can you do with these
+comments? [music] A couple years back, I
+wouldn't have to ask the questions. It's
+obvious. Fix them, right? But, we're in
+a different era. Good or bad, I don't
+know which one, but here's the next
+step. Pi can now use the comments
+created by its predecessor session and
+ask something along these lines. Load
+the hunk skill and use it for review.
+The scale would have a way to list
+comments and we'd ask it to inspect the
+context and reload when it's done. I'd
+also suggest going with babysitter here
+to maximize quality results. More on
+that on a babysitter video on the
+channel.
+Somehow, we haven't mentioned it yet,
+but hunk stewie comes with a sidebar,
+which you can toggle with S. The
+sidebar, especially after review, is
+extremely useful at showing both diff
+changes in line and added code, but also
+comments added marked in purple next to
+the relevant files. By the way, all
+navigation options are available to you
+by hitting the question mark key or from
+the menu above. Okay, good stuff, but
+we're not complete here without some
+sweet persistent configuration,
+especially not when it comes to the
+terminal.
+Hunk comes with a tommel config file
+that defaults to dot config under hunk.
+You can set the version control of
+choice, stacked view or split, theme,
+line numbers, and even notes on or off
+by default. And while catpuchin is
+misleadingly is a word stated here, it's
+not actually part of the available
+default themes, at least not at the time
+this video is recorded. If you're like
+me and you're serious about your dot
+files, you start with a dot files repo,
+new config directory path, set your
+changes and preferences, then stow to
+make sure symlinks are reflected in our
+dot config path as shown in the bottom
+split. More on stow and dot files on a
+separate video yet again on the channel.
+The next time you reload hunk, all the
+changes are reflected in the UI.
+Before we part ways, there's one
+additional configuration and an extra
+feature you should know about both.
+Those of you who aren't using git trunk,
+there's a video on the channel, add it
+to your list, but if you're stashing
+changes, you'd be glad to hear hunk
+comes with a stash sub command. I've
+made a small change here on the API
+great response. Quickly git stashing it
+removes the change from the working
+snapshot, which now lives under the
+stash stack. Run hunk stash show. That
+was a very hard sentence to say, and
+there is the change. No need to pop and
+restash. Super useful for stash changes
+you're unsure about and would like a
+review.
+The second feature is you can use hunk
+as your default viewer simply by
+configuring Git to use it as its pager.
+This can, of course, be done globally or
+per project, which doesn't make a lot of
+sense. But, once you have hunk pager
+configured, Git diff will pop the
+familiar UI with your configurations
+with the two-way features like the
+sidebar you love. What if you don't want
+it by default? No problem. That's why
+Git comes with aliases. Just set one for
+diff or show or both like H show, for
+example, with hunk pager in its core
+config. Allow me to tie everything up in
+this video by going back to the tweet
+that started it all for me, specifically
+touching the fact that hunk is a local
+diff viewer. It's good, speedy, lovely
+shortcuts, and everything we love in a
+terminal. A comment below this tweet
+asking if Mitchell knows about LazyGit,
+which is borderline disrespectful,
+having mentioned he's big on JJ, and
+LazyGit is, well, not. And while I've
+mentioned it briefly earlier, it's
+better to see with your own eyes.
+LazyGit is still my favorite GitOps
+utility. It has everything you want and
+need, including reviews, which you can
+basically change to anything you like,
+but it won't be as good as hunk. And as
+the Unix philosophy purists like to
+mention on every single video I make,
+use the right tool for the job.
+Hopefully, that tool does one thing and
+does it perfect. [music] Is hunk staying
+with me? It sure is. Is it perfect? No.
+And yet, I do urge you to go back and
+check the video I made around GH dash
+and how it replaces GitHub UI
+completely. Paired with Octo and Vim, it
+can also perform reviews for you. But
+still, hunk at this point is the best
+I've seen at local reviews and their
+management. Hopefully, in the future,
+it'll be able to become more
+collaborative as a utility. Assuming
+we're still collaborating with humans.
+Thank you for watching. I'll see you in
+the next one.

@@ -1,0 +1,795 @@
+1
+00:00:00,000 --> 00:00:05,240
+For 2 years, the entire AI industry
+
+2
+00:00:02,760 --> 00:00:07,120
+agreed on how to give a model memory.
+
+3
+00:00:05,240 --> 00:00:09,600
+You chopped your documents into
+
+4
+00:00:07,120 --> 00:00:12,000
+thousands of fragments, turned each
+
+5
+00:00:09,600 --> 00:00:13,960
+fragment into a long list of numbers,
+
+6
+00:00:12,000 --> 00:00:16,800
+and paid to store them in a special
+
+7
+00:00:13,960 --> 00:00:19,600
+database. Then, this spring, one of the
+
+8
+00:00:16,800 --> 00:00:22,120
+most respected names in AI looked at all
+
+9
+00:00:19,600 --> 00:00:25,120
+of it and said, "Just use a folder of
+
+10
+00:00:22,120 --> 00:00:26,840
+text files." And it worked better. Now,
+
+11
+00:00:25,120 --> 00:00:29,160
+Google's turned that folder into an
+
+12
+00:00:26,840 --> 00:00:31,480
+official standard. Developers are
+
+13
+00:00:29,160 --> 00:00:33,840
+calling it the most obvious idea they've
+
+14
+00:00:31,480 --> 00:00:35,000
+ever seen, and they might be exactly
+
+15
+00:00:33,840 --> 00:00:37,040
+right.
+
+16
+00:00:35,000 --> 00:00:40,360
+The complicated version existed for a
+
+17
+00:00:37,040 --> 00:00:43,240
+reason. Everything an AI needs to do its
+
+18
+00:00:40,360 --> 00:00:45,960
+job is scattered. A metric's definition
+
+19
+00:00:43,240 --> 00:00:48,280
+lives in one database. Its logic in some
+
+20
+00:00:45,960 --> 00:00:51,000
+pipeline. The reason it changed in a
+
+21
+00:00:48,280 --> 00:00:53,040
+6-month-old pull request. And the rest
+
+22
+00:00:51,000 --> 00:00:55,520
+in the head of an engineer who left in
+
+23
+00:00:53,040 --> 00:00:57,480
+March. The standard fix was a thing
+
+24
+00:00:55,520 --> 00:01:00,640
+called RAG. You take all those
+
+25
+00:00:57,480 --> 00:01:02,800
+documents, slice them into chunks, turn
+
+26
+00:01:00,640 --> 00:01:04,879
+each chunk into a long list of numbers
+
+27
+00:01:02,800 --> 00:01:07,640
+that captures [music] its rough meaning,
+
+28
+00:01:04,879 --> 00:01:10,000
+and load them into a vector database.
+
+29
+00:01:07,640 --> 00:01:11,960
+Ask a question, the system grabs the
+
+30
+00:01:10,000 --> 00:01:14,520
+chunks that look [music] closest to it,
+
+31
+00:01:11,960 --> 00:01:15,980
+and hands them to the model. It works,
+
+32
+00:01:14,520 --> 00:01:16,280
+but it never remembers.
+
+33
+00:01:15,980 --> 00:01:19,320
+>> [music]
+
+34
+00:01:16,280 --> 00:01:21,720
+>> Every query starts from zero. The model
+
+35
+00:01:19,320 --> 00:01:23,760
+gets a fresh pile of disconnected
+
+36
+00:01:21,720 --> 00:01:25,805
+snippets and has to work out the same
+
+37
+00:01:23,760 --> 00:01:28,480
+connections it worked out an hour
+
+38
+00:01:25,805 --> 00:01:30,080
+[music] ago, and the hour before that.
+
+39
+00:01:28,480 --> 00:01:33,440
+That respected name, by the way, was
+
+40
+00:01:30,080 --> 00:01:35,631
+Andrej Karpathy, co-founder of OpenAI,
+
+41
+00:01:33,440 --> 00:01:35,840
+former head of AI at Tesla.
+
+42
+00:01:35,631 --> 00:01:38,040
+>> [music]
+
+43
+00:01:35,840 --> 00:01:40,840
+>> In April, he posted a short file to
+
+44
+00:01:38,040 --> 00:01:41,526
+GitHub for an idea he called the LLM
+
+45
+00:01:40,840 --> 00:01:41,800
+Wiki.
+
+46
+00:01:41,526 --> 00:01:44,400
+>> [music]
+
+47
+00:01:41,800 --> 00:01:46,480
+>> And it flips RAG on its head. Instead of
+
+48
+00:01:44,400 --> 00:01:48,720
+the model re-deriving everything the
+
+49
+00:01:46,480 --> 00:01:51,240
+moment you ask, you build the knowledge
+
+50
+00:01:48,720 --> 00:01:53,600
+up once [music] into a folder of plain
+
+51
+00:01:51,240 --> 00:01:56,360
+text files that link to each other. A
+
+52
+00:01:53,600 --> 00:01:59,080
+living encyclopedia the model can read
+
+53
+00:01:56,360 --> 00:02:01,180
+the way a developer reads a code base.
+
+54
+00:01:59,080 --> 00:02:02,840
+People hear a folder of notes and
+
+55
+00:02:01,180 --> 00:02:05,760
+[music] assume they're the one writing
+
+56
+00:02:02,840 --> 00:02:08,280
+the notes. Wrong way around. You don't
+
+57
+00:02:05,760 --> 00:02:10,240
+write [music] the wiki, the AI does. You
+
+58
+00:02:08,280 --> 00:02:12,840
+bring it new material and ask good
+
+59
+00:02:10,240 --> 00:02:15,640
+questions. It handles the summarizing,
+
+60
+00:02:12,840 --> 00:02:18,400
+the cross-referencing, the filing, all
+
+61
+00:02:15,640 --> 00:02:21,000
+the upkeep nobody ever keeps up with.
+
+62
+00:02:18,400 --> 00:02:24,360
+Karpathy's own line for it, Obsidian is
+
+63
+00:02:21,000 --> 00:02:26,840
+the IDE, the LLM is the programmer, the
+
+64
+00:02:24,360 --> 00:02:29,080
+wiki is the code base. The folder is the
+
+65
+00:02:26,840 --> 00:02:31,640
+part you own, the model is the worker
+
+66
+00:02:29,080 --> 00:02:34,440
+who maintains it. This is where Google
+
+67
+00:02:31,640 --> 00:02:36,600
+comes in. On June 12th, Google Cloud
+
+68
+00:02:34,440 --> 00:02:39,640
+took that loose community idea and
+
+69
+00:02:36,600 --> 00:02:42,080
+published it as a formal spec, the Open
+
+70
+00:02:39,640 --> 00:02:45,240
+Knowledge Format. The spec is almost
+
+71
+00:02:42,080 --> 00:02:48,160
+comically small. A bundle is a folder.
+
+72
+00:02:45,240 --> 00:02:50,840
+Every file is one concept, a table, a
+
+73
+00:02:48,160 --> 00:02:53,600
+metric, a playbook, whatever you've got.
+
+74
+00:02:50,840 --> 00:02:56,160
+The file's path is its name. Links
+
+75
+00:02:53,600 --> 00:02:58,840
+between files form a graph. There are
+
+76
+00:02:56,160 --> 00:03:01,320
+two special file names, one that lists
+
+77
+00:02:58,840 --> 00:03:04,200
+what's in a folder and one that logs
+
+78
+00:03:01,320 --> 00:03:07,160
+changes. And there's exactly one hard
+
+79
+00:03:04,200 --> 00:03:10,320
+rule. Every file has to say what type of
+
+80
+00:03:07,160 --> 00:03:12,560
+thing it is in one field. The spec also
+
+81
+00:03:10,320 --> 00:03:15,200
+orders any tool reading a bundle to
+
+82
+00:03:12,560 --> 00:03:17,480
+forgive almost everything. Unknown
+
+83
+00:03:15,200 --> 00:03:20,080
+fields, broken links, even files it
+
+84
+00:03:17,480 --> 00:03:22,400
+can't parse. An enterprise standard from
+
+85
+00:03:20,080 --> 00:03:23,707
+Google whose defining feature is how
+
+86
+00:03:22,400 --> 00:03:23,880
+little it demands
+
+87
+00:03:23,707 --> 00:03:26,040
+>> [music]
+
+88
+00:03:23,880 --> 00:03:28,360
+>> and how much it lets you break. You
+
+89
+00:03:26,040 --> 00:03:30,600
+could build it in an afternoon. One
+
+90
+00:03:28,360 --> 00:03:32,880
+thing Google dropped though, Karpathy's
+
+91
+00:03:30,600 --> 00:03:35,239
+instructions for how the AI maintains
+
+92
+00:03:32,880 --> 00:03:37,720
+the wiki. They kept the folder and left
+
+93
+00:03:35,239 --> 00:03:40,000
+out the part that keeps it alive.
+
+94
+00:03:37,720 --> 00:03:42,640
+Back to the reversal. The folder wins
+
+95
+00:03:40,000 --> 00:03:44,560
+and it wins for three reasons. First,
+
+96
+00:03:42,640 --> 00:03:47,239
+when the work happens. RAG [music] does
+
+97
+00:03:44,560 --> 00:03:49,800
+its thinking at question time. The wiki
+
+98
+00:03:47,239 --> 00:03:51,840
+does it once up front when the bundle is
+
+99
+00:03:49,800 --> 00:03:54,160
+built, connecting concepts, [music]
+
+100
+00:03:51,840 --> 00:03:56,960
+flagging contradictions, writing the
+
+101
+00:03:54,160 --> 00:03:59,240
+summaries. Pay that cost a single time,
+
+102
+00:03:56,960 --> 00:04:02,600
+then just read the finished answer.
+
+103
+00:03:59,240 --> 00:04:04,972
+Second, skill. A model can only hold so
+
+104
+00:04:02,600 --> 00:04:06,880
+much in its head at once, and a big
+
+105
+00:04:04,972 --> 00:04:09,680
+[music] company has thousands of these
+
+106
+00:04:06,880 --> 00:04:10,867
+files. Each folder carries a short table
+
+107
+00:04:09,680 --> 00:04:10,880
+of contents.
+
+108
+00:04:10,867 --> 00:04:12,800
+>> [music]
+
+109
+00:04:10,880 --> 00:04:15,120
+>> The model reads that first, picks the
+
+110
+00:04:12,800 --> 00:04:17,760
+one file it needs, and skips the other
+
+111
+00:04:15,120 --> 00:04:21,000
+9,000. It never chokes on the whole
+
+112
+00:04:17,760 --> 00:04:23,680
+library. Third, it's only text. It lives
+
+113
+00:04:21,000 --> 00:04:26,120
+in Git exactly like code. You can diff
+
+114
+00:04:23,680 --> 00:04:27,720
+it, review it in a pull request, [music]
+
+115
+00:04:26,120 --> 00:04:30,360
+zip the whole thing and hand it to a
+
+116
+00:04:27,720 --> 00:04:32,360
+model running offline on a laptop. You
+
+117
+00:04:30,360 --> 00:04:34,880
+don't need a database, a server, or an
+
+118
+00:04:32,360 --> 00:04:37,760
+API key to read it. If you can open a
+
+119
+00:04:34,880 --> 00:04:40,640
+file, you're good. Two quick mix-ups to
+
+120
+00:04:37,760 --> 00:04:43,040
+clear up. This isn't competing with MCP.
+
+121
+00:04:40,640 --> 00:04:45,320
+MCP is the pipe that moves data around
+
+122
+00:04:43,040 --> 00:04:47,960
+live. This is the cargo that moves
+
+123
+00:04:45,320 --> 00:04:50,120
+through it, and it's not an SEO trick.
+
+124
+00:04:47,960 --> 00:04:52,520
+Nothing in it helps a search engine find
+
+125
+00:04:50,120 --> 00:04:55,720
+you. It's private knowledge for your own
+
+126
+00:04:52,520 --> 00:04:58,640
+agents. The pitch is that the AI does
+
+127
+00:04:55,720 --> 00:05:00,640
+the bookkeeping humans always abandon,
+
+128
+00:04:58,640 --> 00:05:02,960
+but the spec has no mechanism to keep
+
+129
+00:05:00,640 --> 00:05:05,360
+anything current. There's a field for a
+
+130
+00:05:02,960 --> 00:05:08,000
+timestamp, fine. A field is not a
+
+131
+00:05:05,360 --> 00:05:10,480
+process. Nothing in the format updates
+
+132
+00:05:08,000 --> 00:05:13,240
+itself. This works beautifully when one
+
+133
+00:05:10,480 --> 00:05:15,919
+person owns one folder. On a shared team
+
+134
+00:05:13,240 --> 00:05:18,320
+folder, it goes stale in a month. Nobody
+
+135
+00:05:15,919 --> 00:05:20,200
+volunteers to tend it, and the agent
+
+136
+00:05:18,320 --> 00:05:22,560
+starts answering from knowledge that
+
+137
+00:05:20,200 --> 00:05:24,880
+expired back in spring. That's catch
+
+138
+00:05:22,560 --> 00:05:27,360
+one. Catch two is funnier. The whole
+
+139
+00:05:24,880 --> 00:05:29,840
+idea rests on AI being a tireless,
+
+140
+00:05:27,360 --> 00:05:32,200
+accurate librarian. In practice,
+
+141
+00:05:29,840 --> 00:05:34,360
+language models are bad at writing clean
+
+142
+00:05:32,200 --> 00:05:37,160
+markdown at scale. They botch the
+
+143
+00:05:34,360 --> 00:05:39,560
+formatting, mangle headers, invent links
+
+144
+00:05:37,160 --> 00:05:41,720
+to files that were never created. And
+
+145
+00:05:39,560 --> 00:05:44,200
+how did Google fix the messy librarian
+
+146
+00:05:41,720 --> 00:05:46,480
+problem? They didn't. They changed the
+
+147
+00:05:44,200 --> 00:05:48,480
+spec to order every reader to forgive
+
+148
+00:05:46,480 --> 00:05:51,080
+the [music] mess. That permissive rule
+
+149
+00:05:48,480 --> 00:05:53,000
+is damage control with a nicer name. The
+
+150
+00:05:51,080 --> 00:05:55,680
+deepest catch is the last [music] one.
+
+151
+00:05:53,000 --> 00:05:58,280
+The format standardizes the container,
+
+152
+00:05:55,680 --> 00:06:01,000
+not the meaning. The one required field
+
+153
+00:05:58,280 --> 00:06:04,280
+is a free-form label. Your team writes
+
+154
+00:06:01,000 --> 00:06:06,800
+BigQuery table. Mine writes table.
+
+155
+00:06:04,280 --> 00:06:08,560
+Someone else writes relational asset.
+
+156
+00:06:06,800 --> 00:06:10,400
+They're all valid, but each is speaking
+
+157
+00:06:08,560 --> 00:06:12,800
+a different language. You can ship the
+
+158
+00:06:10,400 --> 00:06:14,400
+box anywhere. Agreeing on what's inside
+
+159
+00:06:12,800 --> 00:06:16,360
+is still on you.
+
+160
+00:06:14,400 --> 00:06:18,240
+Strip all of this back and you land on a
+
+161
+00:06:16,360 --> 00:06:20,840
+line some developer wrote that stuck
+
+162
+00:06:18,240 --> 00:06:23,520
+with me. An agent is basically just a
+
+163
+00:06:20,840 --> 00:06:25,840
+folder of markdown files. Anyone can
+
+164
+00:06:23,520 --> 00:06:28,200
+write markdown. The skill is in how the
+
+165
+00:06:25,840 --> 00:06:30,600
+folder is organized. What's locked
+
+166
+00:06:28,200 --> 00:06:32,960
+versus what the AI can rewrite. What
+
+167
+00:06:30,600 --> 00:06:35,640
+stops it drifting over a long run. The
+
+168
+00:06:32,960 --> 00:06:37,840
+moat is invisible. Two folders can look
+
+169
+00:06:35,640 --> 00:06:40,320
+identical. One holds up in production
+
+170
+00:06:37,840 --> 00:06:41,840
+while the other slowly rots. You can't
+
+171
+00:06:40,320 --> 00:06:44,840
+tell which is which by reading the
+
+172
+00:06:41,840 --> 00:06:46,440
+files. No format can hand you that. Then
+
+173
+00:06:44,840 --> 00:06:49,360
+there's the part Google would rather you
+
+174
+00:06:46,440 --> 00:06:51,560
+skim past. OKF didn't come out of
+
+175
+00:06:49,360 --> 00:06:54,600
+Google's AI lab. It came from the
+
+176
+00:06:51,560 --> 00:06:57,200
+BigQuery team. Every sample data set
+
+177
+00:06:54,600 --> 00:06:59,880
+ships on BigQuery. The reference tool
+
+178
+00:06:57,200 --> 00:07:01,960
+that writes the bundles runs on Gemini.
+
+179
+00:06:59,880 --> 00:07:03,919
+And the easiest place to pour a finished
+
+180
+00:07:01,960 --> 00:07:06,320
+bundle is Google's own knowledge
+
+181
+00:07:03,919 --> 00:07:08,840
+product. The one they just renamed for
+
+182
+00:07:06,320 --> 00:07:10,600
+exactly this moment. If you've seen our
+
+183
+00:07:08,840 --> 00:07:13,480
+video on Gemma 4, I guess you can
+
+184
+00:07:10,600 --> 00:07:16,280
+already smell the strategy behind this.
+
+185
+00:07:13,480 --> 00:07:18,880
+Will it stick? Hard to say. The day it
+
+186
+00:07:16,280 --> 00:07:21,000
+launched, almost nobody outside Google
+
+187
+00:07:18,880 --> 00:07:23,919
+was using it. And [music] a standard
+
+188
+00:07:21,000 --> 00:07:26,520
+with one user is just a suggestion. It
+
+189
+00:07:23,919 --> 00:07:29,040
+could easily be the next Google project
+
+190
+00:07:26,520 --> 00:07:31,600
+added to their graveyard. The idea
+
+191
+00:07:29,040 --> 00:07:33,440
+underneath it has already won though.
+
+192
+00:07:31,600 --> 00:07:35,760
+The most overfunded field [music] in
+
+193
+00:07:33,440 --> 00:07:37,880
+tech spent two years and a fortune
+
+194
+00:07:35,760 --> 00:07:41,080
+convincing itself that giving a machine
+
+195
+00:07:37,880 --> 00:07:43,880
+memory needed exotic infrastructure.
+
+196
+00:07:41,080 --> 00:07:46,160
+Then a tidy folder of text files did the
+
+197
+00:07:43,880 --> 00:07:49,080
+job better. Whatever happens to the
+
+198
+00:07:46,160 --> 00:07:51,760
+format, that part isn't going back in
+
+199
+00:07:49,080 --> 00:07:51,760
+the box.

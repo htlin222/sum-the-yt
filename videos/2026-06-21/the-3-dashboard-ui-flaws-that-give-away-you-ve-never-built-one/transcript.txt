@@ -1,0 +1,201 @@
+Designing a dashboard isn't that hard,
+but orchestrating one is. And there's a
+massive difference between UI that might
+look good and UI that actually works
+when you start using it. So, whether
+you're live coding a new project or
+creating a piece for your portfolio,
+we're covering the three tells that
+immediately give away you've never built
+one before and exactly how to fix each
+and every one.
+>> [music]
+>> The one thing that all dashboards have
+in common is they're built to display
+data. So, if we focus on building the UI
+around the data we need to display, we
+end up with a much more usable
+experience. For example, take a look at
+this table. It seems relatively
+logically laid out, but clearly nothing
+is driving the form. But, for example,
+if we turned the department and
+employment into chips or took these
+numbers and right align them, things
+start to shape up. We do this because
+there's only a set number of departments
+or employment statuses, and we right
+align the numbers so the digits align by
+place value. Then, we can augment this
+further by truncating long text to give
+more breathing room to the other columns
+or even shade out rows of the table that
+are inactive or deactivated. And when we
+compare the before and after, we can
+clearly see which is more visually
+appealing to look at and importantly,
+which is letting the data drive the
+form. And the same is true for data that
+probably shouldn't even be in a table in
+the first place. This table definitely
+works. Don't get me wrong, we could use
+it, but the time delineated nature means
+that this isn't the best format and we
+aren't letting the data determine the
+shape of the UI. Instead, if we were to
+arrange this as a timeline, it starts to
+become a lot easier to follow rather
+than a time sorted table. This form
+factor could then be tucked into a
+sidebar pop out or made wider as a
+second column beside the table, but
+either way, now we're letting the data
+drive the UI. And color is a very
+important consideration when we do start
+designing these tables. [music]
+Landing pages, you can get away with a
+lot, but dashboard colors shouldn't just
+be sprinkled in to look nice. It should
+come from the data itself. In these
+activity logs, the red icon in the chip
+draws your eye to it because the action
+is urgent. The avatar is there because
+your eye can associate who did what way
+faster than reading a name in the
+column. And once you're thinking that
+way, it's a pretty simple jump to adding
+a chart to roll up the data into a
+summary. Because this data has a time
+dimension, and our chart shows you that
+instantly instead of making you hunt
+through a timestamp column, just like
+our previous example.
+Often when I talk about hierarchy, I use
+examples like this, where this card has
+poor hierarchy, and this card has strong
+hierarchy. But there's another type of
+hierarchy based on what you show and
+what you hide, and it's called
+progressive disclosure. For example,
+this share functionality isn't
+permanently ingrained in the side of the
+table since it's not that frequently
+accessed and frankly not important
+enough. Instead, we tuck it into a
+popover so we don't have to rip the user
+to an entirely different page. And
+within this popover, the primary action
+is of course the search box, which is
+why it's immediately visible at the top.
+A secondary action like removing a user
+isn't overly important, so instead of
+ingraining it in the UI, we show the
+remove button on hover along with a
+tooltip. We could be more explicit by
+always having them, or even still more
+explicit by having the full label
+present. But since we're tight on space
+and removing a user from sharing isn't a
+main action, we progressively reveal it
+as soon as the user starts to look for
+that functionality. And what I've just
+described is called the spectrum of
+explicitness, where a global, always
+visible share button is quite high,
+whereas an icon to copy a cell on hover
+is much lower on that same spectrum. And
+Apple does the same thing really well in
+their Reminders app. On swipe left and
+right, it reveals useful but secondary
+actions compared to actually checking
+off the reminder. And if you think about
+it, this is exactly what an onboarding
+is. When a user lands on your app for
+the first time, they shouldn't be
+staring at a fully loaded dashboard
+wondering where to start. A good
+onboarding might start with a single
+tooltip pointing at the most important
+action. Once they've done that, maybe a
+second one appears or a simple checklist
+in the corner. You're not hiding
+functionality, you're sequencing it so
+that the user is never overwhelmed.
+Compare that to explaining the entire
+product in a modal with six bullet
+points the second you log in and then
+instantly forgetting the moment you
+dismiss. And the best way to get a feel
+for how to handle this, the progressive
+disclosure, the spectrum of
+explicitness, and the onboarding flows,
+is to look at a lot of real software.
+Which is exactly what today's sponsor
+Mavin makes dead simple. They've curated
+hundreds of thousands of screens from
+real mobile and web apps. So, instead of
+piecing together an onboarding flow, you
+can search through hundreds of them.
+They also just launched an MCP. So, you
+can pull Mavin's full library directly
+into your AI development. I had it throw
+together a mood board for a banking app
+with real screenshots and actual links
+in about 2 minutes. If you're interested
+in checking it out, the very first link
+down below will get you 20% off.
+A really important concept that AI has a
+hard time wrapping its figurative head
+around is that UI is as much about what
+you can see as what you can't see. Like
+for as much as this table works well and
+looks good, additional functionality in
+such a dense design needs to come from
+parts of the UI that you can't
+immediately see. This could be as simple
+as a copy chip over the cells or perhaps
+comment functionality with a small
+triangle indicator. Here's all the UI
+that you can see and then this is all of
+the UI that you can't immediately see
+but is still there. And it's not a small
+amount. We need it all to actually make
+any of this table function. Putting the
+individual pieces together, the spacing,
+the sizing isn't that hard but
+orchestrating them does require some
+thought. And this applies just as much
+to the smaller items as it does to the
+larger drawers, models, and elements
+that have hidden components and states.
+It makes it easier to see that new
+features or elements often don't require
+a dedicated page just to be better
+thought through how they're implemented.
+But, this isn't just true for dense UI
+like tables. Think about moments in
+software that you almost never see. An
+announcement about a newly launched
+feature or an onboarding pop-up
+explaining how part of the product
+works. But, what's missing pretty much
+unequivocally on all beginner dashboards
+are tooltips. We have to assume that the
+user won't understand all of our icons
+or that they might want more details or
+information on ambiguous labels. It goes
+to show that there's so much UI that's
+hiding that's important for a finished
+product. And with that, those are the
+three subtle flaws that'll give away
+that you've never built a dashboard
+before. The data driving the form, the
+right things hidden until they're
+needed, and all the invisible UI that
+makes the whole thing actually function.
+If you want to check out Mavin, it'll be
+the very first link down below. You can
+get the link to all of the Figma assets
+used in this video down there, too.
+Thank you so much for watching, and I'll
+see you in the next one.

@@ -1,0 +1,803 @@
+1
+00:00:00,000 --> 00:00:04,840
+Designing a dashboard isn't that hard,
+
+2
+00:00:02,520 --> 00:00:06,720
+but orchestrating one is. And there's a
+
+3
+00:00:04,840 --> 00:00:08,760
+massive difference between UI that might
+
+4
+00:00:06,720 --> 00:00:10,440
+look good and UI that actually works
+
+5
+00:00:08,760 --> 00:00:11,960
+when you start using it. So, whether
+
+6
+00:00:10,440 --> 00:00:13,440
+you're live coding a new project or
+
+7
+00:00:11,960 --> 00:00:14,920
+creating a piece for your portfolio,
+
+8
+00:00:13,440 --> 00:00:17,120
+we're covering the three tells that
+
+9
+00:00:14,920 --> 00:00:19,480
+immediately give away you've never built
+
+10
+00:00:17,120 --> 00:00:21,615
+one before and exactly how to fix each
+
+11
+00:00:19,480 --> 00:00:22,400
+and every one.
+
+12
+00:00:21,615 --> 00:00:24,080
+>> [music]
+
+13
+00:00:22,400 --> 00:00:26,200
+>> The one thing that all dashboards have
+
+14
+00:00:24,080 --> 00:00:29,080
+in common is they're built to display
+
+15
+00:00:26,200 --> 00:00:31,240
+data. So, if we focus on building the UI
+
+16
+00:00:29,080 --> 00:00:32,840
+around the data we need to display, we
+
+17
+00:00:31,240 --> 00:00:34,920
+end up with a much more usable
+
+18
+00:00:32,840 --> 00:00:36,920
+experience. For example, take a look at
+
+19
+00:00:34,920 --> 00:00:38,960
+this table. It seems relatively
+
+20
+00:00:36,920 --> 00:00:41,080
+logically laid out, but clearly nothing
+
+21
+00:00:38,960 --> 00:00:42,720
+is driving the form. But, for example,
+
+22
+00:00:41,080 --> 00:00:44,920
+if we turned the department and
+
+23
+00:00:42,720 --> 00:00:46,800
+employment into chips or took these
+
+24
+00:00:44,920 --> 00:00:48,600
+numbers and right align them, things
+
+25
+00:00:46,800 --> 00:00:50,800
+start to shape up. We do this because
+
+26
+00:00:48,600 --> 00:00:52,720
+there's only a set number of departments
+
+27
+00:00:50,800 --> 00:00:55,280
+or employment statuses, and we right
+
+28
+00:00:52,720 --> 00:00:57,240
+align the numbers so the digits align by
+
+29
+00:00:55,280 --> 00:00:59,400
+place value. Then, we can augment this
+
+30
+00:00:57,240 --> 00:01:01,200
+further by truncating long text to give
+
+31
+00:00:59,400 --> 00:01:03,480
+more breathing room to the other columns
+
+32
+00:01:01,200 --> 00:01:06,240
+or even shade out rows of the table that
+
+33
+00:01:03,480 --> 00:01:08,360
+are inactive or deactivated. And when we
+
+34
+00:01:06,240 --> 00:01:10,400
+compare the before and after, we can
+
+35
+00:01:08,360 --> 00:01:12,080
+clearly see which is more visually
+
+36
+00:01:10,400 --> 00:01:14,120
+appealing to look at and importantly,
+
+37
+00:01:12,080 --> 00:01:16,560
+which is letting the data drive the
+
+38
+00:01:14,120 --> 00:01:18,360
+form. And the same is true for data that
+
+39
+00:01:16,560 --> 00:01:20,240
+probably shouldn't even be in a table in
+
+40
+00:01:18,360 --> 00:01:22,320
+the first place. This table definitely
+
+41
+00:01:20,240 --> 00:01:24,600
+works. Don't get me wrong, we could use
+
+42
+00:01:22,320 --> 00:01:26,720
+it, but the time delineated nature means
+
+43
+00:01:24,600 --> 00:01:28,640
+that this isn't the best format and we
+
+44
+00:01:26,720 --> 00:01:30,880
+aren't letting the data determine the
+
+45
+00:01:28,640 --> 00:01:32,640
+shape of the UI. Instead, if we were to
+
+46
+00:01:30,880 --> 00:01:34,720
+arrange this as a timeline, it starts to
+
+47
+00:01:32,640 --> 00:01:36,800
+become a lot easier to follow rather
+
+48
+00:01:34,720 --> 00:01:38,280
+than a time sorted table. This form
+
+49
+00:01:36,800 --> 00:01:40,320
+factor could then be tucked into a
+
+50
+00:01:38,280 --> 00:01:42,400
+sidebar pop out or made wider as a
+
+51
+00:01:40,320 --> 00:01:44,520
+second column beside the table, but
+
+52
+00:01:42,400 --> 00:01:47,240
+either way, now we're letting the data
+
+53
+00:01:44,520 --> 00:01:49,320
+drive the UI. And color is a very
+
+54
+00:01:47,240 --> 00:01:50,600
+important consideration when we do start
+
+55
+00:01:49,320 --> 00:01:52,000
+designing these tables. [music]
+
+56
+00:01:50,600 --> 00:01:54,600
+Landing pages, you can get away with a
+
+57
+00:01:52,000 --> 00:01:56,560
+lot, but dashboard colors shouldn't just
+
+58
+00:01:54,600 --> 00:01:58,640
+be sprinkled in to look nice. It should
+
+59
+00:01:56,560 --> 00:02:01,040
+come from the data itself. In these
+
+60
+00:01:58,640 --> 00:02:03,000
+activity logs, the red icon in the chip
+
+61
+00:02:01,040 --> 00:02:05,080
+draws your eye to it because the action
+
+62
+00:02:03,000 --> 00:02:07,640
+is urgent. The avatar is there because
+
+63
+00:02:05,080 --> 00:02:09,320
+your eye can associate who did what way
+
+64
+00:02:07,640 --> 00:02:10,960
+faster than reading a name in the
+
+65
+00:02:09,320 --> 00:02:12,959
+column. And once you're thinking that
+
+66
+00:02:10,960 --> 00:02:15,200
+way, it's a pretty simple jump to adding
+
+67
+00:02:12,959 --> 00:02:17,280
+a chart to roll up the data into a
+
+68
+00:02:15,200 --> 00:02:19,120
+summary. Because this data has a time
+
+69
+00:02:17,280 --> 00:02:20,880
+dimension, and our chart shows you that
+
+70
+00:02:19,120 --> 00:02:22,480
+instantly instead of making you hunt
+
+71
+00:02:20,880 --> 00:02:25,640
+through a timestamp column, just like
+
+72
+00:02:22,480 --> 00:02:25,640
+our previous example.
+
+73
+00:02:25,720 --> 00:02:30,240
+Often when I talk about hierarchy, I use
+
+74
+00:02:27,920 --> 00:02:32,480
+examples like this, where this card has
+
+75
+00:02:30,240 --> 00:02:34,520
+poor hierarchy, and this card has strong
+
+76
+00:02:32,480 --> 00:02:36,680
+hierarchy. But there's another type of
+
+77
+00:02:34,520 --> 00:02:38,120
+hierarchy based on what you show and
+
+78
+00:02:36,680 --> 00:02:40,400
+what you hide, and it's called
+
+79
+00:02:38,120 --> 00:02:42,120
+progressive disclosure. For example,
+
+80
+00:02:40,400 --> 00:02:44,160
+this share functionality isn't
+
+81
+00:02:42,120 --> 00:02:45,959
+permanently ingrained in the side of the
+
+82
+00:02:44,160 --> 00:02:48,040
+table since it's not that frequently
+
+83
+00:02:45,959 --> 00:02:49,840
+accessed and frankly not important
+
+84
+00:02:48,040 --> 00:02:51,880
+enough. Instead, we tuck it into a
+
+85
+00:02:49,840 --> 00:02:53,880
+popover so we don't have to rip the user
+
+86
+00:02:51,880 --> 00:02:55,959
+to an entirely different page. And
+
+87
+00:02:53,880 --> 00:02:57,640
+within this popover, the primary action
+
+88
+00:02:55,959 --> 00:02:59,880
+is of course the search box, which is
+
+89
+00:02:57,640 --> 00:03:02,800
+why it's immediately visible at the top.
+
+90
+00:02:59,880 --> 00:03:04,720
+A secondary action like removing a user
+
+91
+00:03:02,800 --> 00:03:06,760
+isn't overly important, so instead of
+
+92
+00:03:04,720 --> 00:03:08,600
+ingraining it in the UI, we show the
+
+93
+00:03:06,760 --> 00:03:10,880
+remove button on hover along with a
+
+94
+00:03:08,600 --> 00:03:13,120
+tooltip. We could be more explicit by
+
+95
+00:03:10,880 --> 00:03:15,040
+always having them, or even still more
+
+96
+00:03:13,120 --> 00:03:17,200
+explicit by having the full label
+
+97
+00:03:15,040 --> 00:03:19,440
+present. But since we're tight on space
+
+98
+00:03:17,200 --> 00:03:22,280
+and removing a user from sharing isn't a
+
+99
+00:03:19,440 --> 00:03:24,200
+main action, we progressively reveal it
+
+100
+00:03:22,280 --> 00:03:26,120
+as soon as the user starts to look for
+
+101
+00:03:24,200 --> 00:03:28,080
+that functionality. And what I've just
+
+102
+00:03:26,120 --> 00:03:30,640
+described is called the spectrum of
+
+103
+00:03:28,080 --> 00:03:32,600
+explicitness, where a global, always
+
+104
+00:03:30,640 --> 00:03:35,280
+visible share button is quite high,
+
+105
+00:03:32,600 --> 00:03:38,200
+whereas an icon to copy a cell on hover
+
+106
+00:03:35,280 --> 00:03:40,000
+is much lower on that same spectrum. And
+
+107
+00:03:38,200 --> 00:03:42,320
+Apple does the same thing really well in
+
+108
+00:03:40,000 --> 00:03:44,720
+their Reminders app. On swipe left and
+
+109
+00:03:42,320 --> 00:03:46,760
+right, it reveals useful but secondary
+
+110
+00:03:44,720 --> 00:03:48,800
+actions compared to actually checking
+
+111
+00:03:46,760 --> 00:03:50,840
+off the reminder. And if you think about
+
+112
+00:03:48,800 --> 00:03:53,040
+it, this is exactly what an onboarding
+
+113
+00:03:50,840 --> 00:03:54,240
+is. When a user lands on your app for
+
+114
+00:03:53,040 --> 00:03:56,200
+the first time, they shouldn't be
+
+115
+00:03:54,240 --> 00:03:57,640
+staring at a fully loaded dashboard
+
+116
+00:03:56,200 --> 00:03:59,360
+wondering where to start. A good
+
+117
+00:03:57,640 --> 00:04:01,200
+onboarding might start with a single
+
+118
+00:03:59,360 --> 00:04:02,800
+tooltip pointing at the most important
+
+119
+00:04:01,200 --> 00:04:05,160
+action. Once they've done that, maybe a
+
+120
+00:04:02,800 --> 00:04:07,200
+second one appears or a simple checklist
+
+121
+00:04:05,160 --> 00:04:09,480
+in the corner. You're not hiding
+
+122
+00:04:07,200 --> 00:04:11,560
+functionality, you're sequencing it so
+
+123
+00:04:09,480 --> 00:04:13,320
+that the user is never overwhelmed.
+
+124
+00:04:11,560 --> 00:04:15,280
+Compare that to explaining the entire
+
+125
+00:04:13,320 --> 00:04:17,320
+product in a modal with six bullet
+
+126
+00:04:15,280 --> 00:04:18,799
+points the second you log in and then
+
+127
+00:04:17,320 --> 00:04:20,920
+instantly forgetting the moment you
+
+128
+00:04:18,799 --> 00:04:22,919
+dismiss. And the best way to get a feel
+
+129
+00:04:20,920 --> 00:04:24,240
+for how to handle this, the progressive
+
+130
+00:04:22,919 --> 00:04:26,280
+disclosure, the spectrum of
+
+131
+00:04:24,240 --> 00:04:28,680
+explicitness, and the onboarding flows,
+
+132
+00:04:26,280 --> 00:04:30,400
+is to look at a lot of real software.
+
+133
+00:04:28,680 --> 00:04:32,880
+Which is exactly what today's sponsor
+
+134
+00:04:30,400 --> 00:04:34,840
+Mavin makes dead simple. They've curated
+
+135
+00:04:32,880 --> 00:04:37,240
+hundreds of thousands of screens from
+
+136
+00:04:34,840 --> 00:04:39,120
+real mobile and web apps. So, instead of
+
+137
+00:04:37,240 --> 00:04:41,320
+piecing together an onboarding flow, you
+
+138
+00:04:39,120 --> 00:04:43,560
+can search through hundreds of them.
+
+139
+00:04:41,320 --> 00:04:46,200
+They also just launched an MCP. So, you
+
+140
+00:04:43,560 --> 00:04:48,120
+can pull Mavin's full library directly
+
+141
+00:04:46,200 --> 00:04:50,080
+into your AI development. I had it throw
+
+142
+00:04:48,120 --> 00:04:52,080
+together a mood board for a banking app
+
+143
+00:04:50,080 --> 00:04:54,160
+with real screenshots and actual links
+
+144
+00:04:52,080 --> 00:04:56,240
+in about 2 minutes. If you're interested
+
+145
+00:04:54,160 --> 00:05:00,280
+in checking it out, the very first link
+
+146
+00:04:56,240 --> 00:05:00,280
+down below will get you 20% off.
+
+147
+00:05:00,480 --> 00:05:04,720
+A really important concept that AI has a
+
+148
+00:05:02,480 --> 00:05:07,000
+hard time wrapping its figurative head
+
+149
+00:05:04,720 --> 00:05:09,720
+around is that UI is as much about what
+
+150
+00:05:07,000 --> 00:05:11,840
+you can see as what you can't see. Like
+
+151
+00:05:09,720 --> 00:05:13,840
+for as much as this table works well and
+
+152
+00:05:11,840 --> 00:05:15,680
+looks good, additional functionality in
+
+153
+00:05:13,840 --> 00:05:17,280
+such a dense design needs to come from
+
+154
+00:05:15,680 --> 00:05:19,360
+parts of the UI that you can't
+
+155
+00:05:17,280 --> 00:05:21,840
+immediately see. This could be as simple
+
+156
+00:05:19,360 --> 00:05:23,720
+as a copy chip over the cells or perhaps
+
+157
+00:05:21,840 --> 00:05:25,760
+comment functionality with a small
+
+158
+00:05:23,720 --> 00:05:28,080
+triangle indicator. Here's all the UI
+
+159
+00:05:25,760 --> 00:05:30,400
+that you can see and then this is all of
+
+160
+00:05:28,080 --> 00:05:32,640
+the UI that you can't immediately see
+
+161
+00:05:30,400 --> 00:05:34,880
+but is still there. And it's not a small
+
+162
+00:05:32,640 --> 00:05:36,840
+amount. We need it all to actually make
+
+163
+00:05:34,880 --> 00:05:39,080
+any of this table function. Putting the
+
+164
+00:05:36,840 --> 00:05:41,280
+individual pieces together, the spacing,
+
+165
+00:05:39,080 --> 00:05:43,440
+the sizing isn't that hard but
+
+166
+00:05:41,280 --> 00:05:45,840
+orchestrating them does require some
+
+167
+00:05:43,440 --> 00:05:48,000
+thought. And this applies just as much
+
+168
+00:05:45,840 --> 00:05:50,200
+to the smaller items as it does to the
+
+169
+00:05:48,000 --> 00:05:52,640
+larger drawers, models, and elements
+
+170
+00:05:50,200 --> 00:05:54,320
+that have hidden components and states.
+
+171
+00:05:52,640 --> 00:05:56,680
+It makes it easier to see that new
+
+172
+00:05:54,320 --> 00:05:58,520
+features or elements often don't require
+
+173
+00:05:56,680 --> 00:06:00,760
+a dedicated page just to be better
+
+174
+00:05:58,520 --> 00:06:02,960
+thought through how they're implemented.
+
+175
+00:06:00,760 --> 00:06:04,920
+But, this isn't just true for dense UI
+
+176
+00:06:02,960 --> 00:06:07,240
+like tables. Think about moments in
+
+177
+00:06:04,920 --> 00:06:08,880
+software that you almost never see. An
+
+178
+00:06:07,240 --> 00:06:10,640
+announcement about a newly launched
+
+179
+00:06:08,880 --> 00:06:12,360
+feature or an onboarding pop-up
+
+180
+00:06:10,640 --> 00:06:14,440
+explaining how part of the product
+
+181
+00:06:12,360 --> 00:06:16,840
+works. But, what's missing pretty much
+
+182
+00:06:14,440 --> 00:06:19,040
+unequivocally on all beginner dashboards
+
+183
+00:06:16,840 --> 00:06:21,640
+are tooltips. We have to assume that the
+
+184
+00:06:19,040 --> 00:06:23,560
+user won't understand all of our icons
+
+185
+00:06:21,640 --> 00:06:26,360
+or that they might want more details or
+
+186
+00:06:23,560 --> 00:06:28,200
+information on ambiguous labels. It goes
+
+187
+00:06:26,360 --> 00:06:30,000
+to show that there's so much UI that's
+
+188
+00:06:28,200 --> 00:06:31,880
+hiding that's important for a finished
+
+189
+00:06:30,000 --> 00:06:33,880
+product. And with that, those are the
+
+190
+00:06:31,880 --> 00:06:35,760
+three subtle flaws that'll give away
+
+191
+00:06:33,880 --> 00:06:38,000
+that you've never built a dashboard
+
+192
+00:06:35,760 --> 00:06:39,560
+before. The data driving the form, the
+
+193
+00:06:38,000 --> 00:06:41,800
+right things hidden until they're
+
+194
+00:06:39,560 --> 00:06:44,120
+needed, and all the invisible UI that
+
+195
+00:06:41,800 --> 00:06:45,520
+makes the whole thing actually function.
+
+196
+00:06:44,120 --> 00:06:47,560
+If you want to check out Mavin, it'll be
+
+197
+00:06:45,520 --> 00:06:49,760
+the very first link down below. You can
+
+198
+00:06:47,560 --> 00:06:51,440
+get the link to all of the Figma assets
+
+199
+00:06:49,760 --> 00:06:53,080
+used in this video down there, too.
+
+200
+00:06:51,440 --> 00:06:56,040
+Thank you so much for watching, and I'll
+
+201
+00:06:53,080 --> 00:06:56,040
+see you in the next one.

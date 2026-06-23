@@ -1,0 +1,1499 @@
+1
+00:00:00,000 --> 00:00:03,400
+The biggest challenge for software
+
+2
+00:00:01,480 --> 00:00:05,640
+engineers these days, assuming finding a
+
+3
+00:00:03,400 --> 00:00:07,320
+job is not on the list, is reviewing the
+
+4
+00:00:05,640 --> 00:00:09,160
+huge piles of code going into
+
+5
+00:00:07,320 --> 00:00:11,800
+production. It was a complicated task
+
+6
+00:00:09,160 --> 00:00:13,760
+since basically ever, and it's slowly
+
+7
+00:00:11,800 --> 00:00:15,720
+grown into one of the unsustainable
+
+8
+00:00:13,760 --> 00:00:20,400
+stuff we keep getting asked to do with
+
+9
+00:00:15,720 --> 00:00:20,400
+changes that look like, well, this.
+
+10
+00:00:21,160 --> 00:00:25,400
+So, there's two ways this can go, and no
+
+11
+00:00:23,520 --> 00:00:27,920
+disrespect to the gentleman here, but
+
+12
+00:00:25,400 --> 00:00:30,120
+you can accept all always I don't read
+
+13
+00:00:27,920 --> 00:00:32,439
+this anymore, or look up to one of the
+
+14
+00:00:30,120 --> 00:00:34,640
+best engineers in our generation who has
+
+15
+00:00:32,439 --> 00:00:36,560
+built a DevOps enterprise with his bare
+
+16
+00:00:34,640 --> 00:00:38,440
+hands and currently building the best
+
+17
+00:00:36,560 --> 00:00:40,080
+terminal in existence for the love of
+
+18
+00:00:38,440 --> 00:00:41,880
+the game. Mitchell Hashimoto, while
+
+19
+00:00:40,080 --> 00:00:44,120
+dealing with exact same challenges,
+
+20
+00:00:41,880 --> 00:00:45,720
+needed a code review solution, and he
+
+21
+00:00:44,120 --> 00:00:48,000
+found it. Now, before you start
+
+22
+00:00:45,720 --> 00:00:50,640
+screaming lazy get at me, yes, lazy get
+
+23
+00:00:48,000 --> 00:00:52,760
+is awesome and while you can review code
+
+24
+00:00:50,640 --> 00:00:55,720
+with it, it's not made for that, and it
+
+25
+00:00:52,760 --> 00:00:57,800
+surely doesn't pack this. In a world
+
+26
+00:00:55,720 --> 00:00:59,440
+where slop is a first-class citizen and
+
+27
+00:00:57,800 --> 00:01:01,240
+these guys are trying to tell you all
+
+28
+00:00:59,440 --> 00:01:03,520
+software engineers will be gone within a
+
+29
+00:01:01,240 --> 00:01:05,480
+year, yet their job openings list grow
+
+30
+00:01:03,520 --> 00:01:08,440
+quicker than NPM get supply chain
+
+31
+00:01:05,480 --> 00:01:10,640
+attacks, it's on you. I mean, on us to
+
+32
+00:01:08,440 --> 00:01:12,640
+stand up a gate or hold the door and
+
+33
+00:01:10,640 --> 00:01:15,280
+review code like pros. [music]
+
+34
+00:01:12,640 --> 00:01:16,840
+Hunk is all of the above and more. This
+
+35
+00:01:15,280 --> 00:01:18,440
+doesn't mean agents don't have their
+
+36
+00:01:16,840 --> 00:01:21,240
+place. On the contrary, I'm going to
+
+37
+00:01:18,440 --> 00:01:25,760
+show you exactly how and where they fit
+
+38
+00:01:21,240 --> 00:01:25,760
+into this workflow. Let's get into it.
+
+39
+00:01:27,770 --> 00:01:31,280
+>> [music]
+
+40
+00:01:29,440 --> 00:01:33,640
+>> Back to this tweet that caught my eye
+
+41
+00:01:31,280 --> 00:01:35,880
+last month. Hunk is celebrated by many
+
+42
+00:01:33,640 --> 00:01:38,200
+more than just Mitchell. Dax, one of the
+
+43
+00:01:35,880 --> 00:01:40,600
+founders of Open Code, also points out
+
+44
+00:01:38,200 --> 00:01:42,720
+it uses Open TUI, the framework by
+
+45
+00:01:40,600 --> 00:01:45,080
+Anomaly, the company behind Open Code.
+
+46
+00:01:42,720 --> 00:01:47,040
+Hunk was recently built by Ben Vinegar,
+
+47
+00:01:45,080 --> 00:01:48,760
+one of the previous founders of Sentry,
+
+48
+00:01:47,040 --> 00:01:51,360
+who now stands behind a company that
+
+49
+00:01:48,760 --> 00:01:53,440
+aims to become your AI PM. [music] Hunk,
+
+50
+00:01:51,360 --> 00:01:55,800
+as you probably learned by now, is a TUI
+
+51
+00:01:53,440 --> 00:01:57,400
+for diffs with a sidebar, syntax
+
+52
+00:01:55,800 --> 00:01:59,360
+highlighting, and GitHub-like diff
+
+53
+00:01:57,400 --> 00:02:01,240
+panels. If it rings a bell from previous
+
+54
+00:01:59,360 --> 00:02:03,400
+videos I made, you're not wrong. We'll
+
+55
+00:02:01,240 --> 00:02:06,080
+get to that. As we mentioned, hunk is
+
+56
+00:02:03,400 --> 00:02:08,119
+built on Open TUI by Anomaly and PR
+
+57
+00:02:06,080 --> 00:02:10,640
+diffs, which is an open-source diff
+
+58
+00:02:08,119 --> 00:02:12,840
+rendering library, which, by the way, is
+
+59
+00:02:10,640 --> 00:02:15,120
+itself built on Shiki, a syntax
+
+60
+00:02:12,840 --> 00:02:17,320
+highlighter. Talk about how NPM supply
+
+61
+00:02:15,120 --> 00:02:19,880
+chain attacks start, right? So, without
+
+62
+00:02:17,320 --> 00:02:22,200
+further ado, npm or brew install hunk
+
+63
+00:02:19,880 --> 00:02:24,440
+from their tap, and you're good to go.
+
+64
+00:02:22,200 --> 00:02:27,480
+The first two commands you'll notice are
+
+65
+00:02:24,440 --> 00:02:29,920
+hunk diff and hunk show. Diff is for
+
+66
+00:02:27,480 --> 00:02:32,080
+state changes, while show takes your
+
+67
+00:02:29,920 --> 00:02:34,000
+last commit by default. There are some
+
+68
+00:02:32,080 --> 00:02:36,360
+other options, but before we go in
+
+69
+00:02:34,000 --> 00:02:38,720
+there, let's take a second to describe
+
+70
+00:02:36,360 --> 00:02:41,080
+what is it that hunk gives us and how it
+
+71
+00:02:38,720 --> 00:02:43,160
+lines up against its competition. Hunk
+
+72
+00:02:41,080 --> 00:02:45,720
+gives you an interactive TUI, diff
+
+73
+00:02:43,160 --> 00:02:47,840
+static, delta, and other options. Users
+
+74
+00:02:45,720 --> 00:02:50,160
+know that this isn't the case with them.
+
+75
+00:02:47,840 --> 00:02:53,000
+And here's where it gets interesting, an
+
+76
+00:02:50,160 --> 00:02:54,280
+inline agent and AI annotation. Okay,
+
+77
+00:02:53,000 --> 00:02:56,680
+we'll see. Let's rewind [music] a
+
+78
+00:02:54,280 --> 00:02:58,840
+little. Everything starts here, GNU
+
+79
+00:02:56,680 --> 00:03:00,959
+diff, a tool that finds the difference
+
+80
+00:02:58,840 --> 00:03:02,920
+between two input files. It was first
+
+81
+00:03:00,959 --> 00:03:06,760
+released, please hold onto your chair,
+
+82
+00:03:02,920 --> 00:03:08,519
+51 years ago, when Linus was five. Diff
+
+83
+00:03:06,760 --> 00:03:11,040
+is everywhere. Over the years, the
+
+84
+00:03:08,519 --> 00:03:13,400
+concept was implemented into git diff to
+
+85
+00:03:11,040 --> 00:03:15,640
+help users find changes. And recently,
+
+86
+00:03:13,400 --> 00:03:18,320
+we've started seeing modern options like
+
+87
+00:03:15,640 --> 00:03:20,880
+diff-so-fancy, that is, if you can call
+
+88
+00:03:18,320 --> 00:03:22,920
+a pearl project modern. Then came along
+
+89
+00:03:20,880 --> 00:03:25,800
+delta, a fantastic configurable diff
+
+90
+00:03:22,920 --> 00:03:28,519
+pager in rust. In recent video, I even
+
+91
+00:03:25,800 --> 00:03:30,560
+discussed diffnav, which adds a TUI much
+
+92
+00:03:28,519 --> 00:03:33,000
+like the one hunk presents, but around
+
+93
+00:03:30,560 --> 00:03:35,320
+delta. Not bad, but not quite what we're
+
+94
+00:03:33,000 --> 00:03:37,480
+here to cover today. I'd be remiss if I
+
+95
+00:03:35,320 --> 00:03:40,080
+didn't mention lumen as well, a rust TUI
+
+96
+00:03:37,480 --> 00:03:42,400
+that forces me to see this every time I
+
+97
+00:03:40,080 --> 00:03:44,760
+run it. It's a great and even closer TUI
+
+98
+00:03:42,400 --> 00:03:46,800
+and great UX, but still not with the
+
+99
+00:03:44,760 --> 00:03:49,600
+killer features hunk offers, which we'll
+
+100
+00:03:46,800 --> 00:03:52,560
+see today. Hunk show pops a stacked git
+
+101
+00:03:49,600 --> 00:03:54,120
+diff with some surprising top navbar and
+
+102
+00:03:52,560 --> 00:03:55,802
+then honestly beautiful syntax
+
+103
+00:03:54,120 --> 00:03:57,640
+highlighting and changes with color
+
+104
+00:03:55,802 --> 00:03:59,680
+[music] coding. Each file shows line
+
+105
+00:03:57,640 --> 00:04:01,480
+numbers and how many added or removed
+
+106
+00:03:59,680 --> 00:04:03,200
+lines, and I'll add a key caster here to
+
+107
+00:04:01,480 --> 00:04:05,920
+show you the motions.
+
+108
+00:04:03,200 --> 00:04:07,959
+Control D or U to jump up and down as
+
+109
+00:04:05,920 --> 00:04:10,680
+you would in Vim. Square brackets to
+
+110
+00:04:07,959 --> 00:04:12,840
+jump between hunks. GG and shift G to
+
+111
+00:04:10,680 --> 00:04:15,720
+scroll to the top or bottom. And even
+
+112
+00:04:12,840 --> 00:04:18,400
+HJKL, the arrows in Vim, works as you'd
+
+113
+00:04:15,720 --> 00:04:20,400
+expect. Now, here's the mouse in action.
+
+114
+00:04:18,400 --> 00:04:22,600
+Opening these menus suggesting further
+
+115
+00:04:20,400 --> 00:04:24,360
+shortcuts and options like using E to
+
+116
+00:04:22,600 --> 00:04:26,840
+open the current files in your editor
+
+117
+00:04:24,360 --> 00:04:29,400
+like so, which you can then quit to go
+
+118
+00:04:26,840 --> 00:04:30,960
+back. You can toggle views stacked like
+
+119
+00:04:29,400 --> 00:04:33,640
+we've seen before or side-by-side
+
+120
+00:04:30,960 --> 00:04:36,160
+splits, which is my personal preference.
+
+121
+00:04:33,640 --> 00:04:39,280
+There are themes, which oh god, my eyes.
+
+122
+00:04:36,160 --> 00:04:42,120
+Anyway, yeah, themes. And lastly, there
+
+123
+00:04:39,280 --> 00:04:43,800
+are notes. This is finally where the
+
+124
+00:04:42,120 --> 00:04:45,280
+magic happens. Beyond everything here,
+
+125
+00:04:43,800 --> 00:04:47,440
+the simplest feature of all and in my
+
+126
+00:04:45,280 --> 00:04:49,960
+opinion the greatest, and why I'd use
+
+127
+00:04:47,440 --> 00:04:52,320
+hunk over the others, notes. Much like
+
+128
+00:04:49,960 --> 00:04:54,720
+GitHub comments, are line-based text
+
+129
+00:04:52,320 --> 00:04:57,280
+bubbles you can leave or have someone or
+
+130
+00:04:54,720 --> 00:04:59,640
+something leave for you. Yes, I'm
+
+131
+00:04:57,280 --> 00:05:01,600
+talking about AI, but wait. If you're
+
+132
+00:04:59,640 --> 00:05:03,560
+shipping software across more than one
+
+133
+00:05:01,600 --> 00:05:05,320
+stack, you already know this pain. Your
+
+134
+00:05:03,560 --> 00:05:07,000
+Python service loads secrets one way,
+
+135
+00:05:05,320 --> 00:05:09,280
+your Go binary another, and that one
+
+136
+00:05:07,000 --> 00:05:12,080
+bash script in CI is just sourcing a dot
+
+137
+00:05:09,280 --> 00:05:13,680
+env file and hoping nobody commits it.
+
+138
+00:05:12,080 --> 00:05:15,640
+That's the gap Keeper Security built
+
+139
+00:05:13,680 --> 00:05:17,480
+Keeper Secrets Manager to close. The
+
+140
+00:05:15,640 --> 00:05:19,600
+Keeper Secrets Manager SDK gives you
+
+141
+00:05:17,480 --> 00:05:20,840
+simple, fast, and efficient way to
+
+142
+00:05:19,600 --> 00:05:22,560
+access your secrets management
+
+143
+00:05:20,840 --> 00:05:24,600
+functionality from all popular
+
+144
+00:05:22,560 --> 00:05:26,240
+languages. So, however your services are
+
+145
+00:05:24,600 --> 00:05:28,600
+written, retrieving a secret looks the
+
+146
+00:05:26,240 --> 00:05:30,560
+same every single time. And when you
+
+147
+00:05:28,600 --> 00:05:32,760
+don't even need a full SDK, there's the
+
+148
+00:05:30,560 --> 00:05:34,560
+CLI, which bundles core secrets manager
+
+149
+00:05:32,760 --> 00:05:36,320
+vault interaction straight from your
+
+150
+00:05:34,560 --> 00:05:37,880
+terminal, a shell script, or any
+
+151
+00:05:36,320 --> 00:05:40,000
+software that can be launched from the
+
+152
+00:05:37,880 --> 00:05:42,400
+shell. That covers the parts of your
+
+153
+00:05:40,000 --> 00:05:44,720
+pipeline that aren't really app code at
+
+154
+00:05:42,400 --> 00:05:46,840
+all. Deploy steps, cron jobs, one-off
+
+155
+00:05:44,720 --> 00:05:48,960
+automations without you writing a custom
+
+156
+00:05:46,840 --> 00:05:50,440
+integration for each one. It's the same
+
+157
+00:05:48,960 --> 00:05:52,080
+zero trust zero knowledge vault
+
+158
+00:05:50,440 --> 00:05:53,800
+underneath whether you're calling it
+
+159
+00:05:52,080 --> 00:05:55,720
+from code or from the shell. One
+
+160
+00:05:53,800 --> 00:05:57,880
+consistent way to handle secrets across
+
+161
+00:05:55,720 --> 00:05:59,480
+every language and every script in your
+
+162
+00:05:57,880 --> 00:06:01,240
+stack. If you want to see how this fits
+
+163
+00:05:59,480 --> 00:06:03,200
+into your existing workflow, request a
+
+164
+00:06:01,240 --> 00:06:05,000
+demo at the link in the description.
+
+165
+00:06:03,200 --> 00:06:07,160
+Now, back to the video. Hit the little
+
+166
+00:06:05,000 --> 00:06:09,320
+plus icon next to a line and add your
+
+167
+00:06:07,160 --> 00:06:10,920
+note. You can add as many as you like
+
+168
+00:06:09,320 --> 00:06:13,320
+and scroll between them using opening
+
+169
+00:06:10,920 --> 00:06:15,360
+and closing curly brackets. These can be
+
+170
+00:06:13,320 --> 00:06:17,320
+deleted of course and if it wasn't
+
+171
+00:06:15,360 --> 00:06:19,600
+clear, these comments are not Git
+
+172
+00:06:17,320 --> 00:06:21,640
+tracked changes and would only reflect
+
+173
+00:06:19,600 --> 00:06:24,320
+in this session, after which they
+
+174
+00:06:21,640 --> 00:06:25,680
+evaporate. Not perfect if you ask me,
+
+175
+00:06:24,320 --> 00:06:28,000
+we'll talk about that. As mentioned
+
+176
+00:06:25,680 --> 00:06:29,840
+earlier, hunk shows reviews the last
+
+177
+00:06:28,000 --> 00:06:32,080
+commit, but you can ask for an extended
+
+178
+00:06:29,840 --> 00:06:35,240
+review from head for example on the last
+
+179
+00:06:32,080 --> 00:06:37,400
+two or more. It also supports Jujutsu or
+
+180
+00:06:35,240 --> 00:06:38,640
+JJ. For those of you who are unfamiliar,
+
+181
+00:06:37,400 --> 00:06:40,680
+there are a couple of quite
+
+182
+00:06:38,640 --> 00:06:42,560
+controversial, I must say, videos on the
+
+183
+00:06:40,680 --> 00:06:45,080
+channel which you're welcome to watch.
+
+184
+00:06:42,560 --> 00:06:46,840
+And by the way, this is the main reason
+
+185
+00:06:45,080 --> 00:06:49,120
+for Mitchell Hashimoto enjoying hunk.
+
+186
+00:06:46,840 --> 00:06:51,680
+Most other tools support Git or even
+
+187
+00:06:49,120 --> 00:06:54,200
+just GitHub for reviews. Hunk supports
+
+188
+00:06:51,680 --> 00:06:56,480
+both as a first class citizen. JJ is
+
+189
+00:06:54,200 --> 00:06:59,000
+amazing, I'll leave it at that. Hunk
+
+190
+00:06:56,480 --> 00:07:01,720
+diff is for when local changes are not
+
+191
+00:06:59,000 --> 00:07:03,600
+yet committed and this is the real magic
+
+192
+00:07:01,720 --> 00:07:05,680
+of hunk. Building on top of the notes
+
+193
+00:07:03,600 --> 00:07:08,760
+we've seen earlier, hunk's entire idea
+
+194
+00:07:05,680 --> 00:07:11,440
+of them is actually around AI notes.
+
+195
+00:07:08,760 --> 00:07:14,000
+There's agent workflows file under the
+
+196
+00:07:11,440 --> 00:07:16,120
+docs section which helps your agent
+
+197
+00:07:14,000 --> 00:07:18,400
+review the changes it made and believe
+
+198
+00:07:16,120 --> 00:07:20,400
+it or not leave comments in your code.
+
+199
+00:07:18,400 --> 00:07:22,000
+If this doesn't spark curiosity, I'd
+
+200
+00:07:20,400 --> 00:07:25,000
+quit this video now and do something
+
+201
+00:07:22,000 --> 00:07:27,200
+more productive, but if you're in, check
+
+202
+00:07:25,000 --> 00:07:28,880
+this out. I'll fire up Pi, the best
+
+203
+00:07:27,200 --> 00:07:30,760
+coding agent I've used so far and
+
+204
+00:07:28,880 --> 00:07:33,200
+another video on the channel you'd
+
+205
+00:07:30,760 --> 00:07:35,520
+probably want to add to your watch list.
+
+206
+00:07:33,200 --> 00:07:37,600
+I've seen people on Twitter run hunk in
+
+207
+00:07:35,520 --> 00:07:39,600
+Pi, but couldn't find a dedicated
+
+208
+00:07:37,600 --> 00:07:41,720
+extension. So, I figured let's
+
+209
+00:07:39,600 --> 00:07:45,040
+understand how it works first and then
+
+210
+00:07:41,720 --> 00:07:46,800
+let Pi do it for me. So, hunk comes with
+
+211
+00:07:45,040 --> 00:07:49,000
+a session command, and unless I missed
+
+212
+00:07:46,800 --> 00:07:51,600
+something, this command isn't for you.
+
+213
+00:07:49,000 --> 00:07:53,760
+It's for your agent. When you start hunk
+
+214
+00:07:51,600 --> 00:07:56,280
+diff or show session, in the background,
+
+215
+00:07:53,760 --> 00:07:58,080
+hunk is running a small server. You can
+
+216
+00:07:56,280 --> 00:08:00,280
+list these running sessions, and the
+
+217
+00:07:58,080 --> 00:08:02,320
+hunk review doc explains how to use the
+
+218
+00:08:00,280 --> 00:08:04,960
+review, add context, navigate, and add
+
+219
+00:08:02,320 --> 00:08:07,000
+comments. The workflow suggests a skill
+
+220
+00:08:04,960 --> 00:08:09,360
+and a generic prompt to provide first.
+
+221
+00:08:07,000 --> 00:08:11,000
+So, we'll use that. Let's have Pi
+
+222
+00:08:09,360 --> 00:08:13,919
+install that skill for itself in the
+
+223
+00:08:11,000 --> 00:08:16,040
+background while we set things up.
+
+224
+00:08:13,919 --> 00:08:18,000
+With the generic prompt, we make hunk
+
+225
+00:08:16,040 --> 00:08:19,800
+load the skill, help it a little by
+
+226
+00:08:18,000 --> 00:08:22,919
+asking it to run hunk skill [music]
+
+227
+00:08:19,800 --> 00:08:25,520
+path, and review our diff. Go back to
+
+228
+00:08:22,919 --> 00:08:27,680
+our live session, and there we go. Agent
+
+229
+00:08:25,520 --> 00:08:30,080
+notes commenting on non-structured
+
+230
+00:08:27,680 --> 00:08:31,800
+response body in my API endpoint. Let's
+
+231
+00:08:30,080 --> 00:08:34,039
+go harder on another a bit more
+
+232
+00:08:31,800 --> 00:08:36,400
+complicated change in a big project with
+
+233
+00:08:34,039 --> 00:08:38,159
+notes from agent living next to my own
+
+234
+00:08:36,400 --> 00:08:40,039
+side by side.
+
+235
+00:08:38,159 --> 00:08:42,240
+Now, there's one problem that screams
+
+236
+00:08:40,039 --> 00:08:44,280
+here loudly. While I love the TUI, the
+
+237
+00:08:42,240 --> 00:08:46,520
+UE, the way you can review and read
+
+238
+00:08:44,280 --> 00:08:48,560
+notes, this isn't very collaborative.
+
+239
+00:08:46,520 --> 00:08:50,800
+Sure, you can pull a PR and have my
+
+240
+00:08:48,560 --> 00:08:53,080
+local Pi review and provide comments,
+
+241
+00:08:50,800 --> 00:08:54,800
+but what then? It's not in sync with
+
+242
+00:08:53,080 --> 00:08:56,480
+tools like GitHub comments. I can't
+
+243
+00:08:54,800 --> 00:08:58,240
+share the session, and even if I could,
+
+244
+00:08:56,480 --> 00:09:00,120
+it's not the best method I can think of
+
+245
+00:08:58,240 --> 00:09:01,800
+for code reviews. I've seen some open
+
+246
+00:09:00,120 --> 00:09:03,440
+issues mentioning this, and I hope we'll
+
+247
+00:09:01,800 --> 00:09:04,960
+see something close to that in the
+
+248
+00:09:03,440 --> 00:09:07,320
+future. Other tools I've shared in the
+
+249
+00:09:04,960 --> 00:09:08,680
+past like gh-dash that provides a TUI
+
+250
+00:09:07,320 --> 00:09:10,880
+that integrates with other great
+
+251
+00:09:08,680 --> 00:09:12,920
+projects like Octo and Vim for code
+
+252
+00:09:10,880 --> 00:09:15,400
+reviews in GitHub that actually leaves
+
+253
+00:09:12,920 --> 00:09:17,680
+comments for others to see. More on that
+
+254
+00:09:15,400 --> 00:09:19,720
+in the video on the channel. Okay, so
+
+255
+00:09:17,680 --> 00:09:21,440
+not that, but what can you do with these
+
+256
+00:09:19,720 --> 00:09:22,960
+comments? [music] A couple years back, I
+
+257
+00:09:21,440 --> 00:09:24,960
+wouldn't have to ask the questions. It's
+
+258
+00:09:22,960 --> 00:09:27,400
+obvious. Fix them, right? But, we're in
+
+259
+00:09:24,960 --> 00:09:29,120
+a different era. Good or bad, I don't
+
+260
+00:09:27,400 --> 00:09:31,240
+know which one, but here's the next
+
+261
+00:09:29,120 --> 00:09:33,200
+step. Pi can now use the comments
+
+262
+00:09:31,240 --> 00:09:35,680
+created by its predecessor session and
+
+263
+00:09:33,200 --> 00:09:37,800
+ask something along these lines. Load
+
+264
+00:09:35,680 --> 00:09:39,400
+the hunk skill and use it for review.
+
+265
+00:09:37,800 --> 00:09:41,280
+The scale would have a way to list
+
+266
+00:09:39,400 --> 00:09:43,640
+comments and we'd ask it to inspect the
+
+267
+00:09:41,280 --> 00:09:46,000
+context and reload when it's done. I'd
+
+268
+00:09:43,640 --> 00:09:47,920
+also suggest going with babysitter here
+
+269
+00:09:46,000 --> 00:09:49,640
+to maximize quality results. More on
+
+270
+00:09:47,920 --> 00:09:50,640
+that on a babysitter video on the
+
+271
+00:09:49,640 --> 00:09:52,480
+channel.
+
+272
+00:09:50,640 --> 00:09:55,200
+Somehow, we haven't mentioned it yet,
+
+273
+00:09:52,480 --> 00:09:56,800
+but hunk stewie comes with a sidebar,
+
+274
+00:09:55,200 --> 00:09:59,200
+which you can toggle with S. The
+
+275
+00:09:56,800 --> 00:10:01,200
+sidebar, especially after review, is
+
+276
+00:09:59,200 --> 00:10:04,160
+extremely useful at showing both diff
+
+277
+00:10:01,200 --> 00:10:06,480
+changes in line and added code, but also
+
+278
+00:10:04,160 --> 00:10:08,400
+comments added marked in purple next to
+
+279
+00:10:06,480 --> 00:10:10,080
+the relevant files. By the way, all
+
+280
+00:10:08,400 --> 00:10:12,400
+navigation options are available to you
+
+281
+00:10:10,080 --> 00:10:15,280
+by hitting the question mark key or from
+
+282
+00:10:12,400 --> 00:10:17,000
+the menu above. Okay, good stuff, but
+
+283
+00:10:15,280 --> 00:10:18,720
+we're not complete here without some
+
+284
+00:10:17,000 --> 00:10:20,640
+sweet persistent configuration,
+
+285
+00:10:18,720 --> 00:10:21,640
+especially not when it comes to the
+
+286
+00:10:20,640 --> 00:10:23,360
+terminal.
+
+287
+00:10:21,640 --> 00:10:25,760
+Hunk comes with a tommel config file
+
+288
+00:10:23,360 --> 00:10:27,160
+that defaults to dot config under hunk.
+
+289
+00:10:25,760 --> 00:10:29,440
+You can set the version control of
+
+290
+00:10:27,160 --> 00:10:31,640
+choice, stacked view or split, theme,
+
+291
+00:10:29,440 --> 00:10:33,520
+line numbers, and even notes on or off
+
+292
+00:10:31,640 --> 00:10:37,120
+by default. And while catpuchin is
+
+293
+00:10:33,520 --> 00:10:38,560
+misleadingly is a word stated here, it's
+
+294
+00:10:37,120 --> 00:10:40,720
+not actually part of the available
+
+295
+00:10:38,560 --> 00:10:42,600
+default themes, at least not at the time
+
+296
+00:10:40,720 --> 00:10:44,040
+this video is recorded. If you're like
+
+297
+00:10:42,600 --> 00:10:46,520
+me and you're serious about your dot
+
+298
+00:10:44,040 --> 00:10:48,640
+files, you start with a dot files repo,
+
+299
+00:10:46,520 --> 00:10:51,360
+new config directory path, set your
+
+300
+00:10:48,640 --> 00:10:53,520
+changes and preferences, then stow to
+
+301
+00:10:51,360 --> 00:10:55,640
+make sure symlinks are reflected in our
+
+302
+00:10:53,520 --> 00:10:58,080
+dot config path as shown in the bottom
+
+303
+00:10:55,640 --> 00:11:00,680
+split. More on stow and dot files on a
+
+304
+00:10:58,080 --> 00:11:02,440
+separate video yet again on the channel.
+
+305
+00:11:00,680 --> 00:11:05,000
+The next time you reload hunk, all the
+
+306
+00:11:02,440 --> 00:11:07,120
+changes are reflected in the UI.
+
+307
+00:11:05,000 --> 00:11:08,800
+Before we part ways, there's one
+
+308
+00:11:07,120 --> 00:11:11,360
+additional configuration and an extra
+
+309
+00:11:08,800 --> 00:11:13,240
+feature you should know about both.
+
+310
+00:11:11,360 --> 00:11:14,600
+Those of you who aren't using git trunk,
+
+311
+00:11:13,240 --> 00:11:16,640
+there's a video on the channel, add it
+
+312
+00:11:14,600 --> 00:11:18,600
+to your list, but if you're stashing
+
+313
+00:11:16,640 --> 00:11:20,760
+changes, you'd be glad to hear hunk
+
+314
+00:11:18,600 --> 00:11:22,600
+comes with a stash sub command. I've
+
+315
+00:11:20,760 --> 00:11:25,360
+made a small change here on the API
+
+316
+00:11:22,600 --> 00:11:26,760
+great response. Quickly git stashing it
+
+317
+00:11:25,360 --> 00:11:28,920
+removes the change from the working
+
+318
+00:11:26,760 --> 00:11:31,960
+snapshot, which now lives under the
+
+319
+00:11:28,920 --> 00:11:34,120
+stash stack. Run hunk stash show. That
+
+320
+00:11:31,960 --> 00:11:36,360
+was a very hard sentence to say, and
+
+321
+00:11:34,120 --> 00:11:39,040
+there is the change. No need to pop and
+
+322
+00:11:36,360 --> 00:11:40,600
+restash. Super useful for stash changes
+
+323
+00:11:39,040 --> 00:11:41,760
+you're unsure about and would like a
+
+324
+00:11:40,600 --> 00:11:43,680
+review.
+
+325
+00:11:41,760 --> 00:11:45,280
+The second feature is you can use hunk
+
+326
+00:11:43,680 --> 00:11:48,000
+as your default viewer simply by
+
+327
+00:11:45,280 --> 00:11:50,160
+configuring Git to use it as its pager.
+
+328
+00:11:48,000 --> 00:11:51,800
+This can, of course, be done globally or
+
+329
+00:11:50,160 --> 00:11:54,280
+per project, which doesn't make a lot of
+
+330
+00:11:51,800 --> 00:11:56,200
+sense. But, once you have hunk pager
+
+331
+00:11:54,280 --> 00:11:58,440
+configured, Git diff will pop the
+
+332
+00:11:56,200 --> 00:11:59,680
+familiar UI with your configurations
+
+333
+00:11:58,440 --> 00:12:02,120
+with the two-way features like the
+
+334
+00:11:59,680 --> 00:12:04,040
+sidebar you love. What if you don't want
+
+335
+00:12:02,120 --> 00:12:06,760
+it by default? No problem. That's why
+
+336
+00:12:04,040 --> 00:12:09,320
+Git comes with aliases. Just set one for
+
+337
+00:12:06,760 --> 00:12:11,720
+diff or show or both like H show, for
+
+338
+00:12:09,320 --> 00:12:14,160
+example, with hunk pager in its core
+
+339
+00:12:11,720 --> 00:12:16,120
+config. Allow me to tie everything up in
+
+340
+00:12:14,160 --> 00:12:18,240
+this video by going back to the tweet
+
+341
+00:12:16,120 --> 00:12:20,440
+that started it all for me, specifically
+
+342
+00:12:18,240 --> 00:12:22,920
+touching the fact that hunk is a local
+
+343
+00:12:20,440 --> 00:12:24,600
+diff viewer. It's good, speedy, lovely
+
+344
+00:12:22,920 --> 00:12:26,760
+shortcuts, and everything we love in a
+
+345
+00:12:24,600 --> 00:12:28,760
+terminal. A comment below this tweet
+
+346
+00:12:26,760 --> 00:12:30,920
+asking if Mitchell knows about LazyGit,
+
+347
+00:12:28,760 --> 00:12:33,160
+which is borderline disrespectful,
+
+348
+00:12:30,920 --> 00:12:35,960
+having mentioned he's big on JJ, and
+
+349
+00:12:33,160 --> 00:12:37,600
+LazyGit is, well, not. And while I've
+
+350
+00:12:35,960 --> 00:12:39,520
+mentioned it briefly earlier, it's
+
+351
+00:12:37,600 --> 00:12:41,520
+better to see with your own eyes.
+
+352
+00:12:39,520 --> 00:12:43,760
+LazyGit is still my favorite GitOps
+
+353
+00:12:41,520 --> 00:12:45,680
+utility. It has everything you want and
+
+354
+00:12:43,760 --> 00:12:47,720
+need, including reviews, which you can
+
+355
+00:12:45,680 --> 00:12:50,720
+basically change to anything you like,
+
+356
+00:12:47,720 --> 00:12:52,640
+but it won't be as good as hunk. And as
+
+357
+00:12:50,720 --> 00:12:54,839
+the Unix philosophy purists like to
+
+358
+00:12:52,640 --> 00:12:56,120
+mention on every single video I make,
+
+359
+00:12:54,839 --> 00:12:58,360
+use the right tool for the job.
+
+360
+00:12:56,120 --> 00:13:00,440
+Hopefully, that tool does one thing and
+
+361
+00:12:58,360 --> 00:13:03,360
+does it perfect. [music] Is hunk staying
+
+362
+00:13:00,440 --> 00:13:06,480
+with me? It sure is. Is it perfect? No.
+
+363
+00:13:03,360 --> 00:13:08,280
+And yet, I do urge you to go back and
+
+364
+00:13:06,480 --> 00:13:09,920
+check the video I made around GH dash
+
+365
+00:13:08,280 --> 00:13:12,440
+and how it replaces GitHub UI
+
+366
+00:13:09,920 --> 00:13:15,120
+completely. Paired with Octo and Vim, it
+
+367
+00:13:12,440 --> 00:13:17,480
+can also perform reviews for you. But
+
+368
+00:13:15,120 --> 00:13:19,720
+still, hunk at this point is the best
+
+369
+00:13:17,480 --> 00:13:21,960
+I've seen at local reviews and their
+
+370
+00:13:19,720 --> 00:13:23,000
+management. Hopefully, in the future,
+
+371
+00:13:21,960 --> 00:13:25,520
+it'll be able to become more
+
+372
+00:13:23,000 --> 00:13:28,240
+collaborative as a utility. Assuming
+
+373
+00:13:25,520 --> 00:13:29,680
+we're still collaborating with humans.
+
+374
+00:13:28,240 --> 00:13:32,200
+Thank you for watching. I'll see you in
+
+375
+00:13:29,680 --> 00:13:32,200
+the next one.
