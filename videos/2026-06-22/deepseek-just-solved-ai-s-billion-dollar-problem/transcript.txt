@@ -1,0 +1,131 @@
+Scientists at Deep Seek have invented
+something amazing and exactly at the
+right time when we need it most. You
+see, we are entering the age of AI. But,
+I am really surprised. I just found out
+that the way these AI systems run on our
+computers is incredibly inefficient. So,
+if you want your AI assistant to answer
+quicker, you need more compute power,
+clear as day. But, you may find that as
+you add more compute, it does not get
+faster. But, how can that be? You know,
+it's kind of shocking given that
+companies are paying billions and
+billions of dollars for more compute to
+run these AI systems. How is this
+possible? Imagine reading a book and now
+imagine that every time you turn the
+page, you forget about the characters.
+That's not a great way to read books,
+right? Here is what happens in practice.
+Assume we have a huge brain the size of
+a mountain and we want to talk about a
+book. If the book is one page, we just
+memorize that one page and just talk
+about it, quick and easy. Now, imagine
+that the book grows. It is now huge and
+since we forget about everything the
+moment we turn the page, ouch. If we
+want to talk about it, we have to reread
+it all the time. So, our brain is huge
+and hungry, but there is a problem.
+Information is coming in through a
+straw. So then, we spend most of our
+time not thinking, but reading slowly.
+And that is exactly what the graphics
+cards of today are doing when you run an
+agentic AI system on hard problems. All
+those billions of dollars sitting at 40%
+utilization.
+This is a horror story. That's a tough
+problem. So, what is the solution?
+Well, of course, you don't need all
+those GPUs. So, send them to me.
+Problem solved.
+>> [laughter]
+>> Okay, so how did scientists at Deep Seek
+solve it? Dear fellow scholars, this is
+Two Minute Papers with Dr. Károly
+Zsolnai Féhér. Now, of course, they say
+you don't need a bigger brain. You need
+a bigger straw. So, in today's systems,
+there are AI chips that do the reading.
+We call them prefill machines. They are
+the straws, and they are completely
+jammed. But, there are also different
+kinds of machines in the network, the
+decoding machines. And their straws are
+nearly completely empty. They just sit
+there, often unused. So, they say, "Use
+those to do the reading, and have it
+take a second path to the prefill
+machines." Finally, it's a clever detour
+that lets the brain do its job. But,
+there is a problem. This shortcut takes
+the same high-speed roads that the AI
+needs for thinking. If we don't do this
+well, "Hooray, we solved the traffic
+jam." And when they ask us how, well,
+>> [laughter]
+>> by introducing another traffic jam.
+Okay, so what is the solution for that?
+Well, traffic control. On these roads,
+thinking traffic gets priority. Memory
+traffic, however, gets leftover space.
+This is absolute genius because it does
+not give you more compute. No, it gives
+you access to the compute that you
+already have. Okay, so what is the key
+result? Well, hold on to your papers,
+fellow scholars, because it speeds up
+this whole network from 40% utilization
+to about 80% utilization. In practice,
+almost twice as much work from the
+machine you already bought. That is an
+insane jump in just one paper. I am
+completely stunned. And the main use
+case for this is when you have long
+multi-turn agentic workloads. And they
+give this technique away for all of us
+for free forever. Woof. Now, it is not a
+magic bullet for all AI agents to run
+twice as fast. No, no. It is
+situational. But it helps exactly in the
+hardest situations where we need them
+most. Long conversations, lots of data.
+That's when things really slow down.
+Also, note that this is not a shiny new
+AI system that you can easily write
+headlines about. It's not the brain.
+It's a better road system to the brain.
+It's something that you implement in a
+data center when you serve these AI
+systems. So, you don't see a lot of
+headlines on this because it's not the
+shiny thing that is easy to sell. But it
+is absolutely brilliant. And I really
+wanted to show it to you. And all of us
+get value out of this kind of open
+science. If this idea makes it to real
+serving systems, it might lead to
+cheaper AI inference for all of us in
+the future. And they don't close it down
+and keep this knowledge to themselves.
+They give it all to us as a gift. How
+cool is that? That is the power of the
+papers. What a time to be alive. A word
+of optimism and joy in a world where you
+hear about doom coming from every
+direction. Subscribe and hit the bell if
+you enjoyed this. Here you see me
+running the full DeepSeek AI model
+through Lambda GPU Cloud. 671
+billion parameters running super fast
+and super reliably. This is insane. I
+love it. And I use it on a regular
+basis. Lambda provides you with powerful
+Nvidia GPUs to run your own chatbots and
+experiments. Seriously, try it out now
+at lambda.ai/papers or click the link in
+the description.

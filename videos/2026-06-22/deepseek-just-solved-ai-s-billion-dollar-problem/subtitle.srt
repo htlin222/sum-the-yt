@@ -1,0 +1,523 @@
+1
+00:00:00,000 --> 00:00:05,560
+Scientists at Deep Seek have invented
+
+2
+00:00:02,560 --> 00:00:07,600
+something amazing and exactly at the
+
+3
+00:00:05,560 --> 00:00:10,960
+right time when we need it most. You
+
+4
+00:00:07,600 --> 00:00:13,560
+see, we are entering the age of AI. But,
+
+5
+00:00:10,960 --> 00:00:15,960
+I am really surprised. I just found out
+
+6
+00:00:13,560 --> 00:00:19,080
+that the way these AI systems run on our
+
+7
+00:00:15,960 --> 00:00:21,440
+computers is incredibly inefficient. So,
+
+8
+00:00:19,080 --> 00:00:24,400
+if you want your AI assistant to answer
+
+9
+00:00:21,440 --> 00:00:27,080
+quicker, you need more compute power,
+
+10
+00:00:24,400 --> 00:00:29,840
+clear as day. But, you may find that as
+
+11
+00:00:27,080 --> 00:00:32,640
+you add more compute, it does not get
+
+12
+00:00:29,840 --> 00:00:34,560
+faster. But, how can that be? You know,
+
+13
+00:00:32,640 --> 00:00:36,800
+it's kind of shocking given that
+
+14
+00:00:34,560 --> 00:00:39,200
+companies are paying billions and
+
+15
+00:00:36,800 --> 00:00:41,400
+billions of dollars for more compute to
+
+16
+00:00:39,200 --> 00:00:44,400
+run these AI systems. How is this
+
+17
+00:00:41,400 --> 00:00:46,600
+possible? Imagine reading a book and now
+
+18
+00:00:44,400 --> 00:00:49,200
+imagine that every time you turn the
+
+19
+00:00:46,600 --> 00:00:50,920
+page, you forget about the characters.
+
+20
+00:00:49,200 --> 00:00:53,760
+That's not a great way to read books,
+
+21
+00:00:50,920 --> 00:00:57,280
+right? Here is what happens in practice.
+
+22
+00:00:53,760 --> 00:00:59,920
+Assume we have a huge brain the size of
+
+23
+00:00:57,280 --> 00:01:02,600
+a mountain and we want to talk about a
+
+24
+00:00:59,920 --> 00:01:04,680
+book. If the book is one page, we just
+
+25
+00:01:02,600 --> 00:01:07,760
+memorize that one page and just talk
+
+26
+00:01:04,680 --> 00:01:11,680
+about it, quick and easy. Now, imagine
+
+27
+00:01:07,760 --> 00:01:13,880
+that the book grows. It is now huge and
+
+28
+00:01:11,680 --> 00:01:16,680
+since we forget about everything the
+
+29
+00:01:13,880 --> 00:01:18,720
+moment we turn the page, ouch. If we
+
+30
+00:01:16,680 --> 00:01:22,440
+want to talk about it, we have to reread
+
+31
+00:01:18,720 --> 00:01:24,600
+it all the time. So, our brain is huge
+
+32
+00:01:22,440 --> 00:01:27,000
+and hungry, but there is a problem.
+
+33
+00:01:24,600 --> 00:01:29,640
+Information is coming in through a
+
+34
+00:01:27,000 --> 00:01:33,400
+straw. So then, we spend most of our
+
+35
+00:01:29,640 --> 00:01:35,640
+time not thinking, but reading slowly.
+
+36
+00:01:33,400 --> 00:01:38,200
+And that is exactly what the graphics
+
+37
+00:01:35,640 --> 00:01:41,440
+cards of today are doing when you run an
+
+38
+00:01:38,200 --> 00:01:45,160
+agentic AI system on hard problems. All
+
+39
+00:01:41,440 --> 00:01:47,600
+those billions of dollars sitting at 40%
+
+40
+00:01:45,160 --> 00:01:49,760
+utilization.
+
+41
+00:01:47,600 --> 00:01:52,720
+This is a horror story. That's a tough
+
+42
+00:01:49,760 --> 00:01:55,280
+problem. So, what is the solution?
+
+43
+00:01:52,720 --> 00:01:59,080
+Well, of course, you don't need all
+
+44
+00:01:55,280 --> 00:02:01,176
+those GPUs. So, send them to me.
+
+45
+00:01:59,080 --> 00:02:01,960
+Problem solved.
+
+46
+00:02:01,176 --> 00:02:04,760
+>> [laughter]
+
+47
+00:02:01,960 --> 00:02:07,040
+>> Okay, so how did scientists at Deep Seek
+
+48
+00:02:04,760 --> 00:02:08,720
+solve it? Dear fellow scholars, this is
+
+49
+00:02:07,040 --> 00:02:11,760
+Two Minute Papers with Dr. Károly
+
+50
+00:02:08,720 --> 00:02:14,600
+Zsolnai Féhér. Now, of course, they say
+
+51
+00:02:11,760 --> 00:02:17,480
+you don't need a bigger brain. You need
+
+52
+00:02:14,600 --> 00:02:20,200
+a bigger straw. So, in today's systems,
+
+53
+00:02:17,480 --> 00:02:22,959
+there are AI chips that do the reading.
+
+54
+00:02:20,200 --> 00:02:26,160
+We call them prefill machines. They are
+
+55
+00:02:22,959 --> 00:02:27,920
+the straws, and they are completely
+
+56
+00:02:26,160 --> 00:02:30,320
+jammed. But, there are also different
+
+57
+00:02:27,920 --> 00:02:32,800
+kinds of machines in the network, the
+
+58
+00:02:30,320 --> 00:02:35,920
+decoding machines. And their straws are
+
+59
+00:02:32,800 --> 00:02:39,000
+nearly completely empty. They just sit
+
+60
+00:02:35,920 --> 00:02:41,480
+there, often unused. So, they say, "Use
+
+61
+00:02:39,000 --> 00:02:44,040
+those to do the reading, and have it
+
+62
+00:02:41,480 --> 00:02:47,480
+take a second path to the prefill
+
+63
+00:02:44,040 --> 00:02:50,000
+machines." Finally, it's a clever detour
+
+64
+00:02:47,480 --> 00:02:52,320
+that lets the brain do its job. But,
+
+65
+00:02:50,000 --> 00:02:55,000
+there is a problem. This shortcut takes
+
+66
+00:02:52,320 --> 00:02:57,680
+the same high-speed roads that the AI
+
+67
+00:02:55,000 --> 00:03:00,360
+needs for thinking. If we don't do this
+
+68
+00:02:57,680 --> 00:03:03,402
+well, "Hooray, we solved the traffic
+
+69
+00:03:00,360 --> 00:03:03,600
+jam." And when they ask us how, well,
+
+70
+00:03:03,402 --> 00:03:07,959
+>> [laughter]
+
+71
+00:03:03,600 --> 00:03:10,360
+>> by introducing another traffic jam.
+
+72
+00:03:07,959 --> 00:03:13,120
+Okay, so what is the solution for that?
+
+73
+00:03:10,360 --> 00:03:16,000
+Well, traffic control. On these roads,
+
+74
+00:03:13,120 --> 00:03:19,080
+thinking traffic gets priority. Memory
+
+75
+00:03:16,000 --> 00:03:22,239
+traffic, however, gets leftover space.
+
+76
+00:03:19,080 --> 00:03:25,320
+This is absolute genius because it does
+
+77
+00:03:22,239 --> 00:03:27,440
+not give you more compute. No, it gives
+
+78
+00:03:25,320 --> 00:03:30,160
+you access to the compute that you
+
+79
+00:03:27,440 --> 00:03:32,400
+already have. Okay, so what is the key
+
+80
+00:03:30,160 --> 00:03:34,360
+result? Well, hold on to your papers,
+
+81
+00:03:32,400 --> 00:03:37,800
+fellow scholars, because it speeds up
+
+82
+00:03:34,360 --> 00:03:42,040
+this whole network from 40% utilization
+
+83
+00:03:37,800 --> 00:03:44,400
+to about 80% utilization. In practice,
+
+84
+00:03:42,040 --> 00:03:47,120
+almost twice as much work from the
+
+85
+00:03:44,400 --> 00:03:50,239
+machine you already bought. That is an
+
+86
+00:03:47,120 --> 00:03:52,840
+insane jump in just one paper. I am
+
+87
+00:03:50,239 --> 00:03:55,000
+completely stunned. And the main use
+
+88
+00:03:52,840 --> 00:03:57,920
+case for this is when you have long
+
+89
+00:03:55,000 --> 00:04:00,160
+multi-turn agentic workloads. And they
+
+90
+00:03:57,920 --> 00:04:04,000
+give this technique away for all of us
+
+91
+00:04:00,160 --> 00:04:06,840
+for free forever. Woof. Now, it is not a
+
+92
+00:04:04,000 --> 00:04:09,200
+magic bullet for all AI agents to run
+
+93
+00:04:06,840 --> 00:04:12,400
+twice as fast. No, no. It is
+
+94
+00:04:09,200 --> 00:04:14,440
+situational. But it helps exactly in the
+
+95
+00:04:12,400 --> 00:04:17,760
+hardest situations where we need them
+
+96
+00:04:14,440 --> 00:04:20,160
+most. Long conversations, lots of data.
+
+97
+00:04:17,760 --> 00:04:23,200
+That's when things really slow down.
+
+98
+00:04:20,160 --> 00:04:25,560
+Also, note that this is not a shiny new
+
+99
+00:04:23,200 --> 00:04:28,080
+AI system that you can easily write
+
+100
+00:04:25,560 --> 00:04:30,680
+headlines about. It's not the brain.
+
+101
+00:04:28,080 --> 00:04:32,520
+It's a better road system to the brain.
+
+102
+00:04:30,680 --> 00:04:34,880
+It's something that you implement in a
+
+103
+00:04:32,520 --> 00:04:36,960
+data center when you serve these AI
+
+104
+00:04:34,880 --> 00:04:38,880
+systems. So, you don't see a lot of
+
+105
+00:04:36,960 --> 00:04:42,000
+headlines on this because it's not the
+
+106
+00:04:38,880 --> 00:04:44,800
+shiny thing that is easy to sell. But it
+
+107
+00:04:42,000 --> 00:04:47,200
+is absolutely brilliant. And I really
+
+108
+00:04:44,800 --> 00:04:49,240
+wanted to show it to you. And all of us
+
+109
+00:04:47,200 --> 00:04:51,919
+get value out of this kind of open
+
+110
+00:04:49,240 --> 00:04:54,360
+science. If this idea makes it to real
+
+111
+00:04:51,919 --> 00:04:57,040
+serving systems, it might lead to
+
+112
+00:04:54,360 --> 00:04:59,680
+cheaper AI inference for all of us in
+
+113
+00:04:57,040 --> 00:05:01,840
+the future. And they don't close it down
+
+114
+00:04:59,680 --> 00:05:04,400
+and keep this knowledge to themselves.
+
+115
+00:05:01,840 --> 00:05:07,120
+They give it all to us as a gift. How
+
+116
+00:05:04,400 --> 00:05:10,240
+cool is that? That is the power of the
+
+117
+00:05:07,120 --> 00:05:13,160
+papers. What a time to be alive. A word
+
+118
+00:05:10,240 --> 00:05:15,480
+of optimism and joy in a world where you
+
+119
+00:05:13,160 --> 00:05:17,919
+hear about doom coming from every
+
+120
+00:05:15,480 --> 00:05:19,480
+direction. Subscribe and hit the bell if
+
+121
+00:05:17,919 --> 00:05:22,320
+you enjoyed this. Here you see me
+
+122
+00:05:19,480 --> 00:05:26,600
+running the full DeepSeek AI model
+
+123
+00:05:22,320 --> 00:05:29,560
+through Lambda GPU Cloud. 671
+
+124
+00:05:26,600 --> 00:05:33,040
+billion parameters running super fast
+
+125
+00:05:29,560 --> 00:05:35,440
+and super reliably. This is insane. I
+
+126
+00:05:33,040 --> 00:05:38,280
+love it. And I use it on a regular
+
+127
+00:05:35,440 --> 00:05:41,600
+basis. Lambda provides you with powerful
+
+128
+00:05:38,280 --> 00:05:44,480
+Nvidia GPUs to run your own chatbots and
+
+129
+00:05:41,600 --> 00:05:46,200
+experiments. Seriously, try it out now
+
+130
+00:05:44,480 --> 00:05:49,280
+at lambda.ai/papers or click the link in
+
+131
+00:05:46,200 --> 00:05:49,280
+the description.
