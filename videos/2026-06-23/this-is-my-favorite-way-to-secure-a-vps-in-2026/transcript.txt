@@ -1,0 +1,470 @@
+2026 is shaping up to be quite an
+interesting year, especially when it
+comes to security, or more accurately,
+when it comes to vulnerabilities. Not
+only have we seen a constant wave of
+supply chain attacks, but we're also
+seeing many cloud providers, such as
+GitHub and Vercel, get breached as well.
+Because of this, it means that now is
+the perfect time to start taking
+proactive steps in improving one's
+security posture, especially if, like
+me, you happen to use a VPS when it
+comes to deploying your applications.
+For myself, that means applying a method
+that I like to refer to as the scorched
+earth approach, which is where I
+effectively turn off all ingress to the
+VPS from the public internet, but in a
+way that still allows me to access any
+private services and still serves web
+traffic to my users. Therefore, in order
+to show how to set this up, I'm going to
+need a VPS instance to demonstrate it
+on. Fortunately, that's where the
+sponsor of today's video comes in,
+Hostinger, who provide long-term VPS
+instances at an incredibly affordable
+price. The VPS instance that I'm going
+to be using in this video is the KVM2,
+which comes with two vCPUs, 8 gigs of
+RAM, and a cool 100 GB of SSD storage.
+Not only is this a decent size for
+hosting multiple applications, but it's
+also incredibly affordable, especially
+in today's economy, as the KVM2 comes in
+at only $8.99 a month when you purchase
+a 24-month term. This also has the added
+benefit of protecting you against future
+price increases during that period,
+which, let's be honest, are obviously
+going to keep rising, thanks again to
+the gift that keeps on giving. If that
+price wasn't good enough, however, then
+don't worry, as by using my coupon code
+"dreamsofcode" when you check out,
+you'll save an additional 10% off,
+making it an even more affordable
+option. So, if you want to bag yourself
+a rather decent VPS instance and not
+worry about compute inflation over the
+next couple of years, then you can do so
+by heading on over to
+hostinger.com/dreamsofcode,
+and make sure to use my coupon code
+"dreamsofcode" when checking out to save
+an additional 10% off. A big thank you
+to Hostinger for sponsoring this video.
+Okay, with my VPS in hand, I've already
+gone ahead and set this up like I
+normally would. Doing things like
+installing the latest Ubuntu LTS,
+setting up a non-root user, adding in my
+SSH public keys, and hardening the SSH
+server. If you're interested in what
+those steps actually are, I've done a
+dedicated video that goes into each of
+these in more detail, of which you can
+find linked in the description down
+below. One thing I haven't configured,
+however, which a lot of people like to
+do on their VPS instances, is changing
+the port in which the SSH server is
+bound to, from the standard of 22 to
+something else, such as quad two. Now,
+whilst there's some debate about the
+merits of doing this, when it comes to
+my own VPS setup in 2026, it doesn't
+actually make a difference, because
+we're effectively going to be disabling
+all inbound connections to every port.
+Yes, you heard me correctly. The main
+security measure that I like to take in
+2026 is to disable all inbound access to
+the VPS instance on its public IP
+address. This is, honestly, one of the
+best approaches to VPS security that
+I've been applying recently, as it not
+only protects against a number of
+possible attack vectors, but it also
+protects you against yourself. For
+example, if you accidentally bind a
+private service, such as a database,
+onto a public port. The most simplest
+way to do this is to use the following
+command, which will enable the firewall
+on Ubuntu with the default rules, which
+by default disables all inbound
+connections. Well, before we go ahead
+and do this, there's a few things we
+need to consider. The first of which is
+how we ourselves can still access any of
+the private services running on this
+VPS, such as SSH. The second thing to
+consider is how our users, if we happen
+to have any, will be still able to
+access any running web applications.
+Fortunately, there are ways to solve
+both of these problems. Let's begin with
+the first, which is to allow ourselves
+to still have access to any private
+services running on our VPS instance. A
+private service is one that's only you
+or any trusted individuals should be
+able to have access to. These include
+services such as an SSH server, an admin
+dashboard, or even the front end of a
+self-hosted platform such as those
+provided by Qualify or Dock Ploy.
+Basically, anything that's meant for you
+and you alone, and therefore should not
+be accessible over the public internet.
+As I mentioned, the easiest way to
+enforce this is to effectively deny all
+traffic on our firewall from the public
+internet. However, in order to do that,
+we need to make sure that we ourselves
+can access these services. Now, there's
+a few different ways to achieve this,
+but the approach that I personally like
+to take is to make use of Tailscale,
+which allows you to create a private
+mesh network called a Tailnet,
+consisting of all of your devices that
+have Tailscale installed. By doing so,
+you can securely access this machine
+over an encrypted WireGuard tunnel using
+an IP address that's only reachable from
+within your Tailnet. By the way, full
+disclosure, whilst this video isn't
+sponsored by Tailscale, they do sponsor
+other videos on my channel, so there is
+some bias from myself. Despite that,
+however, it's still a product I would
+thoroughly recommend and one that I use
+every day, especially when it comes to
+my infrastructure. In order to show how
+to use Tailscale, let's go ahead and
+install it on my VPS instance. To do so,
+you'll first need a Tailscale account,
+which is free forever on the personal
+plan. Additionally, you'll also want to
+make sure that you have Tailscale
+installed on your personal devices
+already, such as your main workstation.
+Then, in order to add your VPS instance
+to your Tailnet account, you can head on
+over to the admin console and click the
+following button, selecting install on a
+Linux server. This will take you to
+another page where at the bottom you can
+generate a script that will install and
+authenticate Tailscale automatically.
+All you have to do is copy this script
+and paste it into the console of your
+VPS instance. Once this completes,
+Tailscale should then be installed on
+the machine, which you can confirm by
+checking the admin console. Here, you
+can see the Tailscale DNS name for the
+instance, which by default is set to the
+machine's host name, as well as its
+Tailscale IP address. You can either
+leave these as is, which I recommend
+doing for the IP IP
+or configure them if you want to. In my
+case, I'm going to go ahead and change
+the magic DNS record to be something a
+little bit more recognizable. Now, if I
+go ahead and enable Tailscale on my
+personal device, I should then be able
+to SSH into the VPS using the host name
+we just configured, which as you can see
+is the case. Okay, now that I've
+confirmed I'm able to SSH in, the next
+thing to do is to configure the firewall
+to allow connections to all ports from
+any device on my Tailnet, which is
+achieved using the following UFW
+commands.
+With that rule added, we can then apply
+it by enabling the firewall using this
+next command. However, before executing,
+it's worthwhile mentioning that doing so
+will cause all inbound connections via
+the VPS's public IP to be rejected.
+Therefore, if you have any existing
+services or web applications already up
+and running and serving production
+traffic on your VPS instance, then I
+would wait until the end of the video
+before executing this command.
+Otherwise, you'll run into some
+downtime. In my case, I don't have any
+existing services running, so I'm going
+to go ahead and execute this command to
+enable the firewall and disable any
+inbound connections over the public IP.
+Now, in order to test that it's working,
+I can first try to scan for port 22 on
+the VPS instance using its public IP
+address, which as you can see ends up
+with a timeout. Now, if I try to SSH in
+using the public IP, the same thing
+should happen. However, if I try to SSH
+in using the Tailscale host name whilst
+I'm connected to my Tailnet, you can see
+that I'm able to access it. Lastly, if I
+go ahead and disconnect my device from
+my Tailnet and try to SSH in once again,
+you can see this time it no longer
+works. Very cool. With that, I've
+managed to not only lock down SSH, but
+also any other private services running
+on this instance. For example, if I go
+ahead and run a Rust web application on
+the VPS binding it to quad zero port
+3000. Now, if I try and access this
+service using its public IP address,
+I'll eventually receive a timeout.
+However, I should still be able to
+access this service whilst connected to
+my Tailscale using the VPS's magic DNS
+hostname, which as you can see works
+perfectly. Okay, with that I've managed
+to lock down my VPS instance to any
+inbound connections over its public IP.
+However, whilst this works for myself,
+it does leave my users in a bit of a
+predicament as they're no longer able to
+access any running web application.
+Therefore, let's go ahead and rectify
+this using a similar approach to what we
+did with Tailscale by adding in another
+tunnel onto the machine. This time
+however, we're going to use a service
+called Cloudflare Tunnel. The way this
+service works is that it opens up an
+outbound connection to Cloudflare rather
+than accepting an inbound request. This
+connection is then used to serve traffic
+to your users with Cloudflare acting
+basically like a reverse proxy. However,
+one that comes with a few key benefits.
+The first of which is that by users
+hitting Cloudflare instead of your VPS
+instance, you're effectively hiding the
+IP address of what your underlying VPS
+is, which is rather useful when it comes
+to operational security or OpSec. In
+addition to operational security,
+another good reason to use a service
+like Cloudflare is that it provides a
+web application firewall. This is
+basically a service that sits in front
+of your application and inspects
+incoming traffic for common attack
+vectors such as SQL injection, DDoS
+attempts, automated bots, and even
+zero-day vulnerabilities such as the
+React server component RCEs we saw
+appear at the end of 2025. In addition
+to this, it also provides other sensible
+security defaults such as automatic
+certificate provisioning for HTTPS and
+the ability to set up rate limiting.
+Best of all however, is that it forces
+you to opt into what services you want
+to be accessible, which is a much better
+security model than being accessible by
+default. All of this for me makes it a
+rather valuable service to have running
+on your VPS instance, especially as it
+comes at no additional cost. Although it
+does make Cloudflare a dependency, which
+some people might not enjoy. Fair
+enough. In any case, let's show how easy
+it is to add Cloudflare Tunnel to a VPS
+instance in order to allow access to my
+Rust web application at a given domain
+name. To do so, the first thing we'll
+need is a domain name to bind it to,
+which you can get from any provider you
+prefer. In my case, I'm going to go
+ahead and purchase one from Hostinger as
+they provide domain names for only 99
+cents for the first year, which again is
+a really affordable option. With our
+domain name in hand, the next thing to
+do is to add it to Cloudflare to be
+managed. This is done by first signing
+in to your Cloudflare account or
+creating one if you haven't done so
+already, and then clicking the add site
+button, followed by connecting your
+domain, where you'll need to enter the
+domain name you wish to connect. Once
+added, you will then be provided with a
+couple of name servers that you'll need
+to set up for your domain instance,
+which you can do using the management
+console of wherever you purchased your
+domain. On Hostinger, it looks like the
+following screen. Once the name server
+records have been added, this will begin
+to propagate, which can take anywhere
+from a few minutes to a few hours. Once
+it's complete, Cloudflare will send you
+an email letting you know the domain is
+now active. Once that's the case, we can
+then begin setting up our tunnel. To do
+so, the easiest way to navigate to the
+tunnel configuration is to use the quick
+search menu and type in tunnel, followed
+by selecting the following result.
+Inside of this page, let's go ahead and
+create a new tunnel, followed by
+providing it a name. In my case, I'm
+going to go ahead and enter this as
+secure VPS. Upon doing so, we'll then
+enter the following page, where we can
+select the operating system that we're
+using. Let's go ahead and select this to
+be Debian, followed by the 64-bit
+architecture. This will then provide us
+with three commands, two of which we're
+going to use to install and authenticate
+cloudflared, which is the process that
+Cloudflare Tunnel uses under the hood.
+So, let's go ahead and copy these first
+two commands and paste them into the VPS
+one at a time. Once that's done
+[clears throat] and provided everything
+was successful, our VPS instance should
+connect to Cloudflare through this
+configured tunnel, which we should see
+reflected on the actual page. With that,
+we're now ready to go ahead and set up
+our DNS routes. To do so, we can go go
+and click the three-dot button and then
+select configure. Here we then need to
+press the add route button and select
+published application. Now we can then
+go ahead and select the domain that we
+want for this application as well as any
+subdomain. In my case, I'm going to go
+ahead and set this to the domain I just
+configured as well as setting the
+subdomain to www. Next, we then have the
+ability to set an optional path in order
+to perform path-based routing if we want
+to. This allows us to route a request to
+a specific service based on a path
+prefix. For example, let's say you have
+a separate service for your API and you
+want to route all requests that have the
+/api prefix to it, then you can do so as
+follows. In my case, I'm going to go
+ahead and leave this blank, but it's a
+useful feature to know about. Lastly,
+all that remains is to define the URL of
+the service that we want this tunnel to
+connect to. In my case, this is going to
+be the REST web application that I
+deployed earlier, which is bound on the
+VPS at localhost:3000.
+By the way, if you happen to be using a
+self-hosted platform such as Coolify or
+Dokku ploy, then here you would enter
+the domain you configured for your
+application using that platform rather
+than the loopback URL. Both Coolify and
+Dokku ploy have documentation on how to
+use them effectively with Cloudflare
+Tunnel. So, I recommend checking out the
+platform documentation for each one
+respectively. In any case, with my
+service URL defined, I can now add this
+route to my Cloudflare Tunnel by
+clicking the add route button. Once
+added, I can confirm that everything is
+working by heading on over to the host
+name I configured, which I can do by
+clicking the following link. And as you
+can see, I'm taken to my REST web
+application all without needing to
+enable any inbound connections. Very
+cool. Okay, so before we wrap up this
+video, there's one last thing to quickly
+cover, which is how to enable other
+services that might need to access the
+private ones on our locked-down VPS. For
+example, let's say you're using
+something like Coolify or Dokku ploy
+when it comes to your VPS instance. Both
+of these by default use GitHub webhooks
+in order to trigger a redeploy, which
+unfortunately will no longer work due to
+the fact that we've disabled inbound
+access to our private services. Whilst
+you could solve this by exposing the
+deploy/qualify service using Cloudflare
+tunnel, similar to what we did with the
+web application, it's a better idea to
+instead allow GitHub to access this
+service over our tailnet and then
+trigger a redeploy via their respective
+API. This is achieved using a feature
+that Tailscale provides called workload
+identity federation, of which I've
+covered before in another video and
+there's also some pretty decent
+documentation on. Both of which I've
+linked in the description down below. In
+my case, I like to use this with the
+official Tailscale GitHub action, which
+allows the runner to connect to my
+tailnet and interact with any private
+services. By doing so, I can then send
+an API request to my Dokku Deploy
+instance in order to redeploy an
+application all without needing to
+expose the service to the public
+internet. With that, we've managed to
+set up a VPS instance that denies all
+inbound traffic but is still perfectly
+operational, whether it's serving a web
+application to users or allowing us to
+access any private services on it.
+Whilst this isn't a magic bullet when it
+comes to VPS security, there's no such
+thing, it's definitely an approach I
+feel comfortable with in 2026,
+especially given the rise of AI-based
+security research and potentially
+exploitation that we're going to see in
+the future. Additionally, by adding in
+Cloudflare tunnel, we also get access to
+its fantastic web application firewall,
+which if you want to know more about on
+how to configure, then let me know in
+the comments down below and I'll do a
+dedicated video on it. Otherwise, that
+wraps up how I like to secure my VPS
+instances in 2026. One that I think is
+worthwhile doing if you happen to run
+applications on your own. Speaking of
+which, if you're looking into running
+your own applications on a VPS instance
+and want one that's both reliable and
+affordable, then make sure to check out
+Hostinger using my link in the
+description below. And if you do want to
+purchase, make sure to use my coupon
+code dream to code when checking out to
+save an additional 10% off the already
+low price. In any case, that's all from
+me, but I want to give a big thank you
+to you for watching, and I'll see you on
+the next one.

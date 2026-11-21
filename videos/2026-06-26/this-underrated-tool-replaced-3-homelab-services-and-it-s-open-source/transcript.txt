@@ -1,0 +1,358 @@
+We all love networking channels for
+various reasons. Sharing a project with
+a colleague, serving something to the
+internet from your laptop, or running a
+full-blown home cloud you can access
+remotely. In this channel, I covered FRP
+as a great way to reverse proxy and own
+your channel much like Cloudflare. I've
+talked about headscale, the tail scale
+open source alternative, but all of
+these being amazing solutions feel like
+you're working too hard. It's either
+long ad hoc commands, the lack of an
+official UI, or messing about with
+configs. But there's another open source
+which is quietly becoming one of the
+most popular alternatives to all of the
+above. It's sleek, it's fast, it comes
+with its own UI, but far more important
+than all of these. It claims to do way
+more than just secure mesh network.
+It'll become both your reverse proxy and
+your DNS server, rewriting entries on
+the fly if you need it. And if you're
+running a home lab or any kind of
+network really, you probably need
+something. Netbird takes this pain away.
+It's production ready if you need things
+to work at scale. It's great for
+self-hosters and I took it for a long
+and ended up extremely happy. If you're
+into a solid battle tested mesh network
+option that's built on top of WireGuard
+and works everywhere, you're going to
+love it. I'll show you how to set it up,
+manage, scale, secure, and maybe, just
+maybe, take over self-hosted services
+you've been running at home. It's time
+to get our hands dirty.
+Netbird while we describe in simple
+terms as a tunnel facilitator is
+describing itself as a secure access
+platform. It's open source fairly
+popular written and go and sets you up
+with a visual interface from the start
+for both setup and management. And while
+open source much like tail scale there's
+a company behind it that you can use to
+facilitate connections by using their
+cloud option. I'm going onrem here with
+the community edition which will first
+suggest I create an account with Netbird
+and this seems strange as I'm actually
+expecting a self-hosted server. So
+ignoring that for now. I've deployed
+Netbird as a Kubernetes server on my
+home lab K3S cluster. And while this
+seems a lot, there are two important
+bits here. the net server deployment
+running a single container for net
+server running its process with a
+mounted config file and opening ports
+for HTTP and communication where below
+there's a slashmetrics and health
+endpoints you can use for monitoring the
+other one is the dashboard pod looking
+fairly similar just running the
+dashboard image by NetBird opening HTTP
+for communication through the browser
+for those of you who know Kubernetes
+there's also a couple of services to
+help with internal DNS request flow but
+for those of you who don't either either
+ignore or check my Kubernetes intro for
+beginners workshop below. It seems like
+our deployments are up. Let's give our
+log service a quick check. Both Dozel
+here and the way I set up access to the
+home lab services are videos on the
+channel. Go check them out. Netbird
+seems like it's doing okay as well as
+its dashboard component. So, it's time
+for setup. The Netbird UI is ready for
+us to sign up. And if you find it, don't
+bother trying the credentials.
+Everything's gone. Account created. And
+now we can sign in. And Netbird asks for
+a peer-to-peer network or a remote
+network access. This is an important
+concept we need to clarify. While
+Netbird gives you the option, the real
+power of WireGuard is peer-to-peer mesh
+network. This creates both a safe and
+short path connection without
+overloading a single server and
+utilizing again the power of a pure
+system. I covered it in more depth on
+the Headscale video if you want to catch
+that. The other option, not something to
+be dismissed, is the remote network
+access, allowing you to configure
+Netbird more like a traditional VPN
+where you authenticate with one machine
+and that exposes you to everything in
+the internal network. Kind of like a VPN
+fortress analogy. You have the main gate
+and then once you've passed that, you're
+in the kingdom. So peerto-peer it is
+time to get a device online. Starting
+from my home lab box. Shortly
+thereafter, we get a URL with a one-time
+user code. Pop it open. device login and
+we're in which is also indicated in the
+server itself. We now have a running
+mesh network of one pair. Let's add
+another one. You don't need to look up
+other clients or open source
+alternatives. The network client for
+Android and iOS is right there. And as
+opposed to other competition, it doesn't
+give you the feeling it was vibe coded
+in a weekend by a 5-year-old. Since
+we're not going with the cloud option,
+although you totally can, I'm going to
+change the server and set up my own.
+Change it. Hit the one huge button you
+can't miss. Authenticate, of course, as
+this is the first time we introduce this
+device and connected or so it's pinging
+the host as suggested in the UI returns
+a solid time and a live host. The UI
+also gives us the iPhone now as an added
+network pier. So, it's time to move
+forward. Immediately, we're getting a
+nice visual of the very small network
+we've just set up in the NetBird control
+center. You will have noticed an
+unignorable popup with Net Birds
+offering automatic TLS and O. It's
+currently in beta and I'm pretty much
+happy with my own, but this definitely
+looks like it's going to be a one-stop
+shop for all my needs. Internext, the
+sponsor of today's video, is a privacy
+first cloud storage platform that
+actually fits the way we work. It's open
+source end to end encrypted with zero
+knowledge protection. Much like your
+home storage, they cannot read your
+data. And that's not marketing, it's
+architecture. For DevOps workflows
+specifically, the useful part is Arclone
+support. You can connect Internx Drive
+natively or via webdav. So, anything
+you're doing normally or automate
+normally with Arclone works exactly the
+same way. Scheduled backups,
+artifacting, config file exports from
+remote machines, it just slots in. They
+also just shipped file versioning, which
+is one of those features you don't think
+you need until you do, and reflects
+exactly what you've just set at home.
+With Rust Office, they're now offering a
+lifetime ultimate plan, 5 TB onetime
+payment, no subscription for a backup
+target that's supposed to just exist in
+the background. That pricing model makes
+a lot more sense than paying monthly
+forever. Go to
+interext.com/devopstoolbox
+and use the code devopstoolbox for 87%
+off which is higher than what you see on
+the site directly. Enjoy. Now back to
+the video. If you haven't watched my
+Caddy video on the channel, go ahead and
+do because it's my reverse proxy of
+choice and it's huge power beyond the
+linest easiest configuration I've yet to
+see on such a system is its automatic
+TLS certificate generation and
+management. It really can't get any
+easier than this. Now, Netbird offering
+the same gets me very excited. I'd now
+potentially be able to both handle local
+and remote connections, but also serve
+my applications with HTTPS done for me
+with one caveat. Well, two actually.
+One, it's in beta as mentioned, but
+secondly, self-hosters must run traffic.
+Now, I don't fully understand how Caddy
+doesn't fit here. And while I do have a
+warm place for traffic, the reason I
+went with Caddy was exactly this. So, I
+don't think I'm going to try this right
+now. I'll try it soon and report back.
+Back to the UI. The peers section lists
+current nodes with addresses, groups,
+and client versions. You can create
+setup keys to let other new machines
+join the network by invitation. For now,
+though, let's think about the current
+setup and how I can use it to access
+internal services. Since I picked a
+peer-to-peer network and my phone can
+see my home lab machine, this doesn't
+mean it can see all services running in
+the K3s inside the host. This is what
+network routes are for. Allowing you to
+access other networks without installing
+Netbird on every resource. Now, this
+kind of brings us back to the VPN notion
+I discussed earlier. If you're
+interested in Netbird for a purely
+secure mesh network, the better way if
+you're running it in a cluster is the
+sidecar architecture. Adding specific
+application with the sidecar container
+to join our net network. That said, I'm
+here to play around not suffer. So,
+let's check what a network route gives
+us. Let's say I need access to my home
+lab as a network. The rule would include
+a cider block. I went quite broad here.
+I know for the sake of example and
+laziness. Once the rule is in place, we
+need to pick who the policy applies to.
+In this case, all devices on the
+network. And you can even drill deeper
+and add a posture check, which is
+something I haven't seen a lot or at all
+with alternatives. It can be blocked
+from a specific client version, a
+country, a region, the network range,
+operating system, even a running process
+on the client. This one is huge. Network
+essentially gives you remote access, but
+also a very detailed firewall getting
+extremely specific with what policy it
+accepts. Sure, you can put in a range of
+IPs, but the drill down into actual
+process running or client's version
+covers so many attack vectors narrowing
+down the space. So, you just got a
+remote access to a wireguard based mesh
+network that also handles your TLS
+certificates, but now functions as a
+mini firewall. And if that doesn't get
+you excited, just wait because Netbird
+is about to kill yet another service I'm
+currently running on my home lab. Now,
+we're not done with a fine grain
+configuration to our network route. We
+add routing peers specifically or by a
+group. Enable them and then and only
+then we can start working. My mobile
+client that's currently connected and
+mind you is on the cellular network to
+make sure I'm going through a global
+connection can now go to the log service
+that's only resolvable from my home lab.
+Let's be even more thorough with the
+check. Go back to Netbird and
+disconnect. Hit the log service again on
+Safari and nothing. Awesome. Now the
+access to this is still done through
+Caddy for me. When a device is reaching
+Caddy coming from this address trying to
+curl my log service from a remote
+network does not work. It resolves as
+expected to the private IP which we have
+no access to. But this, as mentioned, is
+not security. It's security by
+obscurity. Here's me quote unquote
+hacking my own setup and how you can
+reach any service that runs the same
+funny hide-and-seek game. It's not even
+an effort. Make curl resolve the IP to
+the public IP if you found it and head
+on to the service again. And what do you
+know? I'm connected. TLS handshake gone
+through and Dozel is served on a plate.
+Now there's two ways to go about this as
+we mentioned. One going to caddy and
+protecting the entry finding the local
+IP only as the access point for this
+service. Once that's done we can repeat
+the same process. Still can't figure the
+internal IP but resolving it using the
+public one leads the kadi which ends up
+getting the forbidden signal exactly as
+configured. So this works but there's an
+even better way which I'll quickly draw
+for you instead of going deep down again
+through DNS settings. The white box is
+my home lab with Caddy served internally
+and can be accessed from the global
+internet. I also have a log service
+jellyfin and netb bird. Now the current
+setup sends everything to caddy that
+distributes the traffic to other
+services including Netbird and that's
+kind of a weird scenario. Netbird is a
+remote access gateway and also has seen
+a firewall and a potentially reverse
+proxy on its own. This should be the
+main access point. We send the traffic
+to it instead of caddy. Netbird will
+allow traffic if you're coming from its
+mesh setup and then and only then will
+Caddy forward your requests to the
+backend services. Which brings me back
+to the Netird reverse proxy option. If I
+can not only put Netbird in front but
+also merge my Caddy setup into it,
+that's going to be a huge win. I'm going
+to wait out the beta phase and then
+check back in again. And please comment
+if that's of interest to cover. Excited
+to see everything visualized in one
+place. In the meantime, here's another
+major surprise in Nepert. I did not
+expect to see. Netbird provides a wait
+for it DNS management system. Yeah, it
+can let you resolve local names in the
+private network and control access even
+further. To do that, you create your own
+name server which is added to Cloudflare
+here. Pick the peers you want to use it
+with, which you can then set to resolve
+a specific domain. Once you do that, all
+configured peers now have a local
+resolver serving DNS entries and
+answering queries internally. You can
+add a bunch of these and beyond the
+familiar ones, you can use a custom name
+to resolve them. I think I'll stop at
+this point because this is going
+slightly off the script of this video.
+Those of you who have watched my HomeLab
+videos know that I'm currently running
+Adgard for this purpose. I recently
+moved from Adgard favoring my public DNS
+that also handles HTTPS as you've seen
+in this video. But having both
+integrated into one place, that makes
+everything more accessible, easily
+monitored and properly resolvable with
+no funky games definitely sparks my
+curiosity. Comment below if covering net
+DNS capabilities is of interest and of
+course it's reverse proxy setup. In the
+meantime, check out my DNS setup that
+allows me to create public entries on
+the fly without having to bind them with
+any public IP using DN simple and a
+caddy trick. Thank you for watching.
+I'll see you on the next one.

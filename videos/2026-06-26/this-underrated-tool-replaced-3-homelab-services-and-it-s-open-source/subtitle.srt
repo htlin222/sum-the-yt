@@ -1,0 +1,1431 @@
+1
+00:00:00,080 --> 00:00:04,000
+We all love networking channels for
+
+2
+00:00:02,080 --> 00:00:05,759
+various reasons. Sharing a project with
+
+3
+00:00:04,000 --> 00:00:07,600
+a colleague, serving something to the
+
+4
+00:00:05,759 --> 00:00:09,599
+internet from your laptop, or running a
+
+5
+00:00:07,600 --> 00:00:12,080
+full-blown home cloud you can access
+
+6
+00:00:09,599 --> 00:00:14,480
+remotely. In this channel, I covered FRP
+
+7
+00:00:12,080 --> 00:00:16,400
+as a great way to reverse proxy and own
+
+8
+00:00:14,480 --> 00:00:18,000
+your channel much like Cloudflare. I've
+
+9
+00:00:16,400 --> 00:00:19,680
+talked about headscale, the tail scale
+
+10
+00:00:18,000 --> 00:00:22,160
+open source alternative, but all of
+
+11
+00:00:19,680 --> 00:00:24,560
+these being amazing solutions feel like
+
+12
+00:00:22,160 --> 00:00:26,560
+you're working too hard. It's either
+
+13
+00:00:24,560 --> 00:00:28,320
+long ad hoc commands, the lack of an
+
+14
+00:00:26,560 --> 00:00:30,800
+official UI, or messing about with
+
+15
+00:00:28,320 --> 00:00:32,399
+configs. But there's another open source
+
+16
+00:00:30,800 --> 00:00:34,239
+which is quietly becoming one of the
+
+17
+00:00:32,399 --> 00:00:36,079
+most popular alternatives to all of the
+
+18
+00:00:34,239 --> 00:00:38,320
+above. It's sleek, it's fast, it comes
+
+19
+00:00:36,079 --> 00:00:40,800
+with its own UI, but far more important
+
+20
+00:00:38,320 --> 00:00:42,960
+than all of these. It claims to do way
+
+21
+00:00:40,800 --> 00:00:45,120
+more than just secure mesh network.
+
+22
+00:00:42,960 --> 00:00:47,280
+It'll become both your reverse proxy and
+
+23
+00:00:45,120 --> 00:00:49,280
+your DNS server, rewriting entries on
+
+24
+00:00:47,280 --> 00:00:50,800
+the fly if you need it. And if you're
+
+25
+00:00:49,280 --> 00:00:52,399
+running a home lab or any kind of
+
+26
+00:00:50,800 --> 00:00:55,039
+network really, you probably need
+
+27
+00:00:52,399 --> 00:00:56,640
+something. Netbird takes this pain away.
+
+28
+00:00:55,039 --> 00:00:58,160
+It's production ready if you need things
+
+29
+00:00:56,640 --> 00:01:00,640
+to work at scale. It's great for
+
+30
+00:00:58,160 --> 00:01:02,640
+self-hosters and I took it for a long
+
+31
+00:01:00,640 --> 00:01:04,879
+and ended up extremely happy. If you're
+
+32
+00:01:02,640 --> 00:01:06,799
+into a solid battle tested mesh network
+
+33
+00:01:04,879 --> 00:01:08,799
+option that's built on top of WireGuard
+
+34
+00:01:06,799 --> 00:01:10,799
+and works everywhere, you're going to
+
+35
+00:01:08,799 --> 00:01:12,960
+love it. I'll show you how to set it up,
+
+36
+00:01:10,799 --> 00:01:15,280
+manage, scale, secure, and maybe, just
+
+37
+00:01:12,960 --> 00:01:17,520
+maybe, take over self-hosted services
+
+38
+00:01:15,280 --> 00:01:21,240
+you've been running at home. It's time
+
+39
+00:01:17,520 --> 00:01:21,240
+to get our hands dirty.
+
+40
+00:01:24,479 --> 00:01:28,960
+Netbird while we describe in simple
+
+41
+00:01:26,720 --> 00:01:31,200
+terms as a tunnel facilitator is
+
+42
+00:01:28,960 --> 00:01:33,200
+describing itself as a secure access
+
+43
+00:01:31,200 --> 00:01:35,119
+platform. It's open source fairly
+
+44
+00:01:33,200 --> 00:01:37,040
+popular written and go and sets you up
+
+45
+00:01:35,119 --> 00:01:39,600
+with a visual interface from the start
+
+46
+00:01:37,040 --> 00:01:41,920
+for both setup and management. And while
+
+47
+00:01:39,600 --> 00:01:43,840
+open source much like tail scale there's
+
+48
+00:01:41,920 --> 00:01:45,840
+a company behind it that you can use to
+
+49
+00:01:43,840 --> 00:01:48,880
+facilitate connections by using their
+
+50
+00:01:45,840 --> 00:01:51,280
+cloud option. I'm going onrem here with
+
+51
+00:01:48,880 --> 00:01:53,360
+the community edition which will first
+
+52
+00:01:51,280 --> 00:01:55,759
+suggest I create an account with Netbird
+
+53
+00:01:53,360 --> 00:01:58,000
+and this seems strange as I'm actually
+
+54
+00:01:55,759 --> 00:01:59,520
+expecting a self-hosted server. So
+
+55
+00:01:58,000 --> 00:02:01,920
+ignoring that for now. I've deployed
+
+56
+00:01:59,520 --> 00:02:04,479
+Netbird as a Kubernetes server on my
+
+57
+00:02:01,920 --> 00:02:06,399
+home lab K3S cluster. And while this
+
+58
+00:02:04,479 --> 00:02:08,800
+seems a lot, there are two important
+
+59
+00:02:06,399 --> 00:02:10,800
+bits here. the net server deployment
+
+60
+00:02:08,800 --> 00:02:12,560
+running a single container for net
+
+61
+00:02:10,800 --> 00:02:14,959
+server running its process with a
+
+62
+00:02:12,560 --> 00:02:18,080
+mounted config file and opening ports
+
+63
+00:02:14,959 --> 00:02:19,840
+for HTTP and communication where below
+
+64
+00:02:18,080 --> 00:02:21,840
+there's a slashmetrics and health
+
+65
+00:02:19,840 --> 00:02:24,080
+endpoints you can use for monitoring the
+
+66
+00:02:21,840 --> 00:02:25,680
+other one is the dashboard pod looking
+
+67
+00:02:24,080 --> 00:02:28,160
+fairly similar just running the
+
+68
+00:02:25,680 --> 00:02:30,080
+dashboard image by NetBird opening HTTP
+
+69
+00:02:28,160 --> 00:02:31,840
+for communication through the browser
+
+70
+00:02:30,080 --> 00:02:33,280
+for those of you who know Kubernetes
+
+71
+00:02:31,840 --> 00:02:35,360
+there's also a couple of services to
+
+72
+00:02:33,280 --> 00:02:37,120
+help with internal DNS request flow but
+
+73
+00:02:35,360 --> 00:02:39,120
+for those of you who don't either either
+
+74
+00:02:37,120 --> 00:02:41,040
+ignore or check my Kubernetes intro for
+
+75
+00:02:39,120 --> 00:02:43,440
+beginners workshop below. It seems like
+
+76
+00:02:41,040 --> 00:02:45,599
+our deployments are up. Let's give our
+
+77
+00:02:43,440 --> 00:02:47,440
+log service a quick check. Both Dozel
+
+78
+00:02:45,599 --> 00:02:49,360
+here and the way I set up access to the
+
+79
+00:02:47,440 --> 00:02:51,280
+home lab services are videos on the
+
+80
+00:02:49,360 --> 00:02:53,760
+channel. Go check them out. Netbird
+
+81
+00:02:51,280 --> 00:02:55,760
+seems like it's doing okay as well as
+
+82
+00:02:53,760 --> 00:02:57,680
+its dashboard component. So, it's time
+
+83
+00:02:55,760 --> 00:02:59,519
+for setup. The Netbird UI is ready for
+
+84
+00:02:57,680 --> 00:03:00,720
+us to sign up. And if you find it, don't
+
+85
+00:02:59,519 --> 00:03:02,800
+bother trying the credentials.
+
+86
+00:03:00,720 --> 00:03:05,360
+Everything's gone. Account created. And
+
+87
+00:03:02,800 --> 00:03:07,680
+now we can sign in. And Netbird asks for
+
+88
+00:03:05,360 --> 00:03:09,760
+a peer-to-peer network or a remote
+
+89
+00:03:07,680 --> 00:03:11,680
+network access. This is an important
+
+90
+00:03:09,760 --> 00:03:13,680
+concept we need to clarify. While
+
+91
+00:03:11,680 --> 00:03:15,840
+Netbird gives you the option, the real
+
+92
+00:03:13,680 --> 00:03:18,319
+power of WireGuard is peer-to-peer mesh
+
+93
+00:03:15,840 --> 00:03:19,760
+network. This creates both a safe and
+
+94
+00:03:18,319 --> 00:03:21,840
+short path connection without
+
+95
+00:03:19,760 --> 00:03:23,760
+overloading a single server and
+
+96
+00:03:21,840 --> 00:03:25,680
+utilizing again the power of a pure
+
+97
+00:03:23,760 --> 00:03:27,360
+system. I covered it in more depth on
+
+98
+00:03:25,680 --> 00:03:29,680
+the Headscale video if you want to catch
+
+99
+00:03:27,360 --> 00:03:31,599
+that. The other option, not something to
+
+100
+00:03:29,680 --> 00:03:33,200
+be dismissed, is the remote network
+
+101
+00:03:31,599 --> 00:03:35,440
+access, allowing you to configure
+
+102
+00:03:33,200 --> 00:03:37,680
+Netbird more like a traditional VPN
+
+103
+00:03:35,440 --> 00:03:39,680
+where you authenticate with one machine
+
+104
+00:03:37,680 --> 00:03:41,760
+and that exposes you to everything in
+
+105
+00:03:39,680 --> 00:03:43,840
+the internal network. Kind of like a VPN
+
+106
+00:03:41,760 --> 00:03:45,840
+fortress analogy. You have the main gate
+
+107
+00:03:43,840 --> 00:03:48,080
+and then once you've passed that, you're
+
+108
+00:03:45,840 --> 00:03:50,319
+in the kingdom. So peerto-peer it is
+
+109
+00:03:48,080 --> 00:03:52,640
+time to get a device online. Starting
+
+110
+00:03:50,319 --> 00:03:55,120
+from my home lab box. Shortly
+
+111
+00:03:52,640 --> 00:03:57,760
+thereafter, we get a URL with a one-time
+
+112
+00:03:55,120 --> 00:04:00,879
+user code. Pop it open. device login and
+
+113
+00:03:57,760 --> 00:04:02,879
+we're in which is also indicated in the
+
+114
+00:04:00,879 --> 00:04:05,840
+server itself. We now have a running
+
+115
+00:04:02,879 --> 00:04:08,000
+mesh network of one pair. Let's add
+
+116
+00:04:05,840 --> 00:04:09,360
+another one. You don't need to look up
+
+117
+00:04:08,000 --> 00:04:11,200
+other clients or open source
+
+118
+00:04:09,360 --> 00:04:14,080
+alternatives. The network client for
+
+119
+00:04:11,200 --> 00:04:16,239
+Android and iOS is right there. And as
+
+120
+00:04:14,080 --> 00:04:18,079
+opposed to other competition, it doesn't
+
+121
+00:04:16,239 --> 00:04:20,239
+give you the feeling it was vibe coded
+
+122
+00:04:18,079 --> 00:04:22,240
+in a weekend by a 5-year-old. Since
+
+123
+00:04:20,239 --> 00:04:24,240
+we're not going with the cloud option,
+
+124
+00:04:22,240 --> 00:04:26,720
+although you totally can, I'm going to
+
+125
+00:04:24,240 --> 00:04:28,960
+change the server and set up my own.
+
+126
+00:04:26,720 --> 00:04:31,199
+Change it. Hit the one huge button you
+
+127
+00:04:28,960 --> 00:04:32,800
+can't miss. Authenticate, of course, as
+
+128
+00:04:31,199 --> 00:04:36,479
+this is the first time we introduce this
+
+129
+00:04:32,800 --> 00:04:38,639
+device and connected or so it's pinging
+
+130
+00:04:36,479 --> 00:04:41,199
+the host as suggested in the UI returns
+
+131
+00:04:38,639 --> 00:04:43,840
+a solid time and a live host. The UI
+
+132
+00:04:41,199 --> 00:04:45,600
+also gives us the iPhone now as an added
+
+133
+00:04:43,840 --> 00:04:47,280
+network pier. So, it's time to move
+
+134
+00:04:45,600 --> 00:04:48,960
+forward. Immediately, we're getting a
+
+135
+00:04:47,280 --> 00:04:50,800
+nice visual of the very small network
+
+136
+00:04:48,960 --> 00:04:52,400
+we've just set up in the NetBird control
+
+137
+00:04:50,800 --> 00:04:54,560
+center. You will have noticed an
+
+138
+00:04:52,400 --> 00:04:56,560
+unignorable popup with Net Birds
+
+139
+00:04:54,560 --> 00:04:58,320
+offering automatic TLS and O. It's
+
+140
+00:04:56,560 --> 00:05:00,320
+currently in beta and I'm pretty much
+
+141
+00:04:58,320 --> 00:05:02,400
+happy with my own, but this definitely
+
+142
+00:05:00,320 --> 00:05:04,639
+looks like it's going to be a one-stop
+
+143
+00:05:02,400 --> 00:05:06,639
+shop for all my needs. Internext, the
+
+144
+00:05:04,639 --> 00:05:08,400
+sponsor of today's video, is a privacy
+
+145
+00:05:06,639 --> 00:05:10,560
+first cloud storage platform that
+
+146
+00:05:08,400 --> 00:05:12,880
+actually fits the way we work. It's open
+
+147
+00:05:10,560 --> 00:05:14,320
+source end to end encrypted with zero
+
+148
+00:05:12,880 --> 00:05:16,560
+knowledge protection. Much like your
+
+149
+00:05:14,320 --> 00:05:18,639
+home storage, they cannot read your
+
+150
+00:05:16,560 --> 00:05:20,560
+data. And that's not marketing, it's
+
+151
+00:05:18,639 --> 00:05:22,960
+architecture. For DevOps workflows
+
+152
+00:05:20,560 --> 00:05:24,960
+specifically, the useful part is Arclone
+
+153
+00:05:22,960 --> 00:05:27,360
+support. You can connect Internx Drive
+
+154
+00:05:24,960 --> 00:05:29,120
+natively or via webdav. So, anything
+
+155
+00:05:27,360 --> 00:05:31,199
+you're doing normally or automate
+
+156
+00:05:29,120 --> 00:05:32,800
+normally with Arclone works exactly the
+
+157
+00:05:31,199 --> 00:05:35,120
+same way. Scheduled backups,
+
+158
+00:05:32,800 --> 00:05:37,120
+artifacting, config file exports from
+
+159
+00:05:35,120 --> 00:05:38,800
+remote machines, it just slots in. They
+
+160
+00:05:37,120 --> 00:05:40,400
+also just shipped file versioning, which
+
+161
+00:05:38,800 --> 00:05:42,080
+is one of those features you don't think
+
+162
+00:05:40,400 --> 00:05:43,840
+you need until you do, and reflects
+
+163
+00:05:42,080 --> 00:05:46,160
+exactly what you've just set at home.
+
+164
+00:05:43,840 --> 00:05:48,960
+With Rust Office, they're now offering a
+
+165
+00:05:46,160 --> 00:05:51,360
+lifetime ultimate plan, 5 TB onetime
+
+166
+00:05:48,960 --> 00:05:53,440
+payment, no subscription for a backup
+
+167
+00:05:51,360 --> 00:05:55,440
+target that's supposed to just exist in
+
+168
+00:05:53,440 --> 00:05:57,520
+the background. That pricing model makes
+
+169
+00:05:55,440 --> 00:05:58,560
+a lot more sense than paying monthly
+
+170
+00:05:57,520 --> 00:06:00,560
+forever. Go to
+
+171
+00:05:58,560 --> 00:06:03,520
+interext.com/devopstoolbox
+
+172
+00:06:00,560 --> 00:06:05,919
+and use the code devopstoolbox for 87%
+
+173
+00:06:03,520 --> 00:06:08,319
+off which is higher than what you see on
+
+174
+00:06:05,919 --> 00:06:09,680
+the site directly. Enjoy. Now back to
+
+175
+00:06:08,319 --> 00:06:11,520
+the video. If you haven't watched my
+
+176
+00:06:09,680 --> 00:06:14,000
+Caddy video on the channel, go ahead and
+
+177
+00:06:11,520 --> 00:06:15,759
+do because it's my reverse proxy of
+
+178
+00:06:14,000 --> 00:06:17,759
+choice and it's huge power beyond the
+
+179
+00:06:15,759 --> 00:06:20,080
+linest easiest configuration I've yet to
+
+180
+00:06:17,759 --> 00:06:22,160
+see on such a system is its automatic
+
+181
+00:06:20,080 --> 00:06:24,240
+TLS certificate generation and
+
+182
+00:06:22,160 --> 00:06:26,720
+management. It really can't get any
+
+183
+00:06:24,240 --> 00:06:29,680
+easier than this. Now, Netbird offering
+
+184
+00:06:26,720 --> 00:06:32,080
+the same gets me very excited. I'd now
+
+185
+00:06:29,680 --> 00:06:34,400
+potentially be able to both handle local
+
+186
+00:06:32,080 --> 00:06:37,600
+and remote connections, but also serve
+
+187
+00:06:34,400 --> 00:06:39,759
+my applications with HTTPS done for me
+
+188
+00:06:37,600 --> 00:06:42,000
+with one caveat. Well, two actually.
+
+189
+00:06:39,759 --> 00:06:44,960
+One, it's in beta as mentioned, but
+
+190
+00:06:42,000 --> 00:06:47,039
+secondly, self-hosters must run traffic.
+
+191
+00:06:44,960 --> 00:06:49,039
+Now, I don't fully understand how Caddy
+
+192
+00:06:47,039 --> 00:06:50,880
+doesn't fit here. And while I do have a
+
+193
+00:06:49,039 --> 00:06:53,520
+warm place for traffic, the reason I
+
+194
+00:06:50,880 --> 00:06:54,960
+went with Caddy was exactly this. So, I
+
+195
+00:06:53,520 --> 00:06:57,120
+don't think I'm going to try this right
+
+196
+00:06:54,960 --> 00:06:59,680
+now. I'll try it soon and report back.
+
+197
+00:06:57,120 --> 00:07:01,360
+Back to the UI. The peers section lists
+
+198
+00:06:59,680 --> 00:07:02,960
+current nodes with addresses, groups,
+
+199
+00:07:01,360 --> 00:07:05,120
+and client versions. You can create
+
+200
+00:07:02,960 --> 00:07:07,360
+setup keys to let other new machines
+
+201
+00:07:05,120 --> 00:07:09,360
+join the network by invitation. For now,
+
+202
+00:07:07,360 --> 00:07:11,919
+though, let's think about the current
+
+203
+00:07:09,360 --> 00:07:13,680
+setup and how I can use it to access
+
+204
+00:07:11,919 --> 00:07:15,680
+internal services. Since I picked a
+
+205
+00:07:13,680 --> 00:07:17,680
+peer-to-peer network and my phone can
+
+206
+00:07:15,680 --> 00:07:19,840
+see my home lab machine, this doesn't
+
+207
+00:07:17,680 --> 00:07:22,639
+mean it can see all services running in
+
+208
+00:07:19,840 --> 00:07:24,800
+the K3s inside the host. This is what
+
+209
+00:07:22,639 --> 00:07:26,720
+network routes are for. Allowing you to
+
+210
+00:07:24,800 --> 00:07:28,639
+access other networks without installing
+
+211
+00:07:26,720 --> 00:07:30,639
+Netbird on every resource. Now, this
+
+212
+00:07:28,639 --> 00:07:31,840
+kind of brings us back to the VPN notion
+
+213
+00:07:30,639 --> 00:07:33,759
+I discussed earlier. If you're
+
+214
+00:07:31,840 --> 00:07:35,919
+interested in Netbird for a purely
+
+215
+00:07:33,759 --> 00:07:37,599
+secure mesh network, the better way if
+
+216
+00:07:35,919 --> 00:07:39,680
+you're running it in a cluster is the
+
+217
+00:07:37,599 --> 00:07:41,599
+sidecar architecture. Adding specific
+
+218
+00:07:39,680 --> 00:07:44,000
+application with the sidecar container
+
+219
+00:07:41,599 --> 00:07:46,000
+to join our net network. That said, I'm
+
+220
+00:07:44,000 --> 00:07:48,000
+here to play around not suffer. So,
+
+221
+00:07:46,000 --> 00:07:50,000
+let's check what a network route gives
+
+222
+00:07:48,000 --> 00:07:52,639
+us. Let's say I need access to my home
+
+223
+00:07:50,000 --> 00:07:55,280
+lab as a network. The rule would include
+
+224
+00:07:52,639 --> 00:07:57,280
+a cider block. I went quite broad here.
+
+225
+00:07:55,280 --> 00:07:59,680
+I know for the sake of example and
+
+226
+00:07:57,280 --> 00:08:02,160
+laziness. Once the rule is in place, we
+
+227
+00:07:59,680 --> 00:08:04,160
+need to pick who the policy applies to.
+
+228
+00:08:02,160 --> 00:08:06,160
+In this case, all devices on the
+
+229
+00:08:04,160 --> 00:08:07,919
+network. And you can even drill deeper
+
+230
+00:08:06,160 --> 00:08:10,160
+and add a posture check, which is
+
+231
+00:08:07,919 --> 00:08:12,080
+something I haven't seen a lot or at all
+
+232
+00:08:10,160 --> 00:08:14,000
+with alternatives. It can be blocked
+
+233
+00:08:12,080 --> 00:08:15,840
+from a specific client version, a
+
+234
+00:08:14,000 --> 00:08:17,759
+country, a region, the network range,
+
+235
+00:08:15,840 --> 00:08:20,160
+operating system, even a running process
+
+236
+00:08:17,759 --> 00:08:22,240
+on the client. This one is huge. Network
+
+237
+00:08:20,160 --> 00:08:24,400
+essentially gives you remote access, but
+
+238
+00:08:22,240 --> 00:08:26,479
+also a very detailed firewall getting
+
+239
+00:08:24,400 --> 00:08:28,479
+extremely specific with what policy it
+
+240
+00:08:26,479 --> 00:08:30,560
+accepts. Sure, you can put in a range of
+
+241
+00:08:28,479 --> 00:08:32,240
+IPs, but the drill down into actual
+
+242
+00:08:30,560 --> 00:08:34,880
+process running or client's version
+
+243
+00:08:32,240 --> 00:08:36,640
+covers so many attack vectors narrowing
+
+244
+00:08:34,880 --> 00:08:39,120
+down the space. So, you just got a
+
+245
+00:08:36,640 --> 00:08:41,200
+remote access to a wireguard based mesh
+
+246
+00:08:39,120 --> 00:08:43,440
+network that also handles your TLS
+
+247
+00:08:41,200 --> 00:08:45,279
+certificates, but now functions as a
+
+248
+00:08:43,440 --> 00:08:47,680
+mini firewall. And if that doesn't get
+
+249
+00:08:45,279 --> 00:08:50,000
+you excited, just wait because Netbird
+
+250
+00:08:47,680 --> 00:08:52,080
+is about to kill yet another service I'm
+
+251
+00:08:50,000 --> 00:08:53,519
+currently running on my home lab. Now,
+
+252
+00:08:52,080 --> 00:08:56,240
+we're not done with a fine grain
+
+253
+00:08:53,519 --> 00:08:58,640
+configuration to our network route. We
+
+254
+00:08:56,240 --> 00:09:00,800
+add routing peers specifically or by a
+
+255
+00:08:58,640 --> 00:09:03,040
+group. Enable them and then and only
+
+256
+00:09:00,800 --> 00:09:04,800
+then we can start working. My mobile
+
+257
+00:09:03,040 --> 00:09:06,880
+client that's currently connected and
+
+258
+00:09:04,800 --> 00:09:08,320
+mind you is on the cellular network to
+
+259
+00:09:06,880 --> 00:09:10,800
+make sure I'm going through a global
+
+260
+00:09:08,320 --> 00:09:13,200
+connection can now go to the log service
+
+261
+00:09:10,800 --> 00:09:14,720
+that's only resolvable from my home lab.
+
+262
+00:09:13,200 --> 00:09:16,320
+Let's be even more thorough with the
+
+263
+00:09:14,720 --> 00:09:18,320
+check. Go back to Netbird and
+
+264
+00:09:16,320 --> 00:09:21,120
+disconnect. Hit the log service again on
+
+265
+00:09:18,320 --> 00:09:22,880
+Safari and nothing. Awesome. Now the
+
+266
+00:09:21,120 --> 00:09:25,120
+access to this is still done through
+
+267
+00:09:22,880 --> 00:09:27,279
+Caddy for me. When a device is reaching
+
+268
+00:09:25,120 --> 00:09:29,440
+Caddy coming from this address trying to
+
+269
+00:09:27,279 --> 00:09:31,600
+curl my log service from a remote
+
+270
+00:09:29,440 --> 00:09:34,080
+network does not work. It resolves as
+
+271
+00:09:31,600 --> 00:09:37,360
+expected to the private IP which we have
+
+272
+00:09:34,080 --> 00:09:39,440
+no access to. But this, as mentioned, is
+
+273
+00:09:37,360 --> 00:09:41,440
+not security. It's security by
+
+274
+00:09:39,440 --> 00:09:44,000
+obscurity. Here's me quote unquote
+
+275
+00:09:41,440 --> 00:09:45,839
+hacking my own setup and how you can
+
+276
+00:09:44,000 --> 00:09:47,519
+reach any service that runs the same
+
+277
+00:09:45,839 --> 00:09:49,760
+funny hide-and-seek game. It's not even
+
+278
+00:09:47,519 --> 00:09:52,240
+an effort. Make curl resolve the IP to
+
+279
+00:09:49,760 --> 00:09:54,080
+the public IP if you found it and head
+
+280
+00:09:52,240 --> 00:09:56,160
+on to the service again. And what do you
+
+281
+00:09:54,080 --> 00:09:58,320
+know? I'm connected. TLS handshake gone
+
+282
+00:09:56,160 --> 00:10:00,399
+through and Dozel is served on a plate.
+
+283
+00:09:58,320 --> 00:10:02,800
+Now there's two ways to go about this as
+
+284
+00:10:00,399 --> 00:10:04,720
+we mentioned. One going to caddy and
+
+285
+00:10:02,800 --> 00:10:06,720
+protecting the entry finding the local
+
+286
+00:10:04,720 --> 00:10:08,640
+IP only as the access point for this
+
+287
+00:10:06,720 --> 00:10:10,480
+service. Once that's done we can repeat
+
+288
+00:10:08,640 --> 00:10:13,120
+the same process. Still can't figure the
+
+289
+00:10:10,480 --> 00:10:15,440
+internal IP but resolving it using the
+
+290
+00:10:13,120 --> 00:10:17,680
+public one leads the kadi which ends up
+
+291
+00:10:15,440 --> 00:10:19,920
+getting the forbidden signal exactly as
+
+292
+00:10:17,680 --> 00:10:21,920
+configured. So this works but there's an
+
+293
+00:10:19,920 --> 00:10:24,000
+even better way which I'll quickly draw
+
+294
+00:10:21,920 --> 00:10:26,000
+for you instead of going deep down again
+
+295
+00:10:24,000 --> 00:10:28,240
+through DNS settings. The white box is
+
+296
+00:10:26,000 --> 00:10:29,760
+my home lab with Caddy served internally
+
+297
+00:10:28,240 --> 00:10:31,760
+and can be accessed from the global
+
+298
+00:10:29,760 --> 00:10:33,920
+internet. I also have a log service
+
+299
+00:10:31,760 --> 00:10:36,160
+jellyfin and netb bird. Now the current
+
+300
+00:10:33,920 --> 00:10:37,680
+setup sends everything to caddy that
+
+301
+00:10:36,160 --> 00:10:39,519
+distributes the traffic to other
+
+302
+00:10:37,680 --> 00:10:41,600
+services including Netbird and that's
+
+303
+00:10:39,519 --> 00:10:43,680
+kind of a weird scenario. Netbird is a
+
+304
+00:10:41,600 --> 00:10:45,519
+remote access gateway and also has seen
+
+305
+00:10:43,680 --> 00:10:47,360
+a firewall and a potentially reverse
+
+306
+00:10:45,519 --> 00:10:49,040
+proxy on its own. This should be the
+
+307
+00:10:47,360 --> 00:10:51,040
+main access point. We send the traffic
+
+308
+00:10:49,040 --> 00:10:53,120
+to it instead of caddy. Netbird will
+
+309
+00:10:51,040 --> 00:10:55,600
+allow traffic if you're coming from its
+
+310
+00:10:53,120 --> 00:10:57,120
+mesh setup and then and only then will
+
+311
+00:10:55,600 --> 00:10:58,959
+Caddy forward your requests to the
+
+312
+00:10:57,120 --> 00:11:01,360
+backend services. Which brings me back
+
+313
+00:10:58,959 --> 00:11:03,440
+to the Netird reverse proxy option. If I
+
+314
+00:11:01,360 --> 00:11:06,000
+can not only put Netbird in front but
+
+315
+00:11:03,440 --> 00:11:07,839
+also merge my Caddy setup into it,
+
+316
+00:11:06,000 --> 00:11:09,839
+that's going to be a huge win. I'm going
+
+317
+00:11:07,839 --> 00:11:11,760
+to wait out the beta phase and then
+
+318
+00:11:09,839 --> 00:11:13,600
+check back in again. And please comment
+
+319
+00:11:11,760 --> 00:11:15,600
+if that's of interest to cover. Excited
+
+320
+00:11:13,600 --> 00:11:17,680
+to see everything visualized in one
+
+321
+00:11:15,600 --> 00:11:20,000
+place. In the meantime, here's another
+
+322
+00:11:17,680 --> 00:11:22,480
+major surprise in Nepert. I did not
+
+323
+00:11:20,000 --> 00:11:25,920
+expect to see. Netbird provides a wait
+
+324
+00:11:22,480 --> 00:11:27,600
+for it DNS management system. Yeah, it
+
+325
+00:11:25,920 --> 00:11:29,920
+can let you resolve local names in the
+
+326
+00:11:27,600 --> 00:11:31,839
+private network and control access even
+
+327
+00:11:29,920 --> 00:11:34,320
+further. To do that, you create your own
+
+328
+00:11:31,839 --> 00:11:36,640
+name server which is added to Cloudflare
+
+329
+00:11:34,320 --> 00:11:38,880
+here. Pick the peers you want to use it
+
+330
+00:11:36,640 --> 00:11:40,800
+with, which you can then set to resolve
+
+331
+00:11:38,880 --> 00:11:42,480
+a specific domain. Once you do that, all
+
+332
+00:11:40,800 --> 00:11:44,399
+configured peers now have a local
+
+333
+00:11:42,480 --> 00:11:46,320
+resolver serving DNS entries and
+
+334
+00:11:44,399 --> 00:11:47,920
+answering queries internally. You can
+
+335
+00:11:46,320 --> 00:11:50,240
+add a bunch of these and beyond the
+
+336
+00:11:47,920 --> 00:11:51,760
+familiar ones, you can use a custom name
+
+337
+00:11:50,240 --> 00:11:53,200
+to resolve them. I think I'll stop at
+
+338
+00:11:51,760 --> 00:11:55,360
+this point because this is going
+
+339
+00:11:53,200 --> 00:11:57,200
+slightly off the script of this video.
+
+340
+00:11:55,360 --> 00:11:58,720
+Those of you who have watched my HomeLab
+
+341
+00:11:57,200 --> 00:12:00,640
+videos know that I'm currently running
+
+342
+00:11:58,720 --> 00:12:03,600
+Adgard for this purpose. I recently
+
+343
+00:12:00,640 --> 00:12:05,839
+moved from Adgard favoring my public DNS
+
+344
+00:12:03,600 --> 00:12:07,360
+that also handles HTTPS as you've seen
+
+345
+00:12:05,839 --> 00:12:09,680
+in this video. But having both
+
+346
+00:12:07,360 --> 00:12:11,279
+integrated into one place, that makes
+
+347
+00:12:09,680 --> 00:12:13,279
+everything more accessible, easily
+
+348
+00:12:11,279 --> 00:12:15,279
+monitored and properly resolvable with
+
+349
+00:12:13,279 --> 00:12:17,440
+no funky games definitely sparks my
+
+350
+00:12:15,279 --> 00:12:19,440
+curiosity. Comment below if covering net
+
+351
+00:12:17,440 --> 00:12:21,440
+DNS capabilities is of interest and of
+
+352
+00:12:19,440 --> 00:12:23,200
+course it's reverse proxy setup. In the
+
+353
+00:12:21,440 --> 00:12:24,880
+meantime, check out my DNS setup that
+
+354
+00:12:23,200 --> 00:12:26,800
+allows me to create public entries on
+
+355
+00:12:24,880 --> 00:12:29,120
+the fly without having to bind them with
+
+356
+00:12:26,800 --> 00:12:31,279
+any public IP using DN simple and a
+
+357
+00:12:29,120 --> 00:12:34,320
+caddy trick. Thank you for watching.
+
+358
+00:12:31,279 --> 00:12:34,320
+I'll see you on the next one.

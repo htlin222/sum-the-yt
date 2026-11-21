@@ -1,0 +1,1258 @@
+1
+00:00:00,000 --> 00:00:05,949
+Okay, so just as news of GPT-5.6 has
+come out that the government is gonna
+
+2
+00:00:05,960 --> 00:00:11,046
+be preventing people to use this, open
+weights models keep chugging along,
+
+3
+00:00:11,226 --> 00:00:16,356
+and this brings me to the topic of
+today's video, Ornith 1.0, which is a
+
+4
+00:00:16,356 --> 00:00:19,236
+family of models from Deep Reinforce.
+
+5
+00:00:19,536 --> 00:00:22,596
+and I guess the big tease here is
+that things have been moving along
+
+6
+00:00:22,616 --> 00:00:26,636
+where we've had sort of one track be
+models and one track be harnesses.
+
+7
+00:00:26,999 --> 00:00:31,520
+and what Ornith is proposing is
+why not have a model that writes
+
+8
+00:00:31,530 --> 00:00:35,369
+its own harness or at least has the
+ability to write its own harness?
+
+9
+00:00:35,973 --> 00:00:40,103
+therefore, if you've got a particular
+use case that needs one kind of harness,
+
+10
+00:00:40,123 --> 00:00:44,293
+it can write that on the fly and then
+be able to use that to actually get
+
+11
+00:00:44,293 --> 00:00:46,183
+the result that you're trying to get.
+
+12
+00:00:46,517 --> 00:00:50,137
+And this is exactly what the Ornith
+family of models are trying to do.
+
+13
+00:00:50,157 --> 00:00:54,697
+They actually call this self-scaffolding
+LLMs for agentic coding.
+
+14
+00:00:54,847 --> 00:00:58,297
+Now the area that they're focusing
+on is agentic coding in here.
+
+15
+00:00:58,477 --> 00:01:01,757
+I think the lessons can probably
+apply to other domains as well.
+
+16
+00:01:01,847 --> 00:01:06,307
+But it does seem the whole topic of
+agentic coding is where the money is at
+
+17
+00:01:06,317 --> 00:01:09,977
+the moment, and where a lot of people
+are trying to make the most innovations.
+
+18
+00:01:10,127 --> 00:01:14,697
+Which makes sense with everybody
+using things like Claude Code, Codex,
+
+19
+00:01:14,697 --> 00:01:18,273
+and all the other agentic coding
+tools that are out there So that
+
+20
+00:01:18,273 --> 00:01:22,963
+brings us to what is actually in
+Ornith 1.0, their family of models.
+
+21
+00:01:22,963 --> 00:01:27,230
+Well, this is four models, that
+are not new pre-trains or anything.
+
+22
+00:01:27,230 --> 00:01:33,060
+These are basically, fine-tunes or sort
+of more mid-training and post-training,
+
+23
+00:01:33,230 --> 00:01:39,440
+on four separate models that come from the
+Qwen 3.5 family and the Gemma 4 family.
+
+24
+00:01:39,440 --> 00:01:42,460
+So we've got a 9B model,
+which is Qwen 3.5.
+
+25
+00:01:42,520 --> 00:01:46,350
+We've got the 31B, which
+comes from the Gemma 4 family.
+
+26
+00:01:46,583 --> 00:01:49,680
+And then we've got a 35B MoE and a 300
+
+27
+00:01:52,363 --> 00:01:55,433
+397B MoE, both from the Qwen 3.5 family.
+
+28
+00:01:55,733 --> 00:01:59,583
+Now, the cool thing in here is that
+they've released all of the models,
+
+29
+00:01:59,633 --> 00:02:02,093
+unlike some of the things we've
+looked at recently where they've
+
+30
+00:02:02,093 --> 00:02:04,473
+held back the biggest and best model.
+
+31
+00:02:04,483 --> 00:02:06,833
+Here, we've got all of
+the models available.
+
+32
+00:02:07,133 --> 00:02:10,053
+So you can try it out whether
+you're just looking out to try the
+
+33
+00:02:10,053 --> 00:02:14,620
+9B, small model, whether you want
+to try the 35B MoE, or whether you
+
+34
+00:02:14,620 --> 00:02:17,700
+want to go really big for the 397B.
+
+35
+00:02:18,000 --> 00:02:22,770
+but the key thing that sets this family
+apart is that these models are learning to
+
+36
+00:02:22,770 --> 00:02:29,613
+generate both sort of solutions, rollout,
+so agentic trajectories and task-specific
+
+37
+00:02:29,613 --> 00:02:32,043
+harnesses that guide those rollouts.
+
+38
+00:02:32,343 --> 00:02:38,563
+So their whole goal is by optimizing both
+that sort of scaffold/harness and the
+
+39
+00:02:38,563 --> 00:02:43,240
+solution that the model is then gonna
+basically generate better solutions out.
+
+40
+00:02:43,500 --> 00:02:46,750
+And if we could just quickly look at
+the benchmarks, I'm not gonna harp on
+
+41
+00:02:46,750 --> 00:02:51,457
+about these, but certainly looking at
+their really big model here, we can
+
+42
+00:02:51,457 --> 00:02:56,647
+see that it's outperforming a lot of
+other models, including the Qwen 3.7
+
+43
+00:02:56,647 --> 00:03:00,647
+Max, the MiniMax model, and often is
+competitive with the Claude Opus models
+
+44
+00:03:00,947 --> 00:03:03,820
+If we do the same thing and look at
+even the smaller ones are doing very
+
+45
+00:03:03,820 --> 00:03:06,800
+well against models their own size.
+
+46
+00:03:07,100 --> 00:03:10,597
+and that's for the 35B MoE
+and even down to the 9B.
+
+47
+00:03:10,767 --> 00:03:13,897
+so the 9B is certainly something you
+should consider if you're looking to
+
+48
+00:03:13,897 --> 00:03:19,137
+run a local coding model and you can't
+run something as big as the 35B MoEs or
+
+49
+00:03:19,373 --> 00:03:24,500
+Gemma 4-31, et cetera, their 9B model
+is doing really well here compared to
+
+50
+00:03:24,500 --> 00:03:28,840
+those other models that are often even
+three times as big as them but what's far
+
+51
+00:03:28,840 --> 00:03:33,430
+more interesting than the benchmarks for
+me is what actually makes this special.
+
+52
+00:03:33,647 --> 00:03:37,217
+And this goes to the heart of sort of
+what they're getting at here, is that
+
+53
+00:03:37,447 --> 00:03:41,657
+up until now, most of the time people
+have thought about agent harnesses as
+
+54
+00:03:41,657 --> 00:03:44,037
+being things that are designed by humans.
+
+55
+00:03:44,307 --> 00:03:48,907
+so what Ornith actually does here is
+they treat that as a learnable object.
+
+56
+00:03:49,197 --> 00:03:53,027
+And the whole idea is that just as
+the model's gonna learn to be able to
+
+57
+00:03:53,027 --> 00:03:58,087
+get good results, it should also learn
+to create better scaffolds or better
+
+58
+00:03:58,097 --> 00:04:01,517
+harnesses for creating those good results.
+
+59
+00:04:01,717 --> 00:04:05,077
+You could even think about it
+as their model learning to do
+
+60
+00:04:05,107 --> 00:04:09,607
+context engineering instead of,
+you having to write that by hand.
+
+61
+00:04:09,907 --> 00:04:14,407
+And that idea here of how do you actually
+train a model or sort of mid-train and
+
+62
+00:04:14,407 --> 00:04:19,303
+post-train a model, to be able to do
+this without it all falling apart is
+
+63
+00:04:19,313 --> 00:04:21,963
+the key thing to me about this project.
+
+64
+00:04:22,207 --> 00:04:25,777
+and this really comes down
+to this sort of two-stage RL
+
+65
+00:04:25,797 --> 00:04:27,337
+process that they've got here.
+
+66
+00:04:27,707 --> 00:04:33,827
+So they basically, propose a task and
+then they condition on that task and
+
+67
+00:04:33,887 --> 00:04:36,377
+a scaffold previously used for it.
+
+68
+00:04:36,677 --> 00:04:40,797
+And then the model will first propose
+a new sort of refined version of
+
+69
+00:04:40,797 --> 00:04:42,517
+that scaffold or that harness.
+
+70
+00:04:42,817 --> 00:04:46,767
+And then conditioning on that new
+harness, it will then basically
+
+71
+00:04:46,777 --> 00:04:50,517
+propose the rollout, which is going
+to get us to the result that we want.
+
+72
+00:04:50,817 --> 00:04:54,727
+Now, then what they do is they take that
+rollout and you can see that they'll
+
+73
+00:04:54,727 --> 00:05:00,717
+have multiple, rollouts there, and they
+will then basically use that as a reward
+
+74
+00:05:00,717 --> 00:05:06,470
+signal to update the model for both
+generating the scaffold and generating
+
+75
+00:05:06,470 --> 00:05:12,090
+the rollout here Ideally, what's going
+on here are those, reward signals,
+
+76
+00:05:12,130 --> 00:05:15,852
+and this is coming from using, GRPO,
+here, And I'll talk about how they're
+
+77
+00:05:15,852 --> 00:05:17,552
+doing the verification in a minute.
+
+78
+00:05:17,852 --> 00:05:22,032
+But allows them to basically update
+the weights of the model to get
+
+79
+00:05:22,042 --> 00:05:26,322
+better at building a scaffold and
+then better at using that scaffold to
+
+80
+00:05:26,322 --> 00:05:28,572
+actually generate good results out.
+
+81
+00:05:28,872 --> 00:05:33,042
+now currently they're focused on doing all
+of this in the domain of agentic coding.
+
+82
+00:05:33,042 --> 00:05:37,022
+So it kind of makes sense, And based on
+their benchmarks, it seems to be working
+
+83
+00:05:37,022 --> 00:05:41,232
+for that but you could imagine this
+being used for other kinds of tasks.
+
+84
+00:05:41,252 --> 00:05:45,955
+Now, obviously the challenge that
+you've got is can that reward signal be
+
+85
+00:05:46,125 --> 00:05:48,405
+something that you can measure with GRPO?
+
+86
+00:05:48,595 --> 00:05:50,795
+Is it something that's
+verifiable, et cetera?
+
+87
+00:05:50,995 --> 00:05:54,085
+And the thing that you should be thinking
+about as you're sort of looking at this
+
+88
+00:05:54,135 --> 00:06:00,028
+is, well, if the model is determining
+basically how the harness works and the
+
+89
+00:06:00,068 --> 00:06:04,978
+actual rollout, why doesn't it just cheat
+and build a harness that just takes a
+
+90
+00:06:04,978 --> 00:06:07,238
+shortcut to get to the right answer?
+
+91
+00:06:07,538 --> 00:06:10,218
+And obviously this is something
+that they've thought about a lot
+
+92
+00:06:10,238 --> 00:06:13,838
+too, They actually address this in
+how they deal with reward hacking.
+
+93
+00:06:14,058 --> 00:06:19,808
+So remember, reward hacking is where if
+you've got some kind of LLM as a judge
+
+94
+00:06:19,818 --> 00:06:24,262
+or something like that, the model just
+learns to do tweaks that are perhaps not
+
+95
+00:06:24,262 --> 00:06:29,502
+exactly what you want, but that are gonna
+get the best reward out of that model.
+
+96
+00:06:29,712 --> 00:06:34,878
+And, in the early days of
+RLHF and RLAIF, et cetera
+
+97
+00:06:35,178 --> 00:06:39,368
+you would find that the sort of generator
+models would generate all these kind
+
+98
+00:06:39,368 --> 00:06:44,628
+of weird ways to get the reward model
+to just give a high signal back.
+
+99
+00:06:44,658 --> 00:06:49,708
+And that could just be repeating certain
+tokens, doing things that as humans
+
+100
+00:06:49,708 --> 00:06:51,388
+we would clearly see as being wrong.
+
+101
+00:06:51,588 --> 00:06:54,948
+But because the reward models were
+perhaps not as good back then,
+
+102
+00:06:55,088 --> 00:06:56,928
+they could be tricked quite easily.
+
+103
+00:06:57,228 --> 00:07:01,018
+Now that said, even though the
+reward models nowadays are better
+
+104
+00:07:01,168 --> 00:07:04,308
+there's no guarantee that that alone
+is gonna give you the best reward
+
+105
+00:07:04,308 --> 00:07:05,928
+signal to actually update your model.
+
+106
+00:07:06,466 --> 00:07:11,286
+so they talk about here of basically
+defending against this in three layers.
+
+107
+00:07:11,546 --> 00:07:17,516
+So the first one is the actual environment
+and sort of tools and I guess basically
+
+108
+00:07:17,526 --> 00:07:22,089
+everything that's going on in the sandbox,
+that the scaffolding is gonna run in.
+
+109
+00:07:22,089 --> 00:07:24,629
+So all of those things are immutable.
+
+110
+00:07:24,659 --> 00:07:27,429
+They can't be changed by the model.
+
+111
+00:07:27,589 --> 00:07:31,339
+So the model can't set up the
+environment to actually do a shortcut
+
+112
+00:07:31,339 --> 00:07:32,969
+to sort of win kind of thing.
+
+113
+00:07:33,269 --> 00:07:36,649
+Secondly, they've got a
+deterministic monitor here,
+
+114
+00:07:36,649 --> 00:07:37,939
+which is kind of cool, right?
+
+115
+00:07:37,939 --> 00:07:42,999
+That what they've got is something
+that's basically watching, what does
+
+116
+00:07:42,999 --> 00:07:45,432
+the scaffolding actually try to do?
+
+117
+00:07:45,442 --> 00:07:49,606
+Does it try and do anything like
+modified verification scripts, use
+
+118
+00:07:49,636 --> 00:07:53,796
+any sort of unsanctioned tools, try
+to use anything that's out of the
+
+119
+00:07:53,796 --> 00:07:55,556
+sandbox that it's allowed to play in?
+
+120
+00:07:55,856 --> 00:08:00,036
+And the moment that it does that, it
+basically gets penalized for doing that.
+
+121
+00:08:00,264 --> 00:08:03,767
+and the third thing that they have
+is an LLM as a judge that can veto
+
+122
+00:08:03,777 --> 00:08:05,387
+on top of any of the other stuff.
+
+123
+00:08:05,387 --> 00:08:09,807
+So even if it bypasses the early stages
+and stuff like that, if the LLM as a judge
+
+124
+00:08:09,827 --> 00:08:14,727
+also says, "No, this has been achieved
+in some way that perhaps wasn't allowed,
+
+125
+00:08:14,787 --> 00:08:19,777
+it can then veto the whole verifier that
+the GRPO was using, et cetera So overall,
+
+126
+00:08:19,817 --> 00:08:24,987
+this is a really interesting idea here
+of can a model then actually sort of code
+
+127
+00:08:24,997 --> 00:08:27,477
+what it needs as a harness on the fly?
+
+128
+00:08:27,657 --> 00:08:31,177
+And we've seen the idea of models
+actually writing code that they can
+
+129
+00:08:31,177 --> 00:08:33,824
+then use, be around for quite a while.
+
+130
+00:08:33,854 --> 00:08:35,254
+so this is the PAL paper.
+
+131
+00:08:35,264 --> 00:08:38,964
+This is from I think it was late
+2022 was the first version of it.
+
+132
+00:08:38,974 --> 00:08:41,804
+This published version is January 2023.
+
+133
+00:08:41,984 --> 00:08:46,014
+And what was so cool about this was
+that it basically proposed that why
+
+134
+00:08:46,014 --> 00:08:50,214
+doesn't the model just write Python
+to do things like math and things
+
+135
+00:08:50,214 --> 00:08:54,544
+like that, and then run that Python
+and bring that back into the model?
+
+136
+00:08:54,654 --> 00:08:59,394
+So that kind of idea is actually quite
+old But getting it to write a whole
+
+137
+00:08:59,394 --> 00:09:04,174
+scaffold shows that, one, not only
+have we come so far in the models
+
+138
+00:09:04,174 --> 00:09:07,814
+that the models have gotten so good
+at this, but this could be the way
+
+139
+00:09:07,814 --> 00:09:11,831
+forward, That as the models get more
+intelligent, we don't want to basically
+
+140
+00:09:11,981 --> 00:09:14,534
+get involved as humans much at all.
+
+141
+00:09:14,544 --> 00:09:17,934
+We just want to leave it to the
+model to write what it needs to
+
+142
+00:09:17,934 --> 00:09:19,914
+get the result that we want out.
+
+143
+00:09:20,210 --> 00:09:23,540
+So let's have a look at the model, see
+what the actual outputs look like, and get
+
+144
+00:09:23,540 --> 00:09:25,600
+a sense of how this is all coming together
+
+145
+00:09:25,964 --> 00:09:29,804
+all right, so if I come in here,
+I'm using my testing suite in here.
+
+146
+00:09:29,844 --> 00:09:31,174
+you can see we've got the model.
+
+147
+00:09:31,184 --> 00:09:33,494
+I'm using the 35B MoE here.
+
+148
+00:09:33,784 --> 00:09:35,284
+If I give it something like this, right?
+
+149
+00:09:35,284 --> 00:09:38,654
+So just starting off with
+some sort of general things.
+
+150
+00:09:38,844 --> 00:09:39,814
+draw pelican.
+
+151
+00:09:39,974 --> 00:09:45,474
+So the whole pelican SVG test, it draws
+a pretty nice pelican in here, right?
+
+152
+00:09:45,474 --> 00:09:49,734
+So you can see that, like, this
+is, straight away getting, a pretty
+
+153
+00:09:49,734 --> 00:09:53,594
+good, result for the pelican,
+which is, kind of be expected.
+
+154
+00:09:53,594 --> 00:09:57,774
+I'm guessing that, I can't remember
+testing the Qwen 3.5 model on
+
+155
+00:09:57,774 --> 00:09:59,584
+this, but, that does quite well.
+
+156
+00:09:59,784 --> 00:10:03,904
+if we give it a RAG question You
+can see we're getting it, where
+
+157
+00:10:03,904 --> 00:10:08,864
+it's writing up a lot of, sort of
+reasoning thinking tokens in here.
+
+158
+00:10:09,180 --> 00:10:13,980
+It's basically gone through and,
+looked at the different stuff in there.
+
+159
+00:10:14,330 --> 00:10:17,210
+but it hasn't really, written
+any code or anything for this.
+
+160
+00:10:17,470 --> 00:10:21,290
+It's just worked out, okay, this is what
+should be the answer, and then it comes
+
+161
+00:10:21,290 --> 00:10:23,420
+back and gives us, answers in there.
+
+162
+00:10:23,660 --> 00:10:27,970
+again, still pretty, impressive And
+it does that for, quite a number
+
+163
+00:10:27,970 --> 00:10:30,180
+of the other sort of tasks as well.
+
+164
+00:10:30,500 --> 00:10:33,510
+If we give it something though where
+we say, "Create a harness to get the
+
+165
+00:10:33,510 --> 00:10:37,700
+weather, with a five-day forecast,"
+and we run this, By the way, the
+
+166
+00:10:37,700 --> 00:10:39,820
+compute here is sponsored by Dell.
+
+167
+00:10:39,830 --> 00:10:45,480
+I'm actually running this on the Dell
+Pro Max with an RTX 6000 Pro here.
+
+168
+00:10:45,680 --> 00:10:49,230
+so I'm getting very good speeds,
+that you can see for the model.
+
+169
+00:10:49,450 --> 00:10:54,120
+I'm able to run both, 16-bit models
+and also quantized models here.
+
+170
+00:10:54,270 --> 00:10:56,780
+this one is actually a quantized version
+that we're running through Ollama.
+
+171
+00:10:56,810 --> 00:10:59,694
+Uh, you can see for some of
+the other ones, I'll run them
+
+172
+00:10:59,714 --> 00:11:02,160
+through vLLM, directly in here.
+
+173
+00:11:02,460 --> 00:11:07,080
+Anyway, if we come in here and look at,
+the thinking process, we can see that it
+
+174
+00:11:07,130 --> 00:11:10,490
+understands the goal of, create a harness.
+
+175
+00:11:10,850 --> 00:11:14,860
+and it understands that it's going
+to, need to handle all the different
+
+176
+00:11:14,860 --> 00:11:16,200
+things that the harness does.
+
+177
+00:11:16,210 --> 00:11:19,250
+So this is, what is kind
+of unique with this model.
+
+178
+00:11:19,650 --> 00:11:22,290
+It then basically starts
+to design a solution.
+
+179
+00:11:22,290 --> 00:11:25,860
+We're getting very nice long,
+chain of thought here, which is
+
+180
+00:11:25,860 --> 00:11:30,360
+very clearly related to the task
+at hand, going through this, and
+
+181
+00:11:30,360 --> 00:11:32,150
+then it starts to draft the code.
+
+182
+00:11:32,330 --> 00:11:34,924
+In this case, it's done
+1,600 tokens in there.
+
+183
+00:11:35,194 --> 00:11:38,944
+If we come in here, we can see
+we've got, it basically deciding it
+
+184
+00:11:38,944 --> 00:11:41,487
+needed to have the, request library.
+
+185
+00:11:41,507 --> 00:11:44,117
+It then basically creates
+the weather harness.
+
+186
+00:11:44,427 --> 00:11:48,797
+The weather harness is gonna be for
+a five-day forecast in here we can
+
+187
+00:11:48,807 --> 00:11:53,237
+see that it's decided, how it's gonna
+handle a bunch of things, for this
+
+188
+00:11:53,237 --> 00:11:57,277
+harness and to basically give us some,
+graphical displays, et cetera and in
+
+189
+00:11:57,277 --> 00:12:01,987
+this case, it's telling us, okay, we
+need, an OpenWeather API key here.
+
+190
+00:12:02,304 --> 00:12:05,364
+And it shows us what some of the
+outputs should be like, et cetera.
+
+191
+00:12:05,664 --> 00:12:05,944
+Okay.
+
+192
+00:12:05,954 --> 00:12:11,934
+If I change it to basically say, right,
+we don't have any API keys, let's see,
+
+193
+00:12:11,944 --> 00:12:17,454
+do we get, something now like an API
+which doesn't need, an API key, in here?
+
+194
+00:12:17,464 --> 00:12:20,154
+So it's still generating
+a lot of thinking tokens.
+
+195
+00:12:20,164 --> 00:12:23,394
+My guess is that the thinking tokens
+are gonna be very similar, although
+
+196
+00:12:23,394 --> 00:12:28,484
+we see the implicit need now is find a
+free no API required weather, source.
+
+197
+00:12:28,824 --> 00:12:33,654
+it's gone and generated a lot more
+thinking tokens as it's gone through this.
+
+198
+00:12:33,824 --> 00:12:38,884
+and it's come up with the, result
+of using the Open meteo API which
+
+199
+00:12:38,884 --> 00:12:43,400
+is this API here, which sure enough
+doesn't require a signup, in here.
+
+200
+00:12:43,410 --> 00:12:48,090
+So, it's then basically rewritten,
+the script to match that API.
+
+201
+00:12:48,390 --> 00:12:53,580
+So we can see we've got these codes here,
+weather interpretation codes, and it will
+
+202
+00:12:53,580 --> 00:12:58,910
+convert them to emojis and to, a sort of
+short description, going through this.
+
+203
+00:12:59,210 --> 00:13:02,610
+then it's gonna take
+coordinates as GPS coordinates.
+
+204
+00:13:02,620 --> 00:13:05,017
+It's actually got the, API in there.
+
+205
+00:13:05,027 --> 00:13:08,907
+It looks like it's handled all of that,
+very well, Which is really good because
+
+206
+00:13:08,917 --> 00:13:12,457
+it understood the requirements that I
+don't have any API keys, and it had to
+
+207
+00:13:12,457 --> 00:13:17,047
+basically do it without, doing the API,
+et cetera And you can see now if we ask
+
+208
+00:13:17,047 --> 00:13:20,867
+it something like create a harness to
+get the latest AI news from Twitter,
+
+209
+00:13:21,154 --> 00:13:22,844
+let's see what it's gonna come up with.
+
+210
+00:13:23,144 --> 00:13:26,404
+It is really nice that when the
+tokens are this fast, you don't
+
+211
+00:13:26,434 --> 00:13:30,494
+mind having a few thousand thinking
+tokens, going through this.
+
+212
+00:13:30,794 --> 00:13:34,104
+And we can see coming in this, okay,
+get the latest AI news from Twitter's
+
+213
+00:13:34,104 --> 00:13:35,550
+API has changed significantly.
+
+214
+00:13:35,550 --> 00:13:37,520
+It's doing quite well
+at understanding that.
+
+215
+00:13:38,070 --> 00:13:42,810
+It's then got code for, dealing with
+the actual sort of main, Twitter API.
+
+216
+00:13:42,984 --> 00:13:46,954
+Okay, what if I change this to telling
+it I don't have any APIs, so find
+
+217
+00:13:46,954 --> 00:13:49,034
+a solution that doesn't need one?
+
+218
+00:13:49,458 --> 00:13:50,698
+Are we gonna get this in the thing?
+
+219
+00:13:50,728 --> 00:13:52,768
+Okay, no API keys allowed.
+
+220
+00:13:52,828 --> 00:13:55,115
+Need a solution that
+bypasses this, requirement.
+
+221
+00:13:55,125 --> 00:13:58,815
+So you can see that, the chain
+of thought has kind of been
+
+222
+00:13:58,815 --> 00:14:00,365
+trained for very specific things.
+
+223
+00:14:00,385 --> 00:14:02,165
+First, understand the user request.
+
+224
+00:14:02,355 --> 00:14:07,485
+So this is a common thing, that is in
+the sort of hidden chain of thought
+
+225
+00:14:07,581 --> 00:14:09,671
+for a lot of the proprietary models.
+
+226
+00:14:09,821 --> 00:14:11,121
+it's got the constraints there.
+
+227
+00:14:11,131 --> 00:14:13,731
+It's got identify key
+challenges, constraints,
+
+228
+00:14:14,011 --> 00:14:16,021
+explore alternative approaches.
+
+229
+00:14:16,321 --> 00:14:21,965
+Let's see, after 3,200 tokens of
+that, what did it come back with?
+
+230
+00:14:22,315 --> 00:14:26,495
+it's come back with, okay, a list of,
+accounts that it should follow, for this,
+
+231
+00:14:26,675 --> 00:14:32,405
+And it's basically just gonna use request
+to try and, scrape it directly in here.
+
+232
+00:14:32,855 --> 00:14:35,135
+I'm not sure how successful that would be.
+
+233
+00:14:35,285 --> 00:14:39,935
+wouldn't surprise me that, that would
+get blocked very quickly But we can see
+
+234
+00:14:39,935 --> 00:14:44,305
+that the logic in the harness is sound
+for what it's trying to do in here.
+
+235
+00:14:44,595 --> 00:14:46,975
+don't forget, this is just
+one-shotting it as well.
+
+236
+00:14:46,975 --> 00:14:52,255
+You could set this up to, basically keep
+passing results in, and you could also set
+
+237
+00:14:52,255 --> 00:14:57,391
+it up to actually take the, code out and,
+automatically run it and stuff like that.
+
+238
+00:14:57,561 --> 00:15:00,781
+And so you can see that the other
+thing too is it actually ends on
+
+239
+00:15:00,811 --> 00:15:05,031
+with each one basically asking Do
+we want to have some kind of simple
+
+240
+00:15:05,051 --> 00:15:07,681
+Gradio or Streamlit UI, et cetera?
+
+241
+00:15:07,981 --> 00:15:11,961
+Okay, so I've come over to, my chat
+sort of testing where we've put
+
+242
+00:15:11,961 --> 00:15:13,831
+in just a simple system prompt.
+
+243
+00:15:14,151 --> 00:15:16,238
+it's gone through stuff.
+
+244
+00:15:16,268 --> 00:15:20,098
+It looks like it's, found a little
+bit of a different solution this time.
+
+245
+00:15:20,528 --> 00:15:25,098
+But I want you to see that, like that
+it's now gone and, rendered this nicely.
+
+246
+00:15:25,238 --> 00:15:28,501
+You can see we're now in a chat thing
+where if I basically ask it at the end of
+
+247
+00:15:28,501 --> 00:15:30,911
+that, can you build a Gradio, interface?
+
+248
+00:15:31,195 --> 00:15:34,065
+Interestingly, this time
+the thinking was very quick.
+
+249
+00:15:34,075 --> 00:15:38,935
+So it understood that it it created the
+sort of, you know, harness already, and
+
+250
+00:15:38,935 --> 00:15:43,235
+that now this was basically just going
+to structure out a plan to do the rest
+
+251
+00:15:43,345 --> 00:15:46,085
+of the Gradio element of it in here.
+
+252
+00:15:46,095 --> 00:15:49,405
+So it's not sort of redoing the
+whole, Twitter thing, which is good.
+
+253
+00:15:49,615 --> 00:15:53,131
+we can see that looks like it's
+made the Gradio app, pretty well and
+
+254
+00:15:53,131 --> 00:15:56,891
+pretty quickly in there So overall,
+I would say that this is definitely
+
+255
+00:15:56,891 --> 00:15:58,861
+a project that's worth checking out.
+
+256
+00:15:59,131 --> 00:16:00,471
+try out the other models.
+
+257
+00:16:00,551 --> 00:16:04,121
+I've gone for the 35B MoE, but you
+could certainly play with this with
+
+258
+00:16:04,281 --> 00:16:08,901
+the smaller 9B model, which is based
+on the Qwen 3.5 series as well.
+
+259
+00:16:09,201 --> 00:16:12,461
+And let me know in the comments what
+kind of results you get with this.
+
+260
+00:16:12,861 --> 00:16:16,191
+I don't think this is going to change
+my daily workhorse for doing coding kind
+
+261
+00:16:16,191 --> 00:16:21,291
+of tasks, I do think if you wanted to do
+local coding and you don't have access
+
+262
+00:16:21,541 --> 00:16:25,991
+to a big GPU, this is something you could
+certainly check out, anyway, thanks to
+
+263
+00:16:25,991 --> 00:16:27,891
+Dell for sponsoring the compute in here.
+
+264
+00:16:28,221 --> 00:16:31,421
+as always, if you found the video useful,
+please click like and subscribe, and
+
+265
+00:16:31,441 --> 00:16:32,931
+I will talk to you in the next video.
+
+266
+00:16:33,201 --> 00:16:33,931
+Bye for now.

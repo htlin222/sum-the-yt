@@ -1,0 +1,585 @@
+My last video was the most popular one
+I've ever made talking about OKF. And if
+you've noticed, I haven't published
+another video since then, and that's
+because I've been working on my OKF. So,
+what I wanted to do today is show you
+what I've built. I built my own little
+personal brain. I've also built a few
+other things with OKF. I think it's
+absolutely the most amazing thing. If
+you missed it, I would recommend going
+back to watch the video where I break
+down what Google's Open Knowledge Format
+is. But just in case, let's give you a
+little bit of a summary. By the way,
+this is my brain that you see on the
+screen here, at least the start of it.
+I'm going to dive into this and show you
+more of it in just a minute. And I'm
+using this every day in my work, so I'm
+going to show you how I'm using that.
+And more importantly, I'll give you the
+tools that you need so that you can
+create something similar yourself. This
+is Google's documentation. The links to
+this and the other things that Google
+published, I'll put down in the
+description of this video. And in a
+minute, I'll give you the instructions
+to give this to your language model so
+that you can create something similar.
+Makes an OKF powerful is that it follows
+a standard structure. And it's a really
+simple structure. A lot of the comments
+in my last video were saying, "This is
+nothing new. I've created markdown files
+for agents to follow, and Google stole
+my idea." What what Google did was make
+it into a standard. Make it so that if I
+gave you my OKF files, which I'm going
+to show you in just a minute, your agent
+could just go and read them because it
+is a standard. So, this is the
+recommended structure that you use for
+these files. And don't worry if this
+doesn't make sense because you can just
+give this to your language model and
+say, "Follow the instructions that are
+in here." That's what I did. I'm not
+natively a coder. I learned started
+learning to code with ChatGPT years ago.
+A few years ago, I said, "Can you tell
+me what VS Code is?" And we went from
+there. And uh today the things that I'm
+creating, I'm not selling software, but
+I'm using tools in my work that's
+allowing me to do things that would take
+me weeks to do and do them in just days.
+It's absolutely amazing. So, they
+recommend the structure that there's an
+index.md stands for markdown. Markdown
+is just a really simple way to put text
+and uh there's special symbols that are
+used for when something is bolded, when
+something is a heading, and uh and so
+it's just a really standard way to do
+things. The you you these are optional.
+Almost all of it is optional. The thing
+that's required is that you have this
+what they call YAML front matter. I
+don't even know if I'm saying that
+right. Gemini says that most people say
+YAML not y a m l, so that's what we're
+going to call it. And the front matter
+is just the matter that's at the front
+of your files. Basically, when the agent
+comes in, we're going to walk through a
+path that an agent would take. It can
+say, "Oh, here's what I need to find and
+here's what's in this file." So, you'll
+see that every file needs to have some
+type of a type. I'm going to show you
+what types I've used in my OKF. And then
+the rest of this is kind of optional.
+You really should have a a title for
+each of your files and a description and
+you know, you can you can add tags. If
+you add tags, then it makes it really
+easy for your files to connect together
+and that's how you get the knowledge
+graph like I have in my brain. And then
+timestamps are are good as well. And
+then anything below this in the body of
+your file is completely optional. So,
+the YAML front matter essentially says
+to the agent, "Here's what's in this
+file." And then the rest can be
+instructions for your agent. I have to
+say I'm a little bit confused still
+about the difference between an OKF and
+a skills.md. I think that you can have I
+do have skills in my OKF. Shortly after
+I created my brain, I said to
+Antigravity, cuz I was creating this
+brain with Antigravity,
+"We'll have to stop now because I have
+to go generate this proposal for a
+potential client." And Antigravity said,
+"Well, Marie, this is why we built the
+OKF." And so, we put together the steps
+that I would take for my proposal and
+and made that a playbook in my OKF. And
+the playbook told the agent, so in my
+case, my agent was Antigravity. Yours
+might be Claude, it might be a local
+model that you use, the steps that
+needed to happen. And the next time that
+I go to generate a proposal, we can do
+it very, very quickly because that
+knowledge is in my OKF. I think that
+those skills, the steps that I gave the
+agent, could also be a skills.md file. I
+have a little bit of confusion. If you
+know the difference between skills and
+what we're creating in our open
+knowledge format, then please do leave a
+comment below because we're all trying
+to learn this as we go along. So, here's
+the very basic structure for the OKF
+that is my brain. You can see that I
+have an index file. I have a log file
+which says everything that my agent has
+chosen to to do. And then I have these
+different types. We have concepts. It
+really bothers me that Antigravity
+spelled entities wrong. Well, I don't
+even know that I need entities as a
+type. I might change that. Playbooks,
+references, and systems. These come from
+some of the examples that Google gave
+us, but your types can be anything. The
+very first OKF that I created, I had far
+too many types. It kind of reminds me of
+when I first started blogging with
+WordPress and I couldn't understand
+whether something should be a category
+or a tag. Types are essentially the the
+very high-level categories that you want
+to filter things by. And you'll see in a
+minute how I filter my types in my
+brain. And this is the index file. I'm
+using this within the Antigravity
+interface. The index file. So, let's say
+I gave you my OKF bundle. I gave you my
+brain. And you can then have your agent,
+whatever it is that you use for AI, go
+to my brain, and because it's a
+standardized format, it will know. It'll
+see on the index file what it is. All
+right, this is a directory listing for
+progressive disclosure. Basically, the
+index file is saying to the agent, here
+are all the things that are in this
+brain. The difference between OKF and
+rag, retrieval augmented generation, is
+all of these things that I have in my
+brain, I could just dump into the
+context window for Gemini. Gemini has
+this massive context window where you
+could put in a couple of full-sized
+books into the context window, and
+Gemini's really good at picking out the
+parts that are needed to answer its
+question. However, that uses a lot of
+tokens to do that. So, the beauty of OKF
+is that it can look at your Is this
+basically like a directory of what's in
+my directories? And we can see that I
+have concepts. Remember we saw that
+folder? These concepts, I'm going to
+show you how they got generated, because
+I didn't put these in here, which is the
+wild thing. I just gave my brain
+information that I said I want to keep
+this as a reference, and it broke it
+down into concepts. And so, we have
+concepts about
+uh the agent payments protocol, the
+agent-to-agent protocol. All of these
+things that I might reference when I'm
+talking to a client or doing my work.
+Then we have the entities, which again
+they've spelt wrong. I got to ask
+anti-gravity to fix that. And these are
+Again, I don't know that I need entities
+in here. This is the interesting part,
+the playbooks. The playbooks, some of
+them are ones that I created. Um for
+example, I created a a playbook that is
+my communication voice. And the reason
+why I did this is that when we did our
+proposal,
+the system tried to make it sound like a
+big corporate business and said, "We
+will do this and our team will blah blah
+blah." And so I had to say that when you
+work with MHC, you're just working with
+Marie and use I instead of we and and
+then we speak in a fairly casual tone,
+you know, kind of tone it down in terms
+of business speak and and corporate
+speak, things like that. So I put that
+in as a as a playbook. But some of my
+playbooks as well are instructions. This
+is the one that I'm really excited about
+and I used this for a client, a
+checkpoint procedure for analyzing site
+impact after a Google update. As I'm
+recording this, Google's rolling out a
+spam update. I had a client that had
+some sites that improved with the last
+core update and some that declined and
+we created this playbook. Now, it took
+me a couple of days to make this
+playbook, but now I have it there and
+then I went to another client and said
+to antigravity, "Can you run a Google
+update analysis for this client?" And
+instead of it taking me two days to do
+it, it produced a report that I was very
+happy with and and so this is the way
+that we're going to do our work moving
+forward. When people say that AI is
+going to take jobs, I you know, I'm of
+two minds about that. I do think that
+there are some jobs that are going to be
+lost because AI advances, but I also
+think that people who use AI will not
+I'm not going to lose my job, at least
+at this point, maybe at some point in
+the future. I'm not going to lose my job
+because of AI. I'm going to be more
+productive because of AI. I'm going to
+be able to do more things. I don't have
+to rely now, when I see a piece of
+information that I want to put into my
+brain, I I have to rely on my biological
+hardware to remember things. Instead, my
+brain has access to far more than my
+biological brain has. And so this type
+of system and and what I should say that
+what I'm creating with OKF, I don't know
+if this is the way to do it. This is
+just the way that I'm doing it, but it
+is making me more productive. It's
+making me smarter. It's making me able
+to do more for my clients, which will
+make them more productive and eventually
+we'll get to a system where my clients
+have access to my OKF, so they have all
+of the intelligence in my brain and then
+we'll be making their own OKFs. So this
+is going to really expand. I also have a
+section in my OKF. I don't know if
+you'll need this in yours for
+references. These are all mostly Google
+articles that Google has published. I
+took the entirety of the Google SEO
+starter guide. If you haven't If you're
+in SEO and you haven't read the starter
+guide, that is the thing that you should
+be reading to to do SEO. And so now when
+I go to my OKF and I use an agent to
+access my OKF, I can get a quote from
+anywhere from any of these Google
+documentations. I also set up a thing.
+This isn't OKF. This is just part of the
+software I created that does a regular
+check on these documents to see if
+Google updated anything and sure enough
+I got a notification yesterday that
+Google updated the documentation on
+Google updates so because there was a
+spam update yesterday. Okay, let's jump
+in to actually see the OKF in action.
+All right, I know this looks like a big
+mess. This is just after a few days of
+me creating things. Each one of these
+dots here is a markdown file in my
+brain. So let's see if we can find one
+where I can explain what's happening
+here to you. You'll see here down in the
+bottom left that these are the
+playbooks. So or not the playbooks, the
+these are the types that I created, and
+we've got concepts, entities, systems,
+playbooks, and references. And I can
+actually just look at individual ones,
+so we can see that I have these
+different playbooks.
+Some of these I didn't create. My brain
+created. This is one Google has guidance
+on uh assessing your content, and and so
+my brain decided to create this. I'm
+going to show you as well that uh my
+brain just doesn't do things on its own.
+I have to give it permission, and this
+is something that you can set up. Let's
+look at this node here, AI Overviews.
+And you can see that I love I love just
+kind of moving things around in here.
+This is um
+in the spec documentation for the OKF,
+there is information on how to set up a
+knowledge graph view like I have. Again,
+just give it to your agent. I don't know
+how this was created. It just was
+created. And we can see that AI
+Overviews, they Oh, I ended up clicking
+on it. It links to a bunch of different
+concepts that are related. So, now let's
+actually look at the markdown file
+itself. If we were looking at the actual
+file structure, this is the YAML front
+matter. The title is AI Overviews.
+There's a little description,
+AI-generated summaries at the top of
+Google search results.
+Uh and then and then we have these tags.
+I think it's funny that it added SGE.
+You can always know when somebody is
+using a language model because it seems
+to reference SGE, Search Generative
+Experiences, what we first called AI
+Overviews.
+Uh and I could decide to just remove
+that. That's, you know, I could if I
+want, although I think it's good to
+reference back to what it was known as
+historically. Now, here is a bunch of
+information. If I asked my brain, which
+we will do in a minute, to tell me what
+AI Overviews are, it will pull from this
+information. So, instead of doing rag
+across the entirety of the knowledge
+that I know, it does rag across this one
+markdown file. So, it is relatively
+fast. You'll see that it does take some
+time to figure out which markdown file
+it needs to go to. And I think that that
+can be improved over time. I think one
+day we'll look back at the first things
+that we created with OKF and realize how
+primitive they are, but hey, we have to
+start somewhere. And so, we'll see all
+of these interesting things, the impact
+on user behavior, the of AI overviews,
+how to look at them through the Chrome
+sidebar. There's there's a ton of stuff
+that as I do something, my brain
+updates. So, let's actually show the
+brain in action. Now, this here, this
+chat part of my brain is not actually
+the OKF. It uses the OKF. The OKF is the
+knowledge. This is my agent. Your agent,
+I could do this from within antigravity,
+but we built this thing where I said,
+"Look, I want to be able to ingest
+something." And and so, actually, let's
+start by doing that. So, I saw on Search
+Engine Roundtable today that Google had
+updated the documentation on the new
+feature that they have in Search Console
+that allows you to choose how they use
+how AI can use your content. And so,
+normally, you know, I would read this
+and I would summarize it myself, but
+instead, what we're going to do today is
+we're going to give it to my OKF agent.
+Could just put the link in, but instead,
+I'm going to say, "Ingest this." and
+give it the link. And you can see it
+says, "Agent is thinking." and it's
+reading the file, it's reading the index
+because it needs to know where it's
+going to put it. So, here's the
+interesting thing. I've seen a lot of
+people talking about OKF saying that
+they're creating entire markdown
+versions of their website where every
+page is its individual page in an a file
+in the OKF. I don't think that that's
+the right way to do it. I think where
+the power comes is where we break things
+down into concepts. And so, here's what
+my agent has said. It's analyzed the new
+documentation, and it's proposing a plan
+to me. I asked it to do this. And if you
+are building your own OKF, I would
+recommend that you give it the
+transcript to this video you're watching
+now, and say "Build something like Marie
+did." because this isn't in Google spec
+documentation. I didn't want the OKF to
+just go build its own brain, because
+sometimes some of the things it wants to
+put in there aren't quite right. And so,
+I'll read through this. It's going to
+create a new reference, meaning that
+there's a new document. I could ask it
+to track that reference. I don't really
+care so much if this documentation
+changes, so I'm not going to do that.
+And it's got a description. It will
+detail will include the include,
+exclude, and inherit options. It's going
+to update. This is the really
+interesting part. Update reference. So,
+we already have a concept in our play or
+our concept in our OKF called AI
+features in Google Search. It's going to
+add something to that to connect it to
+this new concept that we've created.
+It's going to update the concept about
+AI overviews and about AI mode.
+And then
+and then more. So, I
+put this instead of me saying yes, go
+ahead, I made a button, and I'm going to
+say go ahead with the plan. So, now our
+agent is thinking again. It's reading
+some of the references, and it will make
+these changes. In a second, it's going
+to show us what changes it made. It's
+creating a new concept, Search
+Generative AI Control Guide.
+Interesting. Okay. So, now in the
+future, well, I'll show you in a second
+how we're going to use this information.
+So, now my agent tells me what it did,
+and it created a new reference, which
+I'm going to show you that in just a
+minute, and uh tells me what's in this
+reference. I usually skim through this
+just to make sure that there's not
+something that I'm like, "Whoa, actually
+I want it to be this way." It's almost
+always right. I should mention the model
+that I'm using here. I'm using through
+Google's API, the Gemini API. I'm using
+Gemini flash uh three flash preview.
+There is a newer model. There's 3.5
+flash. It's a little bit more expensive
+to do that, and I find that three flash
+preview works really really well. So, I
+have made that a rule within
+anti-gravity to uh
+to always use that model. So, that's
+what it's using.
+Um it updated the reference AI features
+in Google Search. It updated these
+concepts, different concepts, and then
+it says, "Is there anything else you
+would like me to analyze or update in
+your brain?" So, let's actually look at
+uh this new reference that it created.
+And here it is. We have in markdown this
+new file. So, this lives on my computer.
+I do also have this uh backup to GitHub,
+and I make regular backups of it every
+single day uh so that if something goes
+wrong and my program overwrites my brain
+or I lose my computer or something like
+that, then I still have access to my
+brain on GitHub. And uh we can see that
+it's added uh you know, key features uh
+to this documentation, the timeline. It
+pulled out the interesting things that
+we would want to know. And then uh it
+also has um sources. Now, let's um
+actually look let's actually ask the
+brain for information on these new
+controls. Uh so, let's say, "What are
+You know what? Write in one paragraph."
+Cuz this is how I would use it in a
+report for a client report, a
+description of the new
+AI controls we have in Search Console.
+Now, we can see the agent is thinking.
+It's reading the index. It figures out
+that oh, it actually figured out right
+away that it needed to go to that guide
+that we created. Now sometimes it goes
+to multiple sources to generate
+something and it wrote, "Google has
+introduced a new search generative AI
+control within search console allowing
+website owners to manage how their
+content is utilized across AI-powered
+features." And then it gives me all of
+these things. Uh
+and so yeah, it's not adding anything
+new to my brain. I don't know if I
+should create a separate agent for
+querying the brain and putting stuff
+into the brain, but this seems to work
+well for me now. I also created
+something that I'll show you probably in
+another video that takes all of the
+stories that are put into my community,
+the search bar. If you're not aware of
+my community, we you know what, let me
+show it to you. Myself and other members
+of the community document pretty much
+everything that's happening in search
+and in AI that's interesting.
+So if you want to be ahead of the curve
+in staying up to date in what's
+happening, then everything that is
+important is in this community,
+community.mariehaynes.com.
+This is totally free the by the way.
+There is a paid area that is fantastic.
+We have a meeting soon. I got to wrap up
+this video because we're going to be
+talking about the new agentic resource
+discovery protocol that Google made.
+Again, I'll probably make a video on
+that as well. And the reason why I'm
+showing you this is that I want to make
+these personalized versions of
+newsletter because nobody other than me
+and maybe you are as geeky as me and as
+obsessed with what's happening in AI and
+you I spend hours every day. And so what
+I'm doing with an OKF for my
+community is taking the API that comes
+from Mighty Networks that makes my
+community, putting all of these stories
+into an OKF with a little bit of human
+in the loop curation. And then I should
+be able to make it so that it can make a
+personalized version of newsletter so
+that you get just the stories that you
+need. We'll see how that works. I'm
+telling you OKF is absolutely amazing.
+There are a lot of things we can do with
+it. I really hope that you're
+experimenting with it. And if you want
+to get started, then take the links in
+the description below, give it to
+Claude, to ChatGPT Codex, to my favorite
+to antigravity. I know people are saying
+Google's behind. I know people are
+leaving Google. I thoroughly, thoroughly
+believe that Google is like the tortoise
+and the hare is slowly moving towards
+being the world's leader in AI. They
+already are the world's leader in AI.
+That's probably a topic for another
+video. I really would encourage you to
+get used to using antigravity because it
+is so absolutely amazing. So you can
+give your coding agent whatever it is
+instructions. You don't have to know how
+to code. You can actually tell it, "I
+don't know how to code, but I want to
+build something that does this." I'll
+tell you my first version of the OKF
+that I built, it saved everything in
+markdown, it displayed everything in
+markdown, but it didn't actually save it
+to markdown files, and I had to start
+over again. You probably will have to
+take a few shots at doing this, but
+that's okay because this is a skill that
+we're learning in being able to use this
+new technology to create things that'll
+make us more useful, more helpful, more
+productive, and to be more excited about
+the work that we do. So I hope you've
+enjoyed that. Please share below in the
+comments what you're doing with OKF
+because this is the start of something
+really exciting.

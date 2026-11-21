@@ -1,0 +1,372 @@
+You've probably heard all the hype
+around second brains and Claude OS.
+People have been using Claude code to
+set up their entire systems, running it
+like an operating system instead of just
+a coding agent. But these systems come
+with their own problems. When someone
+sets up a second brain, they build it
+for their own use and structure it the
+way they think works best. There's no
+standard way of doing it, which makes
+these systems hard to navigate and keeps
+them from being shareable. To solve
+this, Google just released the open
+knowledge format, where Google is giving
+their own way on how to build such
+operating systems with AI. If this is
+your first time here, we're a software
+company and this is our channel AI labs,
+where we show you how to optimize your
+own processes with AI the same way we've
+done with ours. And in this video, we're
+going to tell you what this format is,
+how it solves the problem, and why it
+actually matters for your workflows. But
+before [snorts] we get into what Google
+did, let's first understand the real
+issue. In our previous videos, we've
+talked about maintaining a second brain,
+and we manage one for ourselves, too,
+where we keep all our strategies,
+research, and guidelines. It's version
+controlled with Git and push to GitHub,
+and everyone on our team has access to
+it. So whenever new people join us, they
+can just pull it and get context on how
+we work. And like we mentioned before,
+this second brain is controlled by a
+Claude.md file. That file basically
+guides the agent on how to navigate
+around the brain. We've also got
+dedicated Claude.md files in each
+folder, so the agent has specific
+instructions for working in that
+directory. But even though Claude is
+pretty good at getting context from
+files, it still messes up a lot. It
+happened to us so many times would put a
+file in the wrong place, and then we'd
+have to remind it where it actually
+goes. And after that, it would just
+create a new folder for it, simply
+because it doesn't know similar info
+already exists in another folder under a
+different name. The real problem is that
+Claude doesn't know the info it needs
+already exists in the knowledge base. It
+only finds things when it actively
+searches for them. So unless you tell it
+to look in a certain file, it won't even
+know that file is there. This isn't
+really obvious in smaller knowledge
+bases, but it becomes a lot more visible
+once you're working with a big one. The
+way Claude searches is by matching
+keywords against the file content, and
+it uses the file names as a guide, too.
+So, if you ask it to search through a
+really nested folder structure, it has
+to make a bunch of attempts before it
+lands on the right file. This not only
+wastes time, but it consumes a lot of
+tokens as well. So, Google just launched
+open knowledge format, and the problem
+it fixes is standardization. And this is
+something we've already seen happen
+across agents a bunch of times. When
+there was a need to let agents talk to
+external resources beyond what they had
+in the terminal, they introduced MCPs,
+and it became a protocol that every
+agent adopted. In the same way,
+packaging reusable instructions came in
+the form of skills, and just like MCPs,
+they spread across every agent. And when
+there was a need to standardize how you
+communicate design intent, Google
+launched the design.md standard, too.
+So, just like there's always a need to
+standardize things, there was a need to
+standardize knowledge, too. And that's
+exactly what open knowledge format does.
+Now, this idea isn't really new. It's
+based on the LLM Wiki pattern which
+Andrej Karpathy came up with, and it got
+really popular a while ago. Before he
+came up with this, people were relying
+on the rag approach where you convert
+all your huge documents into vector
+format. And vectors do help because they
+basically put everything into a form
+that models can understand. From there,
+the system matches the meaning of your
+query against the existing data and
+returns the most relevant matches. But
+Karpathy pointed out that this causes
+issues. Whenever you ask a question, the
+agent is basically rebuilding the
+information from scratch. It hands you
+an answer, but it's not building up any
+knowledge over time. So, he suggested
+using markdown files to build knowledge
+bases instead because that way the agent
+can actually gather context as it goes.
+His approach used in models' ability to
+navigate a file system. And after he
+shared the idea, a lot of people started
+building second brains of their own. But
+the problem was that each one was
+designed around its creator's personal
+workflow. The person who organized it
+knew what was in each folder and could
+navigate it easily with the agent. But a
+new person would have a hard time
+because they'd have to spend time
+letting the agent explore the folders
+and figure out what the knowledge base
+actually holds. OKP solves this by
+creating a standard way of organizing
+files so that not just an agent but a
+human can also understand what's inside
+the knowledge base. It makes knowledge
+shareable by packaging it into a bundle.
+And this bundle can contain markdown
+files which hold the actual information
+about whatever you're building the
+knowledge base for. Each file also
+includes YAML front matter, which is
+basically a small block at the top of
+the file that describes what's inside it
+so the agent knows what that file holds.
+So OKP doesn't really introduce anything
+new. Instead, it gives you a standard
+format that anyone can produce and read
+and it makes knowledge portable across
+different systems. When we first heard
+about it and went through it, one
+thought came to mind. Since Google is
+trying to turn web search into agentic
+search, this could also be an attempt to
+support that shift. Right now, websites
+are adding LLMs.txt
+files because they hold information
+about the website that's specifically
+tailored for models and that gives those
+agentic systems context about the site.
+So instead of relying only on LLMs.txt,
+websites might eventually start adding
+OKP bundles, too. That would let agents
+query their content more efficiently and
+maybe give better search results based
+on that structured info. Right now, it's
+only meant for internal use, but this is
+something that could end up happening.
+So to [snorts] understand how it helps,
+let's see how OKP works under the hood.
+This system takes everything that's a
+part of your knowledge base and
+represents it as objects called
+concepts. It could be your data,
+markdown documents, YAML files, or
+literally anything else that goes into
+it. The structure works like this. All
+the information you want to organize
+gets placed inside folders named after
+the topic and each one only holds
+content about that one topic. And within
+every folder, there's an index.md file.
+This one's the most important because
+it's what the agent reads first. It
+gives the agent context on what's inside
+that folder. Each concept document has a
+small YAML block that includes a name
+and a description. That lets the agent
+know exactly what it is and what's
+inside the document. And just like
+skills have a similar YAML block, this
+serves the exact same purpose. It feeds
+the agent context bit by bit, so it only
+loads the exact thing it needs by
+reading these descriptions first and
+then pulling in the relevant content.
+The main principle OKF is built on is
+minimalism. The idea is that each
+concept should represent only one thing,
+and the type field inside the document
+tells you what that thing is. It
+shouldn't hold multiple unrelated
+things. Because the moment a concept
+mixes topics, the agent loses the
+ability to load the exact information it
+needs. Another principle of OKF is
+separating the knowledge base from
+whoever's consuming it. Whether it's an
+agent, a human, a team member, or
+anything else, the knowledge itself
+stays independent. It's not also tied to
+any specific platform, which is what
+makes it usable with pretty much
+anything. But before we see this system
+in action, let's have a word by our
+sponsor, Mobbin. If you've used tools
+like Cursor, Lovable, or Claude Code to
+build a UI, you've probably noticed they
+all spit out the same thing, the same
+hero section, card layout, and same
+generic onboarding. It looks like AI
+slop, and the reason is simple. These
+tools have never actually seen what good
+design looks like, but Mobbin has.
+Mobbin just launched an MCP server that
+connects your AI tools directly to their
+library of over 621,000
+real app screens and 142,000
+flows from shipped products like
+Revolut, Uber, and Wise. So, here's how
+I used it. I was building a checkout
+flow and asked my agent to reference how
+the best apps handle it. The key part,
+it's not copying screens. Mobbin gives
+the agent the real flows, states, and
+hierarchy behind those designs before it
+writes any code, so it builds from
+proven patterns instead of guessing.
+Setup takes under a minute, and it works
+across Claude, Cursor, V0, and more. Try
+Mobbin MCP using the link in the pinned
+comment. So, we wanted to see how this
+system actually performs in a real
+setup. And since we were already
+maintaining a second brain that's shared
+across our team through GitHub, we
+tested OKF on it. But we didn't want to
+touch the main branch in case it didn't
+work out. So we created a new branch,
+which is basically a separate copy of
+the project, and made all our changes
+there. So OKF basically ships with three
+things. The first one is an enrichment
+agent. It takes the data that's sitting
+in BigQuery, which is basically Google's
+big database for storing data, converts
+it into OKF concept documents, and then
+runs an LLM pass to check them. Then
+there's an HTML visualization tool that
+turns an OKF bundle into an interactive
+graph view that's easier to explore. And
+it comes with examples of what properly
+formatted OKF data should look like,
+which the agent can use as a reference.
+Now, since we weren't working with
+BigQuery, we didn't need that first
+part. It would have needed setting up a
+whole project around it on Google Cloud,
+which we didn't need since our project
+was already tracked with Git. But the
+tool it ships with for turning data into
+the OKF format is designed only for
+BigQuery. So as a workaround, we created
+a skill called markdown to OKF. What
+this skill does is convert any folder of
+markdown files into an open knowledge
+format bundle following the spec. And
+the way it's designed, code does most of
+the work. Only a small part is handled
+by an agent for the judgment-based
+stuff. It follows a script-first
+approach, and that's because doing the
+work through code puts less load on the
+agent and uses fewer tokens. The skill
+has a script that converts markdown into
+the OKF format. It also includes evals
+to test the conversion, so it performs
+reliably. And these evals are basically
+prompts that the agent runs against the
+output to make sure everything was
+converted correctly. So we then switched
+to our new branch and asked it to do the
+conversion. It ran all the scripts and
+converted the files using the
+instructions, and this created an
+index.md file with links to all the sub
+folders by referencing them. If you've
+used Obsidian before, you'll know this
+is really similar to how it connects
+different pages, and this is also what
+Obsidian uses to build its graph view.
+And the index.md doesn't just exist at
+the root level, it also exists inside
+each sub folder. Each one lists
+everything inside that folder. So, the
+agent knows what content is available
+there. Now, like we mentioned, OKF ships
+with a visualization tool. So, we ran it
+on our bundle using the visualize
+command in the terminal, and it
+generated an HTML document representing
+the entire knowledge base. And you can
+just open it in a browser. It lays out
+all the nodes along with the connections
+between files, which gives you an
+interactive way of understanding the
+whole system and how everything
+connects. So, with all our documents
+converted into the OKF structure, we
+tested how it performed when searching.
+But when we first asked it to look for a
+file, it just defaulted to the way it
+normally searches by matching patterns.
+And that's because OKF isn't a widely
+adopted standard yet and only came out
+recently, so Claude didn't really know
+it existed. To fix that, we added a
+section in the Claude.md file explaining
+how to navigate the system, what role
+each file plays, and how the structure
+should be used. Once that was in place,
+we asked it to navigate to a certain
+file. And this time it started going
+through the index.md files we'd created.
+And it was able to give results way
+faster than searching through the entire
+knowledge base the way Claude would
+normally do here. It also used fewer
+tokens because it loaded the YAML
+metadata first. So, it got an
+understanding of what each file held
+before deciding whether it actually
+needed to open it. So, the main
+advantages you'll get are two things:
+lower token usage and faster retrieval
+times. It really is a quicker way to
+pull information with less chance of the
+errors we talked about earlier. And
+because the structure is documented in
+the Claude.md file, it won't forget
+where files belong. On top of that, it
+knows what each file does because it's
+spelled out in the index.md files. Right
+now, models are already pretty capable
+on their own with pattern matching and
+running their own terminal commands. So,
+until it becomes an open standard that
+agents support out of the box, this is
+more of an optimization than something
+you really need. Now, the skills we
+created can be found in AI Labs Pro,
+which is our community. That's where
+you'll get the resources, the starter
+packs, and more along with a place to
+interact with a bunch of like-minded
+nerds including our team. So, if you
+found value in what we do and want to
+support the channel, this is the best
+way to do it. The link's in the
+description. That brings us to the end
+of this video. If you'd like to support
+the channel and help us keep making
+videos like this, you can do so by using
+the Super Thanks button below. As
+always, thank you for watching and I'll
+see you in the next one.

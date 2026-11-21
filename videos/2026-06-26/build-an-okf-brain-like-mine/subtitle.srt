@@ -1,0 +1,2339 @@
+1
+00:00:00,000 --> 00:00:05,520
+My last video was the most popular one
+
+2
+00:00:02,480 --> 00:00:07,120
+I've ever made talking about OKF. And if
+
+3
+00:00:05,520 --> 00:00:09,160
+you've noticed, I haven't published
+
+4
+00:00:07,120 --> 00:00:12,040
+another video since then, and that's
+
+5
+00:00:09,160 --> 00:00:14,840
+because I've been working on my OKF. So,
+
+6
+00:00:12,040 --> 00:00:16,760
+what I wanted to do today is show you
+
+7
+00:00:14,840 --> 00:00:19,080
+what I've built. I built my own little
+
+8
+00:00:16,760 --> 00:00:20,920
+personal brain. I've also built a few
+
+9
+00:00:19,080 --> 00:00:23,440
+other things with OKF. I think it's
+
+10
+00:00:20,920 --> 00:00:25,560
+absolutely the most amazing thing. If
+
+11
+00:00:23,440 --> 00:00:27,520
+you missed it, I would recommend going
+
+12
+00:00:25,560 --> 00:00:29,960
+back to watch the video where I break
+
+13
+00:00:27,520 --> 00:00:32,400
+down what Google's Open Knowledge Format
+
+14
+00:00:29,960 --> 00:00:34,120
+is. But just in case, let's give you a
+
+15
+00:00:32,400 --> 00:00:36,400
+little bit of a summary. By the way,
+
+16
+00:00:34,120 --> 00:00:38,280
+this is my brain that you see on the
+
+17
+00:00:36,400 --> 00:00:40,200
+screen here, at least the start of it.
+
+18
+00:00:38,280 --> 00:00:42,200
+I'm going to dive into this and show you
+
+19
+00:00:40,200 --> 00:00:44,280
+more of it in just a minute. And I'm
+
+20
+00:00:42,200 --> 00:00:45,960
+using this every day in my work, so I'm
+
+21
+00:00:44,280 --> 00:00:48,080
+going to show you how I'm using that.
+
+22
+00:00:45,960 --> 00:00:49,840
+And more importantly, I'll give you the
+
+23
+00:00:48,080 --> 00:00:51,880
+tools that you need so that you can
+
+24
+00:00:49,840 --> 00:00:54,200
+create something similar yourself. This
+
+25
+00:00:51,880 --> 00:00:56,160
+is Google's documentation. The links to
+
+26
+00:00:54,200 --> 00:00:57,480
+this and the other things that Google
+
+27
+00:00:56,160 --> 00:00:59,360
+published, I'll put down in the
+
+28
+00:00:57,480 --> 00:01:00,800
+description of this video. And in a
+
+29
+00:00:59,360 --> 00:01:02,640
+minute, I'll give you the instructions
+
+30
+00:01:00,800 --> 00:01:04,519
+to give this to your language model so
+
+31
+00:01:02,640 --> 00:01:07,160
+that you can create something similar.
+
+32
+00:01:04,519 --> 00:01:09,160
+Makes an OKF powerful is that it follows
+
+33
+00:01:07,160 --> 00:01:11,040
+a standard structure. And it's a really
+
+34
+00:01:09,160 --> 00:01:12,840
+simple structure. A lot of the comments
+
+35
+00:01:11,040 --> 00:01:16,360
+in my last video were saying, "This is
+
+36
+00:01:12,840 --> 00:01:18,800
+nothing new. I've created markdown files
+
+37
+00:01:16,360 --> 00:01:21,520
+for agents to follow, and Google stole
+
+38
+00:01:18,800 --> 00:01:24,680
+my idea." What what Google did was make
+
+39
+00:01:21,520 --> 00:01:27,480
+it into a standard. Make it so that if I
+
+40
+00:01:24,680 --> 00:01:30,040
+gave you my OKF files, which I'm going
+
+41
+00:01:27,480 --> 00:01:32,320
+to show you in just a minute, your agent
+
+42
+00:01:30,040 --> 00:01:33,880
+could just go and read them because it
+
+43
+00:01:32,320 --> 00:01:36,440
+is a standard. So, this is the
+
+44
+00:01:33,880 --> 00:01:38,360
+recommended structure that you use for
+
+45
+00:01:36,440 --> 00:01:39,960
+these files. And don't worry if this
+
+46
+00:01:38,360 --> 00:01:41,600
+doesn't make sense because you can just
+
+47
+00:01:39,960 --> 00:01:43,680
+give this to your language model and
+
+48
+00:01:41,600 --> 00:01:45,720
+say, "Follow the instructions that are
+
+49
+00:01:43,680 --> 00:01:48,280
+in here." That's what I did. I'm not
+
+50
+00:01:45,720 --> 00:01:51,360
+natively a coder. I learned started
+
+51
+00:01:48,280 --> 00:01:53,360
+learning to code with ChatGPT years ago.
+
+52
+00:01:51,360 --> 00:01:55,320
+A few years ago, I said, "Can you tell
+
+53
+00:01:53,360 --> 00:01:57,880
+me what VS Code is?" And we went from
+
+54
+00:01:55,320 --> 00:02:00,120
+there. And uh today the things that I'm
+
+55
+00:01:57,880 --> 00:02:02,640
+creating, I'm not selling software, but
+
+56
+00:02:00,120 --> 00:02:04,920
+I'm using tools in my work that's
+
+57
+00:02:02,640 --> 00:02:07,880
+allowing me to do things that would take
+
+58
+00:02:04,920 --> 00:02:10,039
+me weeks to do and do them in just days.
+
+59
+00:02:07,880 --> 00:02:11,720
+It's absolutely amazing. So, they
+
+60
+00:02:10,039 --> 00:02:14,840
+recommend the structure that there's an
+
+61
+00:02:11,720 --> 00:02:17,480
+index.md stands for markdown. Markdown
+
+62
+00:02:14,840 --> 00:02:19,760
+is just a really simple way to put text
+
+63
+00:02:17,480 --> 00:02:21,440
+and uh there's special symbols that are
+
+64
+00:02:19,760 --> 00:02:23,920
+used for when something is bolded, when
+
+65
+00:02:21,440 --> 00:02:26,080
+something is a heading, and uh and so
+
+66
+00:02:23,920 --> 00:02:28,720
+it's just a really standard way to do
+
+67
+00:02:26,080 --> 00:02:31,040
+things. The you you these are optional.
+
+68
+00:02:28,720 --> 00:02:33,160
+Almost all of it is optional. The thing
+
+69
+00:02:31,040 --> 00:02:35,520
+that's required is that you have this
+
+70
+00:02:33,160 --> 00:02:36,640
+what they call YAML front matter. I
+
+71
+00:02:35,520 --> 00:02:38,440
+don't even know if I'm saying that
+
+72
+00:02:36,640 --> 00:02:41,280
+right. Gemini says that most people say
+
+73
+00:02:38,440 --> 00:02:43,080
+YAML not y a m l, so that's what we're
+
+74
+00:02:41,280 --> 00:02:46,000
+going to call it. And the front matter
+
+75
+00:02:43,080 --> 00:02:48,280
+is just the matter that's at the front
+
+76
+00:02:46,000 --> 00:02:49,920
+of your files. Basically, when the agent
+
+77
+00:02:48,280 --> 00:02:52,200
+comes in, we're going to walk through a
+
+78
+00:02:49,920 --> 00:02:55,480
+path that an agent would take. It can
+
+79
+00:02:52,200 --> 00:02:57,880
+say, "Oh, here's what I need to find and
+
+80
+00:02:55,480 --> 00:03:00,680
+here's what's in this file." So, you'll
+
+81
+00:02:57,880 --> 00:03:02,360
+see that every file needs to have some
+
+82
+00:03:00,680 --> 00:03:06,200
+type of a type. I'm going to show you
+
+83
+00:03:02,360 --> 00:03:08,200
+what types I've used in my OKF. And then
+
+84
+00:03:06,200 --> 00:03:10,480
+the rest of this is kind of optional.
+
+85
+00:03:08,200 --> 00:03:14,160
+You really should have a a title for
+
+86
+00:03:10,480 --> 00:03:16,440
+each of your files and a description and
+
+87
+00:03:14,160 --> 00:03:18,040
+you know, you can you can add tags. If
+
+88
+00:03:16,440 --> 00:03:20,880
+you add tags, then it makes it really
+
+89
+00:03:18,040 --> 00:03:22,200
+easy for your files to connect together
+
+90
+00:03:20,880 --> 00:03:25,320
+and that's how you get the knowledge
+
+91
+00:03:22,200 --> 00:03:27,360
+graph like I have in my brain. And then
+
+92
+00:03:25,320 --> 00:03:29,680
+timestamps are are good as well. And
+
+93
+00:03:27,360 --> 00:03:32,239
+then anything below this in the body of
+
+94
+00:03:29,680 --> 00:03:34,840
+your file is completely optional. So,
+
+95
+00:03:32,239 --> 00:03:36,480
+the YAML front matter essentially says
+
+96
+00:03:34,840 --> 00:03:38,720
+to the agent, "Here's what's in this
+
+97
+00:03:36,480 --> 00:03:40,920
+file." And then the rest can be
+
+98
+00:03:38,720 --> 00:03:42,560
+instructions for your agent. I have to
+
+99
+00:03:40,920 --> 00:03:46,200
+say I'm a little bit confused still
+
+100
+00:03:42,560 --> 00:03:49,040
+about the difference between an OKF and
+
+101
+00:03:46,200 --> 00:03:52,640
+a skills.md. I think that you can have I
+
+102
+00:03:49,040 --> 00:03:55,040
+do have skills in my OKF. Shortly after
+
+103
+00:03:52,640 --> 00:03:56,840
+I created my brain, I said to
+
+104
+00:03:55,040 --> 00:03:58,560
+Antigravity, cuz I was creating this
+
+105
+00:03:56,840 --> 00:04:00,080
+brain with Antigravity,
+
+106
+00:03:58,560 --> 00:04:01,800
+"We'll have to stop now because I have
+
+107
+00:04:00,080 --> 00:04:04,480
+to go generate this proposal for a
+
+108
+00:04:01,800 --> 00:04:06,120
+potential client." And Antigravity said,
+
+109
+00:04:04,480 --> 00:04:10,560
+"Well, Marie, this is why we built the
+
+110
+00:04:06,120 --> 00:04:14,040
+OKF." And so, we put together the steps
+
+111
+00:04:10,560 --> 00:04:17,400
+that I would take for my proposal and
+
+112
+00:04:14,040 --> 00:04:20,400
+and made that a playbook in my OKF. And
+
+113
+00:04:17,400 --> 00:04:22,560
+the playbook told the agent, so in my
+
+114
+00:04:20,400 --> 00:04:24,120
+case, my agent was Antigravity. Yours
+
+115
+00:04:22,560 --> 00:04:26,080
+might be Claude, it might be a local
+
+116
+00:04:24,120 --> 00:04:28,720
+model that you use, the steps that
+
+117
+00:04:26,080 --> 00:04:31,160
+needed to happen. And the next time that
+
+118
+00:04:28,720 --> 00:04:32,720
+I go to generate a proposal, we can do
+
+119
+00:04:31,160 --> 00:04:35,280
+it very, very quickly because that
+
+120
+00:04:32,720 --> 00:04:37,520
+knowledge is in my OKF. I think that
+
+121
+00:04:35,280 --> 00:04:40,520
+those skills, the steps that I gave the
+
+122
+00:04:37,520 --> 00:04:42,040
+agent, could also be a skills.md file. I
+
+123
+00:04:40,520 --> 00:04:44,400
+have a little bit of confusion. If you
+
+124
+00:04:42,040 --> 00:04:46,240
+know the difference between skills and
+
+125
+00:04:44,400 --> 00:04:48,080
+what we're creating in our open
+
+126
+00:04:46,240 --> 00:04:49,640
+knowledge format, then please do leave a
+
+127
+00:04:48,080 --> 00:04:51,680
+comment below because we're all trying
+
+128
+00:04:49,640 --> 00:04:53,760
+to learn this as we go along. So, here's
+
+129
+00:04:51,680 --> 00:04:55,560
+the very basic structure for the OKF
+
+130
+00:04:53,760 --> 00:04:58,520
+that is my brain. You can see that I
+
+131
+00:04:55,560 --> 00:05:01,040
+have an index file. I have a log file
+
+132
+00:04:58,520 --> 00:05:03,240
+which says everything that my agent has
+
+133
+00:05:01,040 --> 00:05:04,960
+chosen to to do. And then I have these
+
+134
+00:05:03,240 --> 00:05:06,520
+different types. We have concepts. It
+
+135
+00:05:04,960 --> 00:05:09,000
+really bothers me that Antigravity
+
+136
+00:05:06,520 --> 00:05:10,640
+spelled entities wrong. Well, I don't
+
+137
+00:05:09,000 --> 00:05:13,160
+even know that I need entities as a
+
+138
+00:05:10,640 --> 00:05:15,760
+type. I might change that. Playbooks,
+
+139
+00:05:13,160 --> 00:05:17,680
+references, and systems. These come from
+
+140
+00:05:15,760 --> 00:05:20,000
+some of the examples that Google gave
+
+141
+00:05:17,680 --> 00:05:22,560
+us, but your types can be anything. The
+
+142
+00:05:20,000 --> 00:05:25,960
+very first OKF that I created, I had far
+
+143
+00:05:22,560 --> 00:05:27,480
+too many types. It kind of reminds me of
+
+144
+00:05:25,960 --> 00:05:29,320
+when I first started blogging with
+
+145
+00:05:27,480 --> 00:05:30,960
+WordPress and I couldn't understand
+
+146
+00:05:29,320 --> 00:05:34,040
+whether something should be a category
+
+147
+00:05:30,960 --> 00:05:36,760
+or a tag. Types are essentially the the
+
+148
+00:05:34,040 --> 00:05:38,760
+very high-level categories that you want
+
+149
+00:05:36,760 --> 00:05:41,880
+to filter things by. And you'll see in a
+
+150
+00:05:38,760 --> 00:05:44,320
+minute how I filter my types in my
+
+151
+00:05:41,880 --> 00:05:46,080
+brain. And this is the index file. I'm
+
+152
+00:05:44,320 --> 00:05:49,160
+using this within the Antigravity
+
+153
+00:05:46,080 --> 00:05:52,160
+interface. The index file. So, let's say
+
+154
+00:05:49,160 --> 00:05:56,000
+I gave you my OKF bundle. I gave you my
+
+155
+00:05:52,160 --> 00:05:59,000
+brain. And you can then have your agent,
+
+156
+00:05:56,000 --> 00:06:00,840
+whatever it is that you use for AI, go
+
+157
+00:05:59,000 --> 00:06:03,480
+to my brain, and because it's a
+
+158
+00:06:00,840 --> 00:06:06,280
+standardized format, it will know. It'll
+
+159
+00:06:03,480 --> 00:06:09,080
+see on the index file what it is. All
+
+160
+00:06:06,280 --> 00:06:10,840
+right, this is a directory listing for
+
+161
+00:06:09,080 --> 00:06:12,960
+progressive disclosure. Basically, the
+
+162
+00:06:10,840 --> 00:06:14,920
+index file is saying to the agent, here
+
+163
+00:06:12,960 --> 00:06:18,120
+are all the things that are in this
+
+164
+00:06:14,920 --> 00:06:21,160
+brain. The difference between OKF and
+
+165
+00:06:18,120 --> 00:06:23,040
+rag, retrieval augmented generation, is
+
+166
+00:06:21,160 --> 00:06:25,480
+all of these things that I have in my
+
+167
+00:06:23,040 --> 00:06:28,600
+brain, I could just dump into the
+
+168
+00:06:25,480 --> 00:06:31,040
+context window for Gemini. Gemini has
+
+169
+00:06:28,600 --> 00:06:33,360
+this massive context window where you
+
+170
+00:06:31,040 --> 00:06:35,760
+could put in a couple of full-sized
+
+171
+00:06:33,360 --> 00:06:38,080
+books into the context window, and
+
+172
+00:06:35,760 --> 00:06:40,480
+Gemini's really good at picking out the
+
+173
+00:06:38,080 --> 00:06:43,040
+parts that are needed to answer its
+
+174
+00:06:40,480 --> 00:06:46,440
+question. However, that uses a lot of
+
+175
+00:06:43,040 --> 00:06:50,000
+tokens to do that. So, the beauty of OKF
+
+176
+00:06:46,440 --> 00:06:52,160
+is that it can look at your Is this
+
+177
+00:06:50,000 --> 00:06:54,280
+basically like a directory of what's in
+
+178
+00:06:52,160 --> 00:06:55,960
+my directories? And we can see that I
+
+179
+00:06:54,280 --> 00:06:58,320
+have concepts. Remember we saw that
+
+180
+00:06:55,960 --> 00:07:00,440
+folder? These concepts, I'm going to
+
+181
+00:06:58,320 --> 00:07:02,640
+show you how they got generated, because
+
+182
+00:07:00,440 --> 00:07:05,320
+I didn't put these in here, which is the
+
+183
+00:07:02,640 --> 00:07:07,600
+wild thing. I just gave my brain
+
+184
+00:07:05,320 --> 00:07:09,919
+information that I said I want to keep
+
+185
+00:07:07,600 --> 00:07:11,840
+this as a reference, and it broke it
+
+186
+00:07:09,919 --> 00:07:13,520
+down into concepts. And so, we have
+
+187
+00:07:11,840 --> 00:07:15,560
+concepts about
+
+188
+00:07:13,520 --> 00:07:17,720
+uh the agent payments protocol, the
+
+189
+00:07:15,560 --> 00:07:19,360
+agent-to-agent protocol. All of these
+
+190
+00:07:17,720 --> 00:07:21,800
+things that I might reference when I'm
+
+191
+00:07:19,360 --> 00:07:24,520
+talking to a client or doing my work.
+
+192
+00:07:21,800 --> 00:07:26,120
+Then we have the entities, which again
+
+193
+00:07:24,520 --> 00:07:28,960
+they've spelt wrong. I got to ask
+
+194
+00:07:26,120 --> 00:07:31,000
+anti-gravity to fix that. And these are
+
+195
+00:07:28,960 --> 00:07:33,080
+Again, I don't know that I need entities
+
+196
+00:07:31,000 --> 00:07:35,360
+in here. This is the interesting part,
+
+197
+00:07:33,080 --> 00:07:38,120
+the playbooks. The playbooks, some of
+
+198
+00:07:35,360 --> 00:07:40,880
+them are ones that I created. Um for
+
+199
+00:07:38,120 --> 00:07:43,480
+example, I created a a playbook that is
+
+200
+00:07:40,880 --> 00:07:46,000
+my communication voice. And the reason
+
+201
+00:07:43,480 --> 00:07:47,680
+why I did this is that when we did our
+
+202
+00:07:46,000 --> 00:07:52,280
+proposal,
+
+203
+00:07:47,680 --> 00:07:54,240
+the system tried to make it sound like a
+
+204
+00:07:52,280 --> 00:07:56,960
+big corporate business and said, "We
+
+205
+00:07:54,240 --> 00:07:59,120
+will do this and our team will blah blah
+
+206
+00:07:56,960 --> 00:08:01,120
+blah." And so I had to say that when you
+
+207
+00:07:59,120 --> 00:08:05,280
+work with MHC, you're just working with
+
+208
+00:08:01,120 --> 00:08:08,960
+Marie and use I instead of we and and
+
+209
+00:08:05,280 --> 00:08:10,640
+then we speak in a fairly casual tone,
+
+210
+00:08:08,960 --> 00:08:12,880
+you know, kind of tone it down in terms
+
+211
+00:08:10,640 --> 00:08:15,000
+of business speak and and corporate
+
+212
+00:08:12,880 --> 00:08:17,680
+speak, things like that. So I put that
+
+213
+00:08:15,000 --> 00:08:20,360
+in as a as a playbook. But some of my
+
+214
+00:08:17,680 --> 00:08:23,200
+playbooks as well are instructions. This
+
+215
+00:08:20,360 --> 00:08:25,680
+is the one that I'm really excited about
+
+216
+00:08:23,200 --> 00:08:28,080
+and I used this for a client, a
+
+217
+00:08:25,680 --> 00:08:30,280
+checkpoint procedure for analyzing site
+
+218
+00:08:28,080 --> 00:08:31,880
+impact after a Google update. As I'm
+
+219
+00:08:30,280 --> 00:08:35,000
+recording this, Google's rolling out a
+
+220
+00:08:31,880 --> 00:08:37,599
+spam update. I had a client that had
+
+221
+00:08:35,000 --> 00:08:39,800
+some sites that improved with the last
+
+222
+00:08:37,599 --> 00:08:42,640
+core update and some that declined and
+
+223
+00:08:39,800 --> 00:08:44,360
+we created this playbook. Now, it took
+
+224
+00:08:42,640 --> 00:08:46,760
+me a couple of days to make this
+
+225
+00:08:44,360 --> 00:08:49,520
+playbook, but now I have it there and
+
+226
+00:08:46,760 --> 00:08:52,360
+then I went to another client and said
+
+227
+00:08:49,520 --> 00:08:54,720
+to antigravity, "Can you run a Google
+
+228
+00:08:52,360 --> 00:08:56,760
+update analysis for this client?" And
+
+229
+00:08:54,720 --> 00:08:59,320
+instead of it taking me two days to do
+
+230
+00:08:56,760 --> 00:09:01,920
+it, it produced a report that I was very
+
+231
+00:08:59,320 --> 00:09:03,520
+happy with and and so this is the way
+
+232
+00:09:01,920 --> 00:09:05,720
+that we're going to do our work moving
+
+233
+00:09:03,520 --> 00:09:08,280
+forward. When people say that AI is
+
+234
+00:09:05,720 --> 00:09:09,839
+going to take jobs, I you know, I'm of
+
+235
+00:09:08,280 --> 00:09:11,600
+two minds about that. I do think that
+
+236
+00:09:09,839 --> 00:09:15,040
+there are some jobs that are going to be
+
+237
+00:09:11,600 --> 00:09:18,440
+lost because AI advances, but I also
+
+238
+00:09:15,040 --> 00:09:20,320
+think that people who use AI will not
+
+239
+00:09:18,440 --> 00:09:21,839
+I'm not going to lose my job, at least
+
+240
+00:09:20,320 --> 00:09:23,880
+at this point, maybe at some point in
+
+241
+00:09:21,839 --> 00:09:25,800
+the future. I'm not going to lose my job
+
+242
+00:09:23,880 --> 00:09:27,920
+because of AI. I'm going to be more
+
+243
+00:09:25,800 --> 00:09:30,280
+productive because of AI. I'm going to
+
+244
+00:09:27,920 --> 00:09:32,360
+be able to do more things. I don't have
+
+245
+00:09:30,280 --> 00:09:34,000
+to rely now, when I see a piece of
+
+246
+00:09:32,360 --> 00:09:37,360
+information that I want to put into my
+
+247
+00:09:34,000 --> 00:09:40,160
+brain, I I have to rely on my biological
+
+248
+00:09:37,360 --> 00:09:43,680
+hardware to remember things. Instead, my
+
+249
+00:09:40,160 --> 00:09:46,240
+brain has access to far more than my
+
+250
+00:09:43,680 --> 00:09:48,560
+biological brain has. And so this type
+
+251
+00:09:46,240 --> 00:09:50,200
+of system and and what I should say that
+
+252
+00:09:48,560 --> 00:09:51,560
+what I'm creating with OKF, I don't know
+
+253
+00:09:50,200 --> 00:09:53,640
+if this is the way to do it. This is
+
+254
+00:09:51,560 --> 00:09:56,040
+just the way that I'm doing it, but it
+
+255
+00:09:53,640 --> 00:09:58,280
+is making me more productive. It's
+
+256
+00:09:56,040 --> 00:10:00,400
+making me smarter. It's making me able
+
+257
+00:09:58,280 --> 00:10:02,800
+to do more for my clients, which will
+
+258
+00:10:00,400 --> 00:10:05,400
+make them more productive and eventually
+
+259
+00:10:02,800 --> 00:10:09,000
+we'll get to a system where my clients
+
+260
+00:10:05,400 --> 00:10:12,280
+have access to my OKF, so they have all
+
+261
+00:10:09,000 --> 00:10:14,760
+of the intelligence in my brain and then
+
+262
+00:10:12,280 --> 00:10:16,720
+we'll be making their own OKFs. So this
+
+263
+00:10:14,760 --> 00:10:18,480
+is going to really expand. I also have a
+
+264
+00:10:16,720 --> 00:10:19,600
+section in my OKF. I don't know if
+
+265
+00:10:18,480 --> 00:10:23,240
+you'll need this in yours for
+
+266
+00:10:19,600 --> 00:10:26,040
+references. These are all mostly Google
+
+267
+00:10:23,240 --> 00:10:29,320
+articles that Google has published. I
+
+268
+00:10:26,040 --> 00:10:30,880
+took the entirety of the Google SEO
+
+269
+00:10:29,320 --> 00:10:32,400
+starter guide. If you haven't If you're
+
+270
+00:10:30,880 --> 00:10:33,960
+in SEO and you haven't read the starter
+
+271
+00:10:32,400 --> 00:10:37,280
+guide, that is the thing that you should
+
+272
+00:10:33,960 --> 00:10:41,000
+be reading to to do SEO. And so now when
+
+273
+00:10:37,280 --> 00:10:43,720
+I go to my OKF and I use an agent to
+
+274
+00:10:41,000 --> 00:10:45,839
+access my OKF, I can get a quote from
+
+275
+00:10:43,720 --> 00:10:48,040
+anywhere from any of these Google
+
+276
+00:10:45,839 --> 00:10:49,920
+documentations. I also set up a thing.
+
+277
+00:10:48,040 --> 00:10:52,240
+This isn't OKF. This is just part of the
+
+278
+00:10:49,920 --> 00:10:54,320
+software I created that does a regular
+
+279
+00:10:52,240 --> 00:10:57,360
+check on these documents to see if
+
+280
+00:10:54,320 --> 00:10:59,480
+Google updated anything and sure enough
+
+281
+00:10:57,360 --> 00:11:02,200
+I got a notification yesterday that
+
+282
+00:10:59,480 --> 00:11:04,240
+Google updated the documentation on
+
+283
+00:11:02,200 --> 00:11:06,520
+Google updates so because there was a
+
+284
+00:11:04,240 --> 00:11:09,839
+spam update yesterday. Okay, let's jump
+
+285
+00:11:06,520 --> 00:11:11,080
+in to actually see the OKF in action.
+
+286
+00:11:09,839 --> 00:11:14,200
+All right, I know this looks like a big
+
+287
+00:11:11,080 --> 00:11:16,800
+mess. This is just after a few days of
+
+288
+00:11:14,200 --> 00:11:19,480
+me creating things. Each one of these
+
+289
+00:11:16,800 --> 00:11:21,720
+dots here is a markdown file in my
+
+290
+00:11:19,480 --> 00:11:24,240
+brain. So let's see if we can find one
+
+291
+00:11:21,720 --> 00:11:26,000
+where I can explain what's happening
+
+292
+00:11:24,240 --> 00:11:27,480
+here to you. You'll see here down in the
+
+293
+00:11:26,000 --> 00:11:30,240
+bottom left that these are the
+
+294
+00:11:27,480 --> 00:11:32,560
+playbooks. So or not the playbooks, the
+
+295
+00:11:30,240 --> 00:11:35,560
+these are the types that I created, and
+
+296
+00:11:32,560 --> 00:11:37,920
+we've got concepts, entities, systems,
+
+297
+00:11:35,560 --> 00:11:40,360
+playbooks, and references. And I can
+
+298
+00:11:37,920 --> 00:11:42,080
+actually just look at individual ones,
+
+299
+00:11:40,360 --> 00:11:44,280
+so we can see that I have these
+
+300
+00:11:42,080 --> 00:11:47,040
+different playbooks.
+
+301
+00:11:44,280 --> 00:11:49,680
+Some of these I didn't create. My brain
+
+302
+00:11:47,040 --> 00:11:52,480
+created. This is one Google has guidance
+
+303
+00:11:49,680 --> 00:11:54,000
+on uh assessing your content, and and so
+
+304
+00:11:52,480 --> 00:11:56,080
+my brain decided to create this. I'm
+
+305
+00:11:54,000 --> 00:11:58,040
+going to show you as well that uh my
+
+306
+00:11:56,080 --> 00:12:00,040
+brain just doesn't do things on its own.
+
+307
+00:11:58,040 --> 00:12:01,920
+I have to give it permission, and this
+
+308
+00:12:00,040 --> 00:12:05,120
+is something that you can set up. Let's
+
+309
+00:12:01,920 --> 00:12:07,000
+look at this node here, AI Overviews.
+
+310
+00:12:05,120 --> 00:12:08,640
+And you can see that I love I love just
+
+311
+00:12:07,000 --> 00:12:09,960
+kind of moving things around in here.
+
+312
+00:12:08,640 --> 00:12:14,520
+This is um
+
+313
+00:12:09,960 --> 00:12:18,000
+in the spec documentation for the OKF,
+
+314
+00:12:14,520 --> 00:12:20,200
+there is information on how to set up a
+
+315
+00:12:18,000 --> 00:12:21,680
+knowledge graph view like I have. Again,
+
+316
+00:12:20,200 --> 00:12:23,120
+just give it to your agent. I don't know
+
+317
+00:12:21,680 --> 00:12:25,160
+how this was created. It just was
+
+318
+00:12:23,120 --> 00:12:27,640
+created. And we can see that AI
+
+319
+00:12:25,160 --> 00:12:29,800
+Overviews, they Oh, I ended up clicking
+
+320
+00:12:27,640 --> 00:12:32,120
+on it. It links to a bunch of different
+
+321
+00:12:29,800 --> 00:12:34,080
+concepts that are related. So, now let's
+
+322
+00:12:32,120 --> 00:12:37,000
+actually look at the markdown file
+
+323
+00:12:34,080 --> 00:12:39,480
+itself. If we were looking at the actual
+
+324
+00:12:37,000 --> 00:12:42,160
+file structure, this is the YAML front
+
+325
+00:12:39,480 --> 00:12:43,480
+matter. The title is AI Overviews.
+
+326
+00:12:42,160 --> 00:12:45,920
+There's a little description,
+
+327
+00:12:43,480 --> 00:12:48,320
+AI-generated summaries at the top of
+
+328
+00:12:45,920 --> 00:12:50,880
+Google search results.
+
+329
+00:12:48,320 --> 00:12:53,480
+Uh and then and then we have these tags.
+
+330
+00:12:50,880 --> 00:12:54,960
+I think it's funny that it added SGE.
+
+331
+00:12:53,480 --> 00:12:57,000
+You can always know when somebody is
+
+332
+00:12:54,960 --> 00:12:59,280
+using a language model because it seems
+
+333
+00:12:57,000 --> 00:13:01,960
+to reference SGE, Search Generative
+
+334
+00:12:59,280 --> 00:13:03,360
+Experiences, what we first called AI
+
+335
+00:13:01,960 --> 00:13:04,920
+Overviews.
+
+336
+00:13:03,360 --> 00:13:06,640
+Uh and I could decide to just remove
+
+337
+00:13:04,920 --> 00:13:07,839
+that. That's, you know, I could if I
+
+338
+00:13:06,640 --> 00:13:10,360
+want, although I think it's good to
+
+339
+00:13:07,839 --> 00:13:13,240
+reference back to what it was known as
+
+340
+00:13:10,360 --> 00:13:16,560
+historically. Now, here is a bunch of
+
+341
+00:13:13,240 --> 00:13:18,839
+information. If I asked my brain, which
+
+342
+00:13:16,560 --> 00:13:21,280
+we will do in a minute, to tell me what
+
+343
+00:13:18,839 --> 00:13:23,839
+AI Overviews are, it will pull from this
+
+344
+00:13:21,280 --> 00:13:25,960
+information. So, instead of doing rag
+
+345
+00:13:23,839 --> 00:13:29,840
+across the entirety of the knowledge
+
+346
+00:13:25,960 --> 00:13:32,480
+that I know, it does rag across this one
+
+347
+00:13:29,840 --> 00:13:34,640
+markdown file. So, it is relatively
+
+348
+00:13:32,480 --> 00:13:37,600
+fast. You'll see that it does take some
+
+349
+00:13:34,640 --> 00:13:39,800
+time to figure out which markdown file
+
+350
+00:13:37,600 --> 00:13:41,600
+it needs to go to. And I think that that
+
+351
+00:13:39,800 --> 00:13:43,760
+can be improved over time. I think one
+
+352
+00:13:41,600 --> 00:13:46,240
+day we'll look back at the first things
+
+353
+00:13:43,760 --> 00:13:47,920
+that we created with OKF and realize how
+
+354
+00:13:46,240 --> 00:13:50,640
+primitive they are, but hey, we have to
+
+355
+00:13:47,920 --> 00:13:52,200
+start somewhere. And so, we'll see all
+
+356
+00:13:50,640 --> 00:13:55,920
+of these interesting things, the impact
+
+357
+00:13:52,200 --> 00:13:57,760
+on user behavior, the of AI overviews,
+
+358
+00:13:55,920 --> 00:14:00,000
+how to look at them through the Chrome
+
+359
+00:13:57,760 --> 00:14:02,840
+sidebar. There's there's a ton of stuff
+
+360
+00:14:00,000 --> 00:14:05,800
+that as I do something, my brain
+
+361
+00:14:02,840 --> 00:14:09,160
+updates. So, let's actually show the
+
+362
+00:14:05,800 --> 00:14:12,480
+brain in action. Now, this here, this
+
+363
+00:14:09,160 --> 00:14:16,480
+chat part of my brain is not actually
+
+364
+00:14:12,480 --> 00:14:19,800
+the OKF. It uses the OKF. The OKF is the
+
+365
+00:14:16,480 --> 00:14:22,640
+knowledge. This is my agent. Your agent,
+
+366
+00:14:19,800 --> 00:14:25,160
+I could do this from within antigravity,
+
+367
+00:14:22,640 --> 00:14:27,440
+but we built this thing where I said,
+
+368
+00:14:25,160 --> 00:14:30,600
+"Look, I want to be able to ingest
+
+369
+00:14:27,440 --> 00:14:32,640
+something." And and so, actually, let's
+
+370
+00:14:30,600 --> 00:14:34,920
+start by doing that. So, I saw on Search
+
+371
+00:14:32,640 --> 00:14:37,920
+Engine Roundtable today that Google had
+
+372
+00:14:34,920 --> 00:14:40,240
+updated the documentation on the new
+
+373
+00:14:37,920 --> 00:14:43,760
+feature that they have in Search Console
+
+374
+00:14:40,240 --> 00:14:46,720
+that allows you to choose how they use
+
+375
+00:14:43,760 --> 00:14:48,600
+how AI can use your content. And so,
+
+376
+00:14:46,720 --> 00:14:50,440
+normally, you know, I would read this
+
+377
+00:14:48,600 --> 00:14:51,920
+and I would summarize it myself, but
+
+378
+00:14:50,440 --> 00:14:54,720
+instead, what we're going to do today is
+
+379
+00:14:51,920 --> 00:14:56,400
+we're going to give it to my OKF agent.
+
+380
+00:14:54,720 --> 00:14:58,560
+Could just put the link in, but instead,
+
+381
+00:14:56,400 --> 00:15:00,839
+I'm going to say, "Ingest this." and
+
+382
+00:14:58,560 --> 00:15:03,440
+give it the link. And you can see it
+
+383
+00:15:00,839 --> 00:15:05,520
+says, "Agent is thinking." and it's
+
+384
+00:15:03,440 --> 00:15:07,880
+reading the file, it's reading the index
+
+385
+00:15:05,520 --> 00:15:09,400
+because it needs to know where it's
+
+386
+00:15:07,880 --> 00:15:11,120
+going to put it. So, here's the
+
+387
+00:15:09,400 --> 00:15:13,360
+interesting thing. I've seen a lot of
+
+388
+00:15:11,120 --> 00:15:15,120
+people talking about OKF saying that
+
+389
+00:15:13,360 --> 00:15:17,160
+they're creating entire markdown
+
+390
+00:15:15,120 --> 00:15:20,680
+versions of their website where every
+
+391
+00:15:17,160 --> 00:15:22,600
+page is its individual page in an a file
+
+392
+00:15:20,680 --> 00:15:24,160
+in the OKF. I don't think that that's
+
+393
+00:15:22,600 --> 00:15:26,200
+the right way to do it. I think where
+
+394
+00:15:24,160 --> 00:15:28,960
+the power comes is where we break things
+
+395
+00:15:26,200 --> 00:15:32,120
+down into concepts. And so, here's what
+
+396
+00:15:28,960 --> 00:15:35,240
+my agent has said. It's analyzed the new
+
+397
+00:15:32,120 --> 00:15:38,400
+documentation, and it's proposing a plan
+
+398
+00:15:35,240 --> 00:15:40,280
+to me. I asked it to do this. And if you
+
+399
+00:15:38,400 --> 00:15:41,880
+are building your own OKF, I would
+
+400
+00:15:40,280 --> 00:15:43,800
+recommend that you give it the
+
+401
+00:15:41,880 --> 00:15:46,640
+transcript to this video you're watching
+
+402
+00:15:43,800 --> 00:15:49,040
+now, and say "Build something like Marie
+
+403
+00:15:46,640 --> 00:15:51,760
+did." because this isn't in Google spec
+
+404
+00:15:49,040 --> 00:15:54,960
+documentation. I didn't want the OKF to
+
+405
+00:15:51,760 --> 00:15:56,600
+just go build its own brain, because
+
+406
+00:15:54,960 --> 00:15:58,720
+sometimes some of the things it wants to
+
+407
+00:15:56,600 --> 00:16:00,440
+put in there aren't quite right. And so,
+
+408
+00:15:58,720 --> 00:16:01,920
+I'll read through this. It's going to
+
+409
+00:16:00,440 --> 00:16:04,040
+create a new reference, meaning that
+
+410
+00:16:01,920 --> 00:16:05,560
+there's a new document. I could ask it
+
+411
+00:16:04,040 --> 00:16:07,720
+to track that reference. I don't really
+
+412
+00:16:05,560 --> 00:16:09,720
+care so much if this documentation
+
+413
+00:16:07,720 --> 00:16:12,680
+changes, so I'm not going to do that.
+
+414
+00:16:09,720 --> 00:16:15,200
+And it's got a description. It will
+
+415
+00:16:12,680 --> 00:16:17,840
+detail will include the include,
+
+416
+00:16:15,200 --> 00:16:19,600
+exclude, and inherit options. It's going
+
+417
+00:16:17,840 --> 00:16:22,080
+to update. This is the really
+
+418
+00:16:19,600 --> 00:16:25,480
+interesting part. Update reference. So,
+
+419
+00:16:22,080 --> 00:16:28,120
+we already have a concept in our play or
+
+420
+00:16:25,480 --> 00:16:30,360
+our concept in our OKF called AI
+
+421
+00:16:28,120 --> 00:16:33,120
+features in Google Search. It's going to
+
+422
+00:16:30,360 --> 00:16:35,360
+add something to that to connect it to
+
+423
+00:16:33,120 --> 00:16:37,240
+this new concept that we've created.
+
+424
+00:16:35,360 --> 00:16:41,160
+It's going to update the concept about
+
+425
+00:16:37,240 --> 00:16:42,880
+AI overviews and about AI mode.
+
+426
+00:16:41,160 --> 00:16:45,240
+And then
+
+427
+00:16:42,880 --> 00:16:46,960
+and then more. So, I
+
+428
+00:16:45,240 --> 00:16:50,040
+put this instead of me saying yes, go
+
+429
+00:16:46,960 --> 00:16:52,240
+ahead, I made a button, and I'm going to
+
+430
+00:16:50,040 --> 00:16:54,640
+say go ahead with the plan. So, now our
+
+431
+00:16:52,240 --> 00:16:57,720
+agent is thinking again. It's reading
+
+432
+00:16:54,640 --> 00:16:59,680
+some of the references, and it will make
+
+433
+00:16:57,720 --> 00:17:01,600
+these changes. In a second, it's going
+
+434
+00:16:59,680 --> 00:17:03,520
+to show us what changes it made. It's
+
+435
+00:17:01,600 --> 00:17:05,680
+creating a new concept, Search
+
+436
+00:17:03,520 --> 00:17:08,079
+Generative AI Control Guide.
+
+437
+00:17:05,680 --> 00:17:10,199
+Interesting. Okay. So, now in the
+
+438
+00:17:08,079 --> 00:17:11,760
+future, well, I'll show you in a second
+
+439
+00:17:10,199 --> 00:17:13,959
+how we're going to use this information.
+
+440
+00:17:11,760 --> 00:17:16,120
+So, now my agent tells me what it did,
+
+441
+00:17:13,959 --> 00:17:17,280
+and it created a new reference, which
+
+442
+00:17:16,120 --> 00:17:19,920
+I'm going to show you that in just a
+
+443
+00:17:17,280 --> 00:17:21,520
+minute, and uh tells me what's in this
+
+444
+00:17:19,920 --> 00:17:22,600
+reference. I usually skim through this
+
+445
+00:17:21,520 --> 00:17:24,520
+just to make sure that there's not
+
+446
+00:17:22,600 --> 00:17:26,360
+something that I'm like, "Whoa, actually
+
+447
+00:17:24,520 --> 00:17:28,480
+I want it to be this way." It's almost
+
+448
+00:17:26,360 --> 00:17:30,840
+always right. I should mention the model
+
+449
+00:17:28,480 --> 00:17:34,440
+that I'm using here. I'm using through
+
+450
+00:17:30,840 --> 00:17:37,600
+Google's API, the Gemini API. I'm using
+
+451
+00:17:34,440 --> 00:17:39,960
+Gemini flash uh three flash preview.
+
+452
+00:17:37,600 --> 00:17:41,800
+There is a newer model. There's 3.5
+
+453
+00:17:39,960 --> 00:17:43,960
+flash. It's a little bit more expensive
+
+454
+00:17:41,800 --> 00:17:46,400
+to do that, and I find that three flash
+
+455
+00:17:43,960 --> 00:17:48,520
+preview works really really well. So, I
+
+456
+00:17:46,400 --> 00:17:50,800
+have made that a rule within
+
+457
+00:17:48,520 --> 00:17:52,800
+anti-gravity to uh
+
+458
+00:17:50,800 --> 00:17:54,360
+to always use that model. So, that's
+
+459
+00:17:52,800 --> 00:17:57,200
+what it's using.
+
+460
+00:17:54,360 --> 00:17:59,600
+Um it updated the reference AI features
+
+461
+00:17:57,200 --> 00:18:01,320
+in Google Search. It updated these
+
+462
+00:17:59,600 --> 00:18:02,880
+concepts, different concepts, and then
+
+463
+00:18:01,320 --> 00:18:04,360
+it says, "Is there anything else you
+
+464
+00:18:02,880 --> 00:18:07,360
+would like me to analyze or update in
+
+465
+00:18:04,360 --> 00:18:09,560
+your brain?" So, let's actually look at
+
+466
+00:18:07,360 --> 00:18:12,920
+uh this new reference that it created.
+
+467
+00:18:09,560 --> 00:18:15,400
+And here it is. We have in markdown this
+
+468
+00:18:12,920 --> 00:18:19,520
+new file. So, this lives on my computer.
+
+469
+00:18:15,400 --> 00:18:22,080
+I do also have this uh backup to GitHub,
+
+470
+00:18:19,520 --> 00:18:24,920
+and I make regular backups of it every
+
+471
+00:18:22,080 --> 00:18:27,800
+single day uh so that if something goes
+
+472
+00:18:24,920 --> 00:18:29,600
+wrong and my program overwrites my brain
+
+473
+00:18:27,800 --> 00:18:32,200
+or I lose my computer or something like
+
+474
+00:18:29,600 --> 00:18:34,880
+that, then I still have access to my
+
+475
+00:18:32,200 --> 00:18:38,080
+brain on GitHub. And uh we can see that
+
+476
+00:18:34,880 --> 00:18:40,600
+it's added uh you know, key features uh
+
+477
+00:18:38,080 --> 00:18:43,200
+to this documentation, the timeline. It
+
+478
+00:18:40,600 --> 00:18:45,840
+pulled out the interesting things that
+
+479
+00:18:43,200 --> 00:18:50,120
+we would want to know. And then uh it
+
+480
+00:18:45,840 --> 00:18:52,240
+also has um sources. Now, let's um
+
+481
+00:18:50,120 --> 00:18:56,040
+actually look let's actually ask the
+
+482
+00:18:52,240 --> 00:18:58,680
+brain for information on these new
+
+483
+00:18:56,040 --> 00:19:01,240
+controls. Uh so, let's say, "What are
+
+484
+00:18:58,680 --> 00:19:02,760
+You know what? Write in one paragraph."
+
+485
+00:19:01,240 --> 00:19:05,560
+Cuz this is how I would use it in a
+
+486
+00:19:02,760 --> 00:19:08,800
+report for a client report, a
+
+487
+00:19:05,560 --> 00:19:12,880
+description of the new
+
+488
+00:19:08,800 --> 00:19:14,400
+AI controls we have in Search Console.
+
+489
+00:19:12,880 --> 00:19:16,160
+Now, we can see the agent is thinking.
+
+490
+00:19:14,400 --> 00:19:18,040
+It's reading the index. It figures out
+
+491
+00:19:16,160 --> 00:19:20,160
+that oh, it actually figured out right
+
+492
+00:19:18,040 --> 00:19:22,360
+away that it needed to go to that guide
+
+493
+00:19:20,160 --> 00:19:25,040
+that we created. Now sometimes it goes
+
+494
+00:19:22,360 --> 00:19:26,680
+to multiple sources to generate
+
+495
+00:19:25,040 --> 00:19:28,600
+something and it wrote, "Google has
+
+496
+00:19:26,680 --> 00:19:30,960
+introduced a new search generative AI
+
+497
+00:19:28,600 --> 00:19:32,320
+control within search console allowing
+
+498
+00:19:30,960 --> 00:19:34,520
+website owners to manage how their
+
+499
+00:19:32,320 --> 00:19:37,600
+content is utilized across AI-powered
+
+500
+00:19:34,520 --> 00:19:39,240
+features." And then it gives me all of
+
+501
+00:19:37,600 --> 00:19:40,960
+these things. Uh
+
+502
+00:19:39,240 --> 00:19:42,560
+and so yeah, it's not adding anything
+
+503
+00:19:40,960 --> 00:19:44,000
+new to my brain. I don't know if I
+
+504
+00:19:42,560 --> 00:19:45,760
+should create a separate agent for
+
+505
+00:19:44,000 --> 00:19:47,280
+querying the brain and putting stuff
+
+506
+00:19:45,760 --> 00:19:49,920
+into the brain, but this seems to work
+
+507
+00:19:47,280 --> 00:19:52,400
+well for me now. I also created
+
+508
+00:19:49,920 --> 00:19:55,360
+something that I'll show you probably in
+
+509
+00:19:52,400 --> 00:19:57,520
+another video that takes all of the
+
+510
+00:19:55,360 --> 00:19:59,560
+stories that are put into my community,
+
+511
+00:19:57,520 --> 00:20:01,840
+the search bar. If you're not aware of
+
+512
+00:19:59,560 --> 00:20:03,800
+my community, we you know what, let me
+
+513
+00:20:01,840 --> 00:20:05,720
+show it to you. Myself and other members
+
+514
+00:20:03,800 --> 00:20:08,480
+of the community document pretty much
+
+515
+00:20:05,720 --> 00:20:10,840
+everything that's happening in search
+
+516
+00:20:08,480 --> 00:20:12,520
+and in AI that's interesting.
+
+517
+00:20:10,840 --> 00:20:13,840
+So if you want to be ahead of the curve
+
+518
+00:20:12,520 --> 00:20:16,520
+in staying up to date in what's
+
+519
+00:20:13,840 --> 00:20:18,480
+happening, then everything that is
+
+520
+00:20:16,520 --> 00:20:20,320
+important is in this community,
+
+521
+00:20:18,480 --> 00:20:22,440
+community.mariehaynes.com.
+
+522
+00:20:20,320 --> 00:20:24,920
+This is totally free the by the way.
+
+523
+00:20:22,440 --> 00:20:26,720
+There is a paid area that is fantastic.
+
+524
+00:20:24,920 --> 00:20:28,480
+We have a meeting soon. I got to wrap up
+
+525
+00:20:26,720 --> 00:20:30,760
+this video because we're going to be
+
+526
+00:20:28,480 --> 00:20:32,840
+talking about the new agentic resource
+
+527
+00:20:30,760 --> 00:20:34,640
+discovery protocol that Google made.
+
+528
+00:20:32,840 --> 00:20:37,320
+Again, I'll probably make a video on
+
+529
+00:20:34,640 --> 00:20:40,320
+that as well. And the reason why I'm
+
+530
+00:20:37,320 --> 00:20:41,840
+showing you this is that I want to make
+
+531
+00:20:40,320 --> 00:20:44,360
+these personalized versions of
+
+532
+00:20:41,840 --> 00:20:47,320
+newsletter because nobody other than me
+
+533
+00:20:44,360 --> 00:20:50,120
+and maybe you are as geeky as me and as
+
+534
+00:20:47,320 --> 00:20:53,920
+obsessed with what's happening in AI and
+
+535
+00:20:50,120 --> 00:20:56,640
+you I spend hours every day. And so what
+
+536
+00:20:53,920 --> 00:21:00,560
+I'm doing with an OKF for my
+
+537
+00:20:56,640 --> 00:21:01,880
+community is taking the API that comes
+
+538
+00:21:00,560 --> 00:21:04,960
+from Mighty Networks that makes my
+
+539
+00:21:01,880 --> 00:21:08,000
+community, putting all of these stories
+
+540
+00:21:04,960 --> 00:21:10,760
+into an OKF with a little bit of human
+
+541
+00:21:08,000 --> 00:21:12,720
+in the loop curation. And then I should
+
+542
+00:21:10,760 --> 00:21:15,040
+be able to make it so that it can make a
+
+543
+00:21:12,720 --> 00:21:17,200
+personalized version of newsletter so
+
+544
+00:21:15,040 --> 00:21:19,640
+that you get just the stories that you
+
+545
+00:21:17,200 --> 00:21:22,200
+need. We'll see how that works. I'm
+
+546
+00:21:19,640 --> 00:21:23,960
+telling you OKF is absolutely amazing.
+
+547
+00:21:22,200 --> 00:21:25,720
+There are a lot of things we can do with
+
+548
+00:21:23,960 --> 00:21:28,440
+it. I really hope that you're
+
+549
+00:21:25,720 --> 00:21:31,640
+experimenting with it. And if you want
+
+550
+00:21:28,440 --> 00:21:34,200
+to get started, then take the links in
+
+551
+00:21:31,640 --> 00:21:38,240
+the description below, give it to
+
+552
+00:21:34,200 --> 00:21:40,440
+Claude, to ChatGPT Codex, to my favorite
+
+553
+00:21:38,240 --> 00:21:42,000
+to antigravity. I know people are saying
+
+554
+00:21:40,440 --> 00:21:44,320
+Google's behind. I know people are
+
+555
+00:21:42,000 --> 00:21:46,880
+leaving Google. I thoroughly, thoroughly
+
+556
+00:21:44,320 --> 00:21:49,840
+believe that Google is like the tortoise
+
+557
+00:21:46,880 --> 00:21:52,480
+and the hare is slowly moving towards
+
+558
+00:21:49,840 --> 00:21:54,320
+being the world's leader in AI. They
+
+559
+00:21:52,480 --> 00:21:56,200
+already are the world's leader in AI.
+
+560
+00:21:54,320 --> 00:21:58,560
+That's probably a topic for another
+
+561
+00:21:56,200 --> 00:22:00,600
+video. I really would encourage you to
+
+562
+00:21:58,560 --> 00:22:02,960
+get used to using antigravity because it
+
+563
+00:22:00,600 --> 00:22:05,880
+is so absolutely amazing. So you can
+
+564
+00:22:02,960 --> 00:22:07,720
+give your coding agent whatever it is
+
+565
+00:22:05,880 --> 00:22:09,440
+instructions. You don't have to know how
+
+566
+00:22:07,720 --> 00:22:10,920
+to code. You can actually tell it, "I
+
+567
+00:22:09,440 --> 00:22:13,040
+don't know how to code, but I want to
+
+568
+00:22:10,920 --> 00:22:14,920
+build something that does this." I'll
+
+569
+00:22:13,040 --> 00:22:17,480
+tell you my first version of the OKF
+
+570
+00:22:14,920 --> 00:22:19,640
+that I built, it saved everything in
+
+571
+00:22:17,480 --> 00:22:21,160
+markdown, it displayed everything in
+
+572
+00:22:19,640 --> 00:22:22,880
+markdown, but it didn't actually save it
+
+573
+00:22:21,160 --> 00:22:24,800
+to markdown files, and I had to start
+
+574
+00:22:22,880 --> 00:22:26,800
+over again. You probably will have to
+
+575
+00:22:24,800 --> 00:22:28,600
+take a few shots at doing this, but
+
+576
+00:22:26,800 --> 00:22:31,200
+that's okay because this is a skill that
+
+577
+00:22:28,600 --> 00:22:33,400
+we're learning in being able to use this
+
+578
+00:22:31,200 --> 00:22:35,840
+new technology to create things that'll
+
+579
+00:22:33,400 --> 00:22:38,400
+make us more useful, more helpful, more
+
+580
+00:22:35,840 --> 00:22:40,480
+productive, and to be more excited about
+
+581
+00:22:38,400 --> 00:22:42,400
+the work that we do. So I hope you've
+
+582
+00:22:40,480 --> 00:22:44,720
+enjoyed that. Please share below in the
+
+583
+00:22:42,400 --> 00:22:46,680
+comments what you're doing with OKF
+
+584
+00:22:44,720 --> 00:22:49,720
+because this is the start of something
+
+585
+00:22:46,680 --> 00:22:49,720
+really exciting.

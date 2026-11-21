@@ -1,0 +1,10179 @@
+1
+00:00:00,000 --> 00:00:04,400
+Agentic commerce will be bigger than
+
+2
+00:00:02,360 --> 00:00:06,480
+e-commerce. There are cases where the
+
+3
+00:00:04,400 --> 00:00:08,000
+Sierra agent is actually getting paid a
+
+4
+00:00:06,480 --> 00:00:10,680
+commission on a sale.
+
+5
+00:00:08,000 --> 00:00:13,040
+>> Today, I'm talking to Zack Reno Wedeen,
+
+6
+00:00:10,680 --> 00:00:15,160
+head of product at Sierra, the platform
+
+7
+00:00:13,040 --> 00:00:16,560
+powering customer experience agents for
+
+8
+00:00:15,160 --> 00:00:17,920
+most of the Fortune 20.
+
+9
+00:00:16,560 --> 00:00:19,400
+>> Coding agents are really good at file
+
+10
+00:00:17,920 --> 00:00:21,080
+systems, they're really good at Git,
+
+11
+00:00:19,400 --> 00:00:23,080
+they're really good at grep. Let's
+
+12
+00:00:21,080 --> 00:00:25,440
+materialize everything into those
+
+13
+00:00:23,080 --> 00:00:26,520
+structures so that coding agents can
+
+14
+00:00:25,440 --> 00:00:28,320
+just, [music] you know, cook.
+
+15
+00:00:26,520 --> 00:00:30,360
+>> He breaks down how Sierra builds for
+
+16
+00:00:28,320 --> 00:00:32,240
+voice and why the architecture looks
+
+17
+00:00:30,360 --> 00:00:34,600
+nothing like a standard agent harness.
+
+18
+00:00:32,240 --> 00:00:36,720
+>> One of the big unlocks for Sierra agents
+
+19
+00:00:34,600 --> 00:00:38,640
+was how to parallelize thinking,
+
+20
+00:00:36,720 --> 00:00:40,400
+listening, and talking. And if this
+
+21
+00:00:38,640 --> 00:00:42,160
+model says it's silent, you trust it. If
+
+22
+00:00:40,400 --> 00:00:42,960
+this model does not say it's silent, you
+
+23
+00:00:42,160 --> 00:00:45,040
+trust this one.
+
+24
+00:00:42,960 --> 00:00:46,760
+>> We get into why a Sierra conversation is
+
+25
+00:00:45,040 --> 00:00:48,360
+unlike a typical LLM call.
+
+26
+00:00:46,760 --> 00:00:49,880
+>> You know, 10 or 15 different models
+
+27
+00:00:48,360 --> 00:00:51,640
+might be invoked for a given
+
+28
+00:00:49,880 --> 00:00:54,000
+conversation turn. So, sometimes you're
+
+29
+00:00:51,640 --> 00:00:54,640
+classifying and you're responding at the
+
+30
+00:00:54,000 --> 00:00:57,000
+same time.
+
+31
+00:00:54,640 --> 00:00:58,240
+>> And Zack explains how and why Sierra
+
+32
+00:00:57,000 --> 00:00:59,880
+built an entirely separate
+
+33
+00:00:58,240 --> 00:01:02,240
+infrastructure layer for payments.
+
+34
+00:00:59,880 --> 00:01:04,199
+>> We have isolated infrastructure where
+
+35
+00:01:02,240 --> 00:01:05,199
+payment info doesn't go to an external
+
+36
+00:01:04,199 --> 00:01:07,600
+large language model because none of the
+
+37
+00:01:05,199 --> 00:01:08,000
+LLM providers are PCI certified in that
+
+38
+00:01:07,600 --> 00:01:10,085
+way.
+
+39
+00:01:08,000 --> 00:01:11,920
+>> Welcome to Max Agency, the podcast
+
+40
+00:01:10,085 --> 00:01:14,120
+[music] that goes deep into how the best
+
+41
+00:01:11,920 --> 00:01:15,980
+agents are being built by builders like
+
+42
+00:01:14,120 --> 00:01:17,000
+you.
+
+43
+00:01:15,980 --> 00:01:18,680
+>> [music]
+
+44
+00:01:17,000 --> 00:01:21,240
+>> Most people are probably familiar with
+
+45
+00:01:18,680 --> 00:01:22,960
+Sierra as a customer support platform.
+
+46
+00:01:21,240 --> 00:01:24,360
+But, from what I understand, recently
+
+47
+00:01:22,960 --> 00:01:25,760
+you guys are going broader than that.
+
+48
+00:01:24,360 --> 00:01:27,440
+Could you talk a little bit about the
+
+49
+00:01:25,760 --> 00:01:28,400
+types of agents that you help people
+
+50
+00:01:27,440 --> 00:01:30,080
+build?
+
+51
+00:01:28,400 --> 00:01:31,760
+>> Yeah, so this has been the vision since
+
+52
+00:01:30,080 --> 00:01:34,720
+the beginning. I think because many
+
+53
+00:01:31,760 --> 00:01:36,640
+companies have an RFP process where
+
+54
+00:01:34,720 --> 00:01:39,000
+they're very specific about, "Hey, we
+
+55
+00:01:36,640 --> 00:01:41,200
+want to solve customer service." That is
+
+56
+00:01:39,000 --> 00:01:44,080
+often where we start, but we think of
+
+57
+00:01:41,200 --> 00:01:46,120
+Sierra as the full engagement platform
+
+58
+00:01:44,080 --> 00:01:48,280
+across all of the moments that matter
+
+59
+00:01:46,120 --> 00:01:50,760
+for your customers. So, if you're an
+
+60
+00:01:48,280 --> 00:01:52,720
+airline, that might be browsing for a
+
+61
+00:01:50,760 --> 00:01:54,760
+flight, might be booking the flight,
+
+62
+00:01:52,720 --> 00:01:57,000
+might be choosing your seat, might be in
+
+63
+00:01:54,760 --> 00:01:59,440
+my case, I have a small dog, so adding a
+
+64
+00:01:57,000 --> 00:02:02,560
+pet in cabin, then the flight might get
+
+65
+00:01:59,440 --> 00:02:04,800
+rescheduled or delayed or
+
+66
+00:02:02,560 --> 00:02:06,240
+cancelled, etc. etc. You need to get
+
+67
+00:02:04,800 --> 00:02:08,679
+your bags there. There are just so many
+
+68
+00:02:06,240 --> 00:02:10,399
+different things across that process.
+
+69
+00:02:08,679 --> 00:02:12,120
+Some of them are sort of sales, some of
+
+70
+00:02:10,399 --> 00:02:14,360
+them are more service, some of them are
+
+71
+00:02:12,120 --> 00:02:16,800
+more loyalty, but they all kind of
+
+72
+00:02:14,360 --> 00:02:19,560
+ladder up to the relationship between a
+
+73
+00:02:16,800 --> 00:02:21,640
+business and its customers. And Sierra
+
+74
+00:02:19,560 --> 00:02:22,920
+agents are present at all of these
+
+75
+00:02:21,640 --> 00:02:25,840
+different parts of the customer life
+
+76
+00:02:22,920 --> 00:02:27,760
+cycle. So, as an example,
+
+77
+00:02:25,840 --> 00:02:29,720
+there are cases where the Sierra agent
+
+78
+00:02:27,760 --> 00:02:31,880
+is actually, because of our
+
+79
+00:02:29,720 --> 00:02:34,480
+outcome-based pricing model, getting
+
+80
+00:02:31,880 --> 00:02:35,760
+paid a commission on a sale, which I
+
+81
+00:02:34,480 --> 00:02:37,959
+think is quite different from how most
+
+82
+00:02:35,760 --> 00:02:40,000
+people would imagine service. And so, we
+
+83
+00:02:37,959 --> 00:02:41,840
+get really excited about those more
+
+84
+00:02:40,000 --> 00:02:43,360
+exotic opportunities because they also
+
+85
+00:02:41,840 --> 00:02:45,880
+give us an opportunity to push the
+
+86
+00:02:43,360 --> 00:02:48,440
+platform forward and, you know, continue
+
+87
+00:02:45,880 --> 00:02:50,120
+adding to what the platform can do, and
+
+88
+00:02:48,440 --> 00:02:52,680
+kind of turn that into a product,
+
+89
+00:02:50,120 --> 00:02:54,040
+package it up nicely, and bring more to
+
+90
+00:02:52,680 --> 00:02:54,840
+all of our existing and future
+
+91
+00:02:54,040 --> 00:02:57,440
+customers.
+
+92
+00:02:54,840 --> 00:02:58,880
+>> How similar is the platform between
+
+93
+00:02:57,440 --> 00:03:01,200
+these different use cases?
+
+94
+00:02:58,880 --> 00:03:03,920
+>> I would say that
+
+95
+00:03:01,200 --> 00:03:06,480
+it's very extensible, and so you can
+
+96
+00:03:03,920 --> 00:03:08,239
+kind of take it in different directions.
+
+97
+00:03:06,480 --> 00:03:09,920
+We like to say, I think it's originally
+
+98
+00:03:08,239 --> 00:03:11,160
+attributed to the
+
+99
+00:03:09,920 --> 00:03:13,519
+one of the creators of the programming
+
+100
+00:03:11,160 --> 00:03:15,040
+language Pearl, but we try to make the
+
+101
+00:03:13,519 --> 00:03:17,840
+easy things easy and the hard things
+
+102
+00:03:15,040 --> 00:03:20,040
+possible. So, out of the box, pretty
+
+103
+00:03:17,840 --> 00:03:21,640
+similar, the starting point, but you can
+
+104
+00:03:20,040 --> 00:03:23,400
+kind of take it in any direction that
+
+105
+00:03:21,640 --> 00:03:25,640
+you want. So, it's not that, oh, there's
+
+106
+00:03:23,400 --> 00:03:28,760
+like a separate product for, you know,
+
+107
+00:03:25,640 --> 00:03:30,640
+one company versus another, but the
+
+108
+00:03:28,760 --> 00:03:32,200
+agents that you can build on it, and
+
+109
+00:03:30,640 --> 00:03:34,320
+we'd like to think of these agents as
+
+110
+00:03:32,200 --> 00:03:36,760
+products onto themselves, can be
+
+111
+00:03:34,320 --> 00:03:38,959
+arbitrarily customized.
+
+112
+00:03:36,760 --> 00:03:40,320
+>> What does it look like to build on the
+
+113
+00:03:38,959 --> 00:03:42,920
+Sierra platform?
+
+114
+00:03:40,320 --> 00:03:44,600
+>> So, we have a It's basically a web app.
+
+115
+00:03:42,920 --> 00:03:46,480
+There's three main sections. There's
+
+116
+00:03:44,600 --> 00:03:47,760
+analyze, build, and then there's
+
+117
+00:03:46,480 --> 00:03:49,920
+release.
+
+118
+00:03:47,760 --> 00:03:53,120
+Within the analyze section, you have
+
+119
+00:03:49,920 --> 00:03:55,360
+things like our explorer agent, which is
+
+120
+00:03:53,120 --> 00:03:57,920
+kind of the long-running ChatGPT deep
+
+121
+00:03:55,360 --> 00:04:00,160
+research for all of your customer
+
+122
+00:03:57,920 --> 00:04:02,200
+conversations and data. You have
+
+123
+00:04:00,160 --> 00:04:04,160
+reports, you have monitors, which are
+
+124
+00:04:02,200 --> 00:04:06,360
+kind of always-on evaluators of
+
+125
+00:04:04,160 --> 00:04:08,040
+conversation data as well.
+
+126
+00:04:06,360 --> 00:04:10,440
+And then within build, you have
+
+127
+00:04:08,040 --> 00:04:12,800
+ghostwriter, which is the agent similar
+
+128
+00:04:10,440 --> 00:04:14,160
+to Codex or Claude code for building
+
+129
+00:04:12,800 --> 00:04:15,640
+agents.
+
+130
+00:04:14,160 --> 00:04:17,840
+You also have journeys, kind of the
+
+131
+00:04:15,640 --> 00:04:19,720
+underlying source code layer, although
+
+132
+00:04:17,840 --> 00:04:21,560
+it's not really code. It's more like
+
+133
+00:04:19,720 --> 00:04:24,760
+natural language or standard operating
+
+134
+00:04:21,560 --> 00:04:26,160
+procedures. As well as kind of different
+
+135
+00:04:24,760 --> 00:04:28,560
+variables
+
+136
+00:04:26,160 --> 00:04:31,480
+and everything like that. On the release
+
+137
+00:04:28,560 --> 00:04:33,560
+side, you have all of the collaboration
+
+138
+00:04:31,480 --> 00:04:35,919
+and change management and governance
+
+139
+00:04:33,560 --> 00:04:37,760
+procedures. And so Sierra, I think at
+
+140
+00:04:35,919 --> 00:04:41,640
+this point we're working with most of
+
+141
+00:04:37,760 --> 00:04:43,800
+the Fortune 20, something like 40 or 50%
+
+142
+00:04:41,640 --> 00:04:45,320
+of the Fortune 50 or Fortune 100. So
+
+143
+00:04:43,800 --> 00:04:46,840
+very much
+
+144
+00:04:45,320 --> 00:04:49,280
+with a lot of the largest companies in
+
+145
+00:04:46,840 --> 00:04:51,720
+the world. And they have needs around
+
+146
+00:04:49,280 --> 00:04:54,600
+governance and release processes and
+
+147
+00:04:51,720 --> 00:04:56,960
+change management that have just pushed
+
+148
+00:04:54,600 --> 00:04:58,800
+us to develop from the very beginning,
+
+149
+00:04:56,960 --> 00:05:00,840
+you know, very buttoned-up procedures
+
+150
+00:04:58,800 --> 00:05:02,760
+and collaboration and review and all of
+
+151
+00:05:00,840 --> 00:05:04,800
+this stuff. That's basically what it's
+
+152
+00:05:02,760 --> 00:05:06,880
+like, I think, on the surface, but
+
+153
+00:05:04,800 --> 00:05:08,360
+probably similar to a lot of other, you
+
+154
+00:05:06,880 --> 00:05:09,880
+know, places that you go to build
+
+155
+00:05:08,360 --> 00:05:12,440
+things, whether that's
+
+156
+00:05:09,880 --> 00:05:14,560
+Figma or Claude code or these different
+
+157
+00:05:12,440 --> 00:05:18,680
+places, but just very much optimized
+
+158
+00:05:14,560 --> 00:05:20,360
+around no-code agent building and um
+
+159
+00:05:18,680 --> 00:05:23,080
+giving you all those capabilities.
+
+160
+00:05:20,360 --> 00:05:24,800
+>> And are those different steps intended
+
+161
+00:05:23,080 --> 00:05:26,360
+to be done in that order? Like analyze,
+
+162
+00:05:24,800 --> 00:05:28,200
+build, release. Can you analyze
+
+163
+00:05:26,360 --> 00:05:30,160
+basically human transcripts before you
+
+164
+00:05:28,200 --> 00:05:31,680
+build the AI agent? Or does analyze
+
+165
+00:05:30,160 --> 00:05:32,919
+really come after you build and release
+
+166
+00:05:31,680 --> 00:05:34,520
+the first version of the agent and now
+
+167
+00:05:32,919 --> 00:05:38,040
+you're iterating on it?
+
+168
+00:05:34,520 --> 00:05:40,640
+>> It's both. So, typically, you'll come in
+
+169
+00:05:38,040 --> 00:05:43,120
+with some sort of resource of how you
+
+170
+00:05:40,640 --> 00:05:45,720
+want the agent to be structured and
+
+171
+00:05:43,120 --> 00:05:47,480
+architected, how you want it to behave.
+
+172
+00:05:45,720 --> 00:05:49,520
+Maybe that's transcripts, maybe that's
+
+173
+00:05:47,480 --> 00:05:51,040
+standard operating procedure, maybe
+
+174
+00:05:49,520 --> 00:05:52,440
+that's a conversation that you have with
+
+175
+00:05:51,040 --> 00:05:54,200
+Ghostwriter.
+
+176
+00:05:52,440 --> 00:05:56,440
+And that will typically be how you build
+
+177
+00:05:54,200 --> 00:05:58,440
+the agent. So, I'd say most people will
+
+178
+00:05:56,440 --> 00:06:01,160
+start with build, but then once your
+
+179
+00:05:58,440 --> 00:06:04,000
+agent is live and production
+
+180
+00:06:01,160 --> 00:06:06,080
+conversations are happening, your daily
+
+181
+00:06:04,000 --> 00:06:08,120
+routine probably starts more with
+
+182
+00:06:06,080 --> 00:06:10,440
+analysis. You're probably thinking, how
+
+183
+00:06:08,120 --> 00:06:11,760
+can I optimize the metric that I care
+
+184
+00:06:10,440 --> 00:06:15,040
+about, whether that's customer
+
+185
+00:06:11,760 --> 00:06:16,320
+satisfaction or resolution rate or in
+
+186
+00:06:15,040 --> 00:06:18,919
+the case of the customer I mentioned,
+
+187
+00:06:16,320 --> 00:06:21,760
+like sales converted.
+
+188
+00:06:18,919 --> 00:06:23,360
+And so, you get those insights and then
+
+189
+00:06:21,760 --> 00:06:25,640
+you want to make improvements to the
+
+190
+00:06:23,360 --> 00:06:27,919
+agent, whether it's, you know, fixing an
+
+191
+00:06:25,640 --> 00:06:30,000
+issue or finding a new opportunity to
+
+192
+00:06:27,919 --> 00:06:32,400
+hill climb on a metric or please
+
+193
+00:06:30,000 --> 00:06:34,440
+customers in one one more way.
+
+194
+00:06:32,400 --> 00:06:37,280
+And so, that typically involves, you
+
+195
+00:06:34,440 --> 00:06:38,880
+know, working with Ghostwriter. Often,
+
+196
+00:06:37,280 --> 00:06:41,280
+Ghostwriter will actually proactively
+
+197
+00:06:38,880 --> 00:06:42,760
+suggest an improvement on the insights
+
+198
+00:06:41,280 --> 00:06:44,040
+to kind of close that loop and build
+
+199
+00:06:42,760 --> 00:06:45,360
+that flywheel.
+
+200
+00:06:44,040 --> 00:06:47,919
+Um, but I would say the day to day is
+
+201
+00:06:45,360 --> 00:06:50,520
+more analyze, build, release.
+
+202
+00:06:47,919 --> 00:06:52,080
+>> Who is doing that analyzing and that
+
+203
+00:06:50,520 --> 00:06:54,880
+iterative improvement? Is this is this
+
+204
+00:06:52,080 --> 00:06:58,040
+engineers? Is this product folks?
+
+205
+00:06:54,880 --> 00:07:00,080
+>> It's primarily people that have the most
+
+206
+00:06:58,040 --> 00:07:03,360
+depth and insight about the ideal
+
+207
+00:07:00,080 --> 00:07:05,840
+customer experience, which tends to be
+
+208
+00:07:03,360 --> 00:07:07,800
+operations uh people, so customer
+
+209
+00:07:05,840 --> 00:07:09,320
+experience managers,
+
+210
+00:07:07,800 --> 00:07:11,160
+um folks in that department at our
+
+211
+00:07:09,320 --> 00:07:15,560
+customer companies.
+
+212
+00:07:11,160 --> 00:07:17,960
+It's also a number of engineering teams
+
+213
+00:07:15,560 --> 00:07:20,240
+will build either other agents that
+
+214
+00:07:17,960 --> 00:07:22,440
+interface with Sierra agent or they can
+
+215
+00:07:20,240 --> 00:07:25,000
+extend the platform
+
+216
+00:07:22,440 --> 00:07:26,720
+uh via basically tools and packages that
+
+217
+00:07:25,000 --> 00:07:29,880
+you can then kind of see and introspect
+
+218
+00:07:26,720 --> 00:07:31,960
+on Sierra. So, it's very much kind of
+
+219
+00:07:29,880 --> 00:07:33,040
+the same way that you have the person
+
+220
+00:07:31,960 --> 00:07:34,880
+that knows everything about your
+
+221
+00:07:33,040 --> 00:07:36,919
+knowledge base, we want them to be able
+
+222
+00:07:34,880 --> 00:07:38,640
+to come in and self-serve on day one and
+
+223
+00:07:36,919 --> 00:07:40,760
+just, you know, make the perfect
+
+224
+00:07:38,640 --> 00:07:42,160
+instantiation of knowledge. The person
+
+225
+00:07:40,760 --> 00:07:44,080
+who knows everything about the standard
+
+226
+00:07:42,160 --> 00:07:45,680
+operating procedures should be able to
+
+227
+00:07:44,080 --> 00:07:47,280
+just do that in the product. And so
+
+228
+00:07:45,680 --> 00:07:50,240
+we're constantly kind of trying to sand
+
+229
+00:07:47,280 --> 00:07:52,480
+down all of the barriers between the
+
+230
+00:07:50,240 --> 00:07:53,840
+people with the most context and their
+
+231
+00:07:52,480 --> 00:07:54,880
+ability to contribute directly to the
+
+232
+00:07:53,840 --> 00:07:57,680
+platform.
+
+233
+00:07:54,880 --> 00:07:59,720
+>> You've said no code a few times. So,
+
+234
+00:07:57,680 --> 00:08:01,840
+what does this agent building experience
+
+235
+00:07:59,720 --> 00:08:04,240
+look like? Is it truly no code? And And
+
+236
+00:08:01,840 --> 00:08:06,120
+I'm assuming it's maybe something like
+
+237
+00:08:04,240 --> 00:08:07,800
+quad code where you talk to it and it
+
+238
+00:08:06,120 --> 00:08:09,440
+generates something under the hood. Is
+
+239
+00:08:07,800 --> 00:08:11,200
+it generating code? Is it generating a
+
+240
+00:08:09,440 --> 00:08:12,720
+custom DSL?
+
+241
+00:08:11,200 --> 00:08:14,760
+>> Yeah, good question. So, the layers of
+
+242
+00:08:12,720 --> 00:08:17,880
+the stack, you have kind of what we call
+
+243
+00:08:14,760 --> 00:08:20,560
+Agent OS, which has our constellation of
+
+244
+00:08:17,880 --> 00:08:22,800
+models. So, translating the tasks that
+
+245
+00:08:20,560 --> 00:08:26,320
+need to be done on the platform
+
+246
+00:08:22,800 --> 00:08:28,320
+into prompts, uh into data injection
+
+247
+00:08:26,320 --> 00:08:30,520
+across, you know, 10 or 15 different
+
+248
+00:08:28,320 --> 00:08:32,719
+models that might be invoked for a given
+
+249
+00:08:30,520 --> 00:08:35,159
+conversation turn. Some of those might
+
+250
+00:08:32,719 --> 00:08:37,120
+be frontier models that need to do, you
+
+251
+00:08:35,159 --> 00:08:39,640
+know, top-tier reasoning. Some of them
+
+252
+00:08:37,120 --> 00:08:41,400
+might be in-house models that are very
+
+253
+00:08:39,640 --> 00:08:43,240
+good at a specific task, and some of
+
+254
+00:08:41,400 --> 00:08:46,120
+them might be just, you know, classifier
+
+255
+00:08:43,240 --> 00:08:47,360
+models that run really well on a
+
+256
+00:08:46,120 --> 00:08:49,920
+uh a model that's a little bit cheaper
+
+257
+00:08:47,360 --> 00:08:52,280
+and more performant. And so, that's kind
+
+258
+00:08:49,920 --> 00:08:56,080
+of the base layer. On top of that, you
+
+259
+00:08:52,280 --> 00:08:59,160
+have the Agent SDK, which is the
+
+260
+00:08:56,080 --> 00:09:01,400
+code-based layer of agent orchestration
+
+261
+00:08:59,160 --> 00:09:03,400
+and context management.
+
+262
+00:09:01,400 --> 00:09:06,160
+That's kind of where Sierra started, but
+
+263
+00:09:03,400 --> 00:09:08,240
+over the last 18 months, most of the
+
+264
+00:09:06,160 --> 00:09:10,760
+agent development, um pretty much all of
+
+265
+00:09:08,240 --> 00:09:13,080
+the agent development has shifted to our
+
+266
+00:09:10,760 --> 00:09:16,000
+no code layer that we call journeys.
+
+267
+00:09:13,080 --> 00:09:17,600
+It compiles down to Agent SDK code
+
+268
+00:09:16,000 --> 00:09:19,839
+deterministically
+
+269
+00:09:17,600 --> 00:09:21,360
+and uh isomorphically, which is a fancy
+
+270
+00:09:19,839 --> 00:09:23,400
+word for you can turn it one way and
+
+271
+00:09:21,360 --> 00:09:26,000
+then turn it back and it's the same. And
+
+272
+00:09:23,400 --> 00:09:27,880
+so, you can have uh code that you
+
+273
+00:09:26,000 --> 00:09:29,960
+transition over to no code, you can have
+
+274
+00:09:27,880 --> 00:09:32,680
+no code that you transition over to
+
+275
+00:09:29,960 --> 00:09:34,400
+code, but the language of specifying it
+
+276
+00:09:32,680 --> 00:09:36,760
+is very much
+
+277
+00:09:34,400 --> 00:09:39,240
+declarative. Here's how I want the agent
+
+278
+00:09:36,760 --> 00:09:41,000
+behavior to be Uh when customers ask
+
+279
+00:09:39,240 --> 00:09:42,480
+about this. We want to unlock these
+
+280
+00:09:41,000 --> 00:09:44,600
+conditions and kind of flow in this
+
+281
+00:09:42,480 --> 00:09:46,280
+direction and we find that that's pretty
+
+282
+00:09:44,600 --> 00:09:48,760
+intuitive cuz it maps the type of
+
+283
+00:09:46,280 --> 00:09:50,800
+document that we would write for someone
+
+284
+00:09:48,760 --> 00:09:52,920
+joining the team in a customer
+
+285
+00:09:50,800 --> 00:09:54,800
+experience role or sales role. You would
+
+286
+00:09:52,920 --> 00:09:56,120
+explain to them how to do the job and
+
+287
+00:09:54,800 --> 00:09:58,600
+that's kind of what you're doing here as
+
+288
+00:09:56,120 --> 00:10:01,160
+well. But there is some DSL for
+
+289
+00:09:58,600 --> 00:10:01,920
+journeys. It's not pure raw kind of like
+
+290
+00:10:01,160 --> 00:10:03,000
+text.
+
+291
+00:10:01,920 --> 00:10:05,640
+>> Correct.
+
+292
+00:10:03,000 --> 00:10:07,800
+And it's very hard. I'm not sure we
+
+293
+00:10:05,640 --> 00:10:09,760
+could get into a discussion about it. If
+
+294
+00:10:07,800 --> 00:10:11,560
+you're just doing text, you have to
+
+295
+00:10:09,760 --> 00:10:14,320
+choose between
+
+296
+00:10:11,560 --> 00:10:16,520
+this is non-deterministically compiled,
+
+297
+00:10:14,320 --> 00:10:18,200
+which all of the experiments we've done
+
+298
+00:10:16,520 --> 00:10:19,760
+in that direction,
+
+299
+00:10:18,200 --> 00:10:20,920
+you end up I think with more harm than
+
+300
+00:10:19,760 --> 00:10:23,800
+good.
+
+301
+00:10:20,920 --> 00:10:25,440
+Or this is a prompt engineering task,
+
+302
+00:10:23,800 --> 00:10:27,760
+which then puts you in the realm of
+
+303
+00:10:25,440 --> 00:10:30,040
+engineering teams. And we, you know, are
+
+304
+00:10:27,760 --> 00:10:32,000
+very proud to be more in the realm of
+
+305
+00:10:30,040 --> 00:10:34,200
+operations teams where a lot of that
+
+306
+00:10:32,000 --> 00:10:35,560
+domain specific knowledge resides. The
+
+307
+00:10:34,200 --> 00:10:37,680
+other big piece of it is that
+
+308
+00:10:35,560 --> 00:10:39,800
+Ghostwriter has totally changed the
+
+309
+00:10:37,680 --> 00:10:41,560
+learning curve for building agents. So
+
+310
+00:10:39,800 --> 00:10:42,800
+you come in and you just say, "Hey, you
+
+311
+00:10:41,560 --> 00:10:45,200
+know, I want to orchestrate order
+
+312
+00:10:42,800 --> 00:10:47,760
+returns or I want to do flight booking
+
+313
+00:10:45,200 --> 00:10:49,800
+or I want to do car rental or
+
+314
+00:10:47,760 --> 00:10:52,360
+referral from primary care provider to a
+
+315
+00:10:49,800 --> 00:10:54,520
+specialist." And Ghostwriter just kind
+
+316
+00:10:52,360 --> 00:10:56,600
+of already knows those concepts and is
+
+317
+00:10:54,520 --> 00:10:58,720
+an expert in journeys. But Ghostwriter
+
+318
+00:10:56,600 --> 00:11:01,760
+is using the journeys product. So it's
+
+319
+00:10:58,720 --> 00:11:03,600
+not writing code, it's writing journeys
+
+320
+00:11:01,760 --> 00:11:05,000
+directly so that you can go inspect that
+
+321
+00:11:03,600 --> 00:11:07,040
+after the fact as well.
+
+322
+00:11:05,000 --> 00:11:09,080
+>> I imagine there's some there's some
+
+323
+00:11:07,040 --> 00:11:11,600
+format that these journeys have to have
+
+324
+00:11:09,080 --> 00:11:13,560
+to adhere to and I imagine that's not in
+
+325
+00:11:11,600 --> 00:11:15,240
+the models training data at all. Was it
+
+326
+00:11:13,560 --> 00:11:16,200
+hard to teach it that format or was it
+
+327
+00:11:15,240 --> 00:11:18,360
+pretty easy?
+
+328
+00:11:16,200 --> 00:11:20,400
+>> That's a really good question because at
+
+329
+00:11:18,360 --> 00:11:22,040
+every point there's this conflict
+
+330
+00:11:20,400 --> 00:11:23,680
+between here are the perfect
+
+331
+00:11:22,040 --> 00:11:25,120
+abstractions for me
+
+332
+00:11:23,680 --> 00:11:26,880
+and here are the abstractions that the
+
+333
+00:11:25,120 --> 00:11:29,160
+models are most familiar with. And
+
+334
+00:11:26,880 --> 00:11:31,320
+similar to in math how you're often
+
+335
+00:11:29,160 --> 00:11:32,880
+taking one problem and reframing it in
+
+336
+00:11:31,320 --> 00:11:34,560
+another problem to do a proof or
+
+337
+00:11:32,880 --> 00:11:36,080
+something like that. You have to decide
+
+338
+00:11:34,560 --> 00:11:38,440
+if you want to reframe this problem into
+
+339
+00:11:36,080 --> 00:11:40,440
+something the models understand or build
+
+340
+00:11:38,440 --> 00:11:42,760
+a skill and inject context in the right
+
+341
+00:11:40,440 --> 00:11:44,520
+way so that the models can understand
+
+342
+00:11:42,760 --> 00:11:47,000
+your way of thinking.
+
+343
+00:11:44,520 --> 00:11:49,040
+The truth is that we do both. So there
+
+344
+00:11:47,000 --> 00:11:50,440
+are cases where we'll say you know,
+
+345
+00:11:49,040 --> 00:11:52,440
+coding agents are really good at file
+
+346
+00:11:50,440 --> 00:11:54,680
+systems. They're really good at get.
+
+347
+00:11:52,440 --> 00:11:56,760
+They're really good at grep. Let's
+
+348
+00:11:54,680 --> 00:11:59,120
+materialize everything into those
+
+349
+00:11:56,760 --> 00:12:01,400
+structures so that coding agents can
+
+350
+00:11:59,120 --> 00:12:02,640
+just you know, cook. Then there are
+
+351
+00:12:01,400 --> 00:12:05,760
+other cases where it's like, "No, no,
+
+352
+00:12:02,640 --> 00:12:07,200
+no. Our way of thinking about this is
+
+353
+00:12:05,760 --> 00:12:09,400
+the correct way of thinking about this
+
+354
+00:12:07,200 --> 00:12:11,360
+and there's not really a way to shoehorn
+
+355
+00:12:09,400 --> 00:12:13,680
+it into what it models are already good
+
+356
+00:12:11,360 --> 00:12:15,560
+at. So let's do the investment to make
+
+357
+00:12:13,680 --> 00:12:18,480
+the models good at this. My personal
+
+358
+00:12:15,560 --> 00:12:20,240
+perspective is that 80% of the time you
+
+359
+00:12:18,480 --> 00:12:22,040
+want to do the first thing
+
+360
+00:12:20,240 --> 00:12:24,960
+and just meet the models of where they
+
+361
+00:12:22,040 --> 00:12:27,000
+are on their turf and you should reserve
+
+362
+00:12:24,960 --> 00:12:29,520
+the second one for that really special
+
+363
+00:12:27,000 --> 00:12:30,880
+case. I'm curious uh if that's what been
+
+364
+00:12:29,520 --> 00:12:33,440
+your experience as well.
+
+365
+00:12:30,880 --> 00:12:35,520
+>> I think recently it's probably gotten to
+
+366
+00:12:33,440 --> 00:12:37,000
+be we see a lot of people using the file
+
+367
+00:12:35,520 --> 00:12:38,440
+system as an abstraction and so I think
+
+368
+00:12:37,000 --> 00:12:40,160
+recently there's been a lot of talk
+
+369
+00:12:38,440 --> 00:12:41,960
+especially as the labs talk about how
+
+370
+00:12:40,160 --> 00:12:43,920
+they're RL-ing the models to be really
+
+371
+00:12:41,960 --> 00:12:45,600
+good for their hardness to try to fit
+
+372
+00:12:43,920 --> 00:12:48,000
+everything into a file system or this
+
+373
+00:12:45,600 --> 00:12:50,040
+particular like edit file tool or things
+
+374
+00:12:48,000 --> 00:12:52,520
+like that. I also think that the models
+
+375
+00:12:50,040 --> 00:12:53,920
+are really good at writing certain
+
+376
+00:12:52,520 --> 00:12:55,600
+packages. Like if you're in the training
+
+377
+00:12:53,920 --> 00:12:57,000
+data, I think I think a lot of LangGraph
+
+378
+00:12:55,600 --> 00:12:58,440
+is in the training data. So I think at
+
+379
+00:12:57,000 --> 00:12:59,839
+least Anthropic models recommend
+
+380
+00:12:58,440 --> 00:13:00,880
+LangGraph for a lot of use cases and
+
+381
+00:12:59,839 --> 00:13:02,400
+that's great.
+
+382
+00:13:00,880 --> 00:13:03,720
+But for newer things like deep agents,
+
+383
+00:13:02,400 --> 00:13:05,640
+which is a new package we have, it's not
+
+384
+00:13:03,720 --> 00:13:06,880
+in the training data at all. We spend a
+
+385
+00:13:05,640 --> 00:13:07,960
+little bit of time, not maybe not as
+
+386
+00:13:06,880 --> 00:13:09,160
+much as we should, but we spend a little
+
+387
+00:13:07,960 --> 00:13:10,560
+bit of time thinking about what makes
+
+388
+00:13:09,160 --> 00:13:12,080
+these models good at writing certain
+
+389
+00:13:10,560 --> 00:13:13,800
+things. We really have no clue how to
+
+390
+00:13:12,080 --> 00:13:15,400
+like affect know how to affect what goes
+
+391
+00:13:13,800 --> 00:13:16,760
+in the training data, but it's a really
+
+392
+00:13:15,400 --> 00:13:19,600
+interesting thing and so I think there's
+
+393
+00:13:16,760 --> 00:13:21,880
+definitely been cases where we see that
+
+394
+00:13:19,600 --> 00:13:23,440
+people choose technology because the
+
+395
+00:13:21,880 --> 00:13:25,640
+models are really good at writing it.
+
+396
+00:13:23,440 --> 00:13:27,760
+And so one question I was also going to
+
+397
+00:13:25,640 --> 00:13:28,920
+ask for the agent SDK, I imagine that's
+
+398
+00:13:27,760 --> 00:13:30,840
+you know, your own custom kind of like
+
+399
+00:13:28,920 --> 00:13:32,880
+framework built in house. I don't know
+
+400
+00:13:30,840 --> 00:13:34,160
+if you experimented with having It
+
+401
+00:13:32,880 --> 00:13:36,280
+sounds like you didn't you you're not
+
+402
+00:13:34,160 --> 00:13:37,360
+having Ghostwriter write that directly,
+
+403
+00:13:36,280 --> 00:13:39,000
+but like that's obviously much more
+
+404
+00:13:37,360 --> 00:13:41,160
+closer to code and so I was curious if
+
+405
+00:13:39,000 --> 00:13:43,600
+you experimented with Ghostwriter or any
+
+406
+00:13:41,160 --> 00:13:48,160
+model like writing agent SDK versus just
+
+407
+00:13:43,600 --> 00:13:50,840
+writing like raw code. So, yes, um
+
+408
+00:13:48,160 --> 00:13:52,320
+one of the things too is if you almost
+
+409
+00:13:50,840 --> 00:13:54,560
+do the abstraction that the models are
+
+410
+00:13:52,320 --> 00:13:56,360
+really good at, it can be overconfident
+
+411
+00:13:54,560 --> 00:13:58,200
+or it can be familiar and successful.
+
+412
+00:13:56,360 --> 00:14:00,920
+And so you have to be very thoughtful
+
+413
+00:13:58,200 --> 00:14:02,160
+about going either all the way there or
+
+414
+00:14:00,920 --> 00:14:03,480
+just not going there at all.
+
+415
+00:14:02,160 --> 00:14:04,560
+>> Like you're saying agent SDK is
+
+416
+00:14:03,480 --> 00:14:05,520
+somewhere in the middle and that might
+
+417
+00:14:04,560 --> 00:14:07,680
+actually confuse it.
+
+418
+00:14:05,520 --> 00:14:10,440
+>> Exactly. Exactly. Um
+
+419
+00:14:07,680 --> 00:14:13,480
+we have kind of reinvented the agent SDK
+
+420
+00:14:10,440 --> 00:14:15,440
+two or three times as models improve. So
+
+421
+00:14:13,480 --> 00:14:17,520
+it used to be you had to have more
+
+422
+00:14:15,440 --> 00:14:19,560
+deterministic guardrails in order to get
+
+423
+00:14:17,520 --> 00:14:22,040
+the behavior that you want. Now there's
+
+424
+00:14:19,560 --> 00:14:23,800
+more room for reasoning at each
+
+425
+00:14:22,040 --> 00:14:26,880
+individual step and you can kind of push
+
+426
+00:14:23,800 --> 00:14:29,400
+out the frontier of that reliability
+
+427
+00:14:26,880 --> 00:14:31,880
+versus reasoning trade-off. So that's
+
+428
+00:14:29,400 --> 00:14:34,680
+been very interesting. The reason for
+
+429
+00:14:31,880 --> 00:14:36,400
+Ghostwriter primarily or entirely
+
+430
+00:14:34,680 --> 00:14:39,480
+editing no code is just that that's
+
+431
+00:14:36,400 --> 00:14:41,160
+where the vast majority of activity is
+
+432
+00:14:39,480 --> 00:14:43,440
+on the platform today. So that's what
+
+433
+00:14:41,160 --> 00:14:45,440
+our customers know and so making
+
+434
+00:14:43,440 --> 00:14:47,200
+Ghostwriter good at it is really where
+
+435
+00:14:45,440 --> 00:14:49,360
+all of the payoff is.
+
+436
+00:14:47,200 --> 00:14:51,920
+I think if we tried to do it for code,
+
+437
+00:14:49,360 --> 00:14:53,120
+it would be a a similarly scoped task,
+
+438
+00:14:51,920 --> 00:14:54,600
+but it would be hard to get it to be
+
+439
+00:14:53,120 --> 00:14:55,640
+really good at both at the same time.
+
+440
+00:14:54,600 --> 00:14:56,600
+There's always going to be some
+
+441
+00:14:55,640 --> 00:14:58,920
+trade-off.
+
+442
+00:14:56,600 --> 00:15:01,200
+>> Do you still let users edit the agent
+
+443
+00:14:58,920 --> 00:15:02,920
+SDK code if they want or is that now
+
+444
+00:15:01,200 --> 00:15:05,040
+like completely abstracted away from
+
+445
+00:15:02,920 --> 00:15:07,240
+them in terms of just pitch journeys?
+
+446
+00:15:05,040 --> 00:15:08,600
+>> So the core agent SDK is part of the
+
+447
+00:15:07,240 --> 00:15:11,280
+Sierra platform,
+
+448
+00:15:08,600 --> 00:15:13,720
+but building agents in code is totally
+
+449
+00:15:11,280 --> 00:15:16,200
+something you can do. One example is a
+
+450
+00:15:13,720 --> 00:15:18,400
+number of our customers have CI/CD a
+
+451
+00:15:16,200 --> 00:15:20,760
+continuous integration pipelines that
+
+452
+00:15:18,400 --> 00:15:23,040
+they want to make sure their agent is
+
+453
+00:15:20,760 --> 00:15:25,000
+released on. And so they need to get
+
+454
+00:15:23,040 --> 00:15:27,120
+repository, which is where their agent
+
+455
+00:15:25,000 --> 00:15:29,560
+lives. Another example is sometimes you
+
+456
+00:15:27,120 --> 00:15:31,760
+have a particularly complex tool that
+
+457
+00:15:29,560 --> 00:15:33,800
+has interacts with a streaming API or
+
+458
+00:15:31,760 --> 00:15:36,280
+something in a way that is just easier
+
+459
+00:15:33,800 --> 00:15:38,800
+to model in code than in no code. And
+
+460
+00:15:36,280 --> 00:15:41,360
+so, the way that these work is because
+
+461
+00:15:38,800 --> 00:15:43,200
+no code compiles down to code, you can
+
+462
+00:15:41,360 --> 00:15:45,280
+kind of import or under the hood it will
+
+463
+00:15:43,200 --> 00:15:46,840
+import code files and compiled no code
+
+464
+00:15:45,280 --> 00:15:48,480
+files kind of all as though they're the
+
+465
+00:15:46,840 --> 00:15:50,800
+same thing because they are.
+
+466
+00:15:48,480 --> 00:15:52,840
+So, I think this is a benefit of
+
+467
+00:15:50,800 --> 00:15:54,440
+starting out as a code-based platform is
+
+468
+00:15:52,840 --> 00:15:56,920
+that we still support it. We have a
+
+469
+00:15:54,440 --> 00:15:59,680
+number of customers that have dozens or
+
+470
+00:15:56,920 --> 00:16:01,680
+in a few cases 100-plus developers
+
+471
+00:15:59,680 --> 00:16:03,080
+building on the platform. And
+
+472
+00:16:01,680 --> 00:16:05,440
+sometimes for that, you know, they work
+
+473
+00:16:03,080 --> 00:16:07,160
+in Git, they release in Git. And so,
+
+474
+00:16:05,440 --> 00:16:09,280
+being part of their enterprise change
+
+475
+00:16:07,160 --> 00:16:10,400
+management protocol just means
+
+476
+00:16:09,280 --> 00:16:12,360
+supporting Git.
+
+477
+00:16:10,400 --> 00:16:14,640
+>> You mentioned that the agent SDK has
+
+478
+00:16:12,360 --> 00:16:16,960
+changed over over the past few years as
+
+479
+00:16:14,640 --> 00:16:18,800
+everything in the space has. Um,
+
+480
+00:16:16,960 --> 00:16:20,240
+what does it look like now and how has
+
+481
+00:16:18,800 --> 00:16:21,080
+it changed? What does that evolution
+
+482
+00:16:20,240 --> 00:16:23,280
+look like?
+
+483
+00:16:21,080 --> 00:16:26,200
+>> So, it started out we call this now
+
+484
+00:16:23,280 --> 00:16:28,360
+flow-based, very much like, you know, do
+
+485
+00:16:26,200 --> 00:16:30,040
+this. And it wasn't just like do these
+
+486
+00:16:28,360 --> 00:16:32,839
+things. I think I'm a big fan of your
+
+487
+00:16:30,040 --> 00:16:34,720
+not another workflow builder blog post.
+
+488
+00:16:32,839 --> 00:16:36,600
+So, it wasn't that rigid, but it would
+
+489
+00:16:34,720 --> 00:16:40,200
+be hey, you know, make sure you collect
+
+490
+00:16:36,600 --> 00:16:42,240
+their email before you say that you're
+
+491
+00:16:40,200 --> 00:16:45,080
+going to send them a confirmation email,
+
+492
+00:16:42,240 --> 00:16:47,600
+right? Very clear to us, but you would
+
+493
+00:16:45,080 --> 00:16:49,680
+want to do those things in that order.
+
+494
+00:16:47,600 --> 00:16:51,240
+Now, I think if you think about just the
+
+495
+00:16:49,680 --> 00:16:52,320
+way that agents can reason through tool
+
+496
+00:16:51,240 --> 00:16:54,640
+calling,
+
+497
+00:16:52,320 --> 00:16:56,640
+instead of having to specify that in the
+
+498
+00:16:54,640 --> 00:16:59,400
+actual structure of your agent, you
+
+499
+00:16:56,640 --> 00:17:01,160
+might just give it the context that in
+
+500
+00:16:59,400 --> 00:17:02,480
+order to call this tool, you know, as a
+
+501
+00:17:01,160 --> 00:17:03,600
+prerequisite you should have their
+
+502
+00:17:02,480 --> 00:17:05,120
+email.
+
+503
+00:17:03,600 --> 00:17:06,560
+And it will know how to ask for it. So,
+
+504
+00:17:05,120 --> 00:17:08,560
+it's really like you'll just say that in
+
+505
+00:17:06,560 --> 00:17:10,800
+the prompt. Yes.
+
+506
+00:17:08,560 --> 00:17:12,560
+Or, you know, eventually all things end
+
+507
+00:17:10,800 --> 00:17:13,680
+up in prompts, but it would be in the
+
+508
+00:17:12,560 --> 00:17:15,160
+journey.
+
+509
+00:17:13,680 --> 00:17:16,880
+And so, as you're kind of writing it
+
+510
+00:17:15,160 --> 00:17:19,800
+out, you would specify that that's one
+
+511
+00:17:16,880 --> 00:17:22,079
+of the rules or policies of the journey.
+
+512
+00:17:19,800 --> 00:17:24,040
+And then the agent can take care of the
+
+513
+00:17:22,079 --> 00:17:26,439
+rest. I think it's a mix of the models
+
+514
+00:17:24,040 --> 00:17:28,360
+getting better and our orchestration
+
+515
+00:17:26,439 --> 00:17:29,920
+platform becoming even more
+
+516
+00:17:28,360 --> 00:17:32,640
+sophisticated and robust. So, when I
+
+517
+00:17:29,920 --> 00:17:34,520
+talk about that constellation of models,
+
+518
+00:17:32,640 --> 00:17:36,360
+there's a lot of We talked a little bit
+
+519
+00:17:34,520 --> 00:17:37,720
+before about Linnaeus and Darwin.
+
+520
+00:17:36,360 --> 00:17:40,800
+There's post-training that goes into
+
+521
+00:17:37,720 --> 00:17:43,280
+that. There's model selection and eval
+
+522
+00:17:40,800 --> 00:17:45,280
+and prompt engineering as well. And so,
+
+523
+00:17:43,280 --> 00:17:47,120
+I think it's it's kind of equal parts
+
+524
+00:17:45,280 --> 00:17:47,920
+model improvements and platform
+
+525
+00:17:47,120 --> 00:17:48,920
+improvements.
+
+526
+00:17:47,920 --> 00:17:49,760
+>> I want to talk about this model in a
+
+527
+00:17:48,920 --> 00:17:51,720
+second, but I want to stay on the
+
+528
+00:17:49,760 --> 00:17:53,800
+harness for a little bit. How similar
+
+529
+00:17:51,720 --> 00:17:55,440
+does it look like in its current form to
+
+530
+00:17:53,800 --> 00:17:57,560
+a coding agent harness? Does it have
+
+531
+00:17:55,440 --> 00:17:59,640
+access to skills and sub-agents in the
+
+532
+00:17:57,560 --> 00:18:00,680
+same way that someone using Claude code
+
+533
+00:17:59,640 --> 00:18:02,760
+would would have?
+
+534
+00:18:00,680 --> 00:18:05,400
+>> So, the one
+
+535
+00:18:02,760 --> 00:18:07,720
+constraint we have that Claude code
+
+536
+00:18:05,400 --> 00:18:10,120
+doesn't have is latency. Majority of
+
+537
+00:18:07,720 --> 00:18:12,600
+Sierra conversations are voice. And if
+
+538
+00:18:10,120 --> 00:18:15,000
+you're not responding in 1 or 2 seconds,
+
+539
+00:18:12,600 --> 00:18:16,320
+then people wonder where you went. And
+
+540
+00:18:15,000 --> 00:18:17,920
+so,
+
+541
+00:18:16,320 --> 00:18:19,600
+we are highly optimized for these low
+
+542
+00:18:17,920 --> 00:18:21,200
+latency use cases. There's a ton of
+
+543
+00:18:19,600 --> 00:18:23,560
+parallelism.
+
+544
+00:18:21,200 --> 00:18:26,240
+That being said, at a high level, it is
+
+545
+00:18:23,560 --> 00:18:28,920
+using a lot of the same models. It has
+
+546
+00:18:26,240 --> 00:18:31,520
+access to tools. Um so, there's a lot of
+
+547
+00:18:28,920 --> 00:18:33,240
+similarities. There are also, you know,
+
+548
+00:18:31,520 --> 00:18:34,960
+you can invoke other agents from the
+
+549
+00:18:33,240 --> 00:18:37,160
+Sierra agent. So, the core What's best
+
+550
+00:18:34,960 --> 00:18:39,360
+for the core conversation loop isn't
+
+551
+00:18:37,160 --> 00:18:41,680
+typically what's best for software
+
+552
+00:18:39,360 --> 00:18:43,240
+development. But you might want to say,
+
+553
+00:18:41,680 --> 00:18:45,480
+"Hey, let me actually give you a
+
+554
+00:18:43,240 --> 00:18:47,160
+callback in 20 minutes after I figure
+
+555
+00:18:45,480 --> 00:18:48,960
+this out." And then you would have a
+
+556
+00:18:47,160 --> 00:18:49,880
+type of loop that runs, you know, more
+
+557
+00:18:48,960 --> 00:18:51,840
+like Claude code.
+
+558
+00:18:49,880 --> 00:18:53,200
+>> And for those for those longer loops
+
+559
+00:18:51,840 --> 00:18:55,360
+that might happen in the background, are
+
+560
+00:18:53,200 --> 00:18:57,160
+those also built on the Sierra platform
+
+561
+00:18:55,360 --> 00:18:58,920
+and are just a separate type of agent
+
+562
+00:18:57,160 --> 00:19:00,280
+that remove the latency constraint?
+
+563
+00:18:58,920 --> 00:19:03,240
+>> You can do it either way. So, you could
+
+564
+00:19:00,280 --> 00:19:05,720
+have a Sierra agent calling out to
+
+565
+00:19:03,240 --> 00:19:07,720
+another Sierra agent or you could also
+
+566
+00:19:05,720 --> 00:19:09,800
+have a Sierra agent calling out to an
+
+567
+00:19:07,720 --> 00:19:11,640
+in-house platform. And because so many
+
+568
+00:19:09,800 --> 00:19:15,080
+of our customers have their own
+
+569
+00:19:11,640 --> 00:19:17,840
+technology teams and a robust array of
+
+570
+00:19:15,080 --> 00:19:20,000
+different AI projects internally.
+
+571
+00:19:17,840 --> 00:19:22,040
+They might be experts in a particular
+
+572
+00:19:20,000 --> 00:19:24,120
+area. Like they might have document
+
+573
+00:19:22,040 --> 00:19:25,960
+generation handled themselves and that
+
+574
+00:19:24,120 --> 00:19:28,080
+might be a long-running agent and then
+
+575
+00:19:25,960 --> 00:19:29,960
+the Sierra agent can call out to it and
+
+576
+00:19:28,080 --> 00:19:32,080
+wait for a response. So it's kind of up
+
+577
+00:19:29,960 --> 00:19:34,000
+to you to choose and we find that
+
+578
+00:19:32,080 --> 00:19:35,960
+enterprises are varied enough that they
+
+579
+00:19:34,000 --> 00:19:37,840
+appreciate kind of having choice.
+
+580
+00:19:35,960 --> 00:19:40,400
+>> When you do these agent-to-agent
+
+581
+00:19:37,840 --> 00:19:42,480
+communications, are you are you using
+
+582
+00:19:40,400 --> 00:19:45,200
+A2A or one of the protocols specifically
+
+583
+00:19:42,480 --> 00:19:47,080
+for that or MCP or just an in-house, I
+
+584
+00:19:45,200 --> 00:19:49,160
+don't know, REST API call?
+
+585
+00:19:47,080 --> 00:19:51,640
+>> The most common is an API call. When you
+
+586
+00:19:49,160 --> 00:19:54,600
+know who you're talking to in advance,
+
+587
+00:19:51,640 --> 00:19:56,840
+often times you can save a lot of tokens
+
+588
+00:19:54,600 --> 00:19:59,040
+and make sure that you're 100% accurate
+
+589
+00:19:56,840 --> 00:20:02,240
+that way. That being said, Sierra agents
+
+590
+00:19:59,040 --> 00:20:04,200
+support the MCP and agent-to-agent
+
+591
+00:20:02,240 --> 00:20:06,320
+protocols. You can kind of install that
+
+592
+00:20:04,200 --> 00:20:08,720
+integration and then your agent can be
+
+593
+00:20:06,320 --> 00:20:10,880
+an MCP client. You can also set up your
+
+594
+00:20:08,720 --> 00:20:13,520
+agent to be an MCP server. So this is
+
+595
+00:20:10,880 --> 00:20:16,320
+how we support ChatGPT apps
+
+596
+00:20:13,520 --> 00:20:18,080
+uh which rely on MCP servers. Basically,
+
+597
+00:20:16,320 --> 00:20:20,720
+the tools of the agent can be made
+
+598
+00:20:18,080 --> 00:20:23,560
+available to ChatGPT and then you can
+
+599
+00:20:20,720 --> 00:20:24,960
+at-reference a Sierra agent. The example
+
+600
+00:20:23,560 --> 00:20:26,120
+uh that would be most familiar is
+
+601
+00:20:24,960 --> 00:20:28,800
+Redfin.
+
+602
+00:20:26,120 --> 00:20:31,520
+Um if you do if you go to redfin.com and
+
+603
+00:20:28,800 --> 00:20:33,960
+do their AI search, uh under the hood,
+
+604
+00:20:31,520 --> 00:20:35,440
+it is a Sierra agent that is returning
+
+605
+00:20:33,960 --> 00:20:37,920
+the home listings and having the
+
+606
+00:20:35,440 --> 00:20:40,440
+conversation with you and that agent is
+
+607
+00:20:37,920 --> 00:20:42,040
+also, I believe, available in ChatGPT.
+
+608
+00:20:40,440 --> 00:20:45,160
+>> Interesting. I I didn't realize that
+
+609
+00:20:42,040 --> 00:20:46,840
+Sierra agents could be ChatGPT apps. Is
+
+610
+00:20:45,160 --> 00:20:48,480
+that the right terminology for them?
+
+611
+00:20:46,840 --> 00:20:50,440
+>> It is. Yeah, exactly.
+
+612
+00:20:48,480 --> 00:20:52,800
+>> Do you have Do you have an opinion or
+
+613
+00:20:50,440 --> 00:20:55,080
+hot take on in the future, do you think
+
+614
+00:20:52,800 --> 00:20:57,520
+people will be interacting with the
+
+615
+00:20:55,080 --> 00:21:00,360
+agents that represent brands on
+
+616
+00:20:57,520 --> 00:21:03,520
+dedicated chatbot websites or in uh
+
+617
+00:21:00,360 --> 00:21:06,680
+ChatGPT or central chat engine?
+
+618
+00:21:03,520 --> 00:21:08,840
+>> I think that agentic commerce will be
+
+619
+00:21:06,680 --> 00:21:10,520
+bigger than e-commerce.
+
+620
+00:21:08,840 --> 00:21:12,760
+So, if I think about how I get things
+
+621
+00:21:10,520 --> 00:21:16,160
+done today, it used to be that I went to
+
+622
+00:21:12,760 --> 00:21:19,120
+websites and clicked around. Now, I ask
+
+623
+00:21:16,160 --> 00:21:21,640
+Codex or Claude to do things for me.
+
+624
+00:21:19,120 --> 00:21:23,440
+And I don't see why I won't do that to
+
+625
+00:21:21,640 --> 00:21:25,480
+manage my subscriptions, to order
+
+626
+00:21:23,440 --> 00:21:28,360
+supplies to my home, to make dinner
+
+627
+00:21:25,480 --> 00:21:29,680
+reservations. It just feels like that's
+
+628
+00:21:28,360 --> 00:21:31,640
+where we're headed.
+
+629
+00:21:29,680 --> 00:21:33,440
+And so, if that's happening, I think
+
+630
+00:21:31,640 --> 00:21:35,400
+brands will want to be ready on the
+
+631
+00:21:33,440 --> 00:21:37,760
+other side of that. So, we're very much
+
+632
+00:21:35,400 --> 00:21:40,120
+planning for that world. We were
+
+633
+00:21:37,760 --> 00:21:43,080
+investing in payments before it made
+
+634
+00:21:40,120 --> 00:21:46,040
+sense, I think, and it's a long process,
+
+635
+00:21:43,080 --> 00:21:49,400
+but a few months ago, we announced, you
+
+636
+00:21:46,040 --> 00:21:50,400
+know, we're uh fully PCI DSS level one
+
+637
+00:21:49,400 --> 00:21:51,840
+certified.
+
+638
+00:21:50,400 --> 00:21:52,240
+>> no clue what that means. What does that
+
+639
+00:21:51,840 --> 00:21:54,040
+mean?
+
+640
+00:21:52,240 --> 00:21:54,560
+>> payment card industry.
+
+641
+00:21:54,040 --> 00:21:57,875
+>> Okay.
+
+642
+00:21:54,560 --> 00:21:58,640
+>> Um oh, man, you stump me on DSS. Uh
+
+643
+00:21:57,875 --> 00:22:00,920
+[laughter]
+
+644
+00:21:58,640 --> 00:22:01,960
+I have uh some of the other acronyms um
+
+645
+00:22:00,920 --> 00:22:03,280
+in my head, but um
+
+646
+00:22:01,960 --> 00:22:05,760
+>> We'll We'll put it in in post.
+
+647
+00:22:03,280 --> 00:22:07,200
+>> Okay. Okay, thanks. Oh, man, it must be
+
+648
+00:22:05,760 --> 00:22:09,360
+like digital
+
+649
+00:22:07,200 --> 00:22:11,880
+I don't know. I know that the We were uh
+
+650
+00:22:09,360 --> 00:22:14,400
+certified by a QSA, which is a qualified
+
+651
+00:22:11,880 --> 00:22:17,120
+security assessor. And uh what that
+
+652
+00:22:14,400 --> 00:22:19,200
+means is we're able to do the only voice
+
+653
+00:22:17,120 --> 00:22:21,040
+payments platform, certainly at launch,
+
+654
+00:22:19,200 --> 00:22:23,000
+I think still this is the case, where
+
+655
+00:22:21,040 --> 00:22:25,400
+you don't need to transfer to another
+
+656
+00:22:23,000 --> 00:22:28,040
+platform. So, it's a co- cohesive
+
+657
+00:22:25,400 --> 00:22:29,360
+experience throughout checkout. And all
+
+658
+00:22:28,040 --> 00:22:32,680
+the work that went into that, we have
+
+659
+00:22:29,360 --> 00:22:34,560
+isolated infrastructure where the
+
+660
+00:22:32,680 --> 00:22:36,000
+payment info doesn't go to a large
+
+661
+00:22:34,560 --> 00:22:37,000
+language model, doesn't go to an
+
+662
+00:22:36,000 --> 00:22:39,360
+external large language model, because
+
+663
+00:22:37,000 --> 00:22:41,520
+we have none of the LLM providers are uh
+
+664
+00:22:39,360 --> 00:22:43,200
+PCI certified in that way.
+
+665
+00:22:41,520 --> 00:22:45,360
+And so, putting that all together is
+
+666
+00:22:43,200 --> 00:22:47,600
+like spinning up a separate cluster, you
+
+667
+00:22:45,360 --> 00:22:49,880
+know, getting certified, um making sure
+
+668
+00:22:47,600 --> 00:22:51,400
+all of our operational rituals, you
+
+669
+00:22:49,880 --> 00:22:53,480
+know, conform to what the security
+
+670
+00:22:51,400 --> 00:22:55,360
+assessor is looking for.
+
+671
+00:22:53,480 --> 00:22:56,960
+And we put in that work because we
+
+672
+00:22:55,360 --> 00:22:59,080
+believe in this future where agentic
+
+673
+00:22:56,960 --> 00:23:01,320
+commerce is actually bigger than
+
+674
+00:22:59,080 --> 00:23:03,240
+e-commerce. And I think e-commerce is in
+
+675
+00:23:01,320 --> 00:23:04,960
+the hundreds of billions of dollars at
+
+676
+00:23:03,240 --> 00:23:06,760
+this point, couple percentage points of
+
+677
+00:23:04,960 --> 00:23:09,280
+GDP or something like that just in the
+
+678
+00:23:06,760 --> 00:23:11,120
+US. And so if you think about that
+
+679
+00:23:09,280 --> 00:23:13,200
+space, um it's pretty big.
+
+680
+00:23:11,120 --> 00:23:17,440
+>> And by agentic commerce, do you mean
+
+681
+00:23:13,200 --> 00:23:19,840
+like chat GPT talking to uh Sierra agent
+
+682
+00:23:17,440 --> 00:23:21,800
+that represents Redfin, or do you mean
+
+683
+00:23:19,840 --> 00:23:23,760
+someone going to Redfin's agent no
+
+684
+00:23:21,800 --> 00:23:24,320
+matter where it is and talking with it
+
+685
+00:23:23,760 --> 00:23:27,480
+there?
+
+686
+00:23:24,320 --> 00:23:30,800
+>> Both, both. I do think that the majority
+
+687
+00:23:27,480 --> 00:23:33,280
+of this will be from personal agents.
+
+688
+00:23:30,800 --> 00:23:36,760
+Just looking at user behavior, we spend
+
+689
+00:23:33,280 --> 00:23:38,160
+so much time in Claude and chat GPT and
+
+690
+00:23:36,760 --> 00:23:39,800
+Codex
+
+691
+00:23:38,160 --> 00:23:42,120
+that you have to think that's where a
+
+692
+00:23:39,800 --> 00:23:43,760
+lot of that behavior will accrue.
+
+693
+00:23:42,120 --> 00:23:46,320
+>> And do you think those agents will
+
+694
+00:23:43,760 --> 00:23:48,880
+interact with another agent? Why not
+
+695
+00:23:46,320 --> 00:23:51,440
+just the raw APIs themselves?
+
+696
+00:23:48,880 --> 00:23:53,680
+>> I do. I think that as you think about
+
+697
+00:23:51,440 --> 00:23:57,600
+being ready for that world,
+
+698
+00:23:53,680 --> 00:24:01,160
+um the same way that you might want to
+
+699
+00:23:57,600 --> 00:24:03,840
+use Shopify or you might want to use
+
+700
+00:24:01,160 --> 00:24:07,040
+certain software on your website to do
+
+701
+00:24:03,840 --> 00:24:08,360
+product recommendations, to do checkout,
+
+702
+00:24:07,040 --> 00:24:11,840
+uh you might want to use Stripe.
+
+703
+00:24:08,360 --> 00:24:12,920
+Similarly, you'll want to use a platform
+
+704
+00:24:11,840 --> 00:24:15,000
+that can make sure that you're
+
+705
+00:24:12,920 --> 00:24:16,920
+presenting your products in the right
+
+706
+00:24:15,000 --> 00:24:19,440
+way, that you're making checkout as easy
+
+707
+00:24:16,920 --> 00:24:21,240
+as possible, and that you're showing up
+
+708
+00:24:19,440 --> 00:24:23,160
+at your best, whether it's for a
+
+709
+00:24:21,240 --> 00:24:24,560
+customer that's browsing or for an agent
+
+710
+00:24:23,160 --> 00:24:26,760
+that's browsing. The one thing that I
+
+711
+00:24:24,560 --> 00:24:28,080
+think is pretty different is the
+
+712
+00:24:26,760 --> 00:24:30,200
+attention
+
+713
+00:24:28,080 --> 00:24:31,000
+isn't necessarily valuable in the same
+
+714
+00:24:30,200 --> 00:24:34,080
+way.
+
+715
+00:24:31,000 --> 00:24:36,080
+Like our eyeballs are more valuable than
+
+716
+00:24:34,080 --> 00:24:37,720
+an agent just, you know, spewing out
+
+717
+00:24:36,080 --> 00:24:39,560
+tokens assuming that no one's ever going
+
+718
+00:24:37,720 --> 00:24:41,480
+to look at it. At least I think that's
+
+719
+00:24:39,560 --> 00:24:43,200
+true for now. At some point it lands up
+
+720
+00:24:41,480 --> 00:24:45,560
+in some future training run and maybe
+
+721
+00:24:43,200 --> 00:24:47,160
+has value, but I think that's de minimis
+
+722
+00:24:45,560 --> 00:24:49,200
+relative to getting us to look at
+
+723
+00:24:47,160 --> 00:24:50,720
+things. And so I do feel like maybe
+
+724
+00:24:49,200 --> 00:24:52,200
+that's a bit different, but the
+
+725
+00:24:50,720 --> 00:24:54,360
+presenting yourself in the right way,
+
+726
+00:24:52,200 --> 00:24:55,760
+making it easy to check out, making it
+
+727
+00:24:54,360 --> 00:24:58,920
+easy to understand what products are
+
+728
+00:24:55,760 --> 00:25:01,200
+available, to express the preferences of
+
+729
+00:24:58,920 --> 00:25:02,680
+whoever is responsible for that agent
+
+730
+00:25:01,200 --> 00:25:04,480
+going off and doing something
+
+731
+00:25:02,680 --> 00:25:06,720
+commercial. That all still feels
+
+732
+00:25:04,480 --> 00:25:08,160
+relevant to me. I've seen some dev tools
+
+733
+00:25:06,720 --> 00:25:10,360
+provider, I think Sentry, doing a
+
+734
+00:25:08,160 --> 00:25:11,760
+similar thing where they have a bunch of
+
+735
+00:25:10,360 --> 00:25:14,080
+APIs, obviously, for the underlying
+
+736
+00:25:11,760 --> 00:25:15,680
+platform, but they also have an endpoint
+
+737
+00:25:14,080 --> 00:25:17,080
+to just ask questions of the agent
+
+738
+00:25:15,680 --> 00:25:18,920
+directly. And I think you could make a
+
+739
+00:25:17,080 --> 00:25:20,560
+counterargument that like, great, brands
+
+740
+00:25:18,920 --> 00:25:22,000
+should absolutely care about how the
+
+741
+00:25:20,560 --> 00:25:23,400
+platform's being used and how it's being
+
+742
+00:25:22,000 --> 00:25:25,800
+presented, but you could do that with
+
+743
+00:25:23,400 --> 00:25:26,960
+skills or or some other mechanism to
+
+744
+00:25:25,800 --> 00:25:28,080
+expose that to the agent. And I I
+
+745
+00:25:26,960 --> 00:25:30,040
+honestly don't know which one's right,
+
+746
+00:25:28,080 --> 00:25:31,440
+but it it has been interesting to see
+
+747
+00:25:30,040 --> 00:25:32,920
+the whole space is so new, but
+
+748
+00:25:31,440 --> 00:25:34,560
+increasingly so companies exposing
+
+749
+00:25:32,920 --> 00:25:36,400
+agents as endpoints to interact with
+
+750
+00:25:34,560 --> 00:25:39,240
+rather than the endpoints themselves.
+
+751
+00:25:36,400 --> 00:25:40,640
+>> I agree. I think that all of this stuff
+
+752
+00:25:39,240 --> 00:25:42,640
+you could try to do it yourself. It
+
+753
+00:25:40,640 --> 00:25:44,600
+might be that certain companies, that's
+
+754
+00:25:42,640 --> 00:25:47,440
+the best option.
+
+755
+00:25:44,600 --> 00:25:49,840
+What we've seen is that because there's
+
+756
+00:25:47,440 --> 00:25:51,400
+often tens or hundreds of millions of
+
+757
+00:25:49,840 --> 00:25:53,000
+dollars on the line, in some cases
+
+758
+00:25:51,400 --> 00:25:54,080
+billions of dollars on the line, you
+
+759
+00:25:53,000 --> 00:25:56,320
+really want to make sure you're getting
+
+760
+00:25:54,080 --> 00:25:59,400
+the best solution. And so if you're
+
+761
+00:25:56,320 --> 00:26:01,280
+going to be 90% as good at it as you
+
+762
+00:25:59,400 --> 00:26:02,480
+could be partnering with a company like
+
+763
+00:26:01,280 --> 00:26:05,320
+Sierra,
+
+764
+00:26:02,480 --> 00:26:07,280
+it still makes sense to partner and, you
+
+765
+00:26:05,320 --> 00:26:08,200
+know, get that extra few billion
+
+766
+00:26:07,280 --> 00:26:10,040
+dollars.
+
+767
+00:26:08,200 --> 00:26:12,200
+>> One last question on this fun side
+
+768
+00:26:10,040 --> 00:26:13,960
+tangent, payments. How early are we?
+
+769
+00:26:12,200 --> 00:26:17,240
+>> I think we're really early.
+
+770
+00:26:13,960 --> 00:26:20,080
+I personally still don't order paper
+
+771
+00:26:17,240 --> 00:26:20,360
+towels with Codex. I don't know if you
+
+772
+00:26:20,080 --> 00:26:21,840
+do.
+
+773
+00:26:20,360 --> 00:26:23,040
+>> No, and that's why I asked. I'm glad
+
+774
+00:26:21,840 --> 00:26:24,240
+that you said that cuz I know I'm not
+
+775
+00:26:23,040 --> 00:26:26,000
+close to doing that. And so I was
+
+776
+00:26:24,240 --> 00:26:28,160
+wondering how far behind I was.
+
+777
+00:26:26,000 --> 00:26:30,160
+>> I mean, yeah, like
+
+778
+00:26:28,160 --> 00:26:31,560
+I also didn't do it with Alexa. You
+
+779
+00:26:30,160 --> 00:26:33,360
+know, I think for some of that really
+
+780
+00:26:31,560 --> 00:26:34,520
+easy stuff, you could probably have done
+
+781
+00:26:33,360 --> 00:26:36,280
+it already.
+
+782
+00:26:34,520 --> 00:26:38,520
+The one that I think will definitely
+
+783
+00:26:36,280 --> 00:26:40,560
+become a thing is there are a lot of
+
+784
+00:26:38,520 --> 00:26:41,960
+apps that claim they can, you know, go
+
+785
+00:26:40,560 --> 00:26:44,120
+through all of your subscriptions and
+
+786
+00:26:41,960 --> 00:26:45,920
+cancel the ones that you're not using.
+
+787
+00:26:44,120 --> 00:26:48,360
+That feels like as a consumer, that's a
+
+788
+00:26:45,920 --> 00:26:51,760
+useful service. I'm definitely closer to
+
+789
+00:26:48,360 --> 00:26:53,760
+doing that with Codex than I am
+
+790
+00:26:51,760 --> 00:26:55,480
+with an app. You know, it would it would
+
+791
+00:26:53,760 --> 00:26:57,440
+be so much work to tell it all the
+
+792
+00:26:55,480 --> 00:27:00,360
+things and try to tell it which ones to
+
+793
+00:26:57,440 --> 00:27:02,720
+cancel. It's a very manual process.
+
+794
+00:27:00,360 --> 00:27:04,360
+If I gave Codex or Cloud Co-worker or
+
+795
+00:27:02,720 --> 00:27:05,320
+something just access to my browser and
+
+796
+00:27:04,360 --> 00:27:06,960
+said,
+
+797
+00:27:05,320 --> 00:27:08,920
+"Hey, you know, go to all of the
+
+798
+00:27:06,960 --> 00:27:11,080
+streaming apps and like the ones that
+
+799
+00:27:08,920 --> 00:27:13,880
+I'm not logging into,
+
+800
+00:27:11,080 --> 00:27:15,640
+just, you know, cancel those and let me
+
+801
+00:27:13,880 --> 00:27:16,680
+know if you need my password." And
+
+802
+00:27:15,640 --> 00:27:18,360
+obviously you have to figure out how to
+
+803
+00:27:16,680 --> 00:27:20,480
+make that secure and everything. But I
+
+804
+00:27:18,360 --> 00:27:21,640
+feel like that I would have demand for
+
+805
+00:27:20,480 --> 00:27:23,400
+that product.
+
+806
+00:27:21,640 --> 00:27:25,080
+>> Going back to the harness for a little
+
+807
+00:27:23,400 --> 00:27:26,800
+bit, you said something earlier about
+
+808
+00:27:25,080 --> 00:27:28,560
+things running in parallel. Is that like
+
+809
+00:27:26,800 --> 00:27:30,440
+guardrails that you're running or
+
+810
+00:27:28,560 --> 00:27:32,120
+retrieval steps or what's running in
+
+811
+00:27:30,440 --> 00:27:35,880
+parallel in in this process?
+
+812
+00:27:32,120 --> 00:27:37,480
+>> So many things. One example, knowledge.
+
+813
+00:27:35,880 --> 00:27:40,200
+We will
+
+814
+00:27:37,480 --> 00:27:41,800
+often look up answers before we know if
+
+815
+00:27:40,200 --> 00:27:43,680
+we want them.
+
+816
+00:27:41,800 --> 00:27:45,800
+So you'll, you know, before you decide
+
+817
+00:27:43,680 --> 00:27:47,600
+whether this question needs an answer,
+
+818
+00:27:45,800 --> 00:27:49,560
+you'll at least have the answer ready or
+
+819
+00:27:47,600 --> 00:27:52,200
+in parallel with deciding. So sometimes
+
+820
+00:27:49,560 --> 00:27:53,840
+you're classifying and you're responding
+
+821
+00:27:52,200 --> 00:27:55,240
+at the same time. Basically speculative
+
+822
+00:27:53,840 --> 00:27:57,720
+execution.
+
+823
+00:27:55,240 --> 00:27:59,560
+Another example would be transcription,
+
+824
+00:27:57,720 --> 00:28:01,640
+what we call ensembling.
+
+825
+00:27:59,560 --> 00:28:03,440
+Um I think we might have published a
+
+826
+00:28:01,640 --> 00:28:06,640
+blog post on this today, which is great.
+
+827
+00:28:03,440 --> 00:28:08,600
+Go read it. We've learned so many things
+
+828
+00:28:06,640 --> 00:28:11,200
+from being a
+
+829
+00:28:08,600 --> 00:28:13,080
+uh modular architecture on voice. This
+
+830
+00:28:11,200 --> 00:28:15,200
+was an early decision we made that I
+
+831
+00:28:13,080 --> 00:28:18,560
+think has totally played out to our
+
+832
+00:28:15,200 --> 00:28:21,360
+advantage where we have the ability for
+
+833
+00:28:18,560 --> 00:28:25,560
+any language, for any customer, for any
+
+834
+00:28:21,360 --> 00:28:27,360
+use case to multi-home providers
+
+835
+00:28:25,560 --> 00:28:29,480
+uh across transcription, across
+
+836
+00:28:27,360 --> 00:28:31,360
+synthesis, and across native uh
+
+837
+00:28:29,480 --> 00:28:33,280
+voice-to-voice models. And so on the
+
+838
+00:28:31,360 --> 00:28:36,560
+transcription side, for example, it just
+
+839
+00:28:33,280 --> 00:28:39,080
+turns out uh when you have a thick UK
+
+840
+00:28:36,560 --> 00:28:40,320
+accent from northern UK or at least
+
+841
+00:28:39,080 --> 00:28:42,760
+parts of northern UK. I don't know
+
+842
+00:28:40,320 --> 00:28:44,600
+exactly the region.
+
+843
+00:28:42,760 --> 00:28:46,640
+There is one model that has the highest
+
+844
+00:28:44,600 --> 00:28:48,680
+quality transcription,
+
+845
+00:28:46,640 --> 00:28:50,040
+but it hallucinates during silence more
+
+846
+00:28:48,680 --> 00:28:52,320
+than other models.
+
+847
+00:28:50,040 --> 00:28:54,400
+So, we run two models in parallel.
+
+848
+00:28:52,320 --> 00:28:56,200
+And if this model says it's silent, you
+
+849
+00:28:54,400 --> 00:28:58,320
+trust it. If this model does not say
+
+850
+00:28:56,200 --> 00:29:00,040
+it's silent, you trust this one. And so,
+
+851
+00:28:58,320 --> 00:29:02,200
+that's just an example where we're
+
+852
+00:29:00,040 --> 00:29:04,120
+running those in parallel. Uh we have
+
+853
+00:29:02,200 --> 00:29:07,520
+logic for when you take the right one,
+
+854
+00:29:04,120 --> 00:29:09,760
+and it's very specific. And if you had,
+
+855
+00:29:07,520 --> 00:29:12,240
+you know, all your chips in with one
+
+856
+00:29:09,760 --> 00:29:14,320
+provider or one system, uh or you
+
+857
+00:29:12,240 --> 00:29:16,440
+weren't doing things in parallel, you
+
+858
+00:29:14,320 --> 00:29:18,160
+would inevitably hit the limits of what
+
+859
+00:29:16,440 --> 00:29:20,800
+that provider can do. So, the same way
+
+860
+00:29:18,160 --> 00:29:23,600
+we use Claude and Gemini and the
+
+861
+00:29:20,800 --> 00:29:25,400
+GPT-class models, we're also able to use
+
+862
+00:29:23,600 --> 00:29:27,040
+all of the leading players on the
+
+863
+00:29:25,400 --> 00:29:28,680
+transcription and synthesis and
+
+864
+00:29:27,040 --> 00:29:29,960
+speech-to-speech side as well.
+
+865
+00:29:28,680 --> 00:29:32,720
+>> You mentioned you have some in-house
+
+866
+00:29:29,960 --> 00:29:34,560
+models as well. What do those models do,
+
+867
+00:29:32,720 --> 00:29:35,600
+and why did you guys decide to build
+
+868
+00:29:34,560 --> 00:29:38,040
+those in-house?
+
+869
+00:29:35,600 --> 00:29:40,480
+>> So, uh knowledge is a great example. I
+
+870
+00:29:38,040 --> 00:29:43,440
+think whenever we are pushing the limits
+
+871
+00:29:40,480 --> 00:29:45,160
+of what's possible, we always consider
+
+872
+00:29:43,440 --> 00:29:47,360
+whether we should build this in-house
+
+873
+00:29:45,160 --> 00:29:49,320
+whenever it's limiting our ability to
+
+874
+00:29:47,360 --> 00:29:52,440
+deliver more for our customers.
+
+875
+00:29:49,320 --> 00:29:54,480
+So, an example where we're probably not
+
+876
+00:29:52,440 --> 00:29:56,320
+the company is these, you know, many
+
+877
+00:29:54,480 --> 00:30:00,600
+millions of dollar training runs that
+
+878
+00:29:56,320 --> 00:30:02,960
+produce the GPT-5.5 class models. And,
+
+879
+00:30:00,600 --> 00:30:04,560
+you know, Mythos, I'm sure is a many,
+
+880
+00:30:02,960 --> 00:30:06,840
+many millions or tens or hundreds of
+
+881
+00:30:04,560 --> 00:30:08,600
+millions of dollars training run um to
+
+882
+00:30:06,840 --> 00:30:10,480
+get that produced. And that's stuff that
+
+883
+00:30:08,600 --> 00:30:11,760
+OpenAI and Anthropic are just the best
+
+884
+00:30:10,480 --> 00:30:13,000
+in the world at.
+
+885
+00:30:11,760 --> 00:30:15,800
+I think what we're the best in the world
+
+886
+00:30:13,000 --> 00:30:17,560
+at is going really deep with customers,
+
+887
+00:30:15,800 --> 00:30:20,600
+understanding all of the process
+
+888
+00:30:17,560 --> 00:30:22,320
+knowledge uh specific to their industry,
+
+889
+00:30:20,600 --> 00:30:24,080
+specific to their company, specific to
+
+890
+00:30:22,320 --> 00:30:26,440
+their customer base.
+
+891
+00:30:24,080 --> 00:30:28,920
+And then having the products that can
+
+892
+00:30:26,440 --> 00:30:30,760
+allow them to serve those customers as
+
+893
+00:30:28,920 --> 00:30:32,480
+best as possible. And so, an example
+
+894
+00:30:30,760 --> 00:30:35,560
+like knowledge where we were hitting the
+
+895
+00:30:32,480 --> 00:30:36,960
+limits of the retrieval and reranking
+
+896
+00:30:35,560 --> 00:30:39,480
+that we could do with out-of-the-box
+
+897
+00:30:36,960 --> 00:30:40,920
+models, we asked the question of, you
+
+898
+00:30:39,480 --> 00:30:41,920
+know, should we create our own models
+
+899
+00:30:40,920 --> 00:30:43,880
+here
+
+900
+00:30:41,920 --> 00:30:46,040
+um and eval them. And we have a research
+
+901
+00:30:43,880 --> 00:30:48,120
+team that's pretty sizable and tightly
+
+902
+00:30:46,040 --> 00:30:50,320
+integrated with our product teams. And
+
+903
+00:30:48,120 --> 00:30:52,920
+so, we can flex that muscle when we need
+
+904
+00:30:50,320 --> 00:30:54,240
+to, but we try not to be doing it just
+
+905
+00:30:52,920 --> 00:30:55,520
+for the sake of doing it.
+
+906
+00:30:54,240 --> 00:30:57,360
+>> You mentioned something like every run
+
+907
+00:30:55,520 --> 00:30:59,280
+of the agent would have 10 to 15
+
+908
+00:30:57,360 --> 00:31:01,320
+different model calls. If you had to
+
+909
+00:30:59,280 --> 00:31:02,920
+guestimate like how many of those are
+
+910
+00:31:01,320 --> 00:31:05,480
+frontier model calls versus like
+
+911
+00:31:02,920 --> 00:31:07,240
+in-house fine-tune versus not frontier
+
+912
+00:31:05,480 --> 00:31:09,640
+model but but third party?
+
+913
+00:31:07,240 --> 00:31:13,200
+>> So, for a typical, um, turn of a
+
+914
+00:31:09,640 --> 00:31:15,200
+conversation, I would guess that and
+
+915
+00:31:13,200 --> 00:31:17,480
+this is just ballpark, but, you know,
+
+916
+00:31:15,200 --> 00:31:20,200
+being, uh, precise rather than being
+
+917
+00:31:17,480 --> 00:31:24,280
+accurate. Uh, I think maybe a couple
+
+918
+00:31:20,200 --> 00:31:26,360
+frontier model, a handful of classifiers
+
+919
+00:31:24,280 --> 00:31:28,480
+that probably don't require that, a
+
+920
+00:31:26,360 --> 00:31:30,840
+handful of speculative execution in the
+
+921
+00:31:28,480 --> 00:31:33,240
+case of voice in particular to make sure
+
+922
+00:31:30,840 --> 00:31:34,760
+that it's low latency. Um, sometimes
+
+923
+00:31:33,240 --> 00:31:36,360
+there will be an interim response that's
+
+924
+00:31:34,760 --> 00:31:37,760
+generated to, you know, the same way
+
+925
+00:31:36,360 --> 00:31:39,280
+you'd say, "Hold on a minute, I'm just
+
+926
+00:31:37,760 --> 00:31:41,520
+pulling up your account." Like that kind
+
+927
+00:31:39,280 --> 00:31:43,640
+of thing. Roughly like a third a third a
+
+928
+00:31:41,520 --> 00:31:45,840
+third or a quarter quarter quarter, but
+
+929
+00:31:43,640 --> 00:31:49,240
+I would say the frontier models just
+
+930
+00:31:45,840 --> 00:31:52,120
+because they might be slower or more
+
+931
+00:31:49,240 --> 00:31:54,160
+expensive would probably be, you know,
+
+932
+00:31:52,120 --> 00:31:56,120
+more doing the bulk of the reasoning but
+
+933
+00:31:54,160 --> 00:31:57,320
+in one or two inferences for a given
+
+934
+00:31:56,120 --> 00:31:59,320
+conversation turn.
+
+935
+00:31:57,320 --> 00:32:01,000
+>> Do you ever end up training models
+
+936
+00:31:59,320 --> 00:32:02,520
+specific to a customer?
+
+937
+00:32:01,000 --> 00:32:04,600
+>> It's not something that would be out of
+
+938
+00:32:02,520 --> 00:32:07,520
+the question, but I can't think of a
+
+939
+00:32:04,600 --> 00:32:09,960
+specific example. The reason I pause is
+
+940
+00:32:07,520 --> 00:32:11,240
+because we do have our agent data
+
+941
+00:32:09,960 --> 00:32:13,200
+platform
+
+942
+00:32:11,240 --> 00:32:16,120
+and there are machine learning models
+
+943
+00:32:13,200 --> 00:32:18,520
+that power strategies that are specific
+
+944
+00:32:16,120 --> 00:32:19,160
+to customers. But in terms of like a,
+
+945
+00:32:18,520 --> 00:32:21,120
+uh,
+
+946
+00:32:19,160 --> 00:32:23,360
+you know, language model or generative
+
+947
+00:32:21,120 --> 00:32:25,760
+model, we don't have cases of that.
+
+948
+00:32:23,360 --> 00:32:26,680
+>> What's the agent data platform and what
+
+949
+00:32:25,760 --> 00:32:28,320
+does it power?
+
+950
+00:32:26,680 --> 00:32:30,320
+>> Basically, one thing we realized pretty
+
+951
+00:32:28,320 --> 00:32:32,200
+early on is large language models are
+
+952
+00:32:30,320 --> 00:32:33,920
+really good at in the moment empathy.
+
+953
+00:32:32,200 --> 00:32:35,200
+Oftentimes better than we are of
+
+954
+00:32:33,920 --> 00:32:36,360
+understanding, okay, you You I
+
+955
+00:32:35,200 --> 00:32:38,080
+understand you're having a hard time.
+
+956
+00:32:36,360 --> 00:32:40,680
+I'm really sorry about that. And it's
+
+957
+00:32:38,080 --> 00:32:43,200
+the same way when you walk into
+
+958
+00:32:40,680 --> 00:32:45,440
+a restaurant that has amazing service or
+
+959
+00:32:43,200 --> 00:32:48,200
+a hotel that has amazing service, they
+
+960
+00:32:45,440 --> 00:32:49,760
+recognize the moment you walk in, okay,
+
+961
+00:32:48,200 --> 00:32:52,560
+this person just got off a really long
+
+962
+00:32:49,760 --> 00:32:54,360
+flight or this person's 10 minutes late
+
+963
+00:32:52,560 --> 00:32:55,760
+to their reservation and they were stuck
+
+964
+00:32:54,360 --> 00:32:57,720
+in traffic and I'm just going to let
+
+965
+00:32:55,760 --> 00:32:59,320
+them know that that is not a problem.
+
+966
+00:32:57,720 --> 00:33:01,160
+Their table is ready.
+
+967
+00:32:59,320 --> 00:33:03,800
+And large language models have that,
+
+968
+00:33:01,160 --> 00:33:05,920
+especially on a platform like Sierra.
+
+969
+00:33:03,800 --> 00:33:08,360
+But they don't necessarily know what you
+
+970
+00:33:05,920 --> 00:33:10,680
+care about at a level deeper than that.
+
+971
+00:33:08,360 --> 00:33:13,480
+And oftentimes the previous generation
+
+972
+00:33:10,680 --> 00:33:14,920
+of AI or recommender systems have a
+
+973
+00:33:13,480 --> 00:33:16,040
+better understanding of some of those
+
+974
+00:33:14,920 --> 00:33:18,000
+things.
+
+975
+00:33:16,040 --> 00:33:20,120
+And so what Agent Data Platform does is
+
+976
+00:33:18,000 --> 00:33:21,520
+it can either integrate with your
+
+977
+00:33:20,120 --> 00:33:24,080
+customer data platform, all your
+
+978
+00:33:21,520 --> 00:33:25,720
+internal systems, or you know, you can
+
+979
+00:33:24,080 --> 00:33:28,320
+have it just on Sierra or you can do
+
+980
+00:33:25,720 --> 00:33:31,280
+sort of a zero copy integration.
+
+981
+00:33:28,320 --> 00:33:33,720
+And it can take that structured data
+
+982
+00:33:31,280 --> 00:33:34,880
+that knows what to recommend along with
+
+983
+00:33:33,720 --> 00:33:37,720
+the here and now and now in the use
+
+984
+00:33:34,880 --> 00:33:37,720
+those to
+
+985
+00:33:38,440 --> 00:33:44,920
+generate uh better conversations, better
+
+986
+00:33:42,480 --> 00:33:46,400
+uh orchestrations around how you want
+
+987
+00:33:44,920 --> 00:33:47,640
+customers to feel and what you want to
+
+988
+00:33:46,400 --> 00:33:49,400
+do for them.
+
+989
+00:33:47,640 --> 00:33:52,200
+Um so that all sounds maybe a little bit
+
+990
+00:33:49,400 --> 00:33:54,280
+abstract. Uh one example would be during
+
+991
+00:33:52,200 --> 00:33:55,960
+sales. Oftentimes there's structured
+
+992
+00:33:54,280 --> 00:33:58,720
+data that knows the right offer to
+
+993
+00:33:55,960 --> 00:34:00,080
+present, but doing it just with that
+
+994
+00:33:58,720 --> 00:34:02,840
+structured data with the previous
+
+995
+00:34:00,080 --> 00:34:05,400
+generation of AI and before Sierra feels
+
+996
+00:34:02,840 --> 00:34:07,520
+very stilted or it feels like you know,
+
+997
+00:34:05,400 --> 00:34:09,720
+I don't know why you're doing this. And
+
+998
+00:34:07,520 --> 00:34:12,320
+so large language models can really
+
+999
+00:34:09,720 --> 00:34:14,520
+understand how to present an offer,
+
+1000
+00:34:12,320 --> 00:34:16,200
+uh how to attribute it, weigh two
+
+1001
+00:34:14,520 --> 00:34:17,720
+different offers based on conversation
+
+1002
+00:34:16,200 --> 00:34:19,240
+context and pick the right one for the
+
+1003
+00:34:17,720 --> 00:34:21,440
+moment and that kind of thing. So we see
+
+1004
+00:34:19,240 --> 00:34:23,560
+it a lot with sales, with loyalty and
+
+1005
+00:34:21,440 --> 00:34:25,320
+retention, those types of conversations.
+
+1006
+00:34:23,560 --> 00:34:27,159
+>> One of the last agents we haven't talked
+
+1007
+00:34:25,320 --> 00:34:27,480
+about too much is Explorer.
+
+1008
+00:34:27,159 --> 00:34:29,399
+>> Yes.
+
+1009
+00:34:27,480 --> 00:34:30,320
+>> What is Explorer? What does it look like
+
+1010
+00:34:29,399 --> 00:34:32,200
+under the hood?
+
+1011
+00:34:30,320 --> 00:34:34,760
+>> I've described it as chat GPT deep
+
+1012
+00:34:32,200 --> 00:34:36,919
+research uh for all of your customer
+
+1013
+00:34:34,760 --> 00:34:38,679
+context and conversations and all of the
+
+1014
+00:34:36,919 --> 00:34:39,919
+data on Sierra. And so what it allows
+
+1015
+00:34:38,679 --> 00:34:41,760
+you to do
+
+1016
+00:34:39,919 --> 00:34:44,879
+is basically instead of having to go
+
+1017
+00:34:41,760 --> 00:34:47,600
+spelunking for the specific insight in
+
+1018
+00:34:44,879 --> 00:34:49,639
+reports or in monitors, you can just ask
+
+1019
+00:34:47,600 --> 00:34:51,879
+the question. You can say, "Hey,
+
+1020
+00:34:49,639 --> 00:34:53,720
+I noticed my resolution rate dipped, you
+
+1021
+00:34:51,879 --> 00:34:55,960
+know, why was that?" Or "How can I
+
+1022
+00:34:53,720 --> 00:34:57,600
+generate more sales?" Or
+
+1023
+00:34:55,960 --> 00:35:00,800
+"I wish that more people were converting
+
+1024
+00:34:57,600 --> 00:35:03,280
+from trial to, you know, full-time paid
+
+1025
+00:35:00,800 --> 00:35:04,880
+plan. How come that's not happening?"
+
+1026
+00:35:03,280 --> 00:35:06,920
+And then more than that, you can set up
+
+1027
+00:35:04,880 --> 00:35:09,280
+automations so that, you know, on a
+
+1028
+00:35:06,920 --> 00:35:11,960
+daily basis, for example, Explorer can
+
+1029
+00:35:09,280 --> 00:35:14,000
+ask the same questions proactively.
+
+1030
+00:35:11,960 --> 00:35:15,400
+And then partner with Ghostwriter. We
+
+1031
+00:35:14,000 --> 00:35:18,600
+currently think of these as kind of two
+
+1032
+00:35:15,400 --> 00:35:20,360
+separate agents, the analysis agent and
+
+1033
+00:35:18,600 --> 00:35:22,280
+the authoring agent,
+
+1034
+00:35:20,360 --> 00:35:23,840
+to say, "Oh, here are some fixes that
+
+1035
+00:35:22,280 --> 00:35:25,160
+are suggested to improve." And you can
+
+1036
+00:35:23,840 --> 00:35:27,120
+chat with Ghostwriter and kind of pick
+
+1037
+00:35:25,160 --> 00:35:29,040
+it up from there. Under the hood where
+
+1038
+00:35:27,120 --> 00:35:31,960
+this is converging, I think is a shared
+
+1039
+00:35:29,040 --> 00:35:33,000
+harness that is an expert at using Agent
+
+1040
+00:35:31,960 --> 00:35:35,320
+Studio,
+
+1041
+00:35:33,000 --> 00:35:37,120
+Sierra's platform. Um and so that's kind
+
+1042
+00:35:35,320 --> 00:35:38,040
+of what we've been setting up in terms
+
+1043
+00:35:37,120 --> 00:35:39,480
+of what we talked about at the
+
+1044
+00:35:38,040 --> 00:35:41,360
+beginning, like,
+
+1045
+00:35:39,480 --> 00:35:44,360
+you know, figuring out the file system
+
+1046
+00:35:41,360 --> 00:35:47,200
+architecture that maps to the product.
+
+1047
+00:35:44,360 --> 00:35:48,520
+Um and so as we've exposed more and more
+
+1048
+00:35:47,200 --> 00:35:49,680
+tools,
+
+1049
+00:35:48,520 --> 00:35:52,760
+um you know, like building knowledge
+
+1050
+00:35:49,680 --> 00:35:54,040
+bases to these agents, they get more and
+
+1051
+00:35:52,760 --> 00:35:55,920
+more powerful and we see a lot of
+
+1052
+00:35:54,040 --> 00:35:58,080
+emergent behavior between both.
+
+1053
+00:35:55,920 --> 00:36:00,000
+>> Does this harness end up looking more
+
+1054
+00:35:58,080 --> 00:36:02,080
+similar to like a coding agent harness
+
+1055
+00:36:00,000 --> 00:36:04,000
+than the the harness that's part of
+
+1056
+00:36:02,080 --> 00:36:07,160
+Agent OS or Agent SDK?
+
+1057
+00:36:04,000 --> 00:36:09,880
+>> Yes. Um so this is less of a quick-turn
+
+1058
+00:36:07,160 --> 00:36:13,040
+conversational agent and more of a
+
+1059
+00:36:09,880 --> 00:36:15,000
+longer-term deep analysis agent. And so
+
+1060
+00:36:13,040 --> 00:36:16,320
+it ends up looking a lot more like a
+
+1061
+00:36:15,000 --> 00:36:17,160
+cloud coder or Codex.
+
+1062
+00:36:16,320 --> 00:36:18,240
+>> One of the things I've been thinking
+
+1063
+00:36:17,160 --> 00:36:19,200
+about, I'm curious if you have a take
+
+1064
+00:36:18,240 --> 00:36:22,240
+here.
+
+1065
+00:36:19,200 --> 00:36:24,040
+In a year, two years, three years, will
+
+1066
+00:36:22,240 --> 00:36:26,080
+there be the split just in terms of
+
+1067
+00:36:24,040 --> 00:36:28,640
+harness? Ones that's optimized for kind
+
+1068
+00:36:26,080 --> 00:36:31,600
+of like, yeah, lower latency, external
+
+1069
+00:36:28,640 --> 00:36:33,520
+facing, customer experience type things.
+
+1070
+00:36:31,600 --> 00:36:34,760
+Voice is maybe heavily involved. And
+
+1071
+00:36:33,520 --> 00:36:36,520
+another that's really focused on these
+
+1072
+00:36:34,760 --> 00:36:38,200
+deep research, maybe coding, like you're
+
+1073
+00:36:36,520 --> 00:36:39,840
+running in a sandbox, things like that.
+
+1074
+00:36:38,200 --> 00:36:41,360
+Or will just end up converging into one
+
+1075
+00:36:39,840 --> 00:36:43,240
+harness that, you know, depending on how
+
+1076
+00:36:41,360 --> 00:36:45,320
+you prompt it or, you know, has these
+
+1077
+00:36:43,240 --> 00:36:46,720
+async sub-agents in the background that
+
+1078
+00:36:45,320 --> 00:36:47,440
+can maybe run for longer periods of
+
+1079
+00:36:46,720 --> 00:36:49,960
+time.
+
+1080
+00:36:47,440 --> 00:36:52,240
+>> I think there will always be latency,
+
+1081
+00:36:49,960 --> 00:36:54,040
+performance, cost tradeoffs and
+
+1082
+00:36:52,240 --> 00:36:55,600
+different architectures that emerge
+
+1083
+00:36:54,040 --> 00:36:58,360
+because of that.
+
+1084
+00:36:55,600 --> 00:37:00,480
+I've actually been surprised by how many
+
+1085
+00:36:58,360 --> 00:37:01,760
+different types of model companies there
+
+1086
+00:37:00,480 --> 00:37:03,040
+still are.
+
+1087
+00:37:01,760 --> 00:37:05,480
+And when I talk to people who are
+
+1088
+00:37:03,040 --> 00:37:08,360
+particularly AGI filled about it and I
+
+1089
+00:37:05,480 --> 00:37:10,720
+say, "Hey, what's like a cool model
+
+1090
+00:37:08,360 --> 00:37:12,280
+opportunity that's not flying like so
+
+1091
+00:37:10,720 --> 00:37:14,080
+close to the sun that the labs will do
+
+1092
+00:37:12,280 --> 00:37:16,240
+it?" They'll say, "Oh, well, you'll just
+
+1093
+00:37:14,080 --> 00:37:17,720
+ask, you know, GPT-12 to make that
+
+1094
+00:37:16,240 --> 00:37:20,480
+model, so it's actually not a big
+
+1095
+00:37:17,720 --> 00:37:23,040
+opportunity." But I think in reality, at
+
+1096
+00:37:20,480 --> 00:37:25,365
+least up until now, I'll probably look
+
+1097
+00:37:23,040 --> 00:37:26,520
+dumb when AGI comes out.
+
+1098
+00:37:25,365 --> 00:37:29,320
+>> [laughter]
+
+1099
+00:37:26,520 --> 00:37:32,000
+>> You do see a lot of success in areas
+
+1100
+00:37:29,320 --> 00:37:34,200
+like voice models from transcription to
+
+1101
+00:37:32,000 --> 00:37:36,920
+synthesis. You don't always see
+
+1102
+00:37:34,200 --> 00:37:38,600
+leadership from the model labs. You see
+
+1103
+00:37:36,920 --> 00:37:40,360
+the model labs actually trying to focus
+
+1104
+00:37:38,600 --> 00:37:42,320
+more on specific problems. For
+
+1105
+00:37:40,360 --> 00:37:44,720
+Anthropic, I think it's coding. For
+
+1106
+00:37:42,320 --> 00:37:45,760
+OpenAI, it's been consumer, now maybe
+
+1107
+00:37:44,720 --> 00:37:48,040
+shifting a little bit more to
+
+1108
+00:37:45,760 --> 00:37:50,960
+enterprise. Um for Google, definitely
+
+1109
+00:37:48,040 --> 00:37:52,400
+consumer as well. And it really does
+
+1110
+00:37:50,960 --> 00:37:54,640
+feel like there are still tradeoffs to
+
+1111
+00:37:52,400 --> 00:37:57,040
+me. So, I expect there will still be
+
+1112
+00:37:54,640 --> 00:37:59,960
+multiple architectures up until that
+
+1113
+00:37:57,040 --> 00:38:00,680
+event horizon of AGI's here, so all bets
+
+1114
+00:37:59,960 --> 00:38:02,760
+are off.
+
+1115
+00:38:00,680 --> 00:38:04,280
+>> As you guys build your core agent
+
+1116
+00:38:02,760 --> 00:38:06,160
+harnesses, and I'm assuming one to build
+
+1117
+00:38:04,280 --> 00:38:08,240
+them in a model agnostic way, what do
+
+1118
+00:38:06,160 --> 00:38:10,000
+you need to change to go from an OpenAI
+
+1119
+00:38:08,240 --> 00:38:12,120
+model to an Anthropic model?
+
+1120
+00:38:10,000 --> 00:38:13,600
+>> Usually, you have the evals that are
+
+1121
+00:38:12,120 --> 00:38:15,840
+designed to work across both. So, if you
+
+1122
+00:38:13,600 --> 00:38:18,160
+have really good evals and a really good
+
+1123
+00:38:15,840 --> 00:38:19,720
+harness, a really good architecture,
+
+1124
+00:38:18,160 --> 00:38:22,800
+then you should be able to kind of hill
+
+1125
+00:38:19,720 --> 00:38:24,520
+climb toward eval performance without
+
+1126
+00:38:22,800 --> 00:38:26,160
+too much effort. Often what will happen
+
+1127
+00:38:24,520 --> 00:38:28,120
+is you'll learn the first time you're
+
+1128
+00:38:26,160 --> 00:38:30,160
+switching one task from one to another
+
+1129
+00:38:28,120 --> 00:38:33,040
+or making it possible to run on multiple
+
+1130
+00:38:30,160 --> 00:38:34,320
+systems that your eval wasn't quite as
+
+1131
+00:38:33,040 --> 00:38:36,120
+good as you thought. And so then you
+
+1132
+00:38:34,320 --> 00:38:38,600
+make your eval better and you continue
+
+1133
+00:38:36,120 --> 00:38:42,520
+to improve. But the short answer is that
+
+1134
+00:38:38,600 --> 00:38:44,800
+it's pretty simple for a given
+
+1135
+00:38:42,520 --> 00:38:48,000
+intelligence level of a model
+
+1136
+00:38:44,800 --> 00:38:50,320
+to run a task on one or the other. And
+
+1137
+00:38:48,000 --> 00:38:52,960
+so again it's that basically latency
+
+1138
+00:38:50,320 --> 00:38:54,760
+quality cost trade-off, but not more
+
+1139
+00:38:52,960 --> 00:38:56,600
+than that. And because we have customers
+
+1140
+00:38:54,760 --> 00:38:59,120
+that have very specific requirements
+
+1141
+00:38:56,600 --> 00:39:02,120
+around what clouds they can run in, what
+
+1142
+00:38:59,120 --> 00:39:04,520
+models they can use, and our
+
+1143
+00:39:02,120 --> 00:39:07,000
+company approach is to meet them, you
+
+1144
+00:39:04,520 --> 00:39:08,640
+know, on their terms. You don't serve
+
+1145
+00:39:07,000 --> 00:39:11,120
+most of the Fortune 20 without that
+
+1146
+00:39:08,640 --> 00:39:13,080
+approach. It's not really a choice.
+
+1147
+00:39:11,120 --> 00:39:14,560
+And so because that's our approach and
+
+1148
+00:39:13,080 --> 00:39:16,800
+we've built a lot of products around
+
+1149
+00:39:14,560 --> 00:39:18,560
+that, we also have made sure that we can
+
+1150
+00:39:16,800 --> 00:39:20,640
+kind of move between models of
+
+1151
+00:39:18,560 --> 00:39:21,480
+comparable intelligence without too much
+
+1152
+00:39:20,640 --> 00:39:22,840
+heartburn.
+
+1153
+00:39:21,480 --> 00:39:24,480
+>> And what do you end up changing when you
+
+1154
+00:39:22,840 --> 00:39:26,120
+hill climb? Is it just the prompts? Do
+
+1155
+00:39:24,480 --> 00:39:27,080
+you also change out some of the tools
+
+1156
+00:39:26,120 --> 00:39:29,640
+themselves?
+
+1157
+00:39:27,080 --> 00:39:32,360
+>> It depends on the case. And I might not
+
+1158
+00:39:29,640 --> 00:39:34,800
+be the expert on the exact history of
+
+1159
+00:39:32,360 --> 00:39:36,120
+each. I would I think that if you change
+
+1160
+00:39:34,800 --> 00:39:38,360
+the tools,
+
+1161
+00:39:36,120 --> 00:39:39,960
+it's pretty hard not to have downstream
+
+1162
+00:39:38,360 --> 00:39:41,760
+effects of that. And there might be
+
+1163
+00:39:39,960 --> 00:39:43,360
+certain tasks that can only run on
+
+1164
+00:39:41,760 --> 00:39:45,040
+certain models
+
+1165
+00:39:43,360 --> 00:39:47,040
+and other tasks that can run on other
+
+1166
+00:39:45,040 --> 00:39:49,360
+models. And so there's always kind of a
+
+1167
+00:39:47,040 --> 00:39:52,080
+set of eligible models for specific
+
+1168
+00:39:49,360 --> 00:39:54,480
+tasks. I don't know exactly how tools
+
+1169
+00:39:52,080 --> 00:39:56,800
+change, but I know the eval getting more
+
+1170
+00:39:54,480 --> 00:39:58,560
+robust and the prompt, you know,
+
+1171
+00:39:56,800 --> 00:40:01,200
+conforming to the quirks of each model
+
+1172
+00:39:58,560 --> 00:40:03,720
+is definitely part of the development.
+
+1173
+00:40:01,200 --> 00:40:05,720
+>> You guys recently wrote a blog around
+
+1174
+00:40:03,720 --> 00:40:07,600
+context engineering and I think you said
+
+1175
+00:40:05,720 --> 00:40:09,080
+it was the key to great agent building
+
+1176
+00:40:07,600 --> 00:40:11,000
+or something like that. How do you guys
+
+1177
+00:40:09,080 --> 00:40:12,840
+think about context engineering and and
+
+1178
+00:40:11,000 --> 00:40:14,080
+and what, you know, tips or tricks would
+
+1179
+00:40:12,840 --> 00:40:16,280
+you have for others?
+
+1180
+00:40:14,080 --> 00:40:18,720
+>> I think it's showing agents everything
+
+1181
+00:40:16,280 --> 00:40:20,160
+they need to do the right thing, but
+
+1182
+00:40:18,720 --> 00:40:24,680
+nothing more.
+
+1183
+00:40:20,160 --> 00:40:26,320
+And as models get smarter, you can be
+
+1184
+00:40:24,680 --> 00:40:27,920
+a little bit less precise with
+
+1185
+00:40:26,320 --> 00:40:30,280
+everything they need, and certainly less
+
+1186
+00:40:27,920 --> 00:40:31,360
+precise with nothing more. So, early on
+
+1187
+00:40:30,280 --> 00:40:33,680
+it was
+
+1188
+00:40:31,360 --> 00:40:35,440
+the agent SDK was really about only
+
+1189
+00:40:33,680 --> 00:40:37,320
+giving the model exactly what it needed
+
+1190
+00:40:35,440 --> 00:40:40,400
+and kind of spoon-feeding the context.
+
+1191
+00:40:37,320 --> 00:40:42,000
+Now, to extend the uh meal analogy, it's
+
+1192
+00:40:40,400 --> 00:40:43,880
+probably more like, you know, putting
+
+1193
+00:40:42,000 --> 00:40:46,200
+out the right dish. And maybe in the
+
+1194
+00:40:43,880 --> 00:40:48,680
+future, it might be something that is
+
+1195
+00:40:46,200 --> 00:40:50,320
+even less structured. One concept that I
+
+1196
+00:40:48,680 --> 00:40:52,360
+think is in that blog post is kind of
+
+1197
+00:40:50,320 --> 00:40:54,480
+progressive disclosure. You'll probably
+
+1198
+00:40:52,360 --> 00:40:56,960
+know more about this than I do, but
+
+1199
+00:40:54,480 --> 00:40:58,360
+when you bring something into the
+
+1200
+00:40:56,960 --> 00:40:59,760
+prompt,
+
+1201
+00:40:58,360 --> 00:41:02,640
+you don't want to do it before it's
+
+1202
+00:40:59,760 --> 00:41:04,520
+relevant, and then you also risk
+
+1203
+00:41:02,640 --> 00:41:06,520
+incoherence if you then yank it out of
+
+1204
+00:41:04,520 --> 00:41:08,480
+the prompt. So, when you do things like
+
+1205
+00:41:06,520 --> 00:41:10,160
+prompt compaction, you just want to be
+
+1206
+00:41:08,480 --> 00:41:12,320
+really thoughtful about not making it
+
+1207
+00:41:10,160 --> 00:41:14,600
+lossy, because if you keep something in
+
+1208
+00:41:12,320 --> 00:41:16,560
+the history that is
+
+1209
+00:41:14,600 --> 00:41:19,400
+incoherent with the rest of the system
+
+1210
+00:41:16,560 --> 00:41:21,920
+prompt, it's not going to end well. And
+
+1211
+00:41:19,400 --> 00:41:24,000
+so, I think to the degree, you know,
+
+1212
+00:41:21,920 --> 00:41:25,400
+when we're fixing uh
+
+1213
+00:41:24,000 --> 00:41:28,480
+issues, or when when we've seen
+
+1214
+00:41:25,400 --> 00:41:29,960
+hallucinations, it's often because one
+
+1215
+00:41:28,480 --> 00:41:31,400
+part of the prompt was this, and the
+
+1216
+00:41:29,960 --> 00:41:34,440
+other part was this. And actually, one
+
+1217
+00:41:31,400 --> 00:41:36,440
+of my main learnings from Sierra is
+
+1218
+00:41:34,440 --> 00:41:39,120
+anytime you think the model's being
+
+1219
+00:41:36,440 --> 00:41:40,880
+dumb, it's probably you.
+
+1220
+00:41:39,120 --> 00:41:42,240
+>> I like that. I think that I I think a
+
+1221
+00:41:40,880 --> 00:41:43,800
+lot of people have learned similar
+
+1222
+00:41:42,240 --> 00:41:45,320
+lessons from doubting the model.
+
+1223
+00:41:43,800 --> 00:41:46,480
+>> the model's too dumb, the model's
+
+1224
+00:41:45,320 --> 00:41:48,840
+actually too smart.
+
+1225
+00:41:46,480 --> 00:41:50,520
+>> How much you guys care about prompt
+
+1226
+00:41:48,840 --> 00:41:52,120
+caching and maintaining that cache? I've
+
+1227
+00:41:50,520 --> 00:41:54,000
+heard I've heard kind of like two
+
+1228
+00:41:52,120 --> 00:41:55,240
+mindsets on it. One is like, yeah, do
+
+1229
+00:41:54,000 --> 00:41:57,440
+everything you can to maintain the
+
+1230
+00:41:55,240 --> 00:41:59,280
+cache, like don't invalidate it until
+
+1231
+00:41:57,440 --> 00:42:00,160
+you like absolutely need to. And then
+
+1232
+00:41:59,280 --> 00:42:01,920
+I've heard another theory that's
+
+1233
+00:42:00,160 --> 00:42:03,600
+basically like, yeah, prompt caching's
+
+1234
+00:42:01,920 --> 00:42:05,320
+great, but like what matters most is
+
+1235
+00:42:03,600 --> 00:42:07,200
+like performance, and sometimes you need
+
+1236
+00:42:05,320 --> 00:42:09,040
+to just like break the cache in order to
+
+1237
+00:42:07,200 --> 00:42:11,320
+insert the right context, or give it a
+
+1238
+00:42:09,040 --> 00:42:13,080
+system reminder, or something like that.
+
+1239
+00:42:11,320 --> 00:42:15,240
+How how strictly do you guys try to
+
+1240
+00:42:13,080 --> 00:42:17,520
+adhere to prompt caching?
+
+1241
+00:42:15,240 --> 00:42:22,240
+>> Is the purpose for those who are prompt
+
+1242
+00:42:17,520 --> 00:42:23,320
+caching loyalists for uh speed or cost
+
+1243
+00:42:22,240 --> 00:42:25,360
+or quality?
+
+1244
+00:42:23,320 --> 00:42:25,760
+>> I think the first two mostly speed and
+
+1245
+00:42:25,360 --> 00:42:26,280
+cost.
+
+1246
+00:42:25,760 --> 00:42:28,000
+>> Speed and cost.
+
+1247
+00:42:26,280 --> 00:42:30,720
+>> Yeah. I haven't I haven't heard anyone
+
+1248
+00:42:28,000 --> 00:42:32,440
+argue that it's for quality, but maybe
+
+1249
+00:42:30,720 --> 00:42:33,960
+maybe it works better.
+
+1250
+00:42:32,440 --> 00:42:36,560
+>> It's a nice to have.
+
+1251
+00:42:33,960 --> 00:42:38,720
+Um we definitely don't want to
+
+1252
+00:42:36,560 --> 00:42:40,520
+invalidate a cache for no good reason,
+
+1253
+00:42:38,720 --> 00:42:43,360
+but quality comes first.
+
+1254
+00:42:40,520 --> 00:42:46,600
+So, we aren't uh zealots about it at
+
+1255
+00:42:43,360 --> 00:42:49,360
+all. I would also say that when the
+
+1256
+00:42:46,600 --> 00:42:51,840
+outcomes that your agents are delivering
+
+1257
+00:42:49,360 --> 00:42:54,840
+are very valuable, you have the luxury
+
+1258
+00:42:51,840 --> 00:42:56,240
+of not being extremely focused on cost
+
+1259
+00:42:54,840 --> 00:42:59,200
+in particular.
+
+1260
+00:42:56,240 --> 00:43:01,600
+Uh and so, that probably is part of the
+
+1261
+00:42:59,200 --> 00:43:03,800
+reason for that is that, you know,
+
+1262
+00:43:01,600 --> 00:43:05,320
+a conversation with a customer could
+
+1263
+00:43:03,800 --> 00:43:09,200
+sell a
+
+1264
+00:43:05,320 --> 00:43:12,040
+$100 product or a $1,000 lifetime value
+
+1265
+00:43:09,200 --> 00:43:14,600
+plan. And so, those are valuable enough
+
+1266
+00:43:12,040 --> 00:43:16,280
+that quality almost always comes first.
+
+1267
+00:43:14,600 --> 00:43:17,800
+>> We've talked a bunch about the agent
+
+1268
+00:43:16,280 --> 00:43:19,480
+itself. There's two topics that we were
+
+1269
+00:43:17,800 --> 00:43:20,560
+discussing earlier, and I'm curious
+
+1270
+00:43:19,480 --> 00:43:21,560
+We've talked a little bit about them,
+
+1271
+00:43:20,560 --> 00:43:24,040
+but I'm curious if you have any more
+
+1272
+00:43:21,560 --> 00:43:25,560
+thoughts. First being RL. When is RL
+
+1273
+00:43:24,040 --> 00:43:26,720
+good? When is it bad? How much have you
+
+1274
+00:43:25,560 --> 00:43:29,800
+guys explored it?
+
+1275
+00:43:26,720 --> 00:43:31,720
+>> We've explored it a lot, in part because
+
+1276
+00:43:29,800 --> 00:43:33,480
+it has two great promises, you know,
+
+1277
+00:43:31,720 --> 00:43:35,880
+increasing the ceiling of the quality of
+
+1278
+00:43:33,480 --> 00:43:38,000
+models, and then also making it so that
+
+1279
+00:43:35,880 --> 00:43:39,320
+you can do a similar task on more
+
+1280
+00:43:38,000 --> 00:43:40,600
+models.
+
+1281
+00:43:39,320 --> 00:43:42,240
+I'm curious for your take, but in
+
+1282
+00:43:40,600 --> 00:43:44,000
+practice I've seen a little bit more of
+
+1283
+00:43:42,240 --> 00:43:47,000
+the second one when it comes to like
+
+1284
+00:43:44,000 --> 00:43:48,880
+enterprise RL. It's taking an open model
+
+1285
+00:43:47,000 --> 00:43:51,280
+or open weights model and saying, "How
+
+1286
+00:43:48,880 --> 00:43:53,040
+can we get similar performance to a
+
+1287
+00:43:51,280 --> 00:43:55,880
+frontier model?" The two things that
+
+1288
+00:43:53,040 --> 00:43:57,400
+make it hard are, number one, uh the way
+
+1289
+00:43:55,880 --> 00:44:00,960
+that that gets delivered is
+
+1290
+00:43:57,400 --> 00:44:02,400
+non-deterministic and might include um
+
+1291
+00:44:00,960 --> 00:44:04,160
+you can't include any data that you
+
+1292
+00:44:02,400 --> 00:44:05,800
+don't want the model to regurgitate. So,
+
+1293
+00:44:04,160 --> 00:44:08,560
+we basically would never fine-tune a
+
+1294
+00:44:05,800 --> 00:44:10,080
+model on something when it could lead to
+
+1295
+00:44:08,560 --> 00:44:12,760
+regurgitation risk. That's just a
+
+1296
+00:44:10,080 --> 00:44:16,400
+non-starter. And then also uh in
+
+1297
+00:44:12,760 --> 00:44:17,720
+general, just the way that uh you would
+
+1298
+00:44:16,400 --> 00:44:19,840
+train the model, you have to think about
+
+1299
+00:44:17,720 --> 00:44:21,720
+preparing all of that data.
+
+1300
+00:44:19,840 --> 00:44:24,360
+The other big one is that the frontier
+
+1301
+00:44:21,720 --> 00:44:28,040
+models are improving so fast that you
+
+1302
+00:44:24,360 --> 00:44:30,480
+want to remain as agile as possible.
+
+1303
+00:44:28,040 --> 00:44:32,760
+And so in many cases, doing something
+
+1304
+00:44:30,480 --> 00:44:34,240
+like RL makes a ton of sense for
+
+1305
+00:44:32,760 --> 00:44:35,960
+something like knowledge where we feel
+
+1306
+00:44:34,240 --> 00:44:38,000
+like we are pushing the state of the
+
+1307
+00:44:35,960 --> 00:44:39,960
+art. But if we're not pushing the state
+
+1308
+00:44:38,000 --> 00:44:41,520
+of the art, we really want to be
+
+1309
+00:44:39,960 --> 00:44:43,400
+thinking about what's going to be true 3
+
+1310
+00:44:41,520 --> 00:44:45,480
+months from now, 6 months from now, and
+
+1311
+00:44:43,400 --> 00:44:46,480
+oftentimes RL is a rounding error
+
+1312
+00:44:45,480 --> 00:44:47,760
+against that.
+
+1313
+00:44:46,480 --> 00:44:49,040
+>> Yeah, I feel like to your point earlier,
+
+1314
+00:44:47,760 --> 00:44:51,720
+we've started to hear it a little bit
+
+1315
+00:44:49,040 --> 00:44:53,560
+more recently. I think because of cost.
+
+1316
+00:44:51,720 --> 00:44:54,800
+So I think like most people are
+
+1317
+00:44:53,560 --> 00:44:55,840
+interested in it when they're using
+
+1318
+00:44:54,800 --> 00:44:58,840
+these frontier models and the
+
+1319
+00:44:55,840 --> 00:45:00,480
+performance is good. But now, whether
+
+1320
+00:44:58,840 --> 00:45:02,840
+it's coding or other things, their cost
+
+1321
+00:45:00,480 --> 00:45:04,440
+is just going through the roof. I think
+
+1322
+00:45:02,840 --> 00:45:05,680
+the and we're starting to investigate
+
+1323
+00:45:04,440 --> 00:45:07,040
+this more, but I think the places where
+
+1324
+00:45:05,680 --> 00:45:09,080
+we're hearing it most are basically in
+
+1325
+00:45:07,040 --> 00:45:10,920
+those where performance is good, cost
+
+1326
+00:45:09,080 --> 00:45:12,760
+too high. How can I bring it down? Let's
+
+1327
+00:45:10,920 --> 00:45:14,360
+see if I can I can train a model to get
+
+1328
+00:45:12,760 --> 00:45:15,880
+similar cost at a fraction of the cost.
+
+1329
+00:45:14,360 --> 00:45:16,320
+Or similar performance, fraction of the
+
+1330
+00:45:15,880 --> 00:45:17,520
+cost.
+
+1331
+00:45:16,320 --> 00:45:19,520
+>> Yeah.
+
+1332
+00:45:17,520 --> 00:45:20,960
+Interestingly enough, a lot of our
+
+1333
+00:45:19,520 --> 00:45:24,000
+progress here has been driven by
+
+1334
+00:45:20,960 --> 00:45:25,400
+capacity, not cost. Where
+
+1335
+00:45:24,000 --> 00:45:27,360
+you know, we have a lot of customers
+
+1336
+00:45:25,400 --> 00:45:30,120
+that are in the retail space. And when
+
+1337
+00:45:27,360 --> 00:45:32,920
+we go into Black Friday, Cyber Monday,
+
+1338
+00:45:30,120 --> 00:45:35,800
+for example, you need a lot of capacity
+
+1339
+00:45:32,920 --> 00:45:37,840
+to deal with the spikes that they face.
+
+1340
+00:45:35,800 --> 00:45:39,920
+Uh we've also done load tests that are
+
+1341
+00:45:37,840 --> 00:45:42,320
+on the order of you know, if you were to
+
+1342
+00:45:39,920 --> 00:45:44,080
+have that rate of conversation over a
+
+1343
+00:45:42,320 --> 00:45:46,680
+year, it would be billions of
+
+1344
+00:45:44,080 --> 00:45:49,920
+conversations. And so that level of
+
+1345
+00:45:46,680 --> 00:45:53,360
+concurrency and those spikes just mean
+
+1346
+00:45:49,920 --> 00:45:56,120
+that we need to be resilient to downtime
+
+1347
+00:45:53,360 --> 00:45:58,120
+with a particular provider and ready
+
+1348
+00:45:56,120 --> 00:46:00,760
+for, you know, using whoever has the
+
+1349
+00:45:58,120 --> 00:46:02,560
+capacity to serve us. And so
+
+1350
+00:46:00,760 --> 00:46:04,520
+it's funny because it's useful in so
+
+1351
+00:46:02,560 --> 00:46:07,520
+many ways, but a lot of the reason why
+
+1352
+00:46:04,520 --> 00:46:10,040
+we have such good support for multiple
+
+1353
+00:46:07,520 --> 00:46:11,760
+providers is specifically preparing for
+
+1354
+00:46:10,040 --> 00:46:13,880
+Black Friday Cyber Monday and running
+
+1355
+00:46:11,760 --> 00:46:15,640
+load tests for really large customers.
+
+1356
+00:46:13,880 --> 00:46:17,640
+>> One other
+
+1357
+00:46:15,640 --> 00:46:19,360
+harness agent engineering topic,
+
+1358
+00:46:17,640 --> 00:46:20,360
+multi-agent systems. Where do you think
+
+1359
+00:46:19,360 --> 00:46:21,000
+they're useful, where they're not
+
+1360
+00:46:20,360 --> 00:46:24,440
+useful?
+
+1361
+00:46:21,000 --> 00:46:26,600
+>> I think they are often not as useful as
+
+1362
+00:46:24,440 --> 00:46:28,520
+people think. My thoughts on this would
+
+1363
+00:46:26,600 --> 00:46:30,440
+be people should be really thoughtful
+
+1364
+00:46:28,520 --> 00:46:33,080
+about why they want a multi-agent
+
+1365
+00:46:30,440 --> 00:46:35,120
+system. If you want a multi-agent system
+
+1366
+00:46:33,080 --> 00:46:37,000
+so that one team can work on one agent
+
+1367
+00:46:35,120 --> 00:46:38,640
+and one team can work on another agent,
+
+1368
+00:46:37,000 --> 00:46:40,800
+then you're shipping your org chart. If
+
+1369
+00:46:38,640 --> 00:46:42,680
+you want a multi-agent system because
+
+1370
+00:46:40,800 --> 00:46:44,640
+it's just makes you more comfortable to
+
+1371
+00:46:42,680 --> 00:46:46,600
+think about this problem over here and
+
+1372
+00:46:44,640 --> 00:46:49,160
+this other problem over here,
+
+1373
+00:46:46,600 --> 00:46:50,440
+then you're also not optimizing around
+
+1374
+00:46:49,160 --> 00:46:52,920
+impact.
+
+1375
+00:46:50,440 --> 00:46:54,840
+If, for example, you had an agent that
+
+1376
+00:46:52,920 --> 00:46:57,440
+does triage and another agent that does
+
+1377
+00:46:54,840 --> 00:46:58,520
+a task, by building it as a multi-agent
+
+1378
+00:46:57,440 --> 00:47:00,280
+system,
+
+1379
+00:46:58,520 --> 00:47:02,920
+you're often
+
+1380
+00:47:00,280 --> 00:47:05,000
+depriving of the agent doing the task of
+
+1381
+00:47:02,920 --> 00:47:06,960
+the information from the triage and
+
+1382
+00:47:05,000 --> 00:47:09,200
+depriving the agent doing the triage of
+
+1383
+00:47:06,960 --> 00:47:11,440
+all of the procedural information from
+
+1384
+00:47:09,200 --> 00:47:14,400
+the task. And that's typically
+
+1385
+00:47:11,440 --> 00:47:16,920
+destructive of value. And so, we are
+
+1386
+00:47:14,400 --> 00:47:18,920
+often just want to make sure that we're
+
+1387
+00:47:16,920 --> 00:47:20,480
+doing multi-agent systems for the right
+
+1388
+00:47:18,920 --> 00:47:22,920
+reason. If you're kicking off even a
+
+1389
+00:47:20,480 --> 00:47:25,440
+sub-agent, you want to make sure that it
+
+1390
+00:47:22,920 --> 00:47:26,680
+has everything it needs to do that task
+
+1391
+00:47:25,440 --> 00:47:28,160
+and that there's no reason why it
+
+1392
+00:47:26,680 --> 00:47:30,960
+shouldn't just be part of the main
+
+1393
+00:47:28,160 --> 00:47:34,200
+agent. Um and so, I think I've seen a
+
+1394
+00:47:30,960 --> 00:47:36,400
+lot of cases where people are reaching
+
+1395
+00:47:34,200 --> 00:47:39,520
+for multi-agent systems the same way you
+
+1396
+00:47:36,400 --> 00:47:41,320
+might reach for microservices
+
+1397
+00:47:39,520 --> 00:47:44,680
+uh before you're necessarily ready for
+
+1398
+00:47:41,320 --> 00:47:46,880
+that level of optimization and also for
+
+1399
+00:47:44,680 --> 00:47:48,880
+reasons that might not be just about
+
+1400
+00:47:46,880 --> 00:47:52,480
+building the best possible agent. And
+
+1401
+00:47:48,880 --> 00:47:54,360
+so, Sierra agents tend to be kind of one
+
+1402
+00:47:52,480 --> 00:47:56,640
+agent representing the brand. You
+
+1403
+00:47:54,360 --> 00:47:59,000
+certainly can have multiple agents and
+
+1404
+00:47:56,640 --> 00:48:00,800
+build a multi-agent system, but be if
+
+1405
+00:47:59,000 --> 00:48:02,760
+you're managing context correctly, if
+
+1406
+00:48:00,800 --> 00:48:04,480
+you're doing really really good context
+
+1407
+00:48:02,760 --> 00:48:05,920
+engineering, then typically it's just
+
+1408
+00:48:04,480 --> 00:48:08,080
+not a problem because you're not
+
+1409
+00:48:05,920 --> 00:48:08,760
+exposing the wrong context to the wrong
+
+1410
+00:48:08,080 --> 00:48:10,400
+agent.
+
+1411
+00:48:08,760 --> 00:48:11,720
+>> Is there a right time to build a
+
+1412
+00:48:10,400 --> 00:48:13,320
+multi-agent system?
+
+1413
+00:48:11,720 --> 00:48:15,600
+>> I think if you have truly separable
+
+1414
+00:48:13,320 --> 00:48:17,960
+jobs, right? Where there's not any
+
+1415
+00:48:15,600 --> 00:48:19,880
+purpose of the first context being part
+
+1416
+00:48:17,960 --> 00:48:21,920
+of the second context.
+
+1417
+00:48:19,880 --> 00:48:24,720
+I will say that
+
+1418
+00:48:21,920 --> 00:48:27,720
+in my personal opinion with you know,
+
+1419
+00:48:24,720 --> 00:48:29,960
+May 18th, 2026,
+
+1420
+00:48:27,720 --> 00:48:31,880
+there not a lot of great times for it.
+
+1421
+00:48:29,960 --> 00:48:33,960
+There might be times where it actually
+
+1422
+00:48:31,880 --> 00:48:36,080
+the organizational difficulties are
+
+1423
+00:48:33,960 --> 00:48:38,120
+worth the quality drop, but if you're
+
+1424
+00:48:36,080 --> 00:48:39,440
+doing it specifically for quality, I
+
+1425
+00:48:38,120 --> 00:48:41,160
+think it's it's
+
+1426
+00:48:39,440 --> 00:48:43,080
+pretty rare that you can't just solve it
+
+1427
+00:48:41,160 --> 00:48:45,720
+with better context engineering and I'm
+
+1428
+00:48:43,080 --> 00:48:48,240
+kind of a monolith loyalist on that.
+
+1429
+00:48:45,720 --> 00:48:49,880
+>> I feel like voice is one of the things
+
+1430
+00:48:48,240 --> 00:48:52,120
+that is getting more and more popular,
+
+1431
+00:48:49,880 --> 00:48:54,120
+but there still aren't a ton of people
+
+1432
+00:48:52,120 --> 00:48:56,400
+doing a lot of, but you guys are. Can
+
+1433
+00:48:54,120 --> 00:48:57,840
+you give me a voice 101 or 201? What
+
+1434
+00:48:56,400 --> 00:48:59,600
+what should I and other agent builders
+
+1435
+00:48:57,840 --> 00:49:02,080
+know about voice compared to just
+
+1436
+00:48:59,600 --> 00:49:04,000
+building, you know, simple chat agents?
+
+1437
+00:49:02,080 --> 00:49:05,600
+>> Voice has been maybe the most fun
+
+1438
+00:49:04,000 --> 00:49:06,640
+project that I've worked on in my whole
+
+1439
+00:49:05,600 --> 00:49:09,400
+career.
+
+1440
+00:49:06,640 --> 00:49:12,160
+So, and and I for context, I joined
+
+1441
+00:49:09,400 --> 00:49:13,720
+Sierra as an agent PM working on
+
+1442
+00:49:12,160 --> 00:49:16,400
+building agents specifically with
+
+1443
+00:49:13,720 --> 00:49:17,720
+customers in a forward deployed role.
+
+1444
+00:49:16,400 --> 00:49:18,640
+And one of the first customers I worked
+
+1445
+00:49:17,720 --> 00:49:21,960
+on
+
+1446
+00:49:18,640 --> 00:49:25,560
+is SiriusXM, the in-car streaming radio
+
+1447
+00:49:21,960 --> 00:49:29,040
+service. And so, I'm big SiriusXM fan
+
+1448
+00:49:25,560 --> 00:49:32,000
+before that and as a result. And they
+
+1449
+00:49:29,040 --> 00:49:34,360
+have a ton of volume over voice, even
+
+1450
+00:49:32,000 --> 00:49:36,040
+more than they have over chat. And so,
+
+1451
+00:49:34,360 --> 00:49:37,720
+many of their touchpoints with customers
+
+1452
+00:49:36,040 --> 00:49:39,240
+are over the phone. And so, early on it
+
+1453
+00:49:37,720 --> 00:49:41,560
+was very obvious that voice was going to
+
+1454
+00:49:39,240 --> 00:49:42,760
+be impactful for the business.
+
+1455
+00:49:41,560 --> 00:49:44,440
+And we got to think from first
+
+1456
+00:49:42,760 --> 00:49:47,240
+principles, basically from the ground
+
+1457
+00:49:44,440 --> 00:49:49,360
+up, what makes a voice experience great?
+
+1458
+00:49:47,240 --> 00:49:51,680
+How is that similar to chat? How is that
+
+1459
+00:49:49,360 --> 00:49:53,840
+similar How is that different from chat?
+
+1460
+00:49:51,680 --> 00:49:55,240
+And so, latency is probably the most
+
+1461
+00:49:53,840 --> 00:49:58,000
+obvious one.
+
+1462
+00:49:55,240 --> 00:49:59,560
+You need to be really thoughtful about
+
+1463
+00:49:58,000 --> 00:50:01,680
+parallelism. You need to be really
+
+1464
+00:49:59,560 --> 00:50:03,960
+thoughtful about what we call progress
+
+1465
+00:50:01,680 --> 00:50:05,320
+indicators, which is where you
+
+1466
+00:50:03,960 --> 00:50:07,080
+say, you know, hang on a second while I
+
+1467
+00:50:05,320 --> 00:50:08,800
+look up your account.
+
+1468
+00:50:07,080 --> 00:50:10,880
+That's number one. Number two is
+
+1469
+00:50:08,800 --> 00:50:12,280
+naturalism. This is a combination of a
+
+1470
+00:50:10,880 --> 00:50:14,760
+number of different things. So,
+
+1471
+00:50:12,280 --> 00:50:16,360
+oftentimes when something sounds a
+
+1472
+00:50:14,760 --> 00:50:18,400
+little bit robotic,
+
+1473
+00:50:16,360 --> 00:50:20,280
+I'll I'll read what the agent said, and
+
+1474
+00:50:18,400 --> 00:50:22,040
+I'm like, "Well, I sound robotic, too."
+
+1475
+00:50:20,280 --> 00:50:23,760
+So, it's a combination of what the agent
+
+1476
+00:50:22,040 --> 00:50:25,280
+is reading and then also the quality of
+
+1477
+00:50:23,760 --> 00:50:27,400
+the voice itself.
+
+1478
+00:50:25,280 --> 00:50:29,720
+Um there's multilingualism. It's very
+
+1479
+00:50:27,400 --> 00:50:31,560
+easy to speak different languages over
+
+1480
+00:50:29,720 --> 00:50:36,000
+chat using large language models. It's a
+
+1481
+00:50:31,560 --> 00:50:38,160
+lot harder to be fluent in I think it's
+
+1482
+00:50:36,000 --> 00:50:41,000
+almost about 60 languages on Sierra
+
+1483
+00:50:38,160 --> 00:50:42,840
+platform um and
+
+1484
+00:50:41,000 --> 00:50:44,840
+you know, than it is on chat. And each
+
+1485
+00:50:42,840 --> 00:50:47,080
+of those languages, you know, sometimes
+
+1486
+00:50:44,840 --> 00:50:49,440
+the very best transcription provider
+
+1487
+00:50:47,080 --> 00:50:51,040
+might have a 20% word error rate. I
+
+1488
+00:50:49,440 --> 00:50:52,960
+think that's true for a language like
+
+1489
+00:50:51,040 --> 00:50:54,960
+Hungarian, for example. And so, it's
+
+1490
+00:50:52,960 --> 00:50:56,880
+like, how can we ensemble multiple
+
+1491
+00:50:54,960 --> 00:50:58,400
+transcription providers in order to get
+
+1492
+00:50:56,880 --> 00:51:01,400
+that down and kind of be better than a
+
+1493
+00:50:58,400 --> 00:51:03,840
+single model is on its own. The other
+
+1494
+00:51:01,400 --> 00:51:06,080
+big factor is I think we all believe
+
+1495
+00:51:03,840 --> 00:51:08,480
+that a few years from now
+
+1496
+00:51:06,080 --> 00:51:11,560
+most voice agents will be running voice
+
+1497
+00:51:08,480 --> 00:51:13,360
+native models. So, you know, real time I
+
+1498
+00:51:11,560 --> 00:51:15,320
+think it they might be up to 2.5 at this
+
+1499
+00:51:13,360 --> 00:51:17,080
+point. They've had like three big
+
+1500
+00:51:15,320 --> 00:51:19,400
+real-time launches at OpenAI this year
+
+1501
+00:51:17,080 --> 00:51:22,200
+already. There was the really cool demo
+
+1502
+00:51:19,400 --> 00:51:24,160
+from Thinking Machines Labs as well. So,
+
+1503
+00:51:22,200 --> 00:51:25,160
+there's been a lot of increased momentum
+
+1504
+00:51:24,160 --> 00:51:28,200
+here.
+
+1505
+00:51:25,160 --> 00:51:30,880
+And as of a few months ago, we now have
+
+1506
+00:51:28,200 --> 00:51:32,800
+production agents live with the
+
+1507
+00:51:30,880 --> 00:51:34,520
+voice-to-voice models. Um and so,
+
+1508
+00:51:32,800 --> 00:51:35,720
+they're you know, it's you know, fully
+
+1509
+00:51:34,520 --> 00:51:37,480
+end-to-end doing that. You still need
+
+1510
+00:51:35,720 --> 00:51:39,320
+the transcript in order to like make API
+
+1511
+00:51:37,480 --> 00:51:41,840
+calls and that sort of thing, but the
+
+1512
+00:51:39,320 --> 00:51:44,200
+agent is responding you know,
+
+1513
+00:51:41,840 --> 00:51:45,640
+with audio as the input. The other big
+
+1514
+00:51:44,200 --> 00:51:48,440
+piece of it, I think the The Machines
+
+1515
+00:51:45,640 --> 00:51:51,880
+demo was a really good example.
+
+1516
+00:51:48,440 --> 00:51:54,200
+Up until now, we basically had like 50
+
+1517
+00:51:51,880 --> 00:51:56,760
+lines of Python. I think Silero is the
+
+1518
+00:51:54,200 --> 00:51:57,880
+most popular voice activity detection
+
+1519
+00:51:56,760 --> 00:51:59,600
+library
+
+1520
+00:51:57,880 --> 00:52:02,560
+deciding when to speak.
+
+1521
+00:51:59,600 --> 00:52:04,880
+And then a trillion parameters deciding
+
+1522
+00:52:02,560 --> 00:52:06,480
+what to say. And that balance feels very
+
+1523
+00:52:04,880 --> 00:52:09,080
+off to me. If you think about the
+
+1524
+00:52:06,480 --> 00:52:10,320
+conversation we're having right now,
+
+1525
+00:52:09,080 --> 00:52:12,760
+I'm actually using a lot of my brain
+
+1526
+00:52:10,320 --> 00:52:14,560
+power to decide when to speak
+
+1527
+00:52:12,760 --> 00:52:15,920
+uh in addition to decide what deciding
+
+1528
+00:52:14,560 --> 00:52:17,280
+what to say. And it's probably more like
+
+1529
+00:52:15,920 --> 00:52:19,800
+50/50.
+
+1530
+00:52:17,280 --> 00:52:23,080
+And so the one of the big unlocks for
+
+1531
+00:52:19,800 --> 00:52:24,480
+Sierra agents was deciding to think
+
+1532
+00:52:23,080 --> 00:52:27,560
+about not only how to parallelize a
+
+1533
+00:52:24,480 --> 00:52:29,480
+task, but how to parallelize thinking,
+
+1534
+00:52:27,560 --> 00:52:31,680
+listening, and talking.
+
+1535
+00:52:29,480 --> 00:52:33,760
+So that when I'm listening, I'm already
+
+1536
+00:52:31,680 --> 00:52:35,200
+thinking about what I might say next.
+
+1537
+00:52:33,760 --> 00:52:37,120
+When I'm talking, I'm listening for
+
+1538
+00:52:35,200 --> 00:52:38,720
+interruptions. And so that was a big
+
+1539
+00:52:37,120 --> 00:52:40,320
+unlock uh in terms of the product
+
+1540
+00:52:38,720 --> 00:52:42,720
+design. The other one I would say is
+
+1541
+00:52:40,320 --> 00:52:44,680
+just modularity, like I said earlier.
+
+1542
+00:52:42,720 --> 00:52:46,640
+Um no one is the best at everything in
+
+1543
+00:52:44,680 --> 00:52:49,320
+this space. And when there are, you
+
+1544
+00:52:46,640 --> 00:52:50,520
+know, 100-plus languages uh worldwide
+
+1545
+00:52:49,320 --> 00:52:51,920
+that, you know, really deliver
+
+1546
+00:52:50,520 --> 00:52:54,480
+meaningful results, when many of our
+
+1547
+00:52:51,920 --> 00:52:57,080
+customers are global brands, global
+
+1548
+00:52:54,480 --> 00:52:58,800
+companies, you need that flexibility to
+
+1549
+00:52:57,080 --> 00:53:01,000
+use one provider here and another
+
+1550
+00:52:58,800 --> 00:53:03,640
+provider there and to ensemble them
+
+1551
+00:53:01,000 --> 00:53:06,560
+together in a specific place as well.
+
+1552
+00:53:03,640 --> 00:53:08,960
+>> How much of that modularity and that
+
+1553
+00:53:06,560 --> 00:53:11,520
+parallelism and thinking about different
+
+1554
+00:53:08,960 --> 00:53:13,240
+things goes away when it's like a native
+
+1555
+00:53:11,520 --> 00:53:16,200
+voice-to-voice model?
+
+1556
+00:53:13,240 --> 00:53:18,000
+>> In one specific conversation,
+
+1557
+00:53:16,200 --> 00:53:19,440
+it goes away.
+
+1558
+00:53:18,000 --> 00:53:22,120
+But if you think about the businesses we
+
+1559
+00:53:19,440 --> 00:53:24,560
+serve, the voice-to-voice models today
+
+1560
+00:53:22,120 --> 00:53:27,360
+are just reaching a level of reliability
+
+1561
+00:53:24,560 --> 00:53:28,760
+where you would trust them for English.
+
+1562
+00:53:27,360 --> 00:53:30,920
+And so if you still want to support all
+
+1563
+00:53:28,760 --> 00:53:34,240
+the different languages, you need that
+
+1564
+00:53:30,920 --> 00:53:36,840
+modularity for the foreseeable future.
+
+1565
+00:53:34,240 --> 00:53:37,920
+Um the other thing is they're still
+
+1566
+00:53:36,840 --> 00:53:40,760
+almost an order of magnitude more
+
+1567
+00:53:37,920 --> 00:53:42,240
+expensive. They aren't quite as good at
+
+1568
+00:53:40,760 --> 00:53:44,200
+reasoning yet.
+
+1569
+00:53:42,240 --> 00:53:45,440
+And so the cases where they are live in
+
+1570
+00:53:44,200 --> 00:53:46,560
+production, they're not quite as
+
+1571
+00:53:45,440 --> 00:53:48,360
+reliable with tool calling and
+
+1572
+00:53:46,560 --> 00:53:50,720
+instruction following. The cases where
+
+1573
+00:53:48,360 --> 00:53:52,280
+they're live in production, it's cases
+
+1574
+00:53:50,720 --> 00:53:54,400
+where we know in advance that the
+
+1575
+00:53:52,280 --> 00:53:57,400
+journey is a little bit simpler.
+
+1576
+00:53:54,400 --> 00:53:59,000
+And where the naturalism matters even
+
+1577
+00:53:57,400 --> 00:54:01,720
+more than usual.
+
+1578
+00:53:59,000 --> 00:54:04,280
+And the procedure is not as complex as
+
+1579
+00:54:01,720 --> 00:54:06,800
+some other cases. And so it's still I
+
+1580
+00:54:04,280 --> 00:54:09,280
+would say a fraction of our market that
+
+1581
+00:54:06,800 --> 00:54:11,640
+we can use voice-to-voice models for.
+
+1582
+00:54:09,280 --> 00:54:13,440
+>> My perception also, and I I have never
+
+1583
+00:54:11,640 --> 00:54:15,040
+built a voice agent. So I know truly
+
+1584
+00:54:13,440 --> 00:54:17,200
+nothing here. But my perception here is
+
+1585
+00:54:15,040 --> 00:54:18,920
+for the voice-to-voice models, you you
+
+1586
+00:54:17,200 --> 00:54:21,360
+probably you have less control over what
+
+1587
+00:54:18,920 --> 00:54:23,360
+goes on inside of the loop basically of
+
+1588
+00:54:21,360 --> 00:54:24,720
+of tool calling and reasoning. Is that
+
+1589
+00:54:23,360 --> 00:54:27,600
+correct or are there pretty good
+
+1590
+00:54:24,720 --> 00:54:28,800
+controls for for what happens inside?
+
+1591
+00:54:27,600 --> 00:54:30,440
+>> You may not have built a voice model,
+
+1592
+00:54:28,800 --> 00:54:33,840
+but you're an expert in developer
+
+1593
+00:54:30,440 --> 00:54:37,000
+ergonomics. And I would say early on
+
+1594
+00:54:33,840 --> 00:54:40,400
+the APIs missed the mark on the
+
+1595
+00:54:37,000 --> 00:54:42,360
+ergonomics. And so they got the uh
+
+1596
+00:54:40,400 --> 00:54:43,680
+integration points wrong. And they were
+
+1597
+00:54:42,360 --> 00:54:45,560
+it was exactly what you said. It was
+
+1598
+00:54:43,680 --> 00:54:47,400
+hey, if you want our model
+
+1599
+00:54:45,560 --> 00:54:49,200
+you need our voice activity detection
+
+1600
+00:54:47,400 --> 00:54:50,640
+and you need the whole thing. There was
+
+1601
+00:54:49,200 --> 00:54:53,320
+still an underlying model that was
+
+1602
+00:54:50,640 --> 00:54:56,920
+available. So I'm, you know, dating
+
+1603
+00:54:53,320 --> 00:54:59,200
+myself in AI, but the GPT-4 audio model
+
+1604
+00:54:56,920 --> 00:55:00,920
+was extremely exciting. It did things
+
+1605
+00:54:59,200 --> 00:55:03,560
+that no model before it could do. I
+
+1606
+00:55:00,920 --> 00:55:06,040
+think maybe like people that are real AI
+
+1607
+00:55:03,560 --> 00:55:08,080
+OGs would say this about like GPT-2 or
+
+1608
+00:55:06,040 --> 00:55:10,000
+something. And so you could see that
+
+1609
+00:55:08,080 --> 00:55:11,360
+this was coming. And I think we all
+
+1610
+00:55:10,000 --> 00:55:13,040
+would have said 5 years from now this is
+
+1611
+00:55:11,360 --> 00:55:16,160
+where we're going to be.
+
+1612
+00:55:13,040 --> 00:55:18,360
+But the way that we wired that up in our
+
+1613
+00:55:16,160 --> 00:55:21,280
+system was basically
+
+1614
+00:55:18,360 --> 00:55:24,360
+using the entire Sierra pipeline.
+
+1615
+00:55:21,280 --> 00:55:27,280
+And then holding on to the input audio.
+
+1616
+00:55:24,360 --> 00:55:30,080
+And piping that in with all of the
+
+1617
+00:55:27,280 --> 00:55:32,440
+prompt context into the audio model to
+
+1618
+00:55:30,080 --> 00:55:33,840
+do the last mile. So we were basically
+
+1619
+00:55:32,440 --> 00:55:35,720
+still doing everything ourselves and
+
+1620
+00:55:33,840 --> 00:55:37,560
+using it for the last mile. I think
+
+1621
+00:55:35,720 --> 00:55:39,760
+you're right that over time there's more
+
+1622
+00:55:37,560 --> 00:55:41,400
+and that you can do with the audio model
+
+1623
+00:55:39,760 --> 00:55:44,160
+the same way there's more that you can
+
+1624
+00:55:41,400 --> 00:55:45,840
+do with the text models. The fallacy
+
+1625
+00:55:44,160 --> 00:55:47,520
+would be that okay, so then you don't
+
+1626
+00:55:45,840 --> 00:55:49,640
+need the harness or you don't need all
+
+1627
+00:55:47,520 --> 00:55:51,040
+of the orchestration and simulations and
+
+1628
+00:55:49,640 --> 00:55:52,760
+everything because
+
+1629
+00:55:51,040 --> 00:55:55,600
+you can make that choice. You can either
+
+1630
+00:55:52,760 --> 00:55:58,440
+do the same thing a little bit more
+
+1631
+00:55:55,600 --> 00:56:00,800
+easily or you can set your sights on new
+
+1632
+00:55:58,440 --> 00:56:02,840
+and more impressive things. Which I
+
+1633
+00:56:00,800 --> 00:56:03,920
+think not to get too philosophical, but
+
+1634
+00:56:02,840 --> 00:56:06,160
+that's kind of the direction of the
+
+1635
+00:56:03,920 --> 00:56:08,440
+industry in general. It's like are we
+
+1636
+00:56:06,160 --> 00:56:11,000
+all obsolete or are we going to find new
+
+1637
+00:56:08,440 --> 00:56:11,960
+things to do that raise our horizons
+
+1638
+00:56:11,000 --> 00:56:14,120
+even farther?
+
+1639
+00:56:11,960 --> 00:56:15,800
+>> If you had to guestimate a time, we're
+
+1640
+00:56:14,120 --> 00:56:16,400
+big into guestimating on the podcast
+
+1641
+00:56:15,800 --> 00:56:16,640
+apparently.
+
+1642
+00:56:16,400 --> 00:56:18,640
+>> Great.
+
+1643
+00:56:16,640 --> 00:56:21,960
+>> Um, when do you when do you think more
+
+1644
+00:56:18,640 --> 00:56:23,520
+than 50% of your either traffic or
+
+1645
+00:56:21,960 --> 00:56:25,640
+customers will be served by a
+
+1646
+00:56:23,520 --> 00:56:27,720
+voice-to-voice model as opposed to this
+
+1647
+00:56:25,640 --> 00:56:28,560
+this speech-to-text text-to-speech
+
+1648
+00:56:27,720 --> 00:56:30,600
+pipeline?
+
+1649
+00:56:28,560 --> 00:56:32,560
+>> I will be surprised if it happens in the
+
+1650
+00:56:30,600 --> 00:56:36,280
+next 18 months. I've been surprised
+
+1651
+00:56:32,560 --> 00:56:38,440
+before. I was surprised by Opus 4.5
+
+1652
+00:56:36,280 --> 00:56:40,640
+uh, late last year. Um, certainly
+
+1653
+00:56:38,440 --> 00:56:42,240
+surprised by ChatGPT. Like vividly
+
+1654
+00:56:40,640 --> 00:56:44,120
+remember the first time
+
+1655
+00:56:42,240 --> 00:56:45,440
+staying up till 3:00 a.m. just, you
+
+1656
+00:56:44,120 --> 00:56:47,349
+know,
+
+1657
+00:56:45,440 --> 00:56:47,680
+trying to jailbreak the prompt.
+
+1658
+00:56:47,349 --> 00:56:50,000
+>> [laughter]
+
+1659
+00:56:47,680 --> 00:56:51,800
+>> And so, you know, I I know you're a
+
+1660
+00:56:50,000 --> 00:56:55,200
+sports fan, too. So, if we're doing
+
+1661
+00:56:51,800 --> 00:56:56,920
+over/unders, it would be like 24 months
+
+1662
+00:56:55,200 --> 00:56:59,040
+and 1 day or something like that. You
+
+1663
+00:56:56,920 --> 00:57:02,120
+know, like or over/under 24 months would
+
+1664
+00:56:59,040 --> 00:57:03,920
+be probably my my personal guess.
+
+1665
+00:57:02,120 --> 00:57:06,120
+Demation.
+
+1666
+00:57:03,920 --> 00:57:08,520
+>> How, if at all, do you guys think about
+
+1667
+00:57:06,120 --> 00:57:10,400
+memory? Specifically long-term memory,
+
+1668
+00:57:08,520 --> 00:57:12,000
+specific It sounds like you've got users
+
+1669
+00:57:10,400 --> 00:57:14,240
+potentially interacting with multiple
+
+1670
+00:57:12,000 --> 00:57:16,400
+different agents that your your that a
+
+1671
+00:57:14,240 --> 00:57:18,400
+single brand can can be building. How do
+
+1672
+00:57:16,400 --> 00:57:19,440
+you think about the memory that's shared
+
+1673
+00:57:18,400 --> 00:57:20,520
+across them?
+
+1674
+00:57:19,440 --> 00:57:21,680
+>> Memory is very important to the
+
+1675
+00:57:20,520 --> 00:57:23,880
+platform.
+
+1676
+00:57:21,680 --> 00:57:26,840
+So, I mentioned the agent data platform
+
+1677
+00:57:23,880 --> 00:57:27,520
+earlier, which kind of brings together
+
+1678
+00:57:26,840 --> 00:57:29,760
+uh,
+
+1679
+00:57:27,520 --> 00:57:32,320
+machine learning data or, you know, big
+
+1680
+00:57:29,760 --> 00:57:35,520
+data as you might say about about
+
+1681
+00:57:32,320 --> 00:57:38,080
+customers and then marries that with in
+
+1682
+00:57:35,520 --> 00:57:40,640
+the moment context. That can only happen
+
+1683
+00:57:38,080 --> 00:57:42,120
+if you have a sense of identity and can
+
+1684
+00:57:40,640 --> 00:57:44,920
+also bring in
+
+1685
+00:57:42,120 --> 00:57:47,320
+memory from the past. So, in every
+
+1686
+00:57:44,920 --> 00:57:49,520
+Sierra conversation, there's the
+
+1687
+00:57:47,320 --> 00:57:51,520
+possibility of
+
+1688
+00:57:49,520 --> 00:57:54,560
+identifying the customer, saving
+
+1689
+00:57:51,520 --> 00:57:56,640
+memories either implicitly automatically
+
+1690
+00:57:54,560 --> 00:57:59,200
+or explicitly, and then extracting those
+
+1691
+00:57:56,640 --> 00:58:01,040
+memories at a future date for use in the
+
+1692
+00:57:59,200 --> 00:58:02,800
+agent. So, it's very much first-class
+
+1693
+00:58:01,040 --> 00:58:04,200
+primitive on the platform.
+
+1694
+00:58:02,800 --> 00:58:07,080
+I think you'll see that happen more and
+
+1695
+00:58:04,200 --> 00:58:09,720
+more over time as well. Just as these
+
+1696
+00:58:07,080 --> 00:58:11,320
+journeys get more complex, as we see
+
+1697
+00:58:09,720 --> 00:58:13,760
+more and more wins from the personal
+
+1698
+00:58:11,320 --> 00:58:16,360
+touch. We already have a number of cases
+
+1699
+00:58:13,760 --> 00:58:18,520
+where resolution rate has gone up
+
+1700
+00:58:16,360 --> 00:58:20,600
+meaningfully from memory, whether it's
+
+1701
+00:58:18,520 --> 00:58:22,800
+just greeting you by name, remembering
+
+1702
+00:58:20,600 --> 00:58:24,280
+what you called about last time, knowing
+
+1703
+00:58:22,800 --> 00:58:26,240
+that yesterday you were on the phone for
+
+1704
+00:58:24,280 --> 00:58:27,400
+an hour and it was really frustrating.
+
+1705
+00:58:26,240 --> 00:58:30,520
+And so,
+
+1706
+00:58:27,400 --> 00:58:33,360
+early on we had that memory through
+
+1707
+00:58:30,520 --> 00:58:34,760
+customer systems only, but we found just
+
+1708
+00:58:33,360 --> 00:58:36,440
+from customers asking over and over,
+
+1709
+00:58:34,760 --> 00:58:38,160
+"Hey, can you just have this first-class
+
+1710
+00:58:36,440 --> 00:58:40,040
+on the platform?" that it's helpful to
+
+1711
+00:58:38,160 --> 00:58:41,320
+have both. Seamless integrations with a
+
+1712
+00:58:40,040 --> 00:58:43,680
+CRM
+
+1713
+00:58:41,320 --> 00:58:46,320
+as well as on platform memory that
+
+1714
+00:58:43,680 --> 00:58:47,880
+really understands AI better than most
+
+1715
+00:58:46,320 --> 00:58:49,520
+CRM software does.
+
+1716
+00:58:47,880 --> 00:58:51,240
+>> How do you guys think about memory? I
+
+1717
+00:58:49,520 --> 00:58:53,480
+feel like you've got agents, multiple
+
+1718
+00:58:51,240 --> 00:58:56,080
+agents interacting with customers
+
+1719
+00:58:53,480 --> 00:58:58,560
+throughout various stages of their
+
+1720
+00:58:56,080 --> 00:59:00,440
+buying experience life cycle. So, I
+
+1721
+00:58:58,560 --> 00:59:01,600
+imagine memory must be important. How
+
+1722
+00:59:00,440 --> 00:59:02,800
+How do you guys think about it?
+
+1723
+00:59:01,600 --> 00:59:05,040
+>> So, memory is extremely important to the
+
+1724
+00:59:02,800 --> 00:59:07,560
+platform and since the agent data
+
+1725
+00:59:05,040 --> 00:59:09,720
+platform introduction, which we launched
+
+1726
+00:59:07,560 --> 00:59:12,040
+back in early November,
+
+1727
+00:59:09,720 --> 00:59:15,160
+it's been a first-class primitive on
+
+1728
+00:59:12,040 --> 00:59:17,120
+Sierra. So, if you call, for example, my
+
+1729
+00:59:15,160 --> 00:59:19,360
+wife lived in Hawaii for a year and so I
+
+1730
+00:59:17,120 --> 00:59:21,360
+was flying Hawaiian Airlines back and
+
+1731
+00:59:19,360 --> 00:59:23,480
+forth quite a bit and on a couple
+
+1732
+00:59:21,360 --> 00:59:25,000
+occasions, for anyone who's brought a
+
+1733
+00:59:23,480 --> 00:59:26,920
+dog to Hawaii, there's a lot of
+
+1734
+00:59:25,000 --> 00:59:29,000
+paperwork involved. I'm excited for the
+
+1735
+00:59:26,920 --> 00:59:31,480
+Sierra agent that can help with that.
+
+1736
+00:59:29,000 --> 00:59:33,800
+But, I would often add a pet in cabin,
+
+1737
+00:59:31,480 --> 00:59:35,800
+not that often, a couple times. And if I
+
+1738
+00:59:33,800 --> 00:59:37,480
+call back, you know, it's nice for them
+
+1739
+00:59:35,800 --> 00:59:40,640
+to remember why I'm calling, to know
+
+1740
+00:59:37,480 --> 00:59:42,800
+about me, to know I prefer aisle seats.
+
+1741
+00:59:40,640 --> 00:59:45,000
+I'm a big user of the in-flight
+
+1742
+00:59:42,800 --> 00:59:46,480
+internet. Hawaiian has Starlink back and
+
+1743
+00:59:45,000 --> 00:59:47,840
+forth from Hawaii.
+
+1744
+00:59:46,480 --> 00:59:49,840
+And so,
+
+1745
+00:59:47,840 --> 00:59:51,840
+these things just what we've seen in
+
+1746
+00:59:49,840 --> 00:59:53,840
+practice is that if you know who someone
+
+1747
+00:59:51,840 --> 00:59:56,160
+is, you greet them by name, you remember
+
+1748
+00:59:53,840 --> 00:59:59,000
+what's important to them, and you show
+
+1749
+00:59:56,160 --> 01:00:00,480
+empathy in the moment, it increases all
+
+1750
+00:59:59,000 --> 01:00:02,320
+of the metrics that are most important
+
+1751
+01:00:00,480 --> 01:00:05,400
+to businesses, from resolution rate to
+
+1752
+01:00:02,320 --> 01:00:07,320
+conversion rate, etc. And so, we've made
+
+1753
+01:00:05,400 --> 01:00:10,080
+memory first class on the Sierra
+
+1754
+01:00:07,320 --> 01:00:11,960
+platform, where during a conversation,
+
+1755
+01:00:10,080 --> 01:00:13,760
+implicitly or explicitly, you can
+
+1756
+01:00:11,960 --> 01:00:16,800
+basically store memories.
+
+1757
+01:00:13,760 --> 01:00:19,440
+And then, the agent, if the same person
+
+1758
+01:00:16,800 --> 01:00:21,480
+calls back, can extract those memories.
+
+1759
+01:00:19,440 --> 01:00:23,560
+The one thing to be aware of is you have
+
+1760
+01:00:21,480 --> 01:00:26,480
+to be really thoughtful about
+
+1761
+01:00:23,560 --> 01:00:28,720
+authentication, because often times, if
+
+1762
+01:00:26,480 --> 01:00:31,040
+someone calls over the phone,
+
+1763
+01:00:28,720 --> 01:00:32,480
+you don't necessarily know 100% from
+
+1764
+01:00:31,040 --> 01:00:35,040
+their phone number that it is this
+
+1765
+01:00:32,480 --> 01:00:36,720
+person. You know, some office networks
+
+1766
+01:00:35,040 --> 01:00:39,000
+all have the same phone number, maybe
+
+1767
+01:00:36,720 --> 01:00:41,040
+it's a family line, etc. And so, every
+
+1768
+01:00:39,000 --> 01:00:43,440
+business has to think about what the
+
+1769
+01:00:41,040 --> 01:00:45,320
+policy is for allowing the extraction of
+
+1770
+01:00:43,440 --> 01:00:47,920
+memories, and which memories are
+
+1771
+01:00:45,320 --> 01:00:49,560
+sensitive versus not so sensitive.
+
+1772
+01:00:47,920 --> 01:00:50,960
+Saying, "Hey Harrison, thanks for
+
+1773
+01:00:49,560 --> 01:00:52,920
+calling again." You know, that's
+
+1774
+01:00:50,960 --> 01:00:54,240
+probably fine. But, if it's like, "Hey
+
+1775
+01:00:52,920 --> 01:00:55,520
+Harrison, and are you calling about your
+
+1776
+01:00:54,240 --> 01:00:56,920
+social security number or the you know,
+
+1777
+01:00:55,520 --> 01:00:59,520
+that's like a definitely a different
+
+1778
+01:00:56,920 --> 01:01:00,800
+standard. Um and so, we try to be very
+
+1779
+01:00:59,520 --> 01:01:01,560
+thoughtful about that with our customers
+
+1780
+01:01:00,800 --> 01:01:03,560
+as well.
+
+1781
+01:01:01,560 --> 01:01:05,360
+>> When you say you can implicitly or
+
+1782
+01:01:03,560 --> 01:01:06,880
+explicitly save memories, what what
+
+1783
+01:01:05,360 --> 01:01:08,760
+exactly does that mean?
+
+1784
+01:01:06,880 --> 01:01:11,280
+>> So, there's kind of three layers of it.
+
+1785
+01:01:08,760 --> 01:01:13,080
+Number one is on a given conversation
+
+1786
+01:01:11,280 --> 01:01:14,560
+turn, you could say, "I want to save
+
+1787
+01:01:13,080 --> 01:01:16,400
+this to memory."
+
+1788
+01:01:14,560 --> 01:01:18,160
+Number two would be at the beginning of
+
+1789
+01:01:16,400 --> 01:01:20,080
+a conversation, you could say, "These
+
+1790
+01:01:18,160 --> 01:01:21,320
+are the things that are important to
+
+1791
+01:01:20,080 --> 01:01:23,480
+remember." You know, "Remember their
+
+1792
+01:01:21,320 --> 01:01:25,680
+birthday." That's always nice. Uh I
+
+1793
+01:01:23,480 --> 01:01:27,320
+remember Cold Stone Creamery growing up,
+
+1794
+01:01:25,680 --> 01:01:28,600
+they would give you a free scoop on your
+
+1795
+01:01:27,320 --> 01:01:30,680
+birthday. You know, it's a great
+
+1796
+01:01:28,600 --> 01:01:32,840
+opportunity for a brand loyalty.
+
+1797
+01:01:30,680 --> 01:01:34,080
+>> you could say, so would the brand say,
+
+1798
+01:01:32,840 --> 01:01:36,800
+would the customer say this in the
+
+1799
+01:01:34,080 --> 01:01:38,760
+system prompt, or would this be the end
+
+1800
+01:01:36,800 --> 01:01:41,200
+customer talking to the agent saying,
+
+1801
+01:01:38,760 --> 01:01:42,960
+"Hey, remember for future things that my
+
+1802
+01:01:41,200 --> 01:01:44,160
+birthday is on XYZ."
+
+1803
+01:01:42,960 --> 01:01:45,880
+>> So, the first one you said would be an
+
+1804
+01:01:44,160 --> 01:01:47,240
+example of journey building. An example
+
+1805
+01:01:45,880 --> 01:01:48,680
+of what I just said, and you would do it
+
+1806
+01:01:47,240 --> 01:01:51,000
+in journey building. You'd say, "I care
+
+1807
+01:01:48,680 --> 01:01:52,400
+about birthdays as an agent developer."
+
+1808
+01:01:51,000 --> 01:01:54,280
+Or an agent builder at any one of our
+
+1809
+01:01:52,400 --> 01:01:56,080
+customer companies. The second thing you
+
+1810
+01:01:54,280 --> 01:01:58,280
+said would be the third category of
+
+1811
+01:01:56,080 --> 01:02:00,160
+memory, which would be just sort of
+
+1812
+01:01:58,280 --> 01:02:01,640
+remember important things, and it would
+
+1813
+01:02:00,160 --> 01:02:03,280
+be an important thing if the customer
+
+1814
+01:02:01,640 --> 01:02:05,160
+said, "Hey, I want you to remember this
+
+1815
+01:02:03,280 --> 01:02:06,680
+when I call back in the future."
+
+1816
+01:02:05,160 --> 01:02:08,440
+Um so, whether you're deciding something
+
+1817
+01:02:06,680 --> 01:02:09,840
+in the moment this is important as an
+
+1818
+01:02:08,440 --> 01:02:12,560
+agent builder, I care about these
+
+1819
+01:02:09,840 --> 01:02:14,680
+things, or you know, let the agent
+
+1820
+01:02:12,560 --> 01:02:17,040
+decide. Uh those are kind of three ways
+
+1821
+01:02:14,680 --> 01:02:18,760
+to structure uh memory storage.
+
+1822
+01:02:17,040 --> 01:02:20,440
+>> And when you think about the structure
+
+1823
+01:02:18,760 --> 01:02:22,000
+of memory itself, do you guys think
+
+1824
+01:02:20,440 --> 01:02:24,880
+about it as a knowledge graph, a vector
+
+1825
+01:02:22,000 --> 01:02:28,080
+store, a file system, TBD?
+
+1826
+01:02:24,880 --> 01:02:30,680
+>> It's not super important. Um I guess I
+
+1827
+01:02:28,080 --> 01:02:32,040
+would say you want to optimize around
+
+1828
+01:02:30,680 --> 01:02:33,200
+retrieval.
+
+1829
+01:02:32,040 --> 01:02:35,000
+But, the reason why I said it's not
+
+1830
+01:02:33,200 --> 01:02:36,720
+super important is that typically your
+
+1831
+01:02:35,000 --> 01:02:38,680
+knowledge base is three orders of
+
+1832
+01:02:36,720 --> 01:02:40,640
+magnitude larger than the memories for
+
+1833
+01:02:38,680 --> 01:02:42,200
+an individual customer.
+
+1834
+01:02:40,640 --> 01:02:43,640
+And so,
+
+1835
+01:02:42,200 --> 01:02:45,040
+the retrieval and ranking problem is
+
+1836
+01:02:43,640 --> 01:02:47,320
+pretty simple, and I don't think it
+
+1837
+01:02:45,040 --> 01:02:48,640
+matters what structure you use, at least
+
+1838
+01:02:47,320 --> 01:02:51,000
+in our system today.
+
+1839
+01:02:48,640 --> 01:02:52,640
+>> I feel like memory is this really hot
+
+1840
+01:02:51,000 --> 01:02:54,240
+topic, and everyone loves to talk about
+
+1841
+01:02:52,640 --> 01:02:56,960
+it. And And there have been memory
+
+1842
+01:02:54,240 --> 01:02:59,000
+startups now for like 2 years, but but I
+
+1843
+01:02:56,960 --> 01:03:02,240
+don't see any of them
+
+1844
+01:02:59,000 --> 01:03:04,760
+being massive breakout successful. Why
+
+1845
+01:03:02,240 --> 01:03:06,200
+is that? Is Is memory not that important
+
+1846
+01:03:04,760 --> 01:03:08,400
+in the grand scheme of things? Is it so
+
+1847
+01:03:06,200 --> 01:03:10,640
+bespoke? Is it just too early on? Is it
+
+1848
+01:03:08,400 --> 01:03:13,360
+Is it really hard? Like why why isn't
+
+1849
+01:03:10,640 --> 01:03:14,560
+there a more established memory company
+
+1850
+01:03:13,360 --> 01:03:16,000
+or memory pattern?
+
+1851
+01:03:14,560 --> 01:03:16,880
+>> Do you have it turned on with Claude or
+
+1852
+01:03:16,000 --> 01:03:18,520
+ChatGPT?
+
+1853
+01:03:16,880 --> 01:03:19,520
+>> Not on purpose, although I think it is
+
+1854
+01:03:18,520 --> 01:03:21,440
+accidentally.
+
+1855
+01:03:19,520 --> 01:03:22,520
+>> And do you find it useful with your
+
+1856
+01:03:21,440 --> 01:03:23,600
+accidental turning it on?
+
+1857
+01:03:22,520 --> 01:03:25,960
+>> I don't really there.
+
+1858
+01:03:23,600 --> 01:03:27,960
+>> Okay. I ask because I would say that
+
+1859
+01:03:25,960 --> 01:03:29,600
+those are useful to me. I think what I
+
+1860
+01:03:27,960 --> 01:03:31,120
+said earlier about how when you're
+
+1861
+01:03:29,600 --> 01:03:32,960
+trusting us with memory, you're trusting
+
+1862
+01:03:31,120 --> 01:03:35,280
+us with authentication. That's part of
+
+1863
+01:03:32,960 --> 01:03:36,560
+it is that actually in order to pull off
+
+1864
+01:03:35,280 --> 01:03:39,560
+memory,
+
+1865
+01:03:36,560 --> 01:03:42,680
+you need to be trusted with something
+
+1866
+01:03:39,560 --> 01:03:45,080
+that has higher risk, you know, as well.
+
+1867
+01:03:42,680 --> 01:03:48,520
+And so, the reason I mentioned ChatGPT
+
+1868
+01:03:45,080 --> 01:03:50,520
+and Claude is those are products that
+
+1869
+01:03:48,520 --> 01:03:53,360
+you are already trusting. And so, I
+
+1870
+01:03:50,520 --> 01:03:55,360
+think they have more freedom than a B2B
+
+1871
+01:03:53,360 --> 01:03:57,520
+player would have where it's like, "Hey,
+
+1872
+01:03:55,360 --> 01:04:00,520
+if I want to buy memory from you,
+
+1873
+01:03:57,520 --> 01:04:02,880
+I also need to buy authentication or
+
+1874
+01:04:00,520 --> 01:04:05,600
+verification at least or identification
+
+1875
+01:04:02,880 --> 01:04:06,920
+at least from you. And I don't know
+
+1876
+01:04:05,600 --> 01:04:08,960
+exactly what the startups are in the
+
+1877
+01:04:06,920 --> 01:04:10,640
+space, but I would imagine like
+
+1878
+01:04:08,960 --> 01:04:12,080
+you're biting off more than you think
+
+1879
+01:04:10,640 --> 01:04:14,000
+when you sell memory."
+
+1880
+01:04:12,080 --> 01:04:16,000
+>> Talking about observability and evals
+
+1881
+01:04:14,000 --> 01:04:18,480
+for a bit. You guys have an interesting
+
+1882
+01:04:16,000 --> 01:04:20,440
+problem, I presume, where you have evals
+
+1883
+01:04:18,480 --> 01:04:23,000
+for your internal agents and for the
+
+1884
+01:04:20,440 --> 01:04:24,120
+maybe like general purpose agent SDK,
+
+1885
+01:04:23,000 --> 01:04:25,920
+but then I'm assuming your customers
+
+1886
+01:04:24,120 --> 01:04:27,480
+want to do evals themselves as well. Are
+
+1887
+01:04:25,920 --> 01:04:29,560
+those the same? Do you use the same
+
+1888
+01:04:27,480 --> 01:04:31,040
+tools for both? Or if they're different,
+
+1889
+01:04:29,560 --> 01:04:34,160
+why and how are they different?
+
+1890
+01:04:31,040 --> 01:04:37,320
+>> Typically not exactly the same. So,
+
+1891
+01:04:34,160 --> 01:04:39,600
+internally, um the Agent OS, you know,
+
+1892
+01:04:37,320 --> 01:04:41,480
+if you think about it as a series of
+
+1893
+01:04:39,600 --> 01:04:43,240
+tasks and some of those tasks might be
+
+1894
+01:04:41,480 --> 01:04:44,880
+very complex and some of those tasks
+
+1895
+01:04:43,240 --> 01:04:48,520
+might be more simple.
+
+1896
+01:04:44,880 --> 01:04:50,520
+The eval problem is more similar to the
+
+1897
+01:04:48,520 --> 01:04:51,640
+eval problem that any applied AI company
+
+1898
+01:04:50,520 --> 01:04:53,880
+has.
+
+1899
+01:04:51,640 --> 01:04:57,280
+When you think about our customers,
+
+1900
+01:04:53,880 --> 01:05:00,160
+I think the eval problem is much more
+
+1901
+01:04:57,280 --> 01:05:01,560
+complicated and involves things like
+
+1902
+01:05:00,160 --> 01:05:04,400
+what happens when there's background
+
+1903
+01:05:01,560 --> 01:05:06,800
+noise in voice and uh what if I have an
+
+1904
+01:05:04,400 --> 01:05:08,960
+adversarial user and I want to save
+
+1905
+01:05:06,800 --> 01:05:10,760
+these 20 personas and run all of my
+
+1906
+01:05:08,960 --> 01:05:13,200
+simulations against all 20 of the
+
+1907
+01:05:10,760 --> 01:05:15,160
+personas and make sure that it works.
+
+1908
+01:05:13,200 --> 01:05:17,320
+And so, you end up with just a more
+
+1909
+01:05:15,160 --> 01:05:19,480
+complicated topography because a
+
+1910
+01:05:17,320 --> 01:05:21,040
+conversation by nature is very
+
+1911
+01:05:19,480 --> 01:05:23,200
+complicated and can go in so many
+
+1912
+01:05:21,040 --> 01:05:25,480
+different directions. And so, we built a
+
+1913
+01:05:23,200 --> 01:05:28,400
+product specifically for our customers
+
+1914
+01:05:25,480 --> 01:05:29,680
+to eval agents called simulations. And
+
+1915
+01:05:28,400 --> 01:05:32,840
+it supports all of these different
+
+1916
+01:05:29,680 --> 01:05:35,360
+things. I think it is probably you can
+
+1917
+01:05:32,840 --> 01:05:37,520
+tell when someone's building an agent if
+
+1918
+01:05:35,360 --> 01:05:39,280
+they have good simulations, it's such a
+
+1919
+01:05:37,520 --> 01:05:42,160
+great unlock because you can make
+
+1920
+01:05:39,280 --> 01:05:44,080
+changes in a way that is constantly
+
+1921
+01:05:42,160 --> 01:05:45,960
+improving the agent and being sure that
+
+1922
+01:05:44,080 --> 01:05:48,000
+you're not regressing, especially as you
+
+1923
+01:05:45,960 --> 01:05:49,320
+get into big teams with complex agents
+
+1924
+01:05:48,000 --> 01:05:51,880
+that are doing so many things. I mean, I
+
+1925
+01:05:49,320 --> 01:05:54,880
+know you see this at LangChain as well.
+
+1926
+01:05:51,880 --> 01:05:56,760
+Like, having really good evals is such a
+
+1927
+01:05:54,880 --> 01:05:59,480
+great unlock. And so, we pride
+
+1928
+01:05:56,760 --> 01:06:02,640
+ourselves, in addition to, you know,
+
+1929
+01:05:59,480 --> 01:06:04,720
+government governance and collaboration
+
+1930
+01:06:02,640 --> 01:06:06,720
+and review and making sure that, you
+
+1931
+01:06:04,720 --> 01:06:08,600
+know, you have workspaces, so you can
+
+1932
+01:06:06,720 --> 01:06:11,520
+let Ghostwriter run free but still
+
+1933
+01:06:08,600 --> 01:06:14,560
+review it before you make any changes.
+
+1934
+01:06:11,520 --> 01:06:16,400
+We also have that simulation layer, so
+
+1935
+01:06:14,560 --> 01:06:17,600
+that every change you make is tested
+
+1936
+01:06:16,400 --> 01:06:19,640
+against all the assumptions of the
+
+1937
+01:06:17,600 --> 01:06:21,680
+platform across voice and chat and many
+
+1938
+01:06:19,640 --> 01:06:23,240
+languages and many personas in this
+
+1939
+01:06:21,680 --> 01:06:24,680
+high-dimensional space that you're going
+
+1940
+01:06:23,240 --> 01:06:26,600
+to experience in production.
+
+1941
+01:06:24,680 --> 01:06:28,000
+>> Going out from evals for just a second
+
+1942
+01:06:26,600 --> 01:06:30,360
+because you said something around
+
+1943
+01:06:28,000 --> 01:06:31,760
+continually improving the agent. I want
+
+1944
+01:06:30,360 --> 01:06:33,240
+to talk about continual learning. That
+
+1945
+01:06:31,760 --> 01:06:35,040
+also ties into memory, I guess, a little
+
+1946
+01:06:33,240 --> 01:06:36,640
+bit. Like, how do you how do you think
+
+1947
+01:06:35,040 --> 01:06:39,840
+about continual learning in general?
+
+1948
+01:06:36,640 --> 01:06:41,760
+Does the Sierra platform support it in a
+
+1949
+01:06:39,840 --> 01:06:44,040
+fully I'm assuming not like completely
+
+1950
+01:06:41,760 --> 01:06:46,560
+automated way, but like how how far
+
+1951
+01:06:44,040 --> 01:06:47,640
+along are you guys and and and what do
+
+1952
+01:06:46,560 --> 01:06:48,480
+you think the future in continual
+
+1953
+01:06:47,640 --> 01:06:51,040
+learning holds?
+
+1954
+01:06:48,480 --> 01:06:53,160
+>> Where we are today is
+
+1955
+01:06:51,040 --> 01:06:55,120
+you can automatically detect an issue
+
+1956
+01:06:53,160 --> 01:06:58,480
+with a monitor. Ghostwriter can
+
+1957
+01:06:55,120 --> 01:07:01,560
+automatically suggest a fix to an issue.
+
+1958
+01:06:58,480 --> 01:07:04,000
+And you can review that issue and push
+
+1959
+01:07:01,560 --> 01:07:05,640
+it to your agent. And so, you're still
+
+1960
+01:07:04,000 --> 01:07:07,920
+in the loop or people are still in the
+
+1961
+01:07:05,640 --> 01:07:09,360
+loop in all of the cases.
+
+1962
+01:07:07,920 --> 01:07:11,240
+But, it's
+
+1963
+01:07:09,360 --> 01:07:13,680
+as automated as it can be with still
+
+1964
+01:07:11,240 --> 01:07:15,680
+giving you authority over that.
+
+1965
+01:07:13,680 --> 01:07:18,040
+I think in the near future, you will
+
+1966
+01:07:15,680 --> 01:07:20,560
+start to see the first cases of Sierra
+
+1967
+01:07:18,040 --> 01:07:22,960
+agents improving themselves where they
+
+1968
+01:07:20,560 --> 01:07:25,000
+have a confidence level to the fix. For
+
+1969
+01:07:22,960 --> 01:07:26,760
+example, if there's an error in a
+
+1970
+01:07:25,000 --> 01:07:28,400
+knowledge article and it can tell that
+
+1971
+01:07:26,760 --> 01:07:30,360
+there's a contradiction and it can go
+
+1972
+01:07:28,400 --> 01:07:32,320
+check the website and, you know, for
+
+1973
+01:07:30,360 --> 01:07:34,400
+whatever reason, it's very clear what
+
+1974
+01:07:32,320 --> 01:07:36,320
+the true answer is, it could it could
+
+1975
+01:07:34,400 --> 01:07:39,000
+give you an FYI instead of needing
+
+1976
+01:07:36,320 --> 01:07:40,840
+approval. Same way, I do some work, I
+
+1977
+01:07:39,000 --> 01:07:42,560
+ask for approval, I do some other work,
+
+1978
+01:07:40,840 --> 01:07:45,000
+I give FYI. And so, all of the
+
+1979
+01:07:42,560 --> 01:07:46,960
+primitives are there, it's just around
+
+1980
+01:07:45,000 --> 01:07:49,320
+the confidence that people have in the
+
+1981
+01:07:46,960 --> 01:07:50,840
+level of control that they want to have.
+
+1982
+01:07:49,320 --> 01:07:52,560
+And so, we also don't want to get ahead
+
+1983
+01:07:50,840 --> 01:07:53,920
+of our skis there. Most of our
+
+1984
+01:07:52,560 --> 01:07:55,440
+customers, they want to review every
+
+1985
+01:07:53,920 --> 01:07:56,600
+change that goes into the agent. This is
+
+1986
+01:07:55,440 --> 01:07:58,120
+a really important part of their
+
+1987
+01:07:56,600 --> 01:08:00,880
+business. We don't want to pull the
+
+1988
+01:07:58,120 --> 01:08:02,600
+future forward too quickly. Um, we want
+
+1989
+01:08:00,880 --> 01:08:03,520
+to move at the pace our customers are
+
+1990
+01:08:02,600 --> 01:08:04,680
+excited about.
+
+1991
+01:08:03,520 --> 01:08:06,920
+>> One of the things you mentioned, going
+
+1992
+01:08:04,680 --> 01:08:08,360
+back to the eval's is monitors. What are
+
+1993
+01:08:06,920 --> 01:08:10,440
+monitors? And then you guys also wrote a
+
+1994
+01:08:08,360 --> 01:08:11,680
+blog called monitoring the monitors or
+
+1995
+01:08:10,440 --> 01:08:12,560
+something like that. I'd be curious to
+
+1996
+01:08:11,680 --> 01:08:14,280
+hear about that.
+
+1997
+01:08:12,560 --> 01:08:16,040
+>> Yeah, we have a saying in the company
+
+1998
+01:08:14,280 --> 01:08:18,720
+that the solution to all problems with
+
+1999
+01:08:16,040 --> 01:08:20,839
+AI is more AI. And so, often times, you
+
+2000
+01:08:18,720 --> 01:08:23,359
+have something that's 90% accurate and
+
+2001
+01:08:20,839 --> 01:08:25,359
+you figure out how to verify it 90% of
+
+2002
+01:08:23,359 --> 01:08:28,400
+the time. Figure out how to verify that
+
+2003
+01:08:25,359 --> 01:08:29,520
+90% of the time. And and so on and so on
+
+2004
+01:08:28,400 --> 01:08:32,080
+and you have something that's, you know,
+
+2005
+01:08:29,520 --> 01:08:33,920
+three or four nines of reliability. And
+
+2006
+01:08:32,080 --> 01:08:35,640
+I think with non-deterministic systems,
+
+2007
+01:08:33,920 --> 01:08:37,880
+that's just quite a bit about how it
+
+2008
+01:08:35,640 --> 01:08:40,680
+works. And so, similarly,
+
+2009
+01:08:37,880 --> 01:08:43,400
+uh, with a conversation platform, you
+
+2010
+01:08:40,680 --> 01:08:45,680
+can set up monitors that run on every
+
+2011
+01:08:43,400 --> 01:08:48,640
+conversation and look out for the things
+
+2012
+01:08:45,680 --> 01:08:51,600
+that you want to flag either for review
+
+2013
+01:08:48,640 --> 01:08:53,359
+or to create issues from, uh, etc. And
+
+2014
+01:08:51,600 --> 01:08:55,640
+it just basically gives you peace of
+
+2015
+01:08:53,359 --> 01:08:57,040
+mind, narrows the set of, "Hey, I don't
+
+2016
+01:08:55,640 --> 01:08:59,279
+have to wake up every morning and try to
+
+2017
+01:08:57,040 --> 01:09:01,160
+read 10,000 conversations. I can read
+
+2018
+01:08:59,279 --> 01:09:03,600
+five. And I can say, 'Okay, these five
+
+2019
+01:09:01,160 --> 01:09:04,759
+look good. I feel comfortable going on
+
+2020
+01:09:03,600 --> 01:09:06,880
+with my day."
+
+2021
+01:09:04,759 --> 01:09:09,279
+And so, that frees up a lot of our
+
+2022
+01:09:06,880 --> 01:09:11,960
+customers to think about how do I
+
+2023
+01:09:09,279 --> 01:09:13,600
+actually improve customer satisfaction
+
+2024
+01:09:11,960 --> 01:09:15,640
+or resolution rate or some of these more
+
+2025
+01:09:13,600 --> 01:09:17,120
+strategic levers
+
+2026
+01:09:15,640 --> 01:09:19,120
+as opposed to feeling like they need to
+
+2027
+01:09:17,120 --> 01:09:20,680
+review everything. So, I think that's
+
+2028
+01:09:19,120 --> 01:09:21,520
+why it's one of our more popular
+
+2029
+01:09:20,680 --> 01:09:24,359
+features.
+
+2030
+01:09:21,520 --> 01:09:27,920
+>> You guys released TaoBench, which is an
+
+2031
+01:09:24,359 --> 01:09:29,400
+eval for a few different agentic use
+
+2032
+01:09:27,920 --> 01:09:32,040
+cases. And I think you released a few
+
+2033
+01:09:29,400 --> 01:09:33,520
+other benches as well. Why do you guys
+
+2034
+01:09:32,040 --> 01:09:34,160
+invest in these and why should people
+
+2035
+01:09:33,520 --> 01:09:35,920
+check them out?
+
+2036
+01:09:34,160 --> 01:09:37,240
+>> So, I mentioned we have a research team
+
+2037
+01:09:35,920 --> 01:09:40,000
+and
+
+2038
+01:09:37,240 --> 01:09:41,839
+it's very exciting when you're building
+
+2039
+01:09:40,000 --> 01:09:44,600
+something to also think about how other
+
+2040
+01:09:41,839 --> 01:09:47,480
+people could use it. I mean, the
+
+2041
+01:09:44,600 --> 01:09:50,279
+distance that the AI space has come and
+
+2042
+01:09:47,480 --> 01:09:52,759
+how we've benefited just from all of the
+
+2043
+01:09:50,279 --> 01:09:54,920
+contributions to open source, you know,
+
+2044
+01:09:52,759 --> 01:09:58,000
+our knowledge engine as as I mentioned
+
+2045
+01:09:54,920 --> 01:09:59,840
+runs on open models that we fine-tuned.
+
+2046
+01:09:58,000 --> 01:10:02,760
+It has felt like one of the areas where
+
+2047
+01:09:59,840 --> 01:10:05,040
+we can contribute because we actually
+
+2048
+01:10:02,760 --> 01:10:06,640
+know a lot about what it takes to build
+
+2049
+01:10:05,040 --> 01:10:08,280
+a good voice agent. I don't think anyone
+
+2050
+01:10:06,640 --> 01:10:10,160
+knows more than we do. We know a lot
+
+2051
+01:10:08,280 --> 01:10:12,520
+about knowledge retrieval, we know a lot
+
+2052
+01:10:10,160 --> 01:10:13,960
+about tool calling and following
+
+2053
+01:10:12,520 --> 01:10:15,000
+process.
+
+2054
+01:10:13,960 --> 01:10:17,800
+Um and we know a lot about
+
+2055
+01:10:15,000 --> 01:10:19,800
+transcription. Um and so, we've released
+
+2056
+01:10:17,800 --> 01:10:21,120
+I think those are the four areas. There
+
+2057
+01:10:19,800 --> 01:10:23,800
+might be another one where we release
+
+2058
+01:10:21,120 --> 01:10:25,680
+benchmarks in the sort of Tao cinematic
+
+2059
+01:10:23,800 --> 01:10:28,280
+universe. There's TaoVoice,
+
+2060
+01:10:25,680 --> 01:10:29,640
+TaoKnowledge, TaoBench, and MuBench,
+
+2061
+01:10:28,280 --> 01:10:30,880
+which is the multilingual transcription
+
+2062
+01:10:29,640 --> 01:10:32,600
+benchmark.
+
+2063
+01:10:30,880 --> 01:10:34,120
+And so,
+
+2064
+01:10:32,600 --> 01:10:35,800
+it really just started because the first
+
+2065
+01:10:34,120 --> 01:10:38,040
+TaoBench was a lot more popular than we
+
+2066
+01:10:35,800 --> 01:10:40,680
+expected. We're like, "Oh, people trust
+
+2067
+01:10:38,040 --> 01:10:42,560
+us to kind of say what good looks like
+
+2068
+01:10:40,680 --> 01:10:44,080
+in this space." And so, we've continued
+
+2069
+01:10:42,560 --> 01:10:46,040
+to do more and more, and our research
+
+2070
+01:10:44,080 --> 01:10:47,920
+team has grown, and there's appetite. I
+
+2071
+01:10:46,040 --> 01:10:49,320
+think it also has this ancillary benefit
+
+2072
+01:10:47,920 --> 01:10:50,680
+of causing us to think about these
+
+2073
+01:10:49,320 --> 01:10:52,880
+problems
+
+2074
+01:10:50,680 --> 01:10:54,480
+in a very principled way. And you know,
+
+2075
+01:10:52,880 --> 01:10:56,080
+from kind of the first principles of
+
+2076
+01:10:54,480 --> 01:10:58,080
+what good looks like.
+
+2077
+01:10:56,080 --> 01:10:59,720
+And then we can evaluate our agents that
+
+2078
+01:10:58,080 --> 01:11:01,920
+way as well. So, I think it has that
+
+2079
+01:10:59,720 --> 01:11:04,680
+benefit, but it is very path dependent
+
+2080
+01:11:01,920 --> 01:11:07,080
+on Tow bench being a hit and you know,
+
+2081
+01:11:04,680 --> 01:11:08,920
+Tow is squared being the sequel being a
+
+2082
+01:11:07,080 --> 01:11:10,800
+hit as well and then us just deciding,
+
+2083
+01:11:08,920 --> 01:11:11,600
+okay, let's do more of this. People seem
+
+2084
+01:11:10,800 --> 01:11:15,080
+to like it.
+
+2085
+01:11:11,600 --> 01:11:17,480
+>> How much does the core agent team use
+
+2086
+01:11:15,080 --> 01:11:19,920
+these to guide their harness choices?
+
+2087
+01:11:17,480 --> 01:11:22,120
+>> Most of the benchmarks we use to
+
+2088
+01:11:19,920 --> 01:11:25,000
+evaluate providers
+
+2089
+01:11:22,120 --> 01:11:27,560
+more than to evaluate agents. And so,
+
+2090
+01:11:25,000 --> 01:11:29,480
+for example, we had there's a really
+
+2091
+01:11:27,560 --> 01:11:31,400
+exciting new transcription model that
+
+2092
+01:11:29,480 --> 01:11:32,640
+came by the office and presented it to
+
+2093
+01:11:31,400 --> 01:11:34,520
+us.
+
+2094
+01:11:32,640 --> 01:11:36,600
+And so, we were able to say, this looks
+
+2095
+01:11:34,520 --> 01:11:38,640
+really exciting, but we'd like you to
+
+2096
+01:11:36,600 --> 01:11:40,800
+run it against Mu bench and then it will
+
+2097
+01:11:38,640 --> 01:11:43,240
+be really exciting. And so, it really
+
+2098
+01:11:40,800 --> 01:11:45,240
+helps in the modular approach that we've
+
+2099
+01:11:43,240 --> 01:11:48,520
+taken. Like, the reason we discovered
+
+2100
+01:11:45,240 --> 01:11:51,720
+that this model works really well when
+
+2101
+01:11:48,520 --> 01:11:53,320
+there's silence in northern United
+
+2102
+01:11:51,720 --> 01:11:54,760
+Kingdom, but this other model works
+
+2103
+01:11:53,320 --> 01:11:56,960
+really well when there's speech is
+
+2104
+01:11:54,760 --> 01:11:59,280
+because of things like Mu bench in
+
+2105
+01:11:56,960 --> 01:12:02,160
+particular for that one. Internally,
+
+2106
+01:11:59,280 --> 01:12:03,640
+simulations is the main way that we eval
+
+2107
+01:12:02,160 --> 01:12:06,160
+the actual agents that are going out to
+
+2108
+01:12:03,640 --> 01:12:08,640
+production. So, it's just too customer
+
+2109
+01:12:06,160 --> 01:12:10,160
+specific for us to rely on something as
+
+2110
+01:12:08,640 --> 01:12:11,720
+general as a benchmark.
+
+2111
+01:12:10,160 --> 01:12:13,680
+>> How do you create these benchmarks? Are
+
+2112
+01:12:11,720 --> 01:12:15,440
+they synthetically generated? Do you do
+
+2113
+01:12:13,680 --> 01:12:16,680
+a lot of data labeling internally? Do
+
+2114
+01:12:15,440 --> 01:12:19,200
+you outsource it?
+
+2115
+01:12:16,680 --> 01:12:21,800
+>> I think it's a mix of all three.
+
+2116
+01:12:19,200 --> 01:12:24,880
+I don't know all of the details for all
+
+2117
+01:12:21,800 --> 01:12:27,320
+of the benchmarks, but I know that we
+
+2118
+01:12:24,880 --> 01:12:30,320
+do a lot of stuff internally just in
+
+2119
+01:12:27,320 --> 01:12:32,360
+terms of especially when you're kind of
+
+2120
+01:12:30,320 --> 01:12:34,440
+in the zero to one phase, just figuring
+
+2121
+01:12:32,360 --> 01:12:35,760
+out what the right shape of the data is.
+
+2122
+01:12:34,440 --> 01:12:37,480
+Even when you work with external
+
+2123
+01:12:35,760 --> 01:12:39,600
+companies, they often want to see some
+
+2124
+01:12:37,480 --> 01:12:41,280
+number of examples from you. And then I
+
+2125
+01:12:39,600 --> 01:12:43,480
+think also
+
+2126
+01:12:41,280 --> 01:12:46,440
+being able to synthesize data when scale
+
+2127
+01:12:43,480 --> 01:12:48,520
+matters a lot especially if you can do
+
+2128
+01:12:46,440 --> 01:12:49,440
+it in a reliable way, is very helpful,
+
+2129
+01:12:48,520 --> 01:12:51,480
+too.
+
+2130
+01:12:49,440 --> 01:12:53,880
+It's harder for something like
+
+2131
+01:12:51,480 --> 01:12:55,320
+transcription where audio synthesis
+
+2132
+01:12:53,880 --> 01:12:56,800
+might be, you know, already in the
+
+2133
+01:12:55,320 --> 01:12:58,200
+training set of the transcription and
+
+2134
+01:12:56,800 --> 01:12:59,400
+that kind of thing.
+
+2135
+01:12:58,200 --> 01:13:00,360
+Um, but for things like text, I think
+
+2136
+01:12:59,400 --> 01:13:01,600
+it's easier.
+
+2137
+01:13:00,360 --> 01:13:04,360
+>> One of the things that I think is pretty
+
+2138
+01:13:01,600 --> 01:13:05,960
+underrated in building agents is UX. So,
+
+2139
+01:13:04,360 --> 01:13:07,400
+we've already talked about voice as a
+
+2140
+01:13:05,960 --> 01:13:10,280
+modality. We've talked about actually
+
+2141
+01:13:07,400 --> 01:13:12,440
+showing up as a chat GPT app. How else
+
+2142
+01:13:10,280 --> 01:13:14,600
+do you guys think about modalities or
+
+2143
+01:13:12,440 --> 01:13:17,240
+UX's? Do you have you experimented with
+
+2144
+01:13:14,600 --> 01:13:19,880
+generative UI in any form?
+
+2145
+01:13:17,240 --> 01:13:22,240
+>> We have quite a bit. I think it's pretty
+
+2146
+01:13:19,880 --> 01:13:23,800
+vertical dependent as well.
+
+2147
+01:13:22,240 --> 01:13:25,640
+To give you an example, when you're
+
+2148
+01:13:23,800 --> 01:13:28,480
+checking in for a flight,
+
+2149
+01:13:25,640 --> 01:13:30,160
+if you have a hypothetically 12-letter
+
+2150
+01:13:28,480 --> 01:13:32,200
+last name with a hyphen in the middle of
+
+2151
+01:13:30,160 --> 01:13:33,800
+it, um, and a first name that's hard to
+
+2152
+01:13:32,200 --> 01:13:36,040
+spell as well,
+
+2153
+01:13:33,800 --> 01:13:37,880
+hypothetically, then it might be helpful
+
+2154
+01:13:36,040 --> 01:13:40,280
+to type that in while you're on the
+
+2155
+01:13:37,880 --> 01:13:42,880
+phone. And so, we see in industries like
+
+2156
+01:13:40,280 --> 01:13:45,440
+airlines appetite for multimodal
+
+2157
+01:13:42,880 --> 01:13:48,720
+experiences, especially when there's a
+
+2158
+01:13:45,440 --> 01:13:50,480
+lot of reservation retrieval or input.
+
+2159
+01:13:48,720 --> 01:13:52,600
+For something like retail, we see
+
+2160
+01:13:50,480 --> 01:13:55,440
+exactly what you described, where really
+
+2161
+01:13:52,600 --> 01:13:57,280
+polished UI around product discovery,
+
+2162
+01:13:55,440 --> 01:13:59,080
+um, and around recommendation moves the
+
+2163
+01:13:57,280 --> 01:14:01,480
+needle and makes a difference.
+
+2164
+01:13:59,080 --> 01:14:03,440
+I think where Sierra is particularly
+
+2165
+01:14:01,480 --> 01:14:07,480
+differentiated is going really deep with
+
+2166
+01:14:03,440 --> 01:14:09,360
+customers, especially in specific areas,
+
+2167
+01:14:07,480 --> 01:14:11,680
+and learning, you know, what does it
+
+2168
+01:14:09,360 --> 01:14:13,880
+mean to build an amazing
+
+2169
+01:14:11,680 --> 01:14:15,280
+retail discovery experience, and then
+
+2170
+01:14:13,880 --> 01:14:18,480
+just from first principles, what's the
+
+2171
+01:14:15,280 --> 01:14:20,320
+agent that could help drive that? versus
+
+2172
+01:14:18,480 --> 01:14:22,720
+what does it mean to build a great
+
+2173
+01:14:20,320 --> 01:14:25,600
+airline check-in experience or flight
+
+2174
+01:14:22,720 --> 01:14:26,960
+disruption experience, um, to the degree
+
+2175
+01:14:25,600 --> 01:14:29,240
+that can be great, it can be not
+
+2176
+01:14:26,960 --> 01:14:31,680
+terrible, I guess. Then, you know,
+
+2177
+01:14:29,240 --> 01:14:32,680
+what's the right form factor for that?
+
+2178
+01:14:31,680 --> 01:14:35,560
+We've seen, and I think one of the
+
+2179
+01:14:32,680 --> 01:14:38,040
+reasons vertical companies have been
+
+2180
+01:14:35,560 --> 01:14:40,160
+pretty successful lately is that
+
+2181
+01:14:38,040 --> 01:14:42,320
+understanding the contours of each
+
+2182
+01:14:40,160 --> 01:14:43,360
+industry and each company really makes a
+
+2183
+01:14:42,320 --> 01:14:44,520
+difference.
+
+2184
+01:14:43,360 --> 01:14:45,960
+>> One of the things that I think you guys
+
+2185
+01:14:44,520 --> 01:14:47,480
+are actually best known for is your
+
+2186
+01:14:45,960 --> 01:14:49,560
+revenue model, and charging for
+
+2187
+01:14:47,480 --> 01:14:51,240
+outcome-based pricing.
+
+2188
+01:14:49,560 --> 01:14:53,000
+How do you actually do that? How do you
+
+2189
+01:14:51,240 --> 01:14:54,920
+estimate the the value that an
+
+2190
+01:14:53,000 --> 01:14:56,680
+interaction has? And And is it specific
+
+2191
+01:14:54,920 --> 01:15:00,440
+to each customer?
+
+2192
+01:14:56,680 --> 01:15:02,520
+>> This, I think, is maybe the number one
+
+2193
+01:15:00,440 --> 01:15:05,040
+operational reason or business reason
+
+2194
+01:15:02,520 --> 01:15:07,600
+why ICR has been successful. It aligns
+
+2195
+01:15:05,040 --> 01:15:10,000
+the incentives between
+
+2196
+01:15:07,600 --> 01:15:12,440
+our company and our customers. And I
+
+2197
+01:15:10,000 --> 01:15:15,000
+think the phrase I like to use, which is
+
+2198
+01:15:12,440 --> 01:15:16,760
+a little bit cheeky, probably, is if you
+
+2199
+01:15:15,000 --> 01:15:19,040
+don't understand the value of
+
+2200
+01:15:16,760 --> 01:15:21,520
+outcome-based pricing, your outcomes are
+
+2201
+01:15:19,040 --> 01:15:23,880
+probably not that valuable. Because when
+
+2202
+01:15:21,520 --> 01:15:26,680
+you're delivering, you know, $100
+
+2203
+01:15:23,880 --> 01:15:27,800
+outcomes, and you get to keep a portion
+
+2204
+01:15:26,680 --> 01:15:29,200
+of it,
+
+2205
+01:15:27,800 --> 01:15:31,920
+everyone wants to row in the same
+
+2206
+01:15:29,200 --> 01:15:34,240
+direction, and it cuts through all of
+
+2207
+01:15:31,920 --> 01:15:36,160
+the prioritization and decision-making
+
+2208
+01:15:34,240 --> 01:15:38,080
+that often will cloud and resource
+
+2209
+01:15:36,160 --> 01:15:39,720
+allocation that often will will cloud
+
+2210
+01:15:38,080 --> 01:15:41,440
+enterprise partnerships. So, it's
+
+2211
+01:15:39,720 --> 01:15:42,960
+extremely valuable, and I think it's a
+
+2212
+01:15:41,440 --> 01:15:45,760
+big reason why we've been successful. I
+
+2213
+01:15:42,960 --> 01:15:48,480
+think it will just become the norm for
+
+2214
+01:15:45,760 --> 01:15:50,920
+companies that are doing differentiated
+
+2215
+01:15:48,480 --> 01:15:52,840
+high-value activities. If your product
+
+2216
+01:15:50,920 --> 01:15:54,280
+really like feels a little bit more like
+
+2217
+01:15:52,840 --> 01:15:57,000
+a commodity,
+
+2218
+01:15:54,280 --> 01:15:58,320
+you'll start to see more usage-based and
+
+2219
+01:15:57,000 --> 01:16:01,280
+seat-based pricing, cuz it's just
+
+2220
+01:15:58,320 --> 01:16:03,680
+simpler. An area, for example,
+
+2221
+01:16:01,280 --> 01:16:06,320
+knowledge-based lookups are a little bit
+
+2222
+01:16:03,680 --> 01:16:08,800
+more that way, just question answering.
+
+2223
+01:16:06,320 --> 01:16:10,840
+And so, in the case of question
+
+2224
+01:16:08,800 --> 01:16:13,440
+answering, that's not an area where you
+
+2225
+01:16:10,840 --> 01:16:16,320
+would have a high premium for an outcome
+
+2226
+01:16:13,440 --> 01:16:18,560
+of any particular sort. But if it's
+
+2227
+01:16:16,320 --> 01:16:20,360
+making a sale on a membership, or you
+
+2228
+01:16:18,560 --> 01:16:22,760
+know, selling someone a car,
+
+2229
+01:16:20,360 --> 01:16:24,720
+that's a really big outcome. Um, and so,
+
+2230
+01:16:22,760 --> 01:16:25,840
+companies will be more than happy to pay
+
+2231
+01:16:24,720 --> 01:16:27,400
+for that.
+
+2232
+01:16:25,840 --> 01:16:31,320
+Uh, I think where we're seeing things
+
+2233
+01:16:27,400 --> 01:16:33,480
+going is intra-conversation outcomes, to
+
+2234
+01:16:31,320 --> 01:16:34,800
+also thinking about more, you know, as I
+
+2235
+01:16:33,480 --> 01:16:37,320
+mentioned, kind of the moments that
+
+2236
+01:16:34,800 --> 01:16:39,800
+matter across the customer life cycle,
+
+2237
+01:16:37,320 --> 01:16:42,480
+and driving outcomes on top of our agent
+
+2238
+01:16:39,800 --> 01:16:44,000
+data platform that kind of span that
+
+2239
+01:16:42,480 --> 01:16:45,440
+whole life cycle. I think that's
+
+2240
+01:16:44,000 --> 01:16:47,160
+particularly interesting.
+
+2241
+01:16:45,440 --> 01:16:48,360
+>> You guys support multiple different
+
+2242
+01:16:47,160 --> 01:16:50,240
+outcomes. So, you've got customer
+
+2243
+01:16:48,360 --> 01:16:52,360
+support and you've got sales. How
+
+2244
+01:16:50,240 --> 01:16:53,760
+different is the pricing between those
+
+2245
+01:16:52,360 --> 01:16:56,040
+and how many different of these like
+
+2246
+01:16:53,760 --> 01:16:56,920
+categories or templates do you guys end
+
+2247
+01:16:56,040 --> 01:16:58,440
+up having?
+
+2248
+01:16:56,920 --> 01:17:01,000
+>> It really depends on the value. So, you
+
+2249
+01:16:58,440 --> 01:17:02,920
+asked if it was customer specific. The
+
+2250
+01:17:01,000 --> 01:17:06,040
+answer ends up being that it sort of has
+
+2251
+01:17:02,920 --> 01:17:10,800
+to be. In certain cases, you are
+
+2252
+01:17:06,040 --> 01:17:12,680
+troubleshooting very complex setup to a
+
+2253
+01:17:10,800 --> 01:17:14,280
+device or something and you have to try
+
+2254
+01:17:12,680 --> 01:17:15,880
+15 different things to get it to work
+
+2255
+01:17:14,280 --> 01:17:18,760
+and the average conversation might take
+
+2256
+01:17:15,880 --> 01:17:20,440
+20 turns and the amount of, you know,
+
+2257
+01:17:18,760 --> 01:17:21,840
+context engineering to make that work
+
+2258
+01:17:20,440 --> 01:17:23,760
+might be very high.
+
+2259
+01:17:21,840 --> 01:17:26,080
+In other cases, you might have something
+
+2260
+01:17:23,760 --> 01:17:28,240
+where, you know, you're just resetting
+
+2261
+01:17:26,080 --> 01:17:29,640
+the signal on your TV and it's very
+
+2262
+01:17:28,240 --> 01:17:32,120
+quick and easy or you're checking your
+
+2263
+01:17:29,640 --> 01:17:35,120
+balance with the bank and that's very
+
+2264
+01:17:32,120 --> 01:17:37,120
+easy. And so, you know, one outcome is
+
+2265
+01:17:35,120 --> 01:17:39,400
+very valuable and drives a lot of
+
+2266
+01:17:37,120 --> 01:17:41,840
+loyalty and one outcome is somewhat
+
+2267
+01:17:39,400 --> 01:17:44,640
+commoditized. You might have some cases
+
+2268
+01:17:41,840 --> 01:17:47,240
+where there's, you know, an outcome
+
+2269
+01:17:44,640 --> 01:17:49,520
+that's tens of dollars
+
+2270
+01:17:47,240 --> 01:17:51,280
+and in terms of the, you know, money
+
+2271
+01:17:49,520 --> 01:17:52,640
+that the agent would earn
+
+2272
+01:17:51,280 --> 01:17:54,240
+and then you might have some cases where
+
+2273
+01:17:52,640 --> 01:17:54,800
+it's, you know, much, much lower than
+
+2274
+01:17:54,240 --> 01:17:57,640
+that.
+
+2275
+01:17:54,800 --> 01:17:59,440
+>> And does that ever differ
+
+2276
+01:17:57,640 --> 01:18:01,440
+within a customer? So, like in your
+
+2277
+01:17:59,440 --> 01:18:03,440
+example, I could imagine you you could
+
+2278
+01:18:01,440 --> 01:18:05,400
+have an agent doing a really simple task
+
+2279
+01:18:03,440 --> 01:18:06,600
+of, oh, tell them to unplug the computer
+
+2280
+01:18:05,400 --> 01:18:08,080
+and plug it back in or something like
+
+2281
+01:18:06,600 --> 01:18:09,640
+that. And there's another one where
+
+2282
+01:18:08,080 --> 01:18:11,560
+like, oh my god, who knows what's going
+
+2283
+01:18:09,640 --> 01:18:13,400
+wrong and and it like is a miracle that
+
+2284
+01:18:11,560 --> 01:18:15,280
+it solves it at all. If it's the same
+
+2285
+01:18:13,400 --> 01:18:16,880
+customer, will it be charged the same
+
+2286
+01:18:15,280 --> 01:18:18,120
+amount or do you differentiate even
+
+2287
+01:18:16,880 --> 01:18:19,080
+within those different types of
+
+2288
+01:18:18,120 --> 01:18:21,160
+requests?
+
+2289
+01:18:19,080 --> 01:18:24,080
+>> There are cases where we differentiate.
+
+2290
+01:18:21,160 --> 01:18:27,760
+We're not dogmatic about it. What we
+
+2291
+01:18:24,080 --> 01:18:30,640
+found is that often times the benefits
+
+2292
+01:18:27,760 --> 01:18:33,960
+of having our incentives aligned
+
+2293
+01:18:30,640 --> 01:18:36,880
+are so high that it's not worth
+
+2294
+01:18:33,960 --> 01:18:40,240
+negotiating every detail of what counts
+
+2295
+01:18:36,880 --> 01:18:42,600
+for what and it kind of even out over
+
+2296
+01:18:40,240 --> 01:18:44,920
+time and you do right by your customers
+
+2297
+01:18:42,600 --> 01:18:46,640
+over time and you build trust and
+
+2298
+01:18:44,920 --> 01:18:48,920
+contracts aren't infinite and you want
+
+2299
+01:18:46,640 --> 01:18:50,600
+to have a really high renewal rate and
+
+2300
+01:18:48,920 --> 01:18:52,320
+have them trust you with more use cases
+
+2301
+01:18:50,600 --> 01:18:55,320
+and these kinds of things. So we make
+
+2302
+01:18:52,320 --> 01:18:58,000
+sure that incentives are deeply aligned.
+
+2303
+01:18:55,320 --> 01:18:59,640
+And then on top of that I think you can
+
+2304
+01:18:58,000 --> 01:19:01,400
+get really pedantic about the
+
+2305
+01:18:59,640 --> 01:19:03,920
+engineering of specific outcomes and
+
+2306
+01:19:01,400 --> 01:19:05,920
+maybe over time the market will move in
+
+2307
+01:19:03,920 --> 01:19:08,240
+that direction. But I think you're
+
+2308
+01:19:05,920 --> 01:19:10,040
+missing the forest for the trees in that
+
+2309
+01:19:08,240 --> 01:19:12,440
+case because of just how powerful the
+
+2310
+01:19:10,040 --> 01:19:14,520
+concept is. And so most of our customers
+
+2311
+01:19:12,440 --> 01:19:16,920
+are eager to find something simple that
+
+2312
+01:19:14,520 --> 01:19:18,520
+we all understand that feels fair. As
+
+2313
+01:19:16,920 --> 01:19:21,360
+opposed to trying to engineer like the
+
+2314
+01:19:18,520 --> 01:19:23,080
+perfect value for the for each outcome.
+
+2315
+01:19:21,360 --> 01:19:24,760
+>> Why don't you think there's more outcome
+
+2316
+01:19:23,080 --> 01:19:26,600
+based pricing right now? Is it because
+
+2317
+01:19:24,760 --> 01:19:28,920
+there's not enough agents doing valuable
+
+2318
+01:19:26,600 --> 01:19:31,120
+things or because it's so operationally
+
+2319
+01:19:28,920 --> 01:19:32,720
+intensive for now cuz it's early on that
+
+2320
+01:19:31,120 --> 01:19:34,120
+you guys have just a built up muscle of
+
+2321
+01:19:32,720 --> 01:19:35,520
+doing it and that's what allows you guys
+
+2322
+01:19:34,120 --> 01:19:37,160
+to do it so effectively.
+
+2323
+01:19:35,520 --> 01:19:40,640
+>> I think it's probably a bit of both. I
+
+2324
+01:19:37,160 --> 01:19:41,920
+think that there are a lot of products
+
+2325
+01:19:40,640 --> 01:19:45,000
+that
+
+2326
+01:19:41,920 --> 01:19:47,120
+probably as models have improved find
+
+2327
+01:19:45,000 --> 01:19:48,800
+themselves in a position of being more
+
+2328
+01:19:47,120 --> 01:19:51,160
+similar to
+
+2329
+01:19:48,800 --> 01:19:53,880
+what you could just buy tokens and
+
+2330
+01:19:51,160 --> 01:19:55,520
+create and then also there's just we're
+
+2331
+01:19:53,880 --> 01:19:58,240
+very early here.
+
+2332
+01:19:55,520 --> 01:20:00,680
+If I had to say though I would guess
+
+2333
+01:19:58,240 --> 01:20:03,200
+that the second one is more important
+
+2334
+01:20:00,680 --> 01:20:07,240
+and there will be a lot more of this the
+
+2335
+01:20:03,200 --> 01:20:10,040
+same way someone doesn't care how many
+
+2336
+01:20:07,240 --> 01:20:12,840
+hours I work as long as I produce you
+
+2337
+01:20:10,040 --> 01:20:14,840
+know new products that are good.
+
+2338
+01:20:12,840 --> 01:20:17,160
+And I think that that will become true
+
+2339
+01:20:14,840 --> 01:20:20,160
+of agents as well. There will be a mix
+
+2340
+01:20:17,160 --> 01:20:22,080
+of building agents in house on platforms
+
+2341
+01:20:20,160 --> 01:20:23,360
+like LangGraph and then there will be
+
+2342
+01:20:22,080 --> 01:20:25,040
+also
+
+2343
+01:20:23,360 --> 01:20:27,480
+you know buying
+
+2344
+01:20:25,040 --> 01:20:28,920
+products like Sierra to build agents on.
+
+2345
+01:20:27,480 --> 01:20:31,680
+>> Maybe switching to the last topic which
+
+2346
+01:20:28,920 --> 01:20:33,440
+is just the type of people that thrive
+
+2347
+01:20:31,680 --> 01:20:35,120
+at Sierra. I think you guys are also
+
+2348
+01:20:33,440 --> 01:20:36,880
+pretty famously known for your forward
+
+2349
+01:20:35,120 --> 01:20:38,040
+deployed engineering or agent builder
+
+2350
+01:20:36,880 --> 01:20:40,600
+approach. Could you talk a little bit
+
+2351
+01:20:38,040 --> 01:20:42,640
+about that both in terms of what those
+
+2352
+01:20:40,600 --> 01:20:44,080
+people do as well as the right persona
+
+2353
+01:20:42,640 --> 01:20:46,000
+to grow into that role?
+
+2354
+01:20:44,080 --> 01:20:48,800
+>> I joined Sierra about 2 and 1/2 years
+
+2355
+01:20:46,000 --> 01:20:51,120
+ago and it was my first B2B job ever.
+
+2356
+01:20:48,800 --> 01:20:52,680
+I'd only worked in consumer products and
+
+2357
+01:20:51,120 --> 01:20:54,480
+I love building consumer products. I
+
+2358
+01:20:52,680 --> 01:20:56,080
+love being like, oh, I could imagine,
+
+2359
+01:20:54,480 --> 01:20:58,760
+you know, my friends using this or my
+
+2360
+01:20:56,080 --> 01:21:00,720
+parents using this, but I'd never really
+
+2361
+01:20:58,760 --> 01:21:02,800
+loved growth
+
+2362
+01:21:00,720 --> 01:21:06,160
+uh and the idea of figuring out how to
+
+2363
+01:21:02,800 --> 01:21:08,360
+drive a couple percentage points of
+
+2364
+01:21:06,160 --> 01:21:10,400
+attention or a couple percentage points
+
+2365
+01:21:08,360 --> 01:21:12,960
+of usage. And what I learned when I
+
+2366
+01:21:10,400 --> 01:21:14,120
+joined Sierra is I love enterprise
+
+2367
+01:21:12,960 --> 01:21:15,221
+sales.
+
+2368
+01:21:14,120 --> 01:21:16,000
+Uh
+
+2369
+01:21:15,221 --> 01:21:17,440
+>> [laughter]
+
+2370
+01:21:16,000 --> 01:21:20,760
+>> I got a tattoo.
+
+2371
+01:21:17,440 --> 01:21:23,240
+Um so, basically, the the process of
+
+2372
+01:21:20,760 --> 01:21:25,920
+caring about each customer individually,
+
+2373
+01:21:23,240 --> 01:21:27,960
+saying one customer is upset, I'm going
+
+2374
+01:21:25,920 --> 01:21:30,360
+to call them right now and find out why
+
+2375
+01:21:27,960 --> 01:21:33,200
+and see how I can help. Just felt very
+
+2376
+01:21:30,360 --> 01:21:36,240
+empowering as a builder in a way where
+
+2377
+01:21:33,200 --> 01:21:38,120
+building for a billion users on Google
+
+2378
+01:21:36,240 --> 01:21:40,000
+Search, for example, you know, it was
+
+2379
+01:21:38,120 --> 01:21:41,920
+exciting in other ways, but it didn't
+
+2380
+01:21:40,000 --> 01:21:44,000
+feel like you could listen to each user
+
+2381
+01:21:41,920 --> 01:21:45,920
+and help them. And in many cases, we
+
+2382
+01:21:44,000 --> 01:21:47,040
+have customers of Sierra that have, you
+
+2383
+01:21:45,920 --> 01:21:49,440
+know, gotten promoted in their
+
+2384
+01:21:47,040 --> 01:21:51,160
+organizations. They're building careers
+
+2385
+01:21:49,440 --> 01:21:54,040
+because of the agents that they built on
+
+2386
+01:21:51,160 --> 01:21:56,080
+Sierra and so it's just feels very deep
+
+2387
+01:21:54,040 --> 01:21:57,680
+in terms of those relationships.
+
+2388
+01:21:56,080 --> 01:21:59,600
+What I love as well though is that the
+
+2389
+01:21:57,680 --> 01:22:01,840
+end user of a Sierra agent is still a
+
+2390
+01:21:59,600 --> 01:22:04,120
+consumer in the vast majority of cases.
+
+2391
+01:22:01,840 --> 01:22:07,240
+And I think it's pretty rare to have a
+
+2392
+01:22:04,120 --> 01:22:09,360
+product that needs to be consumer grade
+
+2393
+01:22:07,240 --> 01:22:11,480
+where the product that you're building,
+
+2394
+01:22:09,360 --> 01:22:13,200
+it's a it's a platform, but then the end
+
+2395
+01:22:11,480 --> 01:22:14,400
+user is really a consumer and you have
+
+2396
+01:22:13,200 --> 01:22:16,720
+to have them in your mind the whole
+
+2397
+01:22:14,400 --> 01:22:19,240
+time, but where you have kind of the
+
+2398
+01:22:16,720 --> 01:22:21,400
+enterprise sales process of building
+
+2399
+01:22:19,240 --> 01:22:23,960
+trust, of solving problems, of
+
+2400
+01:22:21,400 --> 01:22:25,880
+discovering value, and then delivering
+
+2401
+01:22:23,960 --> 01:22:27,760
+that value for people.
+
+2402
+01:22:25,880 --> 01:22:30,040
+Um and so, I think the people that
+
+2403
+01:22:27,760 --> 01:22:32,120
+really appreciate those two things, the
+
+2404
+01:22:30,040 --> 01:22:33,680
+customer obsession and the
+
+2405
+01:22:32,120 --> 01:22:35,360
+craftsmanship,
+
+2406
+01:22:33,680 --> 01:22:37,680
+uh, do very well.
+
+2407
+01:22:35,360 --> 01:22:40,120
+I think we've also discovered just with
+
+2408
+01:22:37,680 --> 01:22:41,480
+the rise of coding agents, certain
+
+2409
+01:22:40,120 --> 01:22:45,080
+things are more important than they used
+
+2410
+01:22:41,480 --> 01:22:46,960
+to be. Deep customer intuition, GPT-5.5
+
+2411
+01:22:45,080 --> 01:22:49,520
+doesn't really have that.
+
+2412
+01:22:46,960 --> 01:22:52,080
+Um, agency, the ability to say, "Why
+
+2413
+01:22:49,520 --> 01:22:54,120
+can't I do this?" Um, one of our uh,
+
+2414
+01:22:52,080 --> 01:22:56,000
+engineers that has really high degree of
+
+2415
+01:22:54,120 --> 01:22:57,760
+agency, her status message is just like,
+
+2416
+01:22:56,000 --> 01:23:00,600
+"Why not today?"
+
+2417
+01:22:57,760 --> 01:23:02,600
+Um, and so, yeah, having that mindset, I
+
+2418
+01:23:00,600 --> 01:23:03,880
+think is really important. And then the
+
+2419
+01:23:02,600 --> 01:23:06,680
+other thing just as someone with a
+
+2420
+01:23:03,880 --> 01:23:07,680
+product background is I think we kind of
+
+2421
+01:23:06,680 --> 01:23:10,040
+have
+
+2422
+01:23:07,680 --> 01:23:12,280
+a faster car than you need more pit
+
+2423
+01:23:10,040 --> 01:23:14,200
+stops, kind of thing. So, like a a
+
+2424
+01:23:12,280 --> 01:23:17,600
+Formula 1 car needs to get its tires
+
+2425
+01:23:14,200 --> 01:23:19,640
+changed more often than my Hyundai Kona.
+
+2426
+01:23:17,600 --> 01:23:21,040
+Uh, and the reason for that is, you
+
+2427
+01:23:19,640 --> 01:23:23,280
+know, it's driving faster, it's burning
+
+2428
+01:23:21,040 --> 01:23:25,360
+more rubber, uh, etc. And I think we
+
+2429
+01:23:23,280 --> 01:23:27,880
+have a similar thing building products
+
+2430
+01:23:25,360 --> 01:23:30,240
+as well now where coding agents have
+
+2431
+01:23:27,880 --> 01:23:32,640
+allowed us to write code a lot faster
+
+2432
+01:23:30,240 --> 01:23:34,520
+and even to review it faster now. But
+
+2433
+01:23:32,640 --> 01:23:36,560
+certain things like product judgment and
+
+2434
+01:23:34,520 --> 01:23:38,640
+customer intuition are therefore
+
+2435
+01:23:36,560 --> 01:23:41,120
+actually needed more often, not less
+
+2436
+01:23:38,640 --> 01:23:44,040
+often. And so, uh, people that can bring
+
+2437
+01:23:41,120 --> 01:23:47,520
+that to the table themselves are in this
+
+2438
+01:23:44,040 --> 01:23:49,320
+amazing loop of moving fast, but people
+
+2439
+01:23:47,520 --> 01:23:51,480
+where it's one person's job to bring
+
+2440
+01:23:49,320 --> 01:23:53,240
+that and another person's job to do
+
+2441
+01:23:51,480 --> 01:23:55,240
+engineering, they need even tighter
+
+2442
+01:23:53,240 --> 01:23:56,600
+collaboration and, you know, more daily
+
+2443
+01:23:55,240 --> 01:23:57,560
+stand-ups and that kind of thing to be
+
+2444
+01:23:56,600 --> 01:23:59,320
+successful.
+
+2445
+01:23:57,560 --> 01:24:00,960
+>> I really like that car analogy. I hadn't
+
+2446
+01:23:59,320 --> 01:24:02,760
+heard that before and totally resonates
+
+2447
+01:24:00,960 --> 01:24:04,600
+with what what what I'm seeing where
+
+2448
+01:24:02,760 --> 01:24:06,320
+product is becoming the bottleneck
+
+2449
+01:24:04,600 --> 01:24:07,720
+because it's so easy to code and you can
+
+2450
+01:24:06,320 --> 01:24:10,320
+make so much of things, but that doesn't
+
+2451
+01:24:07,720 --> 01:24:12,520
+mean you should. Who ends up fitting
+
+2452
+01:24:10,320 --> 01:24:13,920
+this agent builder profile the best? Is
+
+2453
+01:24:12,520 --> 01:24:16,040
+this product people then? Is this
+
+2454
+01:24:13,920 --> 01:24:17,760
+engineers with good product intuition?
+
+2455
+01:24:16,040 --> 01:24:19,840
+Like what does it look like practically?
+
+2456
+01:24:17,760 --> 01:24:22,080
+We're still figuring it out.
+
+2457
+01:24:19,840 --> 01:24:24,280
+>> I will say that people that have done
+
+2458
+01:24:22,080 --> 01:24:26,360
+both roles are often successful in the
+
+2459
+01:24:24,280 --> 01:24:28,520
+company. Our head of engineering, Arya,
+
+2460
+01:24:26,360 --> 01:24:29,840
+has been a product manager in the past.
+
+2461
+01:24:28,520 --> 01:24:32,400
+We have a number of engineers that have
+
+2462
+01:24:29,840 --> 01:24:34,800
+been product managers. I think those
+
+2463
+01:24:32,400 --> 01:24:36,760
+skills, knowing how to talk to
+
+2464
+01:24:34,800 --> 01:24:38,440
+customers, not just like what to say
+
+2465
+01:24:36,760 --> 01:24:40,240
+when you're in front of a customer, but
+
+2466
+01:24:38,440 --> 01:24:42,480
+how to find your way into the right
+
+2467
+01:24:40,240 --> 01:24:44,080
+conversations, having a high degree of
+
+2468
+01:24:42,480 --> 01:24:46,640
+agency, being really strong with
+
+2469
+01:24:44,080 --> 01:24:48,120
+communication, so that you're getting,
+
+2470
+01:24:46,640 --> 01:24:50,360
+you know, product isn't the bottleneck
+
+2471
+01:24:48,120 --> 01:24:51,520
+anymore. Uh those are really important
+
+2472
+01:24:50,360 --> 01:24:53,400
+skills.
+
+2473
+01:24:51,520 --> 01:24:56,120
+I still think kind of knowing the right
+
+2474
+01:24:53,400 --> 01:24:57,840
+questions to ask and the right things to
+
+2475
+01:24:56,120 --> 01:24:59,160
+tell coding agents is really important.
+
+2476
+01:24:57,840 --> 01:25:01,560
+So, the systems thinking and the
+
+2477
+01:24:59,160 --> 01:25:03,200
+architecture design are really
+
+2478
+01:25:01,560 --> 01:25:05,640
+important. And so, if you
+
+2479
+01:25:03,200 --> 01:25:07,800
+have not been an engineer before, uh it
+
+2480
+01:25:05,640 --> 01:25:10,240
+can be difficult. And so, I I think that
+
+2481
+01:25:07,800 --> 01:25:12,920
+the multi-disciplinary approach is more
+
+2482
+01:25:10,240 --> 01:25:15,720
+important than ever. My own personal
+
+2483
+01:25:12,920 --> 01:25:18,760
+rubric, which is like very much in beta,
+
+2484
+01:25:15,720 --> 01:25:21,720
+is kind of this customer intuition,
+
+2485
+01:25:18,760 --> 01:25:23,400
+agency, product judgment,
+
+2486
+01:25:21,720 --> 01:25:26,720
+technical depth,
+
+2487
+01:25:23,400 --> 01:25:28,720
+communication, intensity. Because when
+
+2488
+01:25:26,720 --> 01:25:30,520
+the car, you know, you need to be really
+
+2489
+01:25:28,720 --> 01:25:33,160
+locked in when you're driving a Formula
+
+2490
+01:25:30,520 --> 01:25:34,520
+1 car. Um and then one which is a little
+
+2491
+01:25:33,160 --> 01:25:36,320
+harder to pin down, but it's just kind
+
+2492
+01:25:34,520 --> 01:25:39,040
+of leadership, where when there's more
+
+2493
+01:25:36,320 --> 01:25:41,560
+activity going on, the ability to to
+
+2494
+01:25:39,040 --> 01:25:43,160
+draw it into the correct direction is
+
+2495
+01:25:41,560 --> 01:25:45,200
+really important as well. So, this is
+
+2496
+01:25:43,160 --> 01:25:47,080
+kind of the working framework in my
+
+2497
+01:25:45,200 --> 01:25:48,120
+head, um but I'm sure there are lots of
+
+2498
+01:25:47,080 --> 01:25:50,920
+other things, too.
+
+2499
+01:25:48,120 --> 01:25:52,720
+>> How do you interview for agency? And I
+
+2500
+01:25:50,920 --> 01:25:54,880
+asked this because I think the the guest
+
+2501
+01:25:52,720 --> 01:25:56,960
+we had on in the previous episode said
+
+2502
+01:25:54,880 --> 01:25:58,040
+the exact same word agency for one of
+
+2503
+01:25:56,960 --> 01:25:59,320
+the traits that they look at. And I
+
+2504
+01:25:58,040 --> 01:26:00,360
+asked him the same question. So, now I'm
+
+2505
+01:25:59,320 --> 01:26:02,280
+going to ask you the same question. How
+
+2506
+01:26:00,360 --> 01:26:04,960
+do you How do you interview for agency?
+
+2507
+01:26:02,280 --> 01:26:06,640
+>> So, the most concrete way that we've
+
+2508
+01:26:04,960 --> 01:26:08,320
+changed our interviewing process is we
+
+2509
+01:26:06,640 --> 01:26:10,000
+have this AI native interview.
+
+2510
+01:26:08,320 --> 01:26:10,600
+>> And you wrote a great blog on it the
+
+2511
+01:26:10,000 --> 01:26:11,840
+other week.
+
+2512
+01:26:10,600 --> 01:26:13,920
+>> Yes. And so,
+
+2513
+01:26:11,840 --> 01:26:16,800
+you, by the way, is Vijay and Arya and
+
+2514
+01:26:13,920 --> 01:26:18,880
+our uh engineering leaders. But I've
+
+2515
+01:26:16,800 --> 01:26:21,120
+seen it done and participated in the
+
+2516
+01:26:18,880 --> 01:26:24,240
+interview panels. And basically it
+
+2517
+01:26:21,120 --> 01:26:26,360
+involves building a product end-to-end
+
+2518
+01:26:24,240 --> 01:26:28,280
+over the course of a few hours and then
+
+2519
+01:26:26,360 --> 01:26:31,200
+reviewing it with the team.
+
+2520
+01:26:28,280 --> 01:26:33,440
+I think in that environment you can see
+
+2521
+01:26:31,200 --> 01:26:34,840
+what people think is off-limits or
+
+2522
+01:26:33,440 --> 01:26:37,320
+what's their job and what's not their
+
+2523
+01:26:34,840 --> 01:26:38,920
+job and how far they extend sort of what
+
+2524
+01:26:37,320 --> 01:26:41,160
+they're allowed to do.
+
+2525
+01:26:38,920 --> 01:26:43,360
+And if they're able to
+
+2526
+01:26:41,160 --> 01:26:44,720
+find opportunities that you would have
+
+2527
+01:26:43,360 --> 01:26:46,240
+thought, oh, maybe that they would think
+
+2528
+01:26:44,720 --> 01:26:47,880
+that's out of scope, bring them into
+
+2529
+01:26:46,240 --> 01:26:50,440
+scope and build build great products on
+
+2530
+01:26:47,880 --> 01:26:52,560
+top of it. You kind of see agency. You
+
+2531
+01:26:50,440 --> 01:26:54,520
+see that they have a sense that a lot is
+
+2532
+01:26:52,560 --> 01:26:56,920
+in their control instead of feeling like
+
+2533
+01:26:54,520 --> 01:26:58,680
+certain things are not in their control.
+
+2534
+01:26:56,920 --> 01:27:02,080
+And if you think about coding agents,
+
+2535
+01:26:58,680 --> 01:27:05,160
+they bring so much more into I think the
+
+2536
+01:27:02,080 --> 01:27:06,960
+like the locus of control, right? And so
+
+2537
+01:27:05,160 --> 01:27:09,200
+you can do more things and if you
+
+2538
+01:27:06,960 --> 01:27:11,400
+appreciate that, I think it comes
+
+2539
+01:27:09,200 --> 01:27:13,560
+through in that AI-native interview.
+
+2540
+01:27:11,400 --> 01:27:15,400
+>> Thanks for listening to Max Agency.
+
+2541
+01:27:13,560 --> 01:27:17,960
+If you liked this episode, leave a
+
+2542
+01:27:15,400 --> 01:27:18,750
+review and subscribe. Send feedback or
+
+2543
+01:27:17,960 --> 01:27:20,770
+questions to maxagency@langchain.dev.
+
+2544
+01:27:18,750 --> 01:27:20,770
+[music]
+
+2545
+01:27:21,600 --> 01:27:24,880
+We want to hear from you.

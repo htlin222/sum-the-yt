@@ -1,0 +1,1879 @@
+1
+00:00:00,000 --> 00:00:04,560
+2026 is shaping up to be quite an
+
+2
+00:00:02,520 --> 00:00:07,120
+interesting year, especially when it
+
+3
+00:00:04,560 --> 00:00:08,920
+comes to security, or more accurately,
+
+4
+00:00:07,120 --> 00:00:10,760
+when it comes to vulnerabilities. Not
+
+5
+00:00:08,920 --> 00:00:12,640
+only have we seen a constant wave of
+
+6
+00:00:10,760 --> 00:00:14,240
+supply chain attacks, but we're also
+
+7
+00:00:12,640 --> 00:00:17,160
+seeing many cloud providers, such as
+
+8
+00:00:14,240 --> 00:00:18,920
+GitHub and Vercel, get breached as well.
+
+9
+00:00:17,160 --> 00:00:20,360
+Because of this, it means that now is
+
+10
+00:00:18,920 --> 00:00:22,280
+the perfect time to start taking
+
+11
+00:00:20,360 --> 00:00:24,480
+proactive steps in improving one's
+
+12
+00:00:22,280 --> 00:00:26,360
+security posture, especially if, like
+
+13
+00:00:24,480 --> 00:00:28,200
+me, you happen to use a VPS when it
+
+14
+00:00:26,360 --> 00:00:30,040
+comes to deploying your applications.
+
+15
+00:00:28,200 --> 00:00:32,480
+For myself, that means applying a method
+
+16
+00:00:30,040 --> 00:00:34,320
+that I like to refer to as the scorched
+
+17
+00:00:32,480 --> 00:00:36,160
+earth approach, which is where I
+
+18
+00:00:34,320 --> 00:00:38,880
+effectively turn off all ingress to the
+
+19
+00:00:36,160 --> 00:00:40,600
+VPS from the public internet, but in a
+
+20
+00:00:38,880 --> 00:00:43,000
+way that still allows me to access any
+
+21
+00:00:40,600 --> 00:00:45,680
+private services and still serves web
+
+22
+00:00:43,000 --> 00:00:47,640
+traffic to my users. Therefore, in order
+
+23
+00:00:45,680 --> 00:00:49,760
+to show how to set this up, I'm going to
+
+24
+00:00:47,640 --> 00:00:51,240
+need a VPS instance to demonstrate it
+
+25
+00:00:49,760 --> 00:00:53,400
+on. Fortunately, that's where the
+
+26
+00:00:51,240 --> 00:00:55,640
+sponsor of today's video comes in,
+
+27
+00:00:53,400 --> 00:00:57,880
+Hostinger, who provide long-term VPS
+
+28
+00:00:55,640 --> 00:01:00,000
+instances at an incredibly affordable
+
+29
+00:00:57,880 --> 00:01:02,240
+price. The VPS instance that I'm going
+
+30
+00:01:00,000 --> 00:01:04,120
+to be using in this video is the KVM2,
+
+31
+00:01:02,240 --> 00:01:07,320
+which comes with two vCPUs, 8 gigs of
+
+32
+00:01:04,120 --> 00:01:09,080
+RAM, and a cool 100 GB of SSD storage.
+
+33
+00:01:07,320 --> 00:01:11,080
+Not only is this a decent size for
+
+34
+00:01:09,080 --> 00:01:13,000
+hosting multiple applications, but it's
+
+35
+00:01:11,080 --> 00:01:15,520
+also incredibly affordable, especially
+
+36
+00:01:13,000 --> 00:01:17,520
+in today's economy, as the KVM2 comes in
+
+37
+00:01:15,520 --> 00:01:20,280
+at only $8.99 a month when you purchase
+
+38
+00:01:17,520 --> 00:01:22,280
+a 24-month term. This also has the added
+
+39
+00:01:20,280 --> 00:01:24,560
+benefit of protecting you against future
+
+40
+00:01:22,280 --> 00:01:26,440
+price increases during that period,
+
+41
+00:01:24,560 --> 00:01:28,240
+which, let's be honest, are obviously
+
+42
+00:01:26,440 --> 00:01:30,200
+going to keep rising, thanks again to
+
+43
+00:01:28,240 --> 00:01:32,000
+the gift that keeps on giving. If that
+
+44
+00:01:30,200 --> 00:01:34,000
+price wasn't good enough, however, then
+
+45
+00:01:32,000 --> 00:01:35,600
+don't worry, as by using my coupon code
+
+46
+00:01:34,000 --> 00:01:38,000
+"dreamsofcode" when you check out,
+
+47
+00:01:35,600 --> 00:01:39,720
+you'll save an additional 10% off,
+
+48
+00:01:38,000 --> 00:01:41,560
+making it an even more affordable
+
+49
+00:01:39,720 --> 00:01:43,760
+option. So, if you want to bag yourself
+
+50
+00:01:41,560 --> 00:01:45,720
+a rather decent VPS instance and not
+
+51
+00:01:43,760 --> 00:01:47,960
+worry about compute inflation over the
+
+52
+00:01:45,720 --> 00:01:48,760
+next couple of years, then you can do so
+
+53
+00:01:47,960 --> 00:01:50,880
+by heading on over to
+
+54
+00:01:48,760 --> 00:01:52,400
+hostinger.com/dreamsofcode,
+
+55
+00:01:50,880 --> 00:01:54,320
+and make sure to use my coupon code
+
+56
+00:01:52,400 --> 00:01:56,640
+"dreamsofcode" when checking out to save
+
+57
+00:01:54,320 --> 00:01:58,800
+an additional 10% off. A big thank you
+
+58
+00:01:56,640 --> 00:02:01,200
+to Hostinger for sponsoring this video.
+
+59
+00:01:58,800 --> 00:02:02,400
+Okay, with my VPS in hand, I've already
+
+60
+00:02:01,200 --> 00:02:04,000
+gone ahead and set this up like I
+
+61
+00:02:02,400 --> 00:02:06,240
+normally would. Doing things like
+
+62
+00:02:04,000 --> 00:02:08,679
+installing the latest Ubuntu LTS,
+
+63
+00:02:06,240 --> 00:02:11,520
+setting up a non-root user, adding in my
+
+64
+00:02:08,679 --> 00:02:13,360
+SSH public keys, and hardening the SSH
+
+65
+00:02:11,520 --> 00:02:15,240
+server. If you're interested in what
+
+66
+00:02:13,360 --> 00:02:16,920
+those steps actually are, I've done a
+
+67
+00:02:15,240 --> 00:02:19,040
+dedicated video that goes into each of
+
+68
+00:02:16,920 --> 00:02:20,480
+these in more detail, of which you can
+
+69
+00:02:19,040 --> 00:02:22,760
+find linked in the description down
+
+70
+00:02:20,480 --> 00:02:24,320
+below. One thing I haven't configured,
+
+71
+00:02:22,760 --> 00:02:26,360
+however, which a lot of people like to
+
+72
+00:02:24,320 --> 00:02:28,480
+do on their VPS instances, is changing
+
+73
+00:02:26,360 --> 00:02:31,520
+the port in which the SSH server is
+
+74
+00:02:28,480 --> 00:02:33,920
+bound to, from the standard of 22 to
+
+75
+00:02:31,520 --> 00:02:35,600
+something else, such as quad two. Now,
+
+76
+00:02:33,920 --> 00:02:37,400
+whilst there's some debate about the
+
+77
+00:02:35,600 --> 00:02:39,840
+merits of doing this, when it comes to
+
+78
+00:02:37,400 --> 00:02:41,440
+my own VPS setup in 2026, it doesn't
+
+79
+00:02:39,840 --> 00:02:43,120
+actually make a difference, because
+
+80
+00:02:41,440 --> 00:02:45,959
+we're effectively going to be disabling
+
+81
+00:02:43,120 --> 00:02:48,160
+all inbound connections to every port.
+
+82
+00:02:45,959 --> 00:02:49,840
+Yes, you heard me correctly. The main
+
+83
+00:02:48,160 --> 00:02:53,160
+security measure that I like to take in
+
+84
+00:02:49,840 --> 00:02:55,280
+2026 is to disable all inbound access to
+
+85
+00:02:53,160 --> 00:02:57,680
+the VPS instance on its public IP
+
+86
+00:02:55,280 --> 00:02:59,440
+address. This is, honestly, one of the
+
+87
+00:02:57,680 --> 00:03:01,360
+best approaches to VPS security that
+
+88
+00:02:59,440 --> 00:03:02,600
+I've been applying recently, as it not
+
+89
+00:03:01,360 --> 00:03:04,560
+only protects against a number of
+
+90
+00:03:02,600 --> 00:03:06,120
+possible attack vectors, but it also
+
+91
+00:03:04,560 --> 00:03:07,959
+protects you against yourself. For
+
+92
+00:03:06,120 --> 00:03:09,920
+example, if you accidentally bind a
+
+93
+00:03:07,959 --> 00:03:12,320
+private service, such as a database,
+
+94
+00:03:09,920 --> 00:03:14,040
+onto a public port. The most simplest
+
+95
+00:03:12,320 --> 00:03:15,920
+way to do this is to use the following
+
+96
+00:03:14,040 --> 00:03:18,000
+command, which will enable the firewall
+
+97
+00:03:15,920 --> 00:03:19,720
+on Ubuntu with the default rules, which
+
+98
+00:03:18,000 --> 00:03:21,640
+by default disables all inbound
+
+99
+00:03:19,720 --> 00:03:23,239
+connections. Well, before we go ahead
+
+100
+00:03:21,640 --> 00:03:25,560
+and do this, there's a few things we
+
+101
+00:03:23,239 --> 00:03:28,080
+need to consider. The first of which is
+
+102
+00:03:25,560 --> 00:03:29,680
+how we ourselves can still access any of
+
+103
+00:03:28,080 --> 00:03:32,640
+the private services running on this
+
+104
+00:03:29,680 --> 00:03:34,760
+VPS, such as SSH. The second thing to
+
+105
+00:03:32,640 --> 00:03:36,360
+consider is how our users, if we happen
+
+106
+00:03:34,760 --> 00:03:38,480
+to have any, will be still able to
+
+107
+00:03:36,360 --> 00:03:40,160
+access any running web applications.
+
+108
+00:03:38,480 --> 00:03:42,040
+Fortunately, there are ways to solve
+
+109
+00:03:40,160 --> 00:03:44,120
+both of these problems. Let's begin with
+
+110
+00:03:42,040 --> 00:03:46,080
+the first, which is to allow ourselves
+
+111
+00:03:44,120 --> 00:03:48,640
+to still have access to any private
+
+112
+00:03:46,080 --> 00:03:51,080
+services running on our VPS instance. A
+
+113
+00:03:48,640 --> 00:03:53,280
+private service is one that's only you
+
+114
+00:03:51,080 --> 00:03:55,600
+or any trusted individuals should be
+
+115
+00:03:53,280 --> 00:03:58,440
+able to have access to. These include
+
+116
+00:03:55,600 --> 00:04:00,160
+services such as an SSH server, an admin
+
+117
+00:03:58,440 --> 00:04:02,000
+dashboard, or even the front end of a
+
+118
+00:04:00,160 --> 00:04:04,040
+self-hosted platform such as those
+
+119
+00:04:02,000 --> 00:04:05,960
+provided by Qualify or Dock Ploy.
+
+120
+00:04:04,040 --> 00:04:08,240
+Basically, anything that's meant for you
+
+121
+00:04:05,960 --> 00:04:10,400
+and you alone, and therefore should not
+
+122
+00:04:08,240 --> 00:04:11,800
+be accessible over the public internet.
+
+123
+00:04:10,400 --> 00:04:13,720
+As I mentioned, the easiest way to
+
+124
+00:04:11,800 --> 00:04:15,959
+enforce this is to effectively deny all
+
+125
+00:04:13,720 --> 00:04:18,040
+traffic on our firewall from the public
+
+126
+00:04:15,959 --> 00:04:19,480
+internet. However, in order to do that,
+
+127
+00:04:18,040 --> 00:04:21,959
+we need to make sure that we ourselves
+
+128
+00:04:19,480 --> 00:04:23,520
+can access these services. Now, there's
+
+129
+00:04:21,959 --> 00:04:25,080
+a few different ways to achieve this,
+
+130
+00:04:23,520 --> 00:04:26,919
+but the approach that I personally like
+
+131
+00:04:25,080 --> 00:04:28,480
+to take is to make use of Tailscale,
+
+132
+00:04:26,919 --> 00:04:30,320
+which allows you to create a private
+
+133
+00:04:28,480 --> 00:04:31,760
+mesh network called a Tailnet,
+
+134
+00:04:30,320 --> 00:04:34,080
+consisting of all of your devices that
+
+135
+00:04:31,760 --> 00:04:35,960
+have Tailscale installed. By doing so,
+
+136
+00:04:34,080 --> 00:04:38,480
+you can securely access this machine
+
+137
+00:04:35,960 --> 00:04:40,280
+over an encrypted WireGuard tunnel using
+
+138
+00:04:38,480 --> 00:04:42,360
+an IP address that's only reachable from
+
+139
+00:04:40,280 --> 00:04:43,800
+within your Tailnet. By the way, full
+
+140
+00:04:42,360 --> 00:04:45,800
+disclosure, whilst this video isn't
+
+141
+00:04:43,800 --> 00:04:47,680
+sponsored by Tailscale, they do sponsor
+
+142
+00:04:45,800 --> 00:04:49,840
+other videos on my channel, so there is
+
+143
+00:04:47,680 --> 00:04:51,440
+some bias from myself. Despite that,
+
+144
+00:04:49,840 --> 00:04:53,280
+however, it's still a product I would
+
+145
+00:04:51,440 --> 00:04:54,720
+thoroughly recommend and one that I use
+
+146
+00:04:53,280 --> 00:04:56,360
+every day, especially when it comes to
+
+147
+00:04:54,720 --> 00:04:57,680
+my infrastructure. In order to show how
+
+148
+00:04:56,360 --> 00:05:00,120
+to use Tailscale, let's go ahead and
+
+149
+00:04:57,680 --> 00:05:02,000
+install it on my VPS instance. To do so,
+
+150
+00:05:00,120 --> 00:05:03,680
+you'll first need a Tailscale account,
+
+151
+00:05:02,000 --> 00:05:05,320
+which is free forever on the personal
+
+152
+00:05:03,680 --> 00:05:06,400
+plan. Additionally, you'll also want to
+
+153
+00:05:05,320 --> 00:05:07,800
+make sure that you have Tailscale
+
+154
+00:05:06,400 --> 00:05:09,840
+installed on your personal devices
+
+155
+00:05:07,800 --> 00:05:11,760
+already, such as your main workstation.
+
+156
+00:05:09,840 --> 00:05:13,640
+Then, in order to add your VPS instance
+
+157
+00:05:11,760 --> 00:05:15,360
+to your Tailnet account, you can head on
+
+158
+00:05:13,640 --> 00:05:17,680
+over to the admin console and click the
+
+159
+00:05:15,360 --> 00:05:19,840
+following button, selecting install on a
+
+160
+00:05:17,680 --> 00:05:21,680
+Linux server. This will take you to
+
+161
+00:05:19,840 --> 00:05:23,440
+another page where at the bottom you can
+
+162
+00:05:21,680 --> 00:05:25,480
+generate a script that will install and
+
+163
+00:05:23,440 --> 00:05:27,360
+authenticate Tailscale automatically.
+
+164
+00:05:25,480 --> 00:05:28,760
+All you have to do is copy this script
+
+165
+00:05:27,360 --> 00:05:30,680
+and paste it into the console of your
+
+166
+00:05:28,760 --> 00:05:31,960
+VPS instance. Once this completes,
+
+167
+00:05:30,680 --> 00:05:33,760
+Tailscale should then be installed on
+
+168
+00:05:31,960 --> 00:05:35,600
+the machine, which you can confirm by
+
+169
+00:05:33,760 --> 00:05:37,480
+checking the admin console. Here, you
+
+170
+00:05:35,600 --> 00:05:39,520
+can see the Tailscale DNS name for the
+
+171
+00:05:37,480 --> 00:05:41,080
+instance, which by default is set to the
+
+172
+00:05:39,520 --> 00:05:42,880
+machine's host name, as well as its
+
+173
+00:05:41,080 --> 00:05:44,400
+Tailscale IP address. You can either
+
+174
+00:05:42,880 --> 00:05:45,600
+leave these as is, which I recommend
+
+175
+00:05:44,400 --> 00:05:47,480
+doing for the IP IP
+
+176
+00:05:45,600 --> 00:05:48,640
+or configure them if you want to. In my
+
+177
+00:05:47,480 --> 00:05:50,440
+case, I'm going to go ahead and change
+
+178
+00:05:48,640 --> 00:05:52,840
+the magic DNS record to be something a
+
+179
+00:05:50,440 --> 00:05:54,280
+little bit more recognizable. Now, if I
+
+180
+00:05:52,840 --> 00:05:56,200
+go ahead and enable Tailscale on my
+
+181
+00:05:54,280 --> 00:05:58,720
+personal device, I should then be able
+
+182
+00:05:56,200 --> 00:06:01,040
+to SSH into the VPS using the host name
+
+183
+00:05:58,720 --> 00:06:03,040
+we just configured, which as you can see
+
+184
+00:06:01,040 --> 00:06:05,680
+is the case. Okay, now that I've
+
+185
+00:06:03,040 --> 00:06:07,440
+confirmed I'm able to SSH in, the next
+
+186
+00:06:05,680 --> 00:06:09,880
+thing to do is to configure the firewall
+
+187
+00:06:07,440 --> 00:06:11,880
+to allow connections to all ports from
+
+188
+00:06:09,880 --> 00:06:14,400
+any device on my Tailnet, which is
+
+189
+00:06:11,880 --> 00:06:15,720
+achieved using the following UFW
+
+190
+00:06:14,400 --> 00:06:17,600
+commands.
+
+191
+00:06:15,720 --> 00:06:19,760
+With that rule added, we can then apply
+
+192
+00:06:17,600 --> 00:06:22,760
+it by enabling the firewall using this
+
+193
+00:06:19,760 --> 00:06:25,160
+next command. However, before executing,
+
+194
+00:06:22,760 --> 00:06:27,160
+it's worthwhile mentioning that doing so
+
+195
+00:06:25,160 --> 00:06:30,240
+will cause all inbound connections via
+
+196
+00:06:27,160 --> 00:06:32,320
+the VPS's public IP to be rejected.
+
+197
+00:06:30,240 --> 00:06:34,400
+Therefore, if you have any existing
+
+198
+00:06:32,320 --> 00:06:36,000
+services or web applications already up
+
+199
+00:06:34,400 --> 00:06:38,400
+and running and serving production
+
+200
+00:06:36,000 --> 00:06:39,880
+traffic on your VPS instance, then I
+
+201
+00:06:38,400 --> 00:06:42,120
+would wait until the end of the video
+
+202
+00:06:39,880 --> 00:06:43,280
+before executing this command.
+
+203
+00:06:42,120 --> 00:06:46,000
+Otherwise, you'll run into some
+
+204
+00:06:43,280 --> 00:06:48,160
+downtime. In my case, I don't have any
+
+205
+00:06:46,000 --> 00:06:49,919
+existing services running, so I'm going
+
+206
+00:06:48,160 --> 00:06:51,880
+to go ahead and execute this command to
+
+207
+00:06:49,919 --> 00:06:54,840
+enable the firewall and disable any
+
+208
+00:06:51,880 --> 00:06:56,360
+inbound connections over the public IP.
+
+209
+00:06:54,840 --> 00:06:58,440
+Now, in order to test that it's working,
+
+210
+00:06:56,360 --> 00:07:00,600
+I can first try to scan for port 22 on
+
+211
+00:06:58,440 --> 00:07:02,400
+the VPS instance using its public IP
+
+212
+00:07:00,600 --> 00:07:04,919
+address, which as you can see ends up
+
+213
+00:07:02,400 --> 00:07:07,040
+with a timeout. Now, if I try to SSH in
+
+214
+00:07:04,919 --> 00:07:09,080
+using the public IP, the same thing
+
+215
+00:07:07,040 --> 00:07:11,120
+should happen. However, if I try to SSH
+
+216
+00:07:09,080 --> 00:07:12,960
+in using the Tailscale host name whilst
+
+217
+00:07:11,120 --> 00:07:15,280
+I'm connected to my Tailnet, you can see
+
+218
+00:07:12,960 --> 00:07:16,880
+that I'm able to access it. Lastly, if I
+
+219
+00:07:15,280 --> 00:07:19,600
+go ahead and disconnect my device from
+
+220
+00:07:16,880 --> 00:07:21,040
+my Tailnet and try to SSH in once again,
+
+221
+00:07:19,600 --> 00:07:23,320
+you can see this time it no longer
+
+222
+00:07:21,040 --> 00:07:26,040
+works. Very cool. With that, I've
+
+223
+00:07:23,320 --> 00:07:27,880
+managed to not only lock down SSH, but
+
+224
+00:07:26,040 --> 00:07:29,800
+also any other private services running
+
+225
+00:07:27,880 --> 00:07:31,800
+on this instance. For example, if I go
+
+226
+00:07:29,800 --> 00:07:34,480
+ahead and run a Rust web application on
+
+227
+00:07:31,800 --> 00:07:36,840
+the VPS binding it to quad zero port
+
+228
+00:07:34,480 --> 00:07:39,000
+3000. Now, if I try and access this
+
+229
+00:07:36,840 --> 00:07:41,280
+service using its public IP address,
+
+230
+00:07:39,000 --> 00:07:42,840
+I'll eventually receive a timeout.
+
+231
+00:07:41,280 --> 00:07:45,000
+However, I should still be able to
+
+232
+00:07:42,840 --> 00:07:47,360
+access this service whilst connected to
+
+233
+00:07:45,000 --> 00:07:49,560
+my Tailscale using the VPS's magic DNS
+
+234
+00:07:47,360 --> 00:07:51,880
+hostname, which as you can see works
+
+235
+00:07:49,560 --> 00:07:53,960
+perfectly. Okay, with that I've managed
+
+236
+00:07:51,880 --> 00:07:56,440
+to lock down my VPS instance to any
+
+237
+00:07:53,960 --> 00:07:58,200
+inbound connections over its public IP.
+
+238
+00:07:56,440 --> 00:07:59,920
+However, whilst this works for myself,
+
+239
+00:07:58,200 --> 00:08:01,920
+it does leave my users in a bit of a
+
+240
+00:07:59,920 --> 00:08:03,880
+predicament as they're no longer able to
+
+241
+00:08:01,920 --> 00:08:05,200
+access any running web application.
+
+242
+00:08:03,880 --> 00:08:07,000
+Therefore, let's go ahead and rectify
+
+243
+00:08:05,200 --> 00:08:09,160
+this using a similar approach to what we
+
+244
+00:08:07,000 --> 00:08:11,280
+did with Tailscale by adding in another
+
+245
+00:08:09,160 --> 00:08:12,720
+tunnel onto the machine. This time
+
+246
+00:08:11,280 --> 00:08:14,800
+however, we're going to use a service
+
+247
+00:08:12,720 --> 00:08:16,440
+called Cloudflare Tunnel. The way this
+
+248
+00:08:14,800 --> 00:08:18,280
+service works is that it opens up an
+
+249
+00:08:16,440 --> 00:08:20,480
+outbound connection to Cloudflare rather
+
+250
+00:08:18,280 --> 00:08:22,240
+than accepting an inbound request. This
+
+251
+00:08:20,480 --> 00:08:24,440
+connection is then used to serve traffic
+
+252
+00:08:22,240 --> 00:08:27,040
+to your users with Cloudflare acting
+
+253
+00:08:24,440 --> 00:08:29,120
+basically like a reverse proxy. However,
+
+254
+00:08:27,040 --> 00:08:30,640
+one that comes with a few key benefits.
+
+255
+00:08:29,120 --> 00:08:32,240
+The first of which is that by users
+
+256
+00:08:30,640 --> 00:08:33,919
+hitting Cloudflare instead of your VPS
+
+257
+00:08:32,240 --> 00:08:35,800
+instance, you're effectively hiding the
+
+258
+00:08:33,919 --> 00:08:37,960
+IP address of what your underlying VPS
+
+259
+00:08:35,800 --> 00:08:40,360
+is, which is rather useful when it comes
+
+260
+00:08:37,960 --> 00:08:42,120
+to operational security or OpSec. In
+
+261
+00:08:40,360 --> 00:08:43,719
+addition to operational security,
+
+262
+00:08:42,120 --> 00:08:45,480
+another good reason to use a service
+
+263
+00:08:43,719 --> 00:08:47,560
+like Cloudflare is that it provides a
+
+264
+00:08:45,480 --> 00:08:49,040
+web application firewall. This is
+
+265
+00:08:47,560 --> 00:08:50,880
+basically a service that sits in front
+
+266
+00:08:49,040 --> 00:08:52,560
+of your application and inspects
+
+267
+00:08:50,880 --> 00:08:54,880
+incoming traffic for common attack
+
+268
+00:08:52,560 --> 00:08:57,080
+vectors such as SQL injection, DDoS
+
+269
+00:08:54,880 --> 00:08:59,040
+attempts, automated bots, and even
+
+270
+00:08:57,080 --> 00:09:01,520
+zero-day vulnerabilities such as the
+
+271
+00:08:59,040 --> 00:09:04,040
+React server component RCEs we saw
+
+272
+00:09:01,520 --> 00:09:05,920
+appear at the end of 2025. In addition
+
+273
+00:09:04,040 --> 00:09:08,240
+to this, it also provides other sensible
+
+274
+00:09:05,920 --> 00:09:11,240
+security defaults such as automatic
+
+275
+00:09:08,240 --> 00:09:13,320
+certificate provisioning for HTTPS and
+
+276
+00:09:11,240 --> 00:09:15,160
+the ability to set up rate limiting.
+
+277
+00:09:13,320 --> 00:09:17,360
+Best of all however, is that it forces
+
+278
+00:09:15,160 --> 00:09:19,640
+you to opt into what services you want
+
+279
+00:09:17,360 --> 00:09:21,839
+to be accessible, which is a much better
+
+280
+00:09:19,640 --> 00:09:23,800
+security model than being accessible by
+
+281
+00:09:21,839 --> 00:09:25,360
+default. All of this for me makes it a
+
+282
+00:09:23,800 --> 00:09:27,400
+rather valuable service to have running
+
+283
+00:09:25,360 --> 00:09:29,400
+on your VPS instance, especially as it
+
+284
+00:09:27,400 --> 00:09:31,520
+comes at no additional cost. Although it
+
+285
+00:09:29,400 --> 00:09:33,200
+does make Cloudflare a dependency, which
+
+286
+00:09:31,520 --> 00:09:35,320
+some people might not enjoy. Fair
+
+287
+00:09:33,200 --> 00:09:37,720
+enough. In any case, let's show how easy
+
+288
+00:09:35,320 --> 00:09:39,960
+it is to add Cloudflare Tunnel to a VPS
+
+289
+00:09:37,720 --> 00:09:42,560
+instance in order to allow access to my
+
+290
+00:09:39,960 --> 00:09:44,240
+Rust web application at a given domain
+
+291
+00:09:42,560 --> 00:09:46,440
+name. To do so, the first thing we'll
+
+292
+00:09:44,240 --> 00:09:48,680
+need is a domain name to bind it to,
+
+293
+00:09:46,440 --> 00:09:49,960
+which you can get from any provider you
+
+294
+00:09:48,680 --> 00:09:51,440
+prefer. In my case, I'm going to go
+
+295
+00:09:49,960 --> 00:09:53,200
+ahead and purchase one from Hostinger as
+
+296
+00:09:51,440 --> 00:09:55,040
+they provide domain names for only 99
+
+297
+00:09:53,200 --> 00:09:56,920
+cents for the first year, which again is
+
+298
+00:09:55,040 --> 00:09:58,400
+a really affordable option. With our
+
+299
+00:09:56,920 --> 00:10:00,280
+domain name in hand, the next thing to
+
+300
+00:09:58,400 --> 00:10:02,120
+do is to add it to Cloudflare to be
+
+301
+00:10:00,280 --> 00:10:04,120
+managed. This is done by first signing
+
+302
+00:10:02,120 --> 00:10:05,480
+in to your Cloudflare account or
+
+303
+00:10:04,120 --> 00:10:07,520
+creating one if you haven't done so
+
+304
+00:10:05,480 --> 00:10:08,960
+already, and then clicking the add site
+
+305
+00:10:07,520 --> 00:10:10,440
+button, followed by connecting your
+
+306
+00:10:08,960 --> 00:10:12,360
+domain, where you'll need to enter the
+
+307
+00:10:10,440 --> 00:10:13,880
+domain name you wish to connect. Once
+
+308
+00:10:12,360 --> 00:10:15,680
+added, you will then be provided with a
+
+309
+00:10:13,880 --> 00:10:17,960
+couple of name servers that you'll need
+
+310
+00:10:15,680 --> 00:10:19,400
+to set up for your domain instance,
+
+311
+00:10:17,960 --> 00:10:21,080
+which you can do using the management
+
+312
+00:10:19,400 --> 00:10:22,920
+console of wherever you purchased your
+
+313
+00:10:21,080 --> 00:10:24,680
+domain. On Hostinger, it looks like the
+
+314
+00:10:22,920 --> 00:10:26,520
+following screen. Once the name server
+
+315
+00:10:24,680 --> 00:10:28,200
+records have been added, this will begin
+
+316
+00:10:26,520 --> 00:10:31,080
+to propagate, which can take anywhere
+
+317
+00:10:28,200 --> 00:10:32,600
+from a few minutes to a few hours. Once
+
+318
+00:10:31,080 --> 00:10:34,680
+it's complete, Cloudflare will send you
+
+319
+00:10:32,600 --> 00:10:36,880
+an email letting you know the domain is
+
+320
+00:10:34,680 --> 00:10:38,760
+now active. Once that's the case, we can
+
+321
+00:10:36,880 --> 00:10:40,640
+then begin setting up our tunnel. To do
+
+322
+00:10:38,760 --> 00:10:42,839
+so, the easiest way to navigate to the
+
+323
+00:10:40,640 --> 00:10:45,120
+tunnel configuration is to use the quick
+
+324
+00:10:42,839 --> 00:10:47,000
+search menu and type in tunnel, followed
+
+325
+00:10:45,120 --> 00:10:48,280
+by selecting the following result.
+
+326
+00:10:47,000 --> 00:10:49,920
+Inside of this page, let's go ahead and
+
+327
+00:10:48,280 --> 00:10:51,800
+create a new tunnel, followed by
+
+328
+00:10:49,920 --> 00:10:53,000
+providing it a name. In my case, I'm
+
+329
+00:10:51,800 --> 00:10:55,120
+going to go ahead and enter this as
+
+330
+00:10:53,000 --> 00:10:56,880
+secure VPS. Upon doing so, we'll then
+
+331
+00:10:55,120 --> 00:10:58,280
+enter the following page, where we can
+
+332
+00:10:56,880 --> 00:10:59,720
+select the operating system that we're
+
+333
+00:10:58,280 --> 00:11:01,800
+using. Let's go ahead and select this to
+
+334
+00:10:59,720 --> 00:11:03,600
+be Debian, followed by the 64-bit
+
+335
+00:11:01,800 --> 00:11:05,839
+architecture. This will then provide us
+
+336
+00:11:03,600 --> 00:11:07,640
+with three commands, two of which we're
+
+337
+00:11:05,839 --> 00:11:10,040
+going to use to install and authenticate
+
+338
+00:11:07,640 --> 00:11:12,000
+cloudflared, which is the process that
+
+339
+00:11:10,040 --> 00:11:13,600
+Cloudflare Tunnel uses under the hood.
+
+340
+00:11:12,000 --> 00:11:15,680
+So, let's go ahead and copy these first
+
+341
+00:11:13,600 --> 00:11:17,277
+two commands and paste them into the VPS
+
+342
+00:11:15,680 --> 00:11:18,640
+one at a time. Once that's done
+
+343
+00:11:17,277 --> 00:11:20,839
+[clears throat] and provided everything
+
+344
+00:11:18,640 --> 00:11:22,400
+was successful, our VPS instance should
+
+345
+00:11:20,839 --> 00:11:24,280
+connect to Cloudflare through this
+
+346
+00:11:22,400 --> 00:11:26,560
+configured tunnel, which we should see
+
+347
+00:11:24,280 --> 00:11:27,920
+reflected on the actual page. With that,
+
+348
+00:11:26,560 --> 00:11:30,040
+we're now ready to go ahead and set up
+
+349
+00:11:27,920 --> 00:11:31,680
+our DNS routes. To do so, we can go go
+
+350
+00:11:30,040 --> 00:11:33,520
+and click the three-dot button and then
+
+351
+00:11:31,680 --> 00:11:35,640
+select configure. Here we then need to
+
+352
+00:11:33,520 --> 00:11:37,560
+press the add route button and select
+
+353
+00:11:35,640 --> 00:11:38,840
+published application. Now we can then
+
+354
+00:11:37,560 --> 00:11:40,440
+go ahead and select the domain that we
+
+355
+00:11:38,840 --> 00:11:41,960
+want for this application as well as any
+
+356
+00:11:40,440 --> 00:11:43,320
+subdomain. In my case, I'm going to go
+
+357
+00:11:41,960 --> 00:11:44,920
+ahead and set this to the domain I just
+
+358
+00:11:43,320 --> 00:11:47,560
+configured as well as setting the
+
+359
+00:11:44,920 --> 00:11:49,680
+subdomain to www. Next, we then have the
+
+360
+00:11:47,560 --> 00:11:51,920
+ability to set an optional path in order
+
+361
+00:11:49,680 --> 00:11:54,440
+to perform path-based routing if we want
+
+362
+00:11:51,920 --> 00:11:56,520
+to. This allows us to route a request to
+
+363
+00:11:54,440 --> 00:11:58,560
+a specific service based on a path
+
+364
+00:11:56,520 --> 00:12:00,720
+prefix. For example, let's say you have
+
+365
+00:11:58,560 --> 00:12:02,520
+a separate service for your API and you
+
+366
+00:12:00,720 --> 00:12:05,280
+want to route all requests that have the
+
+367
+00:12:02,520 --> 00:12:06,880
+/api prefix to it, then you can do so as
+
+368
+00:12:05,280 --> 00:12:08,240
+follows. In my case, I'm going to go
+
+369
+00:12:06,880 --> 00:12:10,280
+ahead and leave this blank, but it's a
+
+370
+00:12:08,240 --> 00:12:12,120
+useful feature to know about. Lastly,
+
+371
+00:12:10,280 --> 00:12:13,760
+all that remains is to define the URL of
+
+372
+00:12:12,120 --> 00:12:15,680
+the service that we want this tunnel to
+
+373
+00:12:13,760 --> 00:12:17,040
+connect to. In my case, this is going to
+
+374
+00:12:15,680 --> 00:12:19,240
+be the REST web application that I
+
+375
+00:12:17,040 --> 00:12:21,880
+deployed earlier, which is bound on the
+
+376
+00:12:19,240 --> 00:12:23,800
+VPS at localhost:3000.
+
+377
+00:12:21,880 --> 00:12:25,720
+By the way, if you happen to be using a
+
+378
+00:12:23,800 --> 00:12:27,800
+self-hosted platform such as Coolify or
+
+379
+00:12:25,720 --> 00:12:29,200
+Dokku ploy, then here you would enter
+
+380
+00:12:27,800 --> 00:12:31,640
+the domain you configured for your
+
+381
+00:12:29,200 --> 00:12:34,640
+application using that platform rather
+
+382
+00:12:31,640 --> 00:12:36,720
+than the loopback URL. Both Coolify and
+
+383
+00:12:34,640 --> 00:12:38,240
+Dokku ploy have documentation on how to
+
+384
+00:12:36,720 --> 00:12:41,000
+use them effectively with Cloudflare
+
+385
+00:12:38,240 --> 00:12:43,040
+Tunnel. So, I recommend checking out the
+
+386
+00:12:41,000 --> 00:12:45,080
+platform documentation for each one
+
+387
+00:12:43,040 --> 00:12:47,800
+respectively. In any case, with my
+
+388
+00:12:45,080 --> 00:12:49,320
+service URL defined, I can now add this
+
+389
+00:12:47,800 --> 00:12:51,200
+route to my Cloudflare Tunnel by
+
+390
+00:12:49,320 --> 00:12:52,839
+clicking the add route button. Once
+
+391
+00:12:51,200 --> 00:12:54,720
+added, I can confirm that everything is
+
+392
+00:12:52,839 --> 00:12:56,320
+working by heading on over to the host
+
+393
+00:12:54,720 --> 00:12:58,200
+name I configured, which I can do by
+
+394
+00:12:56,320 --> 00:13:00,240
+clicking the following link. And as you
+
+395
+00:12:58,200 --> 00:13:01,760
+can see, I'm taken to my REST web
+
+396
+00:13:00,240 --> 00:13:04,240
+application all without needing to
+
+397
+00:13:01,760 --> 00:13:06,480
+enable any inbound connections. Very
+
+398
+00:13:04,240 --> 00:13:09,080
+cool. Okay, so before we wrap up this
+
+399
+00:13:06,480 --> 00:13:11,400
+video, there's one last thing to quickly
+
+400
+00:13:09,080 --> 00:13:13,600
+cover, which is how to enable other
+
+401
+00:13:11,400 --> 00:13:16,160
+services that might need to access the
+
+402
+00:13:13,600 --> 00:13:17,360
+private ones on our locked-down VPS. For
+
+403
+00:13:16,160 --> 00:13:18,880
+example, let's say you're using
+
+404
+00:13:17,360 --> 00:13:21,400
+something like Coolify or Dokku ploy
+
+405
+00:13:18,880 --> 00:13:23,880
+when it comes to your VPS instance. Both
+
+406
+00:13:21,400 --> 00:13:25,960
+of these by default use GitHub webhooks
+
+407
+00:13:23,880 --> 00:13:28,120
+in order to trigger a redeploy, which
+
+408
+00:13:25,960 --> 00:13:29,880
+unfortunately will no longer work due to
+
+409
+00:13:28,120 --> 00:13:32,520
+the fact that we've disabled inbound
+
+410
+00:13:29,880 --> 00:13:34,040
+access to our private services. Whilst
+
+411
+00:13:32,520 --> 00:13:36,640
+you could solve this by exposing the
+
+412
+00:13:34,040 --> 00:13:38,280
+deploy/qualify service using Cloudflare
+
+413
+00:13:36,640 --> 00:13:40,760
+tunnel, similar to what we did with the
+
+414
+00:13:38,280 --> 00:13:42,920
+web application, it's a better idea to
+
+415
+00:13:40,760 --> 00:13:44,920
+instead allow GitHub to access this
+
+416
+00:13:42,920 --> 00:13:47,120
+service over our tailnet and then
+
+417
+00:13:44,920 --> 00:13:50,320
+trigger a redeploy via their respective
+
+418
+00:13:47,120 --> 00:13:52,520
+API. This is achieved using a feature
+
+419
+00:13:50,320 --> 00:13:54,680
+that Tailscale provides called workload
+
+420
+00:13:52,520 --> 00:13:56,880
+identity federation, of which I've
+
+421
+00:13:54,680 --> 00:13:58,160
+covered before in another video and
+
+422
+00:13:56,880 --> 00:14:00,240
+there's also some pretty decent
+
+423
+00:13:58,160 --> 00:14:02,120
+documentation on. Both of which I've
+
+424
+00:14:00,240 --> 00:14:03,800
+linked in the description down below. In
+
+425
+00:14:02,120 --> 00:14:06,000
+my case, I like to use this with the
+
+426
+00:14:03,800 --> 00:14:07,480
+official Tailscale GitHub action, which
+
+427
+00:14:06,000 --> 00:14:09,400
+allows the runner to connect to my
+
+428
+00:14:07,480 --> 00:14:11,680
+tailnet and interact with any private
+
+429
+00:14:09,400 --> 00:14:13,360
+services. By doing so, I can then send
+
+430
+00:14:11,680 --> 00:14:15,280
+an API request to my Dokku Deploy
+
+431
+00:14:13,360 --> 00:14:17,000
+instance in order to redeploy an
+
+432
+00:14:15,280 --> 00:14:18,920
+application all without needing to
+
+433
+00:14:17,000 --> 00:14:20,920
+expose the service to the public
+
+434
+00:14:18,920 --> 00:14:23,360
+internet. With that, we've managed to
+
+435
+00:14:20,920 --> 00:14:25,560
+set up a VPS instance that denies all
+
+436
+00:14:23,360 --> 00:14:27,520
+inbound traffic but is still perfectly
+
+437
+00:14:25,560 --> 00:14:29,480
+operational, whether it's serving a web
+
+438
+00:14:27,520 --> 00:14:31,640
+application to users or allowing us to
+
+439
+00:14:29,480 --> 00:14:33,680
+access any private services on it.
+
+440
+00:14:31,640 --> 00:14:35,920
+Whilst this isn't a magic bullet when it
+
+441
+00:14:33,680 --> 00:14:37,560
+comes to VPS security, there's no such
+
+442
+00:14:35,920 --> 00:14:39,680
+thing, it's definitely an approach I
+
+443
+00:14:37,560 --> 00:14:41,560
+feel comfortable with in 2026,
+
+444
+00:14:39,680 --> 00:14:43,800
+especially given the rise of AI-based
+
+445
+00:14:41,560 --> 00:14:45,400
+security research and potentially
+
+446
+00:14:43,800 --> 00:14:47,160
+exploitation that we're going to see in
+
+447
+00:14:45,400 --> 00:14:49,080
+the future. Additionally, by adding in
+
+448
+00:14:47,160 --> 00:14:51,400
+Cloudflare tunnel, we also get access to
+
+449
+00:14:49,080 --> 00:14:52,839
+its fantastic web application firewall,
+
+450
+00:14:51,400 --> 00:14:54,160
+which if you want to know more about on
+
+451
+00:14:52,839 --> 00:14:55,760
+how to configure, then let me know in
+
+452
+00:14:54,160 --> 00:14:57,839
+the comments down below and I'll do a
+
+453
+00:14:55,760 --> 00:14:59,520
+dedicated video on it. Otherwise, that
+
+454
+00:14:57,839 --> 00:15:01,960
+wraps up how I like to secure my VPS
+
+455
+00:14:59,520 --> 00:15:03,440
+instances in 2026. One that I think is
+
+456
+00:15:01,960 --> 00:15:05,280
+worthwhile doing if you happen to run
+
+457
+00:15:03,440 --> 00:15:06,839
+applications on your own. Speaking of
+
+458
+00:15:05,280 --> 00:15:09,000
+which, if you're looking into running
+
+459
+00:15:06,839 --> 00:15:10,880
+your own applications on a VPS instance
+
+460
+00:15:09,000 --> 00:15:12,640
+and want one that's both reliable and
+
+461
+00:15:10,880 --> 00:15:13,800
+affordable, then make sure to check out
+
+462
+00:15:12,640 --> 00:15:16,080
+Hostinger using my link in the
+
+463
+00:15:13,800 --> 00:15:17,480
+description below. And if you do want to
+
+464
+00:15:16,080 --> 00:15:19,360
+purchase, make sure to use my coupon
+
+465
+00:15:17,480 --> 00:15:21,280
+code dream to code when checking out to
+
+466
+00:15:19,360 --> 00:15:23,440
+save an additional 10% off the already
+
+467
+00:15:21,280 --> 00:15:24,960
+low price. In any case, that's all from
+
+468
+00:15:23,440 --> 00:15:26,560
+me, but I want to give a big thank you
+
+469
+00:15:24,960 --> 00:15:29,240
+to you for watching, and I'll see you on
+
+470
+00:15:26,560 --> 00:15:29,240
+the next one.

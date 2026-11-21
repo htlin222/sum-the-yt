@@ -1,0 +1,461 @@
+Okay, so just as news of GPT-5.6 has
+come out that the government is gonna
+be preventing people to use this, open
+weights models keep chugging along,
+and this brings me to the topic of
+today's video, Ornith 1.0, which is a
+family of models from Deep Reinforce.
+and I guess the big tease here is
+that things have been moving along
+where we've had sort of one track be
+models and one track be harnesses.
+and what Ornith is proposing is
+why not have a model that writes
+its own harness or at least has the
+ability to write its own harness?
+therefore, if you've got a particular
+use case that needs one kind of harness,
+it can write that on the fly and then
+be able to use that to actually get
+the result that you're trying to get.
+And this is exactly what the Ornith
+family of models are trying to do.
+They actually call this self-scaffolding
+LLMs for agentic coding.
+Now the area that they're focusing
+on is agentic coding in here.
+I think the lessons can probably
+apply to other domains as well.
+But it does seem the whole topic of
+agentic coding is where the money is at
+the moment, and where a lot of people
+are trying to make the most innovations.
+Which makes sense with everybody
+using things like Claude Code, Codex,
+and all the other agentic coding
+tools that are out there So that
+brings us to what is actually in
+Ornith 1.0, their family of models.
+Well, this is four models, that
+are not new pre-trains or anything.
+These are basically, fine-tunes or sort
+of more mid-training and post-training,
+on four separate models that come from the
+Qwen 3.5 family and the Gemma 4 family.
+So we've got a 9B model,
+which is Qwen 3.5.
+We've got the 31B, which
+comes from the Gemma 4 family.
+And then we've got a 35B MoE and a 300
+397B MoE, both from the Qwen 3.5 family.
+Now, the cool thing in here is that
+they've released all of the models,
+unlike some of the things we've
+looked at recently where they've
+held back the biggest and best model.
+Here, we've got all of
+the models available.
+So you can try it out whether
+you're just looking out to try the
+9B, small model, whether you want
+to try the 35B MoE, or whether you
+want to go really big for the 397B.
+but the key thing that sets this family
+apart is that these models are learning to
+generate both sort of solutions, rollout,
+so agentic trajectories and task-specific
+harnesses that guide those rollouts.
+So their whole goal is by optimizing both
+that sort of scaffold/harness and the
+solution that the model is then gonna
+basically generate better solutions out.
+And if we could just quickly look at
+the benchmarks, I'm not gonna harp on
+about these, but certainly looking at
+their really big model here, we can
+see that it's outperforming a lot of
+other models, including the Qwen 3.7
+Max, the MiniMax model, and often is
+competitive with the Claude Opus models
+If we do the same thing and look at
+even the smaller ones are doing very
+well against models their own size.
+and that's for the 35B MoE
+and even down to the 9B.
+so the 9B is certainly something you
+should consider if you're looking to
+run a local coding model and you can't
+run something as big as the 35B MoEs or
+Gemma 4-31, et cetera, their 9B model
+is doing really well here compared to
+those other models that are often even
+three times as big as them but what's far
+more interesting than the benchmarks for
+me is what actually makes this special.
+And this goes to the heart of sort of
+what they're getting at here, is that
+up until now, most of the time people
+have thought about agent harnesses as
+being things that are designed by humans.
+so what Ornith actually does here is
+they treat that as a learnable object.
+And the whole idea is that just as
+the model's gonna learn to be able to
+get good results, it should also learn
+to create better scaffolds or better
+harnesses for creating those good results.
+You could even think about it
+as their model learning to do
+context engineering instead of,
+you having to write that by hand.
+And that idea here of how do you actually
+train a model or sort of mid-train and
+post-train a model, to be able to do
+this without it all falling apart is
+the key thing to me about this project.
+and this really comes down
+to this sort of two-stage RL
+process that they've got here.
+So they basically, propose a task and
+then they condition on that task and
+a scaffold previously used for it.
+And then the model will first propose
+a new sort of refined version of
+that scaffold or that harness.
+And then conditioning on that new
+harness, it will then basically
+propose the rollout, which is going
+to get us to the result that we want.
+Now, then what they do is they take that
+rollout and you can see that they'll
+have multiple, rollouts there, and they
+will then basically use that as a reward
+signal to update the model for both
+generating the scaffold and generating
+the rollout here Ideally, what's going
+on here are those, reward signals,
+and this is coming from using, GRPO,
+here, And I'll talk about how they're
+doing the verification in a minute.
+But allows them to basically update
+the weights of the model to get
+better at building a scaffold and
+then better at using that scaffold to
+actually generate good results out.
+now currently they're focused on doing all
+of this in the domain of agentic coding.
+So it kind of makes sense, And based on
+their benchmarks, it seems to be working
+for that but you could imagine this
+being used for other kinds of tasks.
+Now, obviously the challenge that
+you've got is can that reward signal be
+something that you can measure with GRPO?
+Is it something that's
+verifiable, et cetera?
+And the thing that you should be thinking
+about as you're sort of looking at this
+is, well, if the model is determining
+basically how the harness works and the
+actual rollout, why doesn't it just cheat
+and build a harness that just takes a
+shortcut to get to the right answer?
+And obviously this is something
+that they've thought about a lot
+too, They actually address this in
+how they deal with reward hacking.
+So remember, reward hacking is where if
+you've got some kind of LLM as a judge
+or something like that, the model just
+learns to do tweaks that are perhaps not
+exactly what you want, but that are gonna
+get the best reward out of that model.
+And, in the early days of
+RLHF and RLAIF, et cetera
+you would find that the sort of generator
+models would generate all these kind
+of weird ways to get the reward model
+to just give a high signal back.
+And that could just be repeating certain
+tokens, doing things that as humans
+we would clearly see as being wrong.
+But because the reward models were
+perhaps not as good back then,
+they could be tricked quite easily.
+Now that said, even though the
+reward models nowadays are better
+there's no guarantee that that alone
+is gonna give you the best reward
+signal to actually update your model.
+so they talk about here of basically
+defending against this in three layers.
+So the first one is the actual environment
+and sort of tools and I guess basically
+everything that's going on in the sandbox,
+that the scaffolding is gonna run in.
+So all of those things are immutable.
+They can't be changed by the model.
+So the model can't set up the
+environment to actually do a shortcut
+to sort of win kind of thing.
+Secondly, they've got a
+deterministic monitor here,
+which is kind of cool, right?
+That what they've got is something
+that's basically watching, what does
+the scaffolding actually try to do?
+Does it try and do anything like
+modified verification scripts, use
+any sort of unsanctioned tools, try
+to use anything that's out of the
+sandbox that it's allowed to play in?
+And the moment that it does that, it
+basically gets penalized for doing that.
+and the third thing that they have
+is an LLM as a judge that can veto
+on top of any of the other stuff.
+So even if it bypasses the early stages
+and stuff like that, if the LLM as a judge
+also says, "No, this has been achieved
+in some way that perhaps wasn't allowed,
+it can then veto the whole verifier that
+the GRPO was using, et cetera So overall,
+this is a really interesting idea here
+of can a model then actually sort of code
+what it needs as a harness on the fly?
+And we've seen the idea of models
+actually writing code that they can
+then use, be around for quite a while.
+so this is the PAL paper.
+This is from I think it was late
+2022 was the first version of it.
+This published version is January 2023.
+And what was so cool about this was
+that it basically proposed that why
+doesn't the model just write Python
+to do things like math and things
+like that, and then run that Python
+and bring that back into the model?
+So that kind of idea is actually quite
+old But getting it to write a whole
+scaffold shows that, one, not only
+have we come so far in the models
+that the models have gotten so good
+at this, but this could be the way
+forward, That as the models get more
+intelligent, we don't want to basically
+get involved as humans much at all.
+We just want to leave it to the
+model to write what it needs to
+get the result that we want out.
+So let's have a look at the model, see
+what the actual outputs look like, and get
+a sense of how this is all coming together
+all right, so if I come in here,
+I'm using my testing suite in here.
+you can see we've got the model.
+I'm using the 35B MoE here.
+If I give it something like this, right?
+So just starting off with
+some sort of general things.
+draw pelican.
+So the whole pelican SVG test, it draws
+a pretty nice pelican in here, right?
+So you can see that, like, this
+is, straight away getting, a pretty
+good, result for the pelican,
+which is, kind of be expected.
+I'm guessing that, I can't remember
+testing the Qwen 3.5 model on
+this, but, that does quite well.
+if we give it a RAG question You
+can see we're getting it, where
+it's writing up a lot of, sort of
+reasoning thinking tokens in here.
+It's basically gone through and,
+looked at the different stuff in there.
+but it hasn't really, written
+any code or anything for this.
+It's just worked out, okay, this is what
+should be the answer, and then it comes
+back and gives us, answers in there.
+again, still pretty, impressive And
+it does that for, quite a number
+of the other sort of tasks as well.
+If we give it something though where
+we say, "Create a harness to get the
+weather, with a five-day forecast,"
+and we run this, By the way, the
+compute here is sponsored by Dell.
+I'm actually running this on the Dell
+Pro Max with an RTX 6000 Pro here.
+so I'm getting very good speeds,
+that you can see for the model.
+I'm able to run both, 16-bit models
+and also quantized models here.
+this one is actually a quantized version
+that we're running through Ollama.
+Uh, you can see for some of
+the other ones, I'll run them
+through vLLM, directly in here.
+Anyway, if we come in here and look at,
+the thinking process, we can see that it
+understands the goal of, create a harness.
+and it understands that it's going
+to, need to handle all the different
+things that the harness does.
+So this is, what is kind
+of unique with this model.
+It then basically starts
+to design a solution.
+We're getting very nice long,
+chain of thought here, which is
+very clearly related to the task
+at hand, going through this, and
+then it starts to draft the code.
+In this case, it's done
+1,600 tokens in there.
+If we come in here, we can see
+we've got, it basically deciding it
+needed to have the, request library.
+It then basically creates
+the weather harness.
+The weather harness is gonna be for
+a five-day forecast in here we can
+see that it's decided, how it's gonna
+handle a bunch of things, for this
+harness and to basically give us some,
+graphical displays, et cetera and in
+this case, it's telling us, okay, we
+need, an OpenWeather API key here.
+And it shows us what some of the
+outputs should be like, et cetera.
+Okay.
+If I change it to basically say, right,
+we don't have any API keys, let's see,
+do we get, something now like an API
+which doesn't need, an API key, in here?
+So it's still generating
+a lot of thinking tokens.
+My guess is that the thinking tokens
+are gonna be very similar, although
+we see the implicit need now is find a
+free no API required weather, source.
+it's gone and generated a lot more
+thinking tokens as it's gone through this.
+and it's come up with the, result
+of using the Open meteo API which
+is this API here, which sure enough
+doesn't require a signup, in here.
+So, it's then basically rewritten,
+the script to match that API.
+So we can see we've got these codes here,
+weather interpretation codes, and it will
+convert them to emojis and to, a sort of
+short description, going through this.
+then it's gonna take
+coordinates as GPS coordinates.
+It's actually got the, API in there.
+It looks like it's handled all of that,
+very well, Which is really good because
+it understood the requirements that I
+don't have any API keys, and it had to
+basically do it without, doing the API,
+et cetera And you can see now if we ask
+it something like create a harness to
+get the latest AI news from Twitter,
+let's see what it's gonna come up with.
+It is really nice that when the
+tokens are this fast, you don't
+mind having a few thousand thinking
+tokens, going through this.
+And we can see coming in this, okay,
+get the latest AI news from Twitter's
+API has changed significantly.
+It's doing quite well
+at understanding that.
+It's then got code for, dealing with
+the actual sort of main, Twitter API.
+Okay, what if I change this to telling
+it I don't have any APIs, so find
+a solution that doesn't need one?
+Are we gonna get this in the thing?
+Okay, no API keys allowed.
+Need a solution that
+bypasses this, requirement.
+So you can see that, the chain
+of thought has kind of been
+trained for very specific things.
+First, understand the user request.
+So this is a common thing, that is in
+the sort of hidden chain of thought
+for a lot of the proprietary models.
+it's got the constraints there.
+It's got identify key
+challenges, constraints,
+explore alternative approaches.
+Let's see, after 3,200 tokens of
+that, what did it come back with?
+it's come back with, okay, a list of,
+accounts that it should follow, for this,
+And it's basically just gonna use request
+to try and, scrape it directly in here.
+I'm not sure how successful that would be.
+wouldn't surprise me that, that would
+get blocked very quickly But we can see
+that the logic in the harness is sound
+for what it's trying to do in here.
+don't forget, this is just
+one-shotting it as well.
+You could set this up to, basically keep
+passing results in, and you could also set
+it up to actually take the, code out and,
+automatically run it and stuff like that.
+And so you can see that the other
+thing too is it actually ends on
+with each one basically asking Do
+we want to have some kind of simple
+Gradio or Streamlit UI, et cetera?
+Okay, so I've come over to, my chat
+sort of testing where we've put
+in just a simple system prompt.
+it's gone through stuff.
+It looks like it's, found a little
+bit of a different solution this time.
+But I want you to see that, like that
+it's now gone and, rendered this nicely.
+You can see we're now in a chat thing
+where if I basically ask it at the end of
+that, can you build a Gradio, interface?
+Interestingly, this time
+the thinking was very quick.
+So it understood that it it created the
+sort of, you know, harness already, and
+that now this was basically just going
+to structure out a plan to do the rest
+of the Gradio element of it in here.
+So it's not sort of redoing the
+whole, Twitter thing, which is good.
+we can see that looks like it's
+made the Gradio app, pretty well and
+pretty quickly in there So overall,
+I would say that this is definitely
+a project that's worth checking out.
+try out the other models.
+I've gone for the 35B MoE, but you
+could certainly play with this with
+the smaller 9B model, which is based
+on the Qwen 3.5 series as well.
+And let me know in the comments what
+kind of results you get with this.
+I don't think this is going to change
+my daily workhorse for doing coding kind
+of tasks, I do think if you wanted to do
+local coding and you don't have access
+to a big GPU, this is something you could
+certainly check out, anyway, thanks to
+Dell for sponsoring the compute in here.
+as always, if you found the video useful,
+please click like and subscribe, and
+I will talk to you in the next video.
+Bye for now.
